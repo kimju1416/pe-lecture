@@ -110,6 +110,11 @@ svg text{font-family:var(--font)}
 /* 2장: 운동 시작 → 빨라짐 */
 #s2{--beat:.86s;--flow:2.4s}
 #s2.st-1{--beat:.4s;--flow:.9s}
+#s2 .mglow{opacity:0;transition:opacity .8s}
+#s2.st-1 .mglow{opacity:1}
+@keyframes squeeze{0%,100%{transform:scale(1)}50%{transform:scale(.95,1.03)}}
+#s2 .squeeze{transform-box:fill-box;transform-origin:center}
+#s2.is-on.st-1 .squeeze{animation:squeeze .8s var(--ease-inout) infinite}
 /* 5장: 15초 타이머 */
 #ring{stroke-dasharray:1;stroke-dashoffset:0}
 #s5.st-1 #ring{stroke-dashoffset:1;transition:stroke-dashoffset 5s linear}
@@ -215,15 +220,13 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <!-- 심장 -->
     <circle cx="420" cy="600" r="230" fill="url(#gGlow)"/>
     <g transform="translate(420 600)"><g class="beat"><use href="#heart" x="-120" y="-120" width="240" height="240"/></g></g>
-    <text x="420" y="800" text-anchor="middle" font-size="34" font-weight="600" fill="#f5f5f7">심장</text>
+    <text x="420" y="840" text-anchor="middle" font-size="34" font-weight="600" fill="#f5f5f7">심장</text>
     <!-- 근육 -->
-    <g transform="translate(1500 600)">
-      <path d="M-150 0C-150-70-70-110 0-110S150-70 150 0 70 110 0 110-150 70-150 0Z" fill="#48484a"/>
-      <path d="M-110 0C-60-40 60-40 110 0M-110 0C-60 40 60 40 110 0M-120 0H120" fill="none" stroke="#636366" stroke-width="5" stroke-linecap="round"/>
-    </g>
-    <text x="1500" y="800" text-anchor="middle" font-size="34" font-weight="600" fill="#f5f5f7">근육</text>
+    <circle cx="1540" cy="600" r="230" fill="url(#gGlow)" class="mglow"/>
+    <g transform="translate(1540 600)"><g class="squeeze"><image href="img/muscle.webp" x="-200" y="-200" width="400" height="400"/></g></g>
+    <text x="1540" y="840" text-anchor="middle" font-size="34" font-weight="600" fill="#f5f5f7">근육</text>
   </svg>
-  <div class="abs center" style="left:270px;width:300px;top:300px">
+  <div class="abs center" style="left:270px;width:300px;top:255px">
     <div class="num" style="font-size:96px;font-weight:600;line-height:1"><span data-num="70,150,150">70</span></div>
     <div class="t-cap mute">회 / 분</div>
   </div>
