@@ -532,7 +532,6 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 <tr><td><kbd>T</kbd> <kbd>N</kbd></td><td>대본 보기</td></tr>
 <tr><td><kbd>O</kbd></td><td>전체 보기</td></tr>
 <tr><td><kbd>F</kbd></td><td>전체 화면</td></tr>
-<tr><td><kbd>M</kbd></td><td>대본 읽어 주기 켜기/끄기</td></tr>
 <tr><td><kbd>B</kbd> / <kbd>W</kbd></td><td>검은 화면 / 흰 화면</td></tr>
 <tr><td>숫자 + <kbd>Enter</kbd></td><td>그 장으로 이동</td></tr>
 <tr><td>좌우로 밀기</td><td>전자칠판·폰에서 넘기기</td></tr>
@@ -545,7 +544,6 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
   <span class="count" id="cnt">1 / 15</span>
   <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
-  <button id="bM" title="대본 읽어 주기(M)" aria-label="대본 읽어 주기"><svg viewBox="0 0 24 24"><path d="M4 9v6h4l5 4V5L8 9H4zM17 9a4 4 0 0 1 0 6"/></svg></button>
   <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </div>
 
@@ -577,7 +575,7 @@ const NOTES = {
 const $ = s => document.querySelector(s);
 const stage = $('#stage'), slides = [...document.querySelectorAll('.slide')];
 const SVGNS = 'http://www.w3.org/2000/svg';
-let cur = 0, step = 0, numBuf = '', speak = false;
+let cur = 0, step = 0, numBuf = '';
 
 // 단계로 나타나는 HTML 요소만 아래에서 올라온다(SVG는 transform 속성을 덮어쓰지 않도록 투명도만)
 document.querySelectorAll('[data-step]').forEach(el => { if (el.namespaceURI !== SVGNS && !el.closest('.zonebar')) el.classList.add('rise'); });
@@ -640,17 +638,8 @@ function replay(){ const s = slides[cur]; s.classList.remove('is-on'); step = 0;
 function md(t){ return t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
 function showNotes(){
   $('#notes').innerHTML = md(NOTES[slides[cur].id] || '');
-  if (speak && 'speechSynthesis' in window) {
-    speechSynthesis.cancel();
-    const u = new SpeechSynthesisUtterance((NOTES[slides[cur].id] || '').replace(/\*\*/g, ''));
-    u.lang = 'ko-KR'; u.rate = 1; speechSynthesis.speak(u);
-  }
 }
 function toggleNotes(){ $('#notes').classList.toggle('show'); $('#bT').classList.toggle('act', $('#notes').classList.contains('show')); }
-function toggleSpeak(){
-  speak = !speak; $('#bM').classList.toggle('act', speak);
-  if (speak) showNotes(); else if ('speechSynthesis' in window) speechSynthesis.cancel();
-}
 
 // 전체 보기
 function buildGrid(){
@@ -692,7 +681,6 @@ addEventListener('keydown', e => {
   else if (/^[tn]$/i.test(k)) toggleNotes();
   else if (/^o$/i.test(k)) toggleOv('#ov');
   else if (/^f$/i.test(k)) fullscreen();
-  else if (/^m$/i.test(k)) toggleSpeak();
   else if (/^b$/i.test(k)) blackout('#000');
   else if (/^w$/i.test(k)) blackout('#fff');
   else if (k === '?' || /^h$/i.test(k)) toggleOv('#help');
@@ -711,7 +699,7 @@ vp.addEventListener('touchend', e => {
 }, {passive: true});
 $('#blackout').onclick = () => $('#blackout').style.display = 'none';
 $('#bR').onclick = replay; $('#bT').onclick = toggleNotes; $('#bO').onclick = () => toggleOv('#ov');
-$('#bP').onclick = prev; $('#bN').onclick = next; $('#bM').onclick = toggleSpeak; $('#bF').onclick = fullscreen;
+$('#bP').onclick = prev; $('#bN').onclick = next; $('#bF').onclick = fullscreen;
 $('#cnt').onclick = () => toggleOv('#help');
 document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeOverlays(); }));
 
