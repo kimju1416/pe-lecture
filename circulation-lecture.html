@@ -987,6 +987,23 @@ const SVGNS = 'http://www.w3.org/2000/svg';
 let cur = 0, step = 0, numBuf = '';
 
 document.querySelectorAll('[data-step]').forEach(el => { if (el.namespaceURI !== SVGNS && el.tagName !== 'TR' && el.tagName !== 'TD') el.classList.add('rise'); });
+// 빈칸은 한 번에 하나씩: 문장이 먼저 빈칸으로 나타나고, 다음 클릭마다 답을 하나씩 공개한다
+slides.forEach(s => {
+  const items = [...s.querySelectorAll('[data-step],[data-reveal]')];
+  if (!items.length) return;
+  const own = e => e.dataset.step !== undefined;
+  const contStep = e => { const c = e.parentElement && e.parentElement.closest('[data-step]'); return c && s.contains(c) ? +c.dataset.step : 0; };
+  const at = e => own(e) ? +e.dataset.step : Math.max(+e.dataset.reveal, contStep(e));
+  const max = Math.max(...items.map(at));
+  let n = 0; const plan = [];
+  for (let k = 0; k <= max; k++){
+    const shows = items.filter(e => own(e) && at(e) === k), blanks = items.filter(e => !own(e) && at(e) === k);
+    blanks.filter(e => contStep(e) < k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+    if (k > 0 && shows.length) { n++; shows.forEach(e => plan.push([e, 'step', n])); }
+    blanks.filter(e => contStep(e) >= k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+  }
+  plan.forEach(([e, a, v]) => { e.dataset[a] = v; });
+});
 const maxStep = slides.map(s => Math.max(0, ...[...s.querySelectorAll('[data-step],[data-reveal]')].map(e => +(e.dataset.step || e.dataset.reveal)),
   ...[...s.querySelectorAll('[data-num],[data-text]')].map(e => (e.dataset.num || e.dataset.text).split(',').length - 1)));
 
