@@ -305,6 +305,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="yr in" style="--d:200"><b>2014 A3</b><span>평균동맥압 · 혈류 추진력 계산</span></div>
     <div class="yr in" style="--d:240"><b>2015 A7</b><span>해리곡선 우측이동 · 정맥 판막</span></div>
     <div class="yr in" style="--d:280"><b>2017 A4</b><span>동방결절 · QRS군</span></div>
+    <div class="yr in" style="--d:300"><b>2017 A14</b><span>운동 효과 방향 (혈압↓ · HDL↑ · 인슐린 요구도↓)</span></div>
     <div class="yr in" style="--d:320"><b>2018 A7</b><span>해부학적 사강 · 폐포 환기량</span></div>
     <div class="yr in" style="--d:360"><b>2020 A7</b><span>좌심실 용적 · 미토콘드리아</span></div>
     <div class="yr in" style="--d:400"><b>2021 B6</b><span>프랭크-스탈링 · 박출계수 · 혈장량</span></div>
@@ -353,59 +354,22 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   </div>
 </section>
 
-<!-- 05 폐순환은 저압 -->
-<section class="slide" id="s5" data-tile="parchment" data-title="폐순환은 저압·저저항">
-  <div class="hd"><div class="t-eyebrow in"><b>1</b>두 개의 순환</div><div class="t-head in" style="--d:100">같은 양의 피를 보내는데, 압력은 5분의 1</div></div>
-  <svg class="full-svg" viewBox="0 0 1920 1080">
-    <line x1="200" y1="900" x2="1100" y2="900" stroke="#c7c7cc" stroke-width="2"/>
-    <g class="in" style="--d:250">
-      <rect x="300" y="580" width="220" height="320" fill="#D70015" opacity=".35"/>
-      <rect x="300" y="420" width="220" height="160" fill="#D70015"/>
-      <text x="410" y="395" text-anchor="middle" font-size="40" font-weight="600" fill="#1d1d1f">120 / 80</text>
-      <text x="410" y="960" text-anchor="middle" font-size="30" fill="#6e6e73">대동맥 (체순환)</text>
-    </g>
-    <g data-step="1">
-      <rect x="700" y="868" width="220" height="32" fill="#0077B6" opacity=".35"/>
-      <rect x="700" y="800" width="220" height="68" fill="#0077B6"/>
-      <text x="810" y="775" text-anchor="middle" font-size="40" font-weight="600" fill="#1d1d1f">25 / 8</text>
-      <text x="810" y="960" text-anchor="middle" font-size="30" fill="#6e6e73">폐동맥 (폐순환)</text>
-    </g>
-    <text x="200" y="1010" font-size="24" fill="#86868b">막대: 아래 = 이완기, 진한 부분 = 수축기까지. 단위 mmHg</text>
-  </svg>
-  <div class="abs" style="left:1180px;top:340px;width:620px">
-    <div class="t-lead" data-step="2">우심실 벽은 좌심실보다 <b>얇다</b></div>
-    <div class="t-body mute" data-step="2" style="margin-top:20px">혈관이 짧고 넓어 저항이 작으니, 낮은 압력으로도 심박출량 전부를 폐로 보낼 수 있다.</div>
-    <div class="t-body" data-step="3" style="margin-top:40px">압력이 낮아야 폐 모세혈관에서 물이 새지 않고 <b>폐부종</b>을 막는다.</div>
-  </div>
-</section>
 
-<!-- 06 폐 모세혈관 동원 -->
-<section class="slide" id="s6" data-tile="black" data-title="운동하면 폐 모세혈관이 열린다">
+<!-- 폐순환 -->
+<section class="slide" id="s5" data-tile="black" data-title="폐순환 — 저압, 그리고 운동하면 열린다">
   <img class="abs fin" src="img/circ-alveoli.jpg" alt="폐포를 감싼 모세혈관망 표본" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>1</b>두 개의 순환</div>
-    <div class="t-head s in" style="--d:100">운동하면 폐 혈류가 몇 배로 는다</div>
-    <div class="pt" data-step="1"><b class="c-o2">동원</b> 쉴 때 닫혀 있던 모세혈관이 열린다 (주로 폐 윗부분)</div>
-    <div class="pt" data-step="2"><b class="c-o2">팽창</b> 이미 열린 혈관이 더 넓어진다</div>
-    <div class="pt" data-step="3">그래서 혈류가 크게 늘어도 폐동맥압은 <b>조금만</b> 오르고, 가스교환 <b>면적</b>은 넓어진다.</div>
-    <div class="t-cap mute" data-step="3" style="margin-top:26px">면적↑ → 픽의 확산 법칙에서 확산량↑ (2024 A12와 연결)</div>
+    <div class="t-head s in" style="--d:100">폐순환은 저압이다</div>
+    <div class="pt" data-step="1">폐동맥압 약 <b class="c-o2">25/8</b> mmHg — 대동맥 120/80의 약 5분의 1. 그래서 우심실 벽이 좌심실보다 <b>얇다</b>.</div>
+    <div class="pt" data-step="2">운동하면 닫혀 있던 폐 모세혈관이 열리고(<b class="c-o2">동원</b>) 넓어진다(<b class="c-o2">팽창</b>).</div>
+    <div class="pt" data-step="3">→ 혈류가 크게 늘어도 압력은 조금만 오르고, 가스교환 <b>면적</b>이 넓어진다 (확산↑, 2024 A12와 연결).</div>
   </div>
 </section>
 
-<!-- 07 관상순환 -->
-<section class="slide" id="s7" data-tile="black" data-title="관상순환 — 심장의 몫">
-  <img class="abs fin" src="img/circ-heart.jpg" alt="관상동맥이 보이는 심장" style="left:-260px;top:0;width:1920px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 80%);mask-image:linear-gradient(90deg,#000 55%,transparent 80%)">
-  <div class="side">
-    <div class="t-eyebrow in"><b>1</b>두 개의 순환</div>
-    <div class="t-head s in" style="--d:100">심장도 피를 받아야 뛴다</div>
-    <div class="pt" data-step="1">좌심실 근육은 <b>이완기</b>에 주로 관상혈류를 받는다 — 수축할 때는 혈관이 눌린다.</div>
-    <div class="pt" data-step="2">심근은 쉴 때도 산소를 <b>70~80%</b> 뽑아 쓴다. 더 뽑을 여유가 없어서, 운동 때는 <b>혈류를 늘려</b> 산소를 받는다.</div>
-    <div class="pt" data-step="3">심박수↑ → 이완기↓ → 관상혈류를 받을 시간↓.<br>심근 산소 요구의 지표는 <b class="c-hr">이중곱</b>(심박수 × 수축기 혈압)이다.</div>
-  </div>
-</section>
 
 <!-- 08 심전도 -->
-<section class="slide" id="s8" data-tile="black" data-title="2. 심전도와 박동 조율기">
+<section class="slide" id="s6" data-tile="black" data-title="2. 심전도와 박동 조율기">
   <div class="hd"><div class="t-eyebrow in"><b>2</b>심장의 전기</div><div class="t-head in" style="--d:100">심전도 한 번 = 심장 한 번</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A4</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
@@ -424,7 +388,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 09 Wiggers -->
-<section class="slide" id="s9" data-tile="light" data-title="Wiggers 도표 읽기">
+<section class="slide" id="s7" data-tile="light" data-title="Wiggers 도표 읽기">
   <div class="hd"><div class="t-eyebrow in"><b>2</b>심장의 전기</div><div class="t-head in" style="--d:100">판막은 압력이 큰 쪽에서 밀려 열린다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2024 B4</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080" id="wig">
@@ -449,7 +413,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 10 문제 ① -->
-<section class="slide" id="s10" data-tile="parchment" data-title="기출형 문제 ① 심전도·심장주기">
+<section class="slide" id="s8" data-tile="parchment" data-title="기출형 문제 ① 심전도·심장주기">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ①</div><div class="t-head in" style="--d:100">발표 중 틀린 것 2개를 찾아 고치시오</div></div>
   <div class="exam in" style="--d:200;left:120px;top:300px;width:1040px">
     <p>다음은 학생들이 심전도와 심장 주기에 대해 발표한 내용이다.</p>
@@ -457,19 +421,19 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
       <li><b>가람</b> : P파는 심실이 탈분극할 때 나타난다.</li>
       <li><b>나래</b> : QRS군 직후 심실은 등용적 수축을 한다.</li>
       <li><b>다온</b> : 좌심실압이 대동맥압보다 높아지면 대동맥판이 열린다.</li>
-      <li><b>라희</b> : 운동 중에는 R-R 간격이 길어져 심박수가 증가한다.</li>
+      <li><b>라희</b> : 운동으로 심박수가 증가하면 R-R 간격은 길어진다.</li>
     </ol>
   </div>
   <div class="answer" style="left:1220px;top:300px;width:580px">
     <div class="t-cap mute">모범답안</div>
     <div class="a-line" data-step="1"><b class="c-hr">가람</b> P파 → <b>심방</b>의 탈분극</div>
-    <div class="a-line" data-step="2"><b class="c-hr">라희</b> R-R 간격이 <b>짧아져</b> 심박수 증가</div>
+    <div class="a-line" data-step="2"><b class="c-hr">라희</b> R-R 간격은 <b>짧아진다</b></div>
     <div data-step="3" style="margin-top:30px"><div class="t-cap mute">채점 키워드</div><span class="kw">심방 탈분극</span><span class="kw">R-R 간격 감소</span></div>
   </div>
 </section>
 
 <!-- 11 Q = HR × SV -->
-<section class="slide" id="s11" data-tile="black" data-title="3. 심박출량 = 심박수 × 1회 박출량">
+<section class="slide" id="s9" data-tile="black" data-title="3. 심박출량 = 심박수 × 1회 박출량">
   <img class="abs fin" src="img/circ-vo2test.jpg" alt="자전거 에르고미터 운동부하검사" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>3</b>심박출량</div>
@@ -478,7 +442,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <table class="qt" data-step="1">
       <tr><th></th><th>HR</th><th>SV</th><th>Q</th></tr>
       <tr><td>안정</td><td>70</td><td>72 mL</td><td><b>약 5 L</b></td></tr>
-      <tr data-step="2"><td>최대 · 일반인</td><td>195</td><td>110 mL</td><td><b class="c-hr">약 21 L</b></td></tr>
+      <tr data-step="2"><td>최대 · 일반인</td><td>195</td><td>103 mL</td><td><b class="c-hr">약 20 L</b></td></tr>
       <tr data-step="3"><td>최대 · 지구성 선수</td><td>190</td><td>180 mL</td><td><b class="c-hr">약 34 L</b></td></tr>
     </table>
     <div class="t-cap mute" data-step="3" style="margin-top:20px">최대 심박수는 둘이 비슷하다. 차이는 <b style="color:var(--on-dark)">1회 박출량</b>에서 난다. (값은 교재 범위 안의 예시)</div>
@@ -486,7 +450,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 12 심박수 두 단계 -->
-<section class="slide" id="s12" data-tile="dark" data-title="심박수가 오르는 두 단계">
+<section class="slide" id="s10" data-tile="dark" data-title="심박수가 오르는 두 단계">
   <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">심박수는 '브레이크를 풀고' 나서 '가속한다'</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 B8</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
@@ -510,7 +474,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 13 SV 3요인 -->
-<section class="slide" id="s13" data-tile="light" data-title="1회 박출량을 정하는 세 가지">
+<section class="slide" id="s11" data-tile="light" data-title="1회 박출량을 정하는 세 가지">
   <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">1회 박출량 = 이완기말 용적 − 수축기말 용적</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 B8</span><span>2021 B6</span></div>
   <div class="cards" style="top:330px;grid-template-columns:repeat(3,1fr)">
@@ -522,14 +486,14 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 14 프랭크-스탈링 -->
-<section class="slide" id="s14" data-tile="black" data-title="프랭크-스탈링 법칙">
+<section class="slide" id="s12" data-tile="black" data-title="프랭크-스탈링 법칙">
   <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">늘어난 만큼 세게 — 프랭크-스탈링</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
     <line x1="300" y1="900" x2="1120" y2="900" stroke="#6e6e73" stroke-width="2"/>
     <line x1="300" y1="900" x2="300" y2="360" stroke="#6e6e73" stroke-width="2"/>
     <g font-size="24" fill="#a1a1a6"><text x="710" y="960" text-anchor="middle">이완기말 용적 (mL) →</text><text x="250" y="340">1회 박출량 (mL)</text>
-      <text x="300" y="935" text-anchor="middle">60</text><text x="710" y="935" text-anchor="middle">130</text><text x="1100" y="935" text-anchor="middle">200</text></g>
+      <text x="300" y="935" text-anchor="middle">60</text><text x="710" y="935" text-anchor="middle">130</text><text x="1120" y="935" text-anchor="middle">200</text></g>
     <path id="fsA" class="draw" pathLength="1" fill="none" stroke="#f5f5f7" stroke-width="7" stroke-linecap="round"/>
     <g data-step="2"><path id="fsB" fill="none" stroke="#FF453A" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"/><text id="fsBl" font-size="28" font-weight="600" fill="#FF453A">교감신경↑ (수축력↑)</text></g>
     <g data-step="1"><circle id="fsP1" r="12" fill="#64D2FF"/><circle id="fsP2" r="12" fill="#64D2FF"/><path id="fsArr" stroke="#64D2FF" stroke-width="4" fill="none"/></g>
@@ -542,7 +506,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 15 박출계수 -->
-<section class="slide" id="s15" data-tile="parchment" data-title="박출계수 계산">
+<section class="slide" id="s13" data-tile="parchment" data-title="박출계수 계산">
   <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">박출계수 — 분모는 이완기말 용적</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
   <div class="panel abs in" style="--d:250;left:120px;top:300px;right:120px">
@@ -550,15 +514,15 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   </div>
   <table class="dtab abs in" style="--d:350;left:120px;top:500px">
     <tr><th></th><th>이완기말 용적</th><th>수축기말 용적</th><th>1회 박출량</th><th>박출계수</th></tr>
-    <tr><td>훈련 전</td><td>90</td><td>40</td><td data-step="1">50</td><td><span class="blank" data-reveal="2" style="min-width:160px"><i>1</i><b>55.6 %</b></span></td></tr>
-    <tr><td>훈련 후</td><td>95</td><td>38</td><td data-step="1">57</td><td><span class="blank" data-reveal="3" style="min-width:160px"><i>2</i><b>60 %</b></span></td></tr>
+    <tr><td>훈련 전</td><td>90</td><td>40</td><td data-step="1">50</td><td><span class="blank" data-reveal="2" style="min-width:160px"><i>1</i><b>55.6%</b></span></td></tr>
+    <tr><td>훈련 후</td><td>95</td><td>38</td><td data-step="1">57</td><td><span class="blank" data-reveal="3" style="min-width:160px"><i>2</i><b>60%</b></span></td></tr>
   </table>
   <div class="abs t-body" data-step="3" style="left:120px;top:800px;right:120px">57 ÷ 95 × 100 = <b class="c-act">60</b> — 수축기말 용적이나 혈액량으로 나누면 오답이다.
-    <div class="t-cap mute" style="margin-top:10px">안정 시 정상 범위 약 55~70 %. 2021 B6 표의 값 그대로.</div></div>
+    <div class="t-cap mute" style="margin-top:10px">안정 시 정상 범위 약 55~70%. 2021 B6 표의 값 그대로.</div></div>
 </section>
 
 <!-- 16 문제 ② -->
-<section class="slide" id="s16" data-tile="light" data-title="기출형 문제 ② 박출계수·혈액량">
+<section class="slide" id="s14" data-tile="light" data-title="기출형 문제 ② 박출계수·혈액량">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ②</div><div class="t-head in" style="--d:100">유산소 지구성 훈련 전·후의 변화</div></div>
   <div class="exam in" style="--d:200;left:120px;top:290px;width:1060px">
     <table>
@@ -571,14 +535,14 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="answer" style="left:1240px;top:290px;width:560px">
     <div class="t-cap mute">모범답안</div>
     <div class="a-line" data-step="1">㉠ <b>1회 박출량</b></div>
-    <div class="a-line" data-step="2">㉡ 78 ÷ 130 × 100 = <b>60 %</b></div>
+    <div class="a-line" data-step="2">㉡ 78 ÷ 130 × 100 = <b>60%</b></div>
     <div class="a-line" data-step="3">훈련 초기 <b>혈장량</b>이 적혈구량보다 더 빨리, 더 많이 늘어 총혈액량 증가에 더 크게 기여한다.</div>
     <div data-step="4" style="margin-top:26px"><div class="t-cap mute">채점 키워드</div><span class="kw">1회 박출량</span><span class="kw">60%</span><span class="kw">혈장량 증가 &gt; 적혈구 증가</span></div>
   </div>
 </section>
 
 <!-- 17 근육펌프 -->
-<section class="slide" id="s17" data-tile="black" data-title="4. 근육펌프와 정맥 판막">
+<section class="slide" id="s15" data-tile="black" data-title="4. 근육펌프와 정맥 판막">
   <video class="abs vid fin" src="img/circ-calf.mp4" poster="img/circ-calf.jpg" muted loop playsinline preload="metadata" style="left:-120px;top:0;width:1300px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
   <div class="side">
     <div class="t-eyebrow in"><b>4</b>정맥환류</div>
@@ -586,12 +550,12 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2015 A7</span></div>
     <div class="pt" data-step="1">근육이 수축하면 그 사이 정맥이 눌려 피가 <b>위로</b> 밀린다.</div>
     <div class="pt" data-step="2">아래로 새지 않게 막는 것 = <span class="blank" data-reveal="2" style="min-width:200px"><i>1</i><b>정맥 판막</b></span></div>
-    <div class="pt" data-step="3">운동을 갑자기 멈추면 펌프가 멎어 환류↓ → 혈압↓ · 어지럼 → <b>정리 운동</b>이 필요한 이유.</div>
+    <div class="pt" data-step="3">운동을 갑자기 멈추면 펌프가 멎어 환류↓ → 혈압↓ · 어지럼 → <b>정리 운동</b>이 필요한 이유. 가벼운 정리 운동(적극적 회복)은 젖산 제거도 앞당긴다 (2020 A7).</div>
   </div>
 </section>
 
 <!-- 18 정맥환류 3기전 -->
-<section class="slide" id="s18" data-tile="black" data-title="정맥환류 3기전 · 등척성 예외">
+<section class="slide" id="s16" data-tile="black" data-title="정맥환류 3기전 · 등척성 예외">
   <img class="abs fin" src="img/circ-isometric.jpg" alt="벽 스쿼트로 버티는 학생" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>4</b>정맥환류</div>
@@ -603,20 +567,20 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 19 혈류 재분배 -->
-<section class="slide" id="s19" data-tile="light" data-title="5. 혈류 재분배">
+<section class="slide" id="s17" data-tile="light" data-title="5. 혈류 재분배">
   <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">근육이 받는 몫: 5분의 1 → 5분의 4 이상</div></div>
   <div class="rbar in" style="--d:250;top:360px" id="rb1"></div>
   <div class="rbar" data-step="1" style="top:560px" id="rb2"></div>
   <div class="abs t-cap" style="left:120px;top:322px">안정 · 심박출량 약 5 L/분</div>
-  <div class="abs t-cap" data-step="1" style="left:120px;top:522px">최대 운동 · 약 25 L/분</div>
+  <div class="abs t-cap" data-step="1" style="left:120px;top:522px">최대 운동 · 약 20~25 L/분</div>
   <div class="abs" data-step="2" style="left:120px;top:720px;right:120px">
     <div class="t-body"><b>교감신경</b>이 온몸 혈관을 조이지만(내장·신장↓), 활동근에서는 대사산물(H⁺·CO₂·K⁺·아데노신·NO)이 혈관을 넓혀 그 조임을 무력화한다 = <b class="c-act">기능적 교감신경 억제</b></div>
-    <div class="t-cap mute" style="margin-top:14px">뇌 혈류는 비율만 줄 뿐 양은 유지되거나 약간 는다 (15 % × 5 L = 0.75 L → 4 % × 25 L = 1 L). 비율은 교재 대표값(대략).</div>
+    <div class="t-cap mute" style="margin-top:14px">뇌 혈류는 비율만 줄 뿐 양은 유지된다. 비율은 교재 대표값(대략).</div>
   </div>
 </section>
 
 <!-- 20 혈압 반응 -->
-<section class="slide" id="s20" data-tile="black" data-title="운동 중 혈압 반응">
+<section class="slide" id="s18" data-tile="black" data-title="운동 중 혈압 반응">
   <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">수축기는 오르고, 이완기는 거의 그대로</div></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
     <line x1="260" y1="900" x2="1180" y2="900" stroke="#6e6e73" stroke-width="2"/><line x1="260" y1="900" x2="260" y2="360" stroke="#6e6e73" stroke-width="2"/>
@@ -625,13 +589,13 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <path class="draw" pathLength="1" d="M260 660L1160 420" stroke="#FF453A" stroke-width="7" fill="none" stroke-linecap="round"/>
     <text x="1170" y="410" font-size="30" font-weight="600" fill="#FF453A">수축기 120→200</text>
     <g data-step="1"><path d="M260 780L1160 786" stroke="#64D2FF" stroke-width="7" fill="none" stroke-linecap="round"/><text x="1170" y="800" font-size="30" font-weight="600" fill="#64D2FF">이완기 ≈ 80</text></g>
-    <g data-step="2"><path d="M260 740L1160 658" stroke="#a1a1a6" stroke-width="5" stroke-dasharray="12 10" fill="none"/><text x="1170" y="660" font-size="28" fill="#a1a1a6">평균동맥압 약간↑</text></g>
+    <g data-step="2"><path d="M260 740L1160 658" stroke="#a1a1a6" stroke-width="5" stroke-dasharray="12 10" fill="none"/><text x="1170" y="660" font-size="28" fill="#a1a1a6">평균동맥압 완만히↑ (93→119)</text></g>
   </svg>
   <div class="abs" style="left:1240px;top:830px;width:600px" data-step="3"><div class="t-cap mute">수축기↑ = 심박출량↑ / 이완기 유지 = 활동근 혈관 확장으로 말초저항↓. 저항운동은 둘 다 크게 오른다.</div></div>
 </section>
 
 <!-- 21 혈류 추진력 -->
-<section class="slide" id="s21" data-tile="parchment" data-title="혈류 추진력 계산">
+<section class="slide" id="s19" data-tile="parchment" data-title="혈류 추진력 계산">
   <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">혈류 추진력 = 평균동맥압 − 우심방압</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2014 A3</span></div>
   <div class="panel abs in" style="--d:250;left:120px;top:300px;width:760px">
@@ -642,28 +606,17 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="abs num" style="left:960px;top:300px;font-size:44px;line-height:1.85;font-weight:500">
     <div data-step="1"><span class="mute lbl">안정 MAP</span>80 + 40/3 = <span class="blank" data-reveal="2" style="min-width:150px"><i>1</i><b>93.3</b></span></div>
     <div data-step="1"><span class="mute lbl">운동 MAP</span>85 + 100/3 = <span class="blank" data-reveal="2" style="min-width:150px"><i>2</i><b>118.3</b></span></div>
-    <div data-step="3"><span class="mute lbl">추진력</span>93.3 − 0 · 118.3 − 5 = <b>113.3</b></div>
+    <div data-step="3"><span class="mute lbl">안정 추진력</span>93.3 − 0 = <b>93.3</b></div>
+    <div data-step="3"><span class="mute lbl">운동 추진력</span>118.3 − 5 = <b>113.3</b></div>
     <div data-step="4"><span class="mute lbl">차이</span>113.3 − 93.3 = <span class="blank" data-reveal="5" style="min-width:150px"><i>3</i><b>20</b></span> mmHg</div>
   </div>
   <div class="abs t-body" data-step="5" style="left:120px;top:820px;right:120px">혈류 = 압력차 ÷ 저항 → 압력차가 커지고 활동근 저항은 줄어 <b>혈류량이 증가</b>한다.
-    <div class="t-cap mute" style="margin-top:8px">RER 1.20 → 젖산을 중탄산염이 완충하며 나온 '비대사성 CO₂' 때문에 1.0을 넘는다.</div></div>
+    <div class="t-cap mute" style="margin-top:8px">RER 1.20 → 고강도로 무산소 대사(젖산)가 늘고(주 연료 탄수화물), 젖산을 중탄산염이 완충하며 나온 '비대사성 CO₂'와 과환기로 1.0을 넘는다.</div></div>
 </section>
 
-<!-- 22 이중곱·발살바 -->
-<section class="slide" id="s22" data-tile="black" data-title="이중곱 · 발살바 (출제 예상)">
-  <img class="abs fin" src="img/circ-legpress.jpg" alt="숨을 참고 레그프레스를 미는 모습" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
-  <div class="side">
-    <div class="t-eyebrow in"><b>5</b>재분배와 혈압</div>
-    <div class="t-head s in" style="--d:100">심장이 얼마나 힘든가</div>
-    <div class="gx static in" style="--d:200"><span class="p">출제 예상</span></div>
-    <div class="pt" data-step="1"><b class="c-hr">이중곱</b> = 심박수 × 수축기 혈압 → 심근 산소 소비량의 지표<br><span class="mute num">안정 70 × 120 = 8,400 · 운동 170 × 190 = 32,300</span></div>
-    <div class="pt" data-step="2"><b class="c-hr">발살바</b> 숨을 참고 성문을 닫은 채 힘을 주면 흉강 내압↑ → 정맥환류↓, 혈압은 급상승. 무거운 레그프레스에서 수축기 300 mmHg 이상이 보고됐다.</div>
-    <div class="pt" data-step="3">지도: 들어 올릴 때 <b>내쉬고</b>, 내릴 때 들이쉰다.</div>
-  </div>
-</section>
 
 <!-- 23 문제 ③ -->
-<section class="slide" id="s23" data-tile="light" data-title="기출형 문제 ③ 혈류 추진력">
+<section class="slide" id="s20" data-tile="light" data-title="기출형 문제 ③ 혈류 추진력">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ③</div><div class="t-head in" style="--d:100">혈류 추진력의 차이를 구하시오</div></div>
   <div class="exam in" style="--d:200;left:120px;top:290px;width:900px">
     <p>운동 부하 검사 결과 (소수점 이하 첫째 자리에서 반올림)</p>
@@ -683,18 +636,18 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 24 산소 운반 -->
-<section class="slide" id="s24" data-tile="black" data-title="6. 피 100 mL에 산소 20 mL">
+<section class="slide" id="s21" data-tile="black" data-title="6. 피 100 mL에 산소 20 mL">
   <video class="abs vid fin" src="img/circ-rbc.mp4" poster="img/circ-rbc.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
   <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 34%,rgba(0,0,0,0) 55%,rgba(0,0,0,.9) 82%)"></div>
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">적혈구 하나하나가 산소를 내려놓는다</div></div>
   <div class="abs center num" style="left:0;right:0;top:830px">
-    <div style="font-size:54px;font-weight:600" data-step="1">헤모글로빈 15 g/dL × <span class="c-act">1.34</span> mL × 98 % ≈ <span class="c-hr">20 mL / 100 mL</span></div>
-    <div class="t-cap mute" data-step="2" style="margin-top:16px">산소 대부분은 헤모글로빈에 붙어 간다. 혈장에 녹은 것은 약 0.3 mL뿐이다.</div>
+    <div style="font-size:54px;font-weight:600" data-step="1">헤모글로빈 15 g/dL × <span class="c-act">1.34</span> mL × 98% ≈ <span class="c-hr">20 mL / 100 mL</span></div>
+    <div class="t-cap mute" data-step="2" style="margin-top:16px">산소 대부분은 헤모글로빈에 붙어 간다. 혈장에 녹은 것은 약 0.3 mL뿐이다. 근육 안에서는 <b style="color:var(--on-dark)">미오글로빈</b>이 산소를 저장한다 (2026 B).</div>
   </div>
 </section>
 
 <!-- 25 산소해리곡선 -->
-<section class="slide" id="s25" data-tile="dark" data-title="산소해리곡선 우측이동">
+<section class="slide" id="s22" data-tile="dark" data-title="산소해리곡선 우측이동">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">근육에서는 곡선이 오른쪽으로 — 산소를 더 내려놓는다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A7</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
@@ -708,15 +661,14 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <g data-step="3" id="odShift"></g>
   </svg>
   <div class="abs" style="left:1240px;top:350px;width:580px">
-    <div class="pt" data-step="1">폐(PO₂ 100) 약 97 % → 쉬는 조직(40) 약 75 % → 운동 근육(20) 약 31 %</div>
+    <div class="pt" data-step="1">폐(PO₂ 100) 약 97% → 쉬는 조직(40) 약 75% → 운동 근육(20) 약 31%</div>
     <div class="pt" data-step="2">우측이동 조건: 체온↑ · PCO₂↑ · <span class="blank" data-reveal="2" style="min-width:110px"><i>1</i><b>pH</b></span>↓ (H⁺↑, 보어 효과) · 2,3-BPG↑</div>
     <div class="pt" data-step="3">같은 PO₂ 20에서 포화도가 더 낮아진다 = 그만큼 <b class="c-hr">더 내려놓음</b> → 동정맥 산소차↑</div>
-    <div class="t-cap mute" data-step="3" style="margin-top:14px">곡선은 힐 식(n = 2.7, P50 26.8 → 32 mmHg)으로 그린 모형이다.</div>
   </div>
 </section>
 
 <!-- 26 Fick -->
-<section class="slide" id="s26" data-tile="light" data-title="픽 원리 — 산소섭취량">
+<section class="slide" id="s23" data-tile="light" data-title="픽 원리 — 산소섭취량">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">산소섭취량 = 심박출량 × 동정맥 산소차</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2025 B10</span></div>
   <div class="cards" style="top:330px;grid-template-columns:1fr 1fr">
@@ -724,11 +676,11 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="card" data-step="2"><div class="k c-hr">최대 운동</div><div class="num" style="font-size:52px;font-weight:600;margin-top:20px">20 L × 150 mL/L</div><div class="big c-hr" style="margin-top:18px">3,000 <span style="font-size:36px;color:var(--t2)">mL/분</span></div><p>동정맥 산소차 약 15 mL/100 mL</p></div>
   </div>
   <div class="abs t-body" data-step="3" style="left:120px;top:800px;right:120px">최대산소섭취량을 키우는 두 길: <b>중추</b> — 최대 심박출량(1회 박출량↑) / <b>말초</b> — 산소 추출(모세혈관 밀도·미토콘드리아↑)
-    <div class="t-cap mute" style="margin-top:10px">단위 함정: mL/100 mL을 L 단위로 바꿀 때 × 10 (14 mL/100 mL = 140 mL/L).</div></div>
+    <div class="t-cap mute" style="margin-top:10px">단위 함정: mL/100 mL를 L 단위로 바꿀 때 × 10 (14 mL/100 mL = 140 mL/L).</div></div>
 </section>
 
 <!-- 27 사강·확산 -->
-<section class="slide" id="s27" data-tile="parchment" data-title="사강 · 폐포 환기량 · 확산">
+<section class="slide" id="s24" data-tile="parchment" data-title="사강 · 폐포 환기량 · 확산">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">숨은 깊게 — 사강 150 mL은 매번 버려진다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2018 A7</span><span>2024 A12</span></div>
   <table class="dtab abs in" style="--d:300;left:120px;top:320px">
@@ -740,19 +692,19 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="abs t-body" data-step="1" style="left:120px;top:640px;width:900px">폐포 환기량 = (1회 호흡량 − <b>해부학적 사강 150</b>) × 호흡수<br><span class="mute">분당 환기량이 같아도 깊고 느린 C가 가장 많다.</span></div>
   <div class="panel abs" data-step="2" style="left:1100px;top:320px;width:700px">
     <div class="t-label">픽의 확산 법칙</div>
-    <div class="num" style="font-size:40px;font-weight:600;margin-top:20px">확산량 ∝ 면적 × 분압차 ÷ 두께</div>
+    <div class="num" style="font-size:40px;font-weight:600;margin-top:20px">확산량 ∝ 면적 × 확산계수 × 분압차 ÷ 두께</div>
     <div class="t-cap mute" style="margin-top:18px;line-height:1.6">운동하면 근육이 산소를 많이 써서 정맥혈 PO₂↓ → 폐에서 <b style="color:var(--ink)">분압차↑</b> → 확산↑ (2024 A12 근거 문장)</div>
   </div>
 </section>
 
 <!-- 28 문제 ④ -->
-<section class="slide" id="s28" data-tile="light" data-title="기출형 문제 ④ 픽 원리 계산">
+<section class="slide" id="s25" data-tile="light" data-title="기출형 문제 ④ 픽 원리 계산">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ④</div><div class="t-head in" style="--d:100">픽 원리로 심박출량과 산소섭취량을 구하시오</div></div>
   <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:28px 38px">
     <div style="display:flex;gap:36px;align-items:flex-start">
       <div>
         <table><tr><th>파워(W)</th><th>심박수</th><th>1회 박출량(mL)</th></tr><tr><td>100</td><td>110</td><td>90</td></tr><tr><td>200</td><td>150</td><td>120</td></tr><tr><td>300</td><td>185</td><td>125</td></tr></table>
-        <p style="margin-top:16px;font-size:24px;line-height:1.55">○ 체중 60 kg<br>○ 운동 시간 8분, 일량 96 kJ<br>※ 1 W = 1 J·s⁻¹</p>
+        <p style="margin-top:16px;font-size:24px;line-height:1.55">○ 체중 60 kg<br>[A] 운동 시간 8분, 일량 96 kJ<br>※ 1 W = 1 J·s⁻¹</p>
       </div>
       <svg width="420" height="330" viewBox="0 0 420 330" style="flex:none">
         <line x1="50" y1="280" x2="400" y2="280" stroke="#1d1d1f" stroke-width="1.5"/><line x1="50" y1="280" x2="50" y2="20" stroke="#1d1d1f" stroke-width="1.5"/>
@@ -762,23 +714,23 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
         <circle cx="282" cy="210" r="5" fill="#1d1d1f"/>
         <g font-size="15" fill="#1d1d1f"><text x="40" y="50" text-anchor="end">20</text><text x="40" y="214" text-anchor="end">6</text><text x="40" y="284" text-anchor="end">0</text>
           <text x="166" y="300" text-anchor="middle">100</text><text x="282" y="300" text-anchor="middle">200</text><text x="398" y="300" text-anchor="middle">300</text>
-          <text x="225" y="325" text-anchor="middle">파워(W)</text><text x="300" y="38">동맥</text><text x="300" y="196">정맥</text><text x="56" y="16">산소(mL/100mL)</text></g>
+          <text x="225" y="325" text-anchor="middle">파워(W)</text><text x="300" y="38">동맥</text><text x="300" y="196">정맥</text><text x="56" y="16">산소(mL/100 mL)</text></g>
       </svg>
     </div>
-    <div class="howto">&lt;작성 방법&gt; ㉠ 심박출량(L·min⁻¹), ㉡ 산소섭취량(mL·kg⁻¹·min⁻¹)을 단위와 함께 쓰고, 훈련으로 1회 박출량이 늘어나는 좌심실 내 요인 2가지를 서술할 것.</div>
+    <div class="howto">&lt;작성 방법&gt; [A] 조건(일량과 시간으로 구한 파워)에서 ㉠ 심박출량(L·min⁻¹), ㉡ 산소섭취량(mL·kg⁻¹·min⁻¹)을 단위와 함께 쓰고, 훈련으로 1회 박출량이 늘어나는 좌심실 내 요인 2가지를 서술할 것.</div>
   </div>
   <div class="answer" style="left:1220px;top:280px;width:600px">
     <div class="t-cap mute">풀이</div>
     <div class="a-line num" data-step="1">96,000 J ÷ 480 s = <b>200 W</b></div>
     <div class="a-line num" data-step="2">㉠ 150 × 120 mL = <b>18 L·min⁻¹</b></div>
-    <div class="a-line num" data-step="3">산소차 20 − 6 = 14 mL/100mL = 140 mL/L</div>
-    <div class="a-line num" data-step="4">㉡ 18 × 140 = 2,520 ÷ 60 = <b>42 mL·kg⁻¹·min⁻¹</b></div>
-    <div class="a-line" data-step="5">좌심실 <b>내강(이완기말 용적)↑</b>, 심근 두께·<b>수축력↑</b></div>
+    <div class="a-line num" data-step="3">산소차 20 − 6 = 14 mL/100 mL = 140 mL/L</div>
+    <div class="a-line num" data-step="4">18 L × 140 mL/L = 2,520 mL/분<br>㉡ 2,520 ÷ 60 kg = <b>42 mL·kg⁻¹·min⁻¹</b></div>
+    <div class="a-line" data-step="5">좌심실 <b>내강(이완기말 용적)↑</b>, 심실 <b>수축력↑</b></div>
   </div>
 </section>
 
 <!-- 29 심혈관 표류 -->
-<section class="slide" id="s29" data-tile="black" data-title="7. 심혈관 표류">
+<section class="slide" id="s26" data-tile="black" data-title="7. 심혈관 표류">
   <video class="abs vid fin" src="img/circ-runner.mp4" poster="img/circ-runner.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
   <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.85) 62%)"></div>
   <div class="side" style="left:1180px;width:660px">
@@ -791,7 +743,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 30 표류 기전 -->
-<section class="slide" id="s30" data-tile="dark" data-title="표류의 기전과 문제">
+<section class="slide" id="s27" data-tile="dark" data-title="표류의 기전과 문제">
   <div class="hd"><div class="t-eyebrow in"><b>7</b>오래, 덥게</div><div class="t-head in" style="--d:100">왜 1회 박출량이 줄어드나</div></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
     <line x1="160" y1="760" x2="900" y2="760" stroke="#6e6e73" stroke-width="2"/><line x1="160" y1="760" x2="160" y2="330" stroke="#6e6e73" stroke-width="2"/>
@@ -800,10 +752,10 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <path class="draw" pathLength="1" d="M160 640L280 545C450 520 700 475 880 460" fill="none" stroke="#FF453A" stroke-width="6"/>
     <path class="draw" pathLength="1" d="M160 600L280 545C450 570 700 615 880 630" fill="none" stroke="#64D2FF" stroke-width="6"/>
     <path class="draw" pathLength="1" d="M160 610L280 545C500 548 700 551 880 553" fill="none" stroke="#f5f5f7" stroke-width="5" stroke-dasharray="12 8"/>
-    <g font-size="26" font-weight="600"><text x="900" y="465" fill="#FF453A">심박수 +12 %</text><text x="900" y="640" fill="#64D2FF">1회 박출량 −12 %</text><text x="900" y="560" fill="#f5f5f7">심박출량 ≈</text></g>
+    <g font-size="26" font-weight="600"><text x="900" y="465" fill="#FF453A">심박수 +12%</text><text x="900" y="640" fill="#64D2FF">1회 박출량 −12%</text><text x="900" y="560" fill="#f5f5f7">심박출량 ≈</text></g>
   </svg>
   <div class="mech" data-step="1">체온↑ → 피부 혈류↑ + 땀으로 <b>혈장량↓</b> → 정맥환류↓ → 이완기말 용적↓ → <b class="c-o2">1회 박출량↓</b> → <b class="c-hr">심박수 보상적↑</b> → 심박출량 유지</div>
-  <div class="abs t-cap mute" data-step="2" style="left:120px;top:960px;right:120px">최근 해석: 교감신경 → 심박수가 먼저 올라 충만 시간이 짧아져 1회 박출량이 준다는 설명도 있다(논쟁 중). 시험 답은 위 흐름으로 쓴다.</div>
+  <div class="abs t-cap mute" data-step="2" style="left:120px;top:960px;right:120px">땀으로 잃은 수분을 지키려고 항이뇨호르몬(뇌하수체 후엽)·알도스테론(부신피질)↑ (2023 B9)</div>
   <div class="mcq no-nav" style="left:1080px;top:300px;width:740px" data-answer="1">
     <div class="t-label">고온에서 60분 달리기 후반, 맞는 조합은?</div>
     <button data-i="0">심박수↓ · 1회 박출량↑ · 심박출량↑</button>
@@ -814,7 +766,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 31 심장 적응 -->
-<section class="slide" id="s31" data-tile="black" data-title="8. 심장의 훈련 적응">
+<section class="slide" id="s28" data-tile="black" data-title="8. 심장의 훈련 적응">
   <img class="abs fin" src="img/circ-athletes.jpg" alt="마라톤 선수와 역도 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
@@ -823,91 +775,89 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="pt" data-step="1"><b class="c-o2">지구성</b> 좌심실 <span class="blank" data-reveal="1" style="min-width:200px"><i>1</i><b>내강(용적)</b></span>↑ — 원심성 비대 → 1회 박출량↑ → 최대 심박출량↑</div>
     <div class="pt" data-step="2"><b class="c-hr">저항</b> 벽 두께↑ — 구심성 비대 (고전적 설명)</div>
     <div class="pt" data-step="3">답안에는 '벽이 두꺼워진다'가 아니라 <b>'내강(용적)이 커진다'</b>를 쓴다.</div>
-    <div class="t-cap mute" data-step="4" style="margin-top:20px">최근 메타분석은 종목별 벽 두께 차이가 작고, 누적 훈련량이 더 중요하다고 본다 (Br Med Bull 2024).</div>
   </div>
 </section>
 
 <!-- 32 혈장량 -->
-<section class="slide" id="s32" data-tile="black" data-title="혈장량이 먼저 늘어난다">
+<section class="slide" id="s29" data-tile="black" data-title="혈장량이 먼저 늘어난다">
   <img class="abs fin" src="img/circ-hematocrit.jpg" alt="원심분리한 혈액 튜브 두 개" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
     <div class="t-head s in" style="--d:100">위는 혈장, 아래는 적혈구</div>
     <div class="t-cap mute in" style="--d:150;margin-top:10px">왼쪽 훈련 전 · 오른쪽 훈련 후 — 혈장 층이 더 두껍다 (예시 사진)</div>
     <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
-    <div class="pt" data-step="1">혈장량: 운동 후 <b>24시간 안에 약 10 %</b>↑ / 적혈구량: <b>수 주</b>에 걸쳐 천천히↑</div>
+    <div class="pt" data-step="1">혈장량: 운동 후 <b>24시간 안에 약 10%</b>↑ / 적혈구량: <b>수 주</b>에 걸쳐 천천히↑</div>
     <div class="pt" data-step="2">혈장이 더 많이 늘어 헤마토크릿은 오히려 약간↓ — 병이 아닌 <b>가성 빈혈</b></div>
     <div class="pt" data-step="3">혈액량↑ → 정맥환류·이완기말 용적↑ → 1회 박출량↑ · 점성↓ · 땀 낼 여유↑</div>
   </div>
 </section>
 
-<!-- 33 근육·탈훈련·PEH -->
-<section class="slide" id="s33" data-tile="light" data-title="근육 적응 · 탈훈련 · 운동 후 저혈압">
-  <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">얻는 것, 잃는 속도, 한 번의 효과</div></div>
+<!-- 근육 적응 -->
+<section class="slide" id="s30" data-tile="light" data-title="근육 적응 · 안정 시 심박수 · 탈훈련">
+  <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">근육은 산소를 더 뽑고, 심장은 덜 뛴다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2019 B5</span><span>2020 A7</span></div>
   <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
-    <div class="card" data-step="1"><div class="k c-act">근육</div><h4>산소를 더 뽑는다</h4><p>모세혈관 밀도↑(지속훈련 약 +13 %) · 미토콘드리아↑(약 +25 %) → 동정맥 산소차↑<br>안정 시 심박수↓ (선수 40~50회/분)</p></div>
-    <div class="card" data-step="2"><div class="k c-hr">탈훈련</div><h4>혈장부터 빠진다</h4><p>2~4주: 혈장량 약 −12 %<br>최대산소섭취량 2주 −4~7 %, 8주 −13~20 %<br>초기 감소는 혈액량, 이후 산소차↓</p></div>
-    <div class="card" data-step="3"><div class="k c-low">운동 후 저혈압</div><h4>한 번 해도 내려간다</h4><p>평균 5~8 mmHg, 최대 24시간<br>혈압이 높은 사람일수록 크다<br>주된 기전: 말초저항↓</p></div>
+    <div class="card" data-step="1"><div class="k c-act">근육</div><h4>산소를 더 뽑는다</h4><p>모세혈관 밀도↑ · 미토콘드리아↑<br>→ 동정맥 산소차↑<br>Type I(지근) 섬유는 원래 모세혈관이 많다</p></div>
+    <div class="card" data-step="2"><div class="k c-hr">심장</div><h4>안정 시 심박수↓</h4><p>1회 박출량이 커져서 덜 뛰어도 된다<br>지구성 선수 40~50회/분</p></div>
+    <div class="card" data-step="3"><div class="k" style="color:var(--t2)">탈훈련</div><h4>혈장부터 빠진다</h4><p>훈련을 멈추면 몇 주 안에<br>혈장량↓ → 1회 박출량↓<br>→ 최대산소섭취량↓</p></div>
   </div>
-  <div class="abs t-cap mute" data-step="3" style="left:120px;top:900px;right:120px">출처: Mølmen 외 Sports Med 2024 · Barbieri 외 Front Physiol 2024 · Farinatti 외 Front Physiol 2022</div>
 </section>
 
 <!-- 34 카보넨 -->
-<section class="slide" id="s34" data-tile="parchment" data-title="카보넨 목표 심박수 · 운동 효과 방향">
+<section class="slide" id="s31" data-tile="parchment" data-title="카보넨 목표 심박수 · 운동 효과 방향">
   <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">처방은 여유심박수로 — 카보넨 공식</div></div>
-  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 A3</span><span>2026 A9</span></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A14</span><span>2022 A3</span><span>2026 A9</span></div>
   <div class="panel abs in" style="--d:250;left:120px;top:300px;right:120px"><div style="font-size:50px;font-weight:600">목표 심박수 = (최대 HR − 안정 HR) × <span class="c-act">강도</span> + 안정 HR</div></div>
   <div class="abs num" style="left:120px;top:500px;font-size:44px;line-height:1.8">
     <div data-step="1"><span class="mute lbl">예</span>안정 64 · 최대 204 → 여유 <span class="blank" data-reveal="2" style="min-width:110px"><i>1</i><b>140</b></span></div>
-    <div data-step="3"><span class="mute lbl">55 %</span>140 × 0.55 + 64 = <b>141</b> · <span class="mute">60 %</span> 140 × 0.60 + 64 = <b>148</b></div>
+    <div data-step="3"><span class="mute lbl">55%</span>140 × 0.55 + 64 = <b>141</b> · <span class="mute">60%</span> 140 × 0.60 + 64 = <b>148</b></div>
+    <div data-step="3"><span class="mute lbl">거꾸로</span>강도 = (목표 − 안정) ÷ 여유 <span class="mute" style="font-size:30px">· 저항운동 강도는 1RM의 %</span></div>
   </div>
-  <div class="abs" data-step="4" style="left:120px;top:760px;right:120px">
+  <div class="abs" data-step="4" style="left:120px;top:810px;right:120px">
     <div class="t-label">운동 효과 — 방향을 틀리기 쉬운 것</div>
     <div class="dirs"><span>안정 시 혈압 <b class="c-low">↓</b></span><span>HDL <b class="c-hr">↑</b></span><span>인슐린 민감도 <b class="c-hr">↑</b></span><span>인슐린 요구도 <b class="c-low">↓</b></span><span>혈관신생 <b class="c-hr">↑</b></span></div>
   </div>
 </section>
 
-<!-- 35 조절 -->
-<section class="slide" id="s35" data-tile="dark" data-title="9. 운동 중 심혈관 조절 (출제 예상)">
-  <div class="hd"><div class="t-eyebrow in"><b>9</b>조절</div><div class="t-head in" style="--d:100">누가 심장에 '더 뛰어라'고 하나</div></div>
+<!-- 출제 예상 -->
+<section class="slide" id="s32" data-tile="dark" data-title="출제 예상 4가지">
+  <div class="hd"><div class="t-eyebrow in">출제 예상</div><div class="t-head in" style="--d:100">13년 동안 안 나온 것 — 한 줄씩만</div></div>
   <div class="gx in" style="--d:200"><span class="p">출제 예상</span></div>
-  <div class="ctrl">
-    <div class="src" data-step="1"><div class="k c-act">① 중추명령</div><p>대뇌 운동 영역 → 운동 시작과 <b>동시에</b> 심박수·혈압↑</p></div>
-    <div class="src" data-step="2"><div class="k c-act">② 운동승압반사</div><p>근육의 Ⅲ군(기계수용기)·Ⅳ군(대사수용기) 구심신경</p></div>
-    <div class="src" data-step="3"><div class="k c-act">③ 동맥 압수용기</div><p>경동맥동·대동맥궁. 운동 중 꺼지지 않고 <b>더 높은 설정점으로 재설정</b></p></div>
-    <div class="hub" data-step="4">연수 심혈관 중추</div>
-    <div class="out" data-step="5">교감↑ · 부교감↓ → 심박수↑ · 수축력↑ · 비활동 부위 혈관 수축</div>
+  <div class="cards" style="top:300px;grid-template-columns:1fr 1fr">
+    <div class="card" data-step="1"><div class="k c-hr">이중곱</div><h4>심박수 × 수축기 혈압</h4><p>심근 산소 소비량의 지표</p></div>
+    <div class="card" data-step="2"><div class="k c-hr">발살바</div><h4>숨 참고 힘주기</h4><p>흉강 내압↑ → 정맥환류↓, 혈압 급상승 → 들어 올릴 때 내쉬게 지도</p></div>
+    <div class="card" data-step="3"><div class="k c-act">조절</div><h4>중추명령 · 운동승압반사 · 압수용기</h4><p>근육 Ⅲ군(기계)·Ⅳ군(대사) 신경 / 압수용기는 꺼지지 않고 재설정</p></div>
+    <div class="card" data-step="4"><div class="k c-low">운동 후 저혈압</div><h4>한 번 해도 내려간다</h4><p>운동 뒤 몇 시간 혈압↓ — 말초저항↓</p></div>
   </div>
-  <svg class="full-svg" viewBox="0 0 1920 1080"><g data-step="4" stroke="#6e6e73" stroke-width="3" fill="none"><path d="M760 410H900V560"/><path d="M760 600H900"/><path d="M760 790H900V640"/></g><g data-step="5" stroke="#6e6e73" stroke-width="3"><path d="M1240 600H1300"/></g></svg>
 </section>
 
 <!-- 36 함정 -->
-<section class="slide" id="s36" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+<section class="slide" id="s33" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
   <ol class="traps">
     <li class="in" style="--d:150">혈류 추진력에서 <b>우심방압을 안 뺌</b></li>
     <li class="in" style="--d:190">박출계수 분모를 수축기말 용적으로 — 분모는 <b>이완기말 용적</b></li>
-    <li class="in" style="--d:230">W → J/s 환산, <b>mL/100mL → mL/L</b> 누락</li>
+    <li class="in" style="--d:230"><b>kJ → J, 분 → 초</b>, mL/100 mL → mL/L 환산 누락</li>
     <li class="in" style="--d:270">심박수 초기 구간을 "교감 증가"만 — 핵심은 <b>부교감 철회</b></li>
     <li class="in" style="--d:310">근육펌프는 <b>등척성 수축</b>에선 안 된다</li>
     <li class="in" style="--d:350">P파 = <b>심방</b> 탈분극 (심실 아님)</li>
     <li class="in" style="--d:390">심혈관 표류: SV↓ HR↑, <b>심박출량 유지</b>까지 쓴다</li>
-    <li class="in" style="--d:430">지구성 적응은 벽 두께가 아니라 <b>좌심실 내강(용적)</b></li>
-    <li class="in" style="--d:470">폐포 환기량은 <b>사강 150 mL을 빼고</b></li>
+    <li class="in" style="--d:430">지구성 적응(2020 A7)은 벽 두께가 아니라 <b>좌심실 내강(용적)</b></li>
+    <li class="in" style="--d:470">폐포 환기량은 <b>사강 150 mL를 빼고</b></li>
     <li class="in" style="--d:510">운동 중 이완기 혈압은 <b>거의 그대로</b></li>
   </ol>
 </section>
 
 <!-- 37 요약 -->
-<section class="slide" id="s37" data-tile="light" data-title="한 장 요약">
+<section class="slide" id="s34" data-tile="light" data-title="한 장 요약">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
   <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
     <div class="card in" style="--d:150"><div class="k c-hr">공식</div><h4>Q = HR × SV</h4><p>VO₂ = Q × 동정맥 산소차<br>EF = SV ÷ EDV<br>MAP = DBP + ⅓ 맥압<br>추진력 = MAP − 우심방압</p></div>
     <div class="card in" style="--d:250"><div class="k c-act">조절</div><h4>SV 3요인</h4><p>이완기말 용적 · 수축력 · 평균 대동맥압<br>HR: 부교감 철회 → 교감<br>환류: 근육·호흡펌프·정맥 수축</p></div>
     <div class="card in" style="--d:350"><div class="k c-o2">운반</div><h4>우측이동</h4><p>온도↑ · PCO₂↑ · pH↓ · 2,3-BPG↑<br>폐포 환기 = (VT − 150) × f<br>확산 ∝ 면적 × 분압차 ÷ 두께</p></div>
-    <div class="card in" style="--d:450"><div class="k c-mid">급성 반응</div><h4>재분배 · 혈압</h4><p>근육 20 % → 84 %<br>수축기↑ 이완기≈<br>표류: HR↑ SV↓ Q 유지</p></div>
+    <div class="card in" style="--d:450"><div class="k c-mid">급성 반응</div><h4>재분배 · 혈압</h4><p>근육 20% → 84%<br>수축기↑ 이완기≈<br>표류: HR↑ SV↓ Q 유지</p></div>
     <div class="card in" style="--d:550"><div class="k c-low">만성 적응</div><h4>좌심실 내강↑</h4><p>혈장량 먼저↑ (가성 빈혈)<br>안정 HR↓ · 모세혈관·미토콘드리아↑<br>탈훈련은 혈장부터</p></div>
-    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">출제 예상</div><h4>아직 안 나온 것</h4><p>압수용기 재설정 · 운동승압반사<br>이중곱 · 발살바 · 운동 후 저혈압<br>CO₂ 운반(중탄산 약 70 %)</p></div>
+    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">출제 예상</div><h4>아직 안 나온 것</h4><p>압수용기 재설정 · 운동승압반사<br>이중곱 · 발살바<br>운동 후 저혈압</p></div>
   </div>
 </section>
 
@@ -934,7 +884,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
   <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
   <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <span class="count" id="cnt">1 / 37</span>
+  <span class="count" id="cnt">1 / 34</span>
   <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
   <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </div>
@@ -946,39 +896,36 @@ const NOTES = {
   s2: "2014학년도부터 2026학년도까지 순환·호흡 문항입니다. 2016·2019학년도를 빼면 해마다 나왔습니다. **계산 문항**은 2014, 2021, 2025년에 나왔고, 단위까지 맞아야 점수가 됩니다. 아직 안 나온 압수용기, 이중곱, 발살바도 뒤에서 다룹니다.",
   s3: "피는 8자로 돕니다. 좌심실에서 **대동맥**으로 나가 온몸을 돌고 우심방으로 오는 것이 체순환, 우심실에서 **폐동맥**으로 폐에 갔다가 **폐정맥**으로 좌심방에 오는 것이 폐순환입니다. 폐동맥에는 정맥혈이 흐릅니다. 동맥과 정맥은 피의 종류가 아니라 방향으로 나눕니다.",
   s4: "심장 안에서는 판막 네 개가 길을 정합니다. 우심방과 우심실 사이 **삼첨판**, 우심실 출구 **폐동맥판**, 좌심방과 좌심실 사이 **승모판**, 좌심실 출구 **대동맥판**입니다. 방실판이 닫히는 소리가 제1심음, 반월판이 닫히는 소리가 제2심음입니다.",
-  s5: "폐순환은 같은 양의 피를 보내지만 압력은 대동맥의 약 5분의 1입니다. 폐동맥압은 약 25/8 mmHg입니다. 저항이 작아 **우심실 벽이 얇고**, 압력이 낮아 폐 모세혈관에서 물이 새지 않습니다.",
-  s6: "운동하면 폐 혈류가 몇 배로 늘어납니다. 그래도 폐동맥압이 조금만 오르는 이유는 닫혀 있던 모세혈관이 열리는 **동원**과, 열린 혈관이 넓어지는 **팽창** 때문입니다. 가스교환 면적도 함께 넓어집니다.",
-  s7: "심장도 피를 받아야 뜁니다. 좌심실 근육은 **이완기**에 주로 관상혈류를 받습니다. 심근은 쉴 때도 산소를 70~80% 뽑아 쓰기 때문에 운동 때는 혈류를 늘려야 합니다. 그래서 심근 산소 요구의 지표로 **이중곱**을 씁니다.",
-  s8: "심전도 한 번이 심장 한 번입니다. **P파는 심방 탈분극**, QRS군은 심실 탈분극, T파는 심실 재분극입니다. 박동 조율기는 우심방의 **동방결절**입니다. 운동하면 R-R 간격이 짧아지는데, 이것이 심박수 증가입니다. 2017학년도 A4번입니다.",
-  s9: "Wiggers 도표입니다. 판막은 압력이 큰 쪽에서 밀려 열립니다. 좌심실압이 대동맥압을 넘는 순간 **대동맥판이 열리고**, 다시 내려가면 닫힙니다. QRS 직후부터 대동맥판이 닫힐 때까지가 **수축기**입니다. 2024학년도 B4번에서 이 도표가 나왔습니다.",
-  s10: "기출형 문제입니다. 네 학생의 발표 중 틀린 것은 가람과 라희입니다. P파는 **심방**의 탈분극이고, 운동 중에는 R-R 간격이 **짧아집니다**.",
-  s11: "심박출량은 심박수 곱하기 1회 박출량입니다. 안정 시 약 5 L, 최대 운동 시 일반인은 약 21 L, 지구성 선수는 30 L를 넘습니다. 최대 심박수는 비슷하므로 차이는 **1회 박출량**에서 납니다.",
-  s12: "심박수는 두 단계로 오릅니다. 약 100회까지는 **부교감 신경 활동이 줄어드는 것**, 즉 브레이크를 푸는 것이고, 그 위로는 **교감신경이 활성화**되는 것입니다. 2022학년도 B8번입니다. 처음부터 교감 증가라고만 쓰면 감점됩니다.",
-  s13: "1회 박출량은 세 가지로 정해집니다. **이완기말 용적**, **심실 수축력**, **평균 대동맥압**입니다. 앞의 둘은 올리고, 대동맥압이 높으면 덜 나갑니다. 2022 B8에서 수축력이 빈칸으로 나왔습니다.",
-  s14: "프랭크-스탈링 법칙입니다. 정맥환류가 늘어 심실이 더 차면 심근이 더 늘어나고, 그만큼 **더 세게 수축**합니다. 교감신경 자극은 곡선 자체를 위로 올리는 수축력 요인으로 구분합니다.",
-  s15: "박출계수는 1회 박출량을 **이완기말 용적**으로 나눈 값입니다. 2021 B6 표에서 훈련 후 57 나누기 95, **60퍼센트**입니다. 분모를 틀리지 마세요.",
-  s16: "기출형 문제입니다. ㉠은 **1회 박출량**, ㉡은 78 나누기 130으로 **60퍼센트**입니다. 총혈액량이 늘어난 이유는 **혈장량이 적혈구량보다 더 빨리, 더 많이 늘기** 때문입니다.",
-  s17: "종아리 근육은 두 번째 심장입니다. 근육이 수축하면 정맥이 눌려 피가 위로 밀리고, **정맥 판막**이 역류를 막습니다. 운동을 갑자기 멈추면 이 펌프가 멎으니 정리 운동을 합니다. 2015 A7번입니다.",
-  s18: "정맥환류는 **근육펌프, 호흡펌프, 정맥 수축** 세 가지로 돕습니다. 그런데 **등척성 수축**처럼 계속 힘을 주고 있으면 혈관이 눌린 채 풀리지 않아 오히려 환류가 막힙니다. 2022 B8의 빈칸입니다.",
-  s19: "최대 운동에서는 근육이 받는 몫이 약 20%에서 84%로 늘어납니다. 교감신경이 온몸 혈관을 조이지만 활동근에서는 대사산물이 혈관을 넓혀 그 조임을 무력화하는데, 이것을 **기능적 교감신경 억제**라고 합니다.",
-  s20: "점증 부하 운동에서 **수축기 혈압은 오르고, 이완기 혈압은 거의 그대로**입니다. 심박출량은 늘고, 활동근 혈관이 넓어져 말초저항은 줄기 때문입니다. 저항운동은 둘 다 크게 오릅니다.",
-  s21: "2014학년도 A3번입니다. 평균동맥압은 이완기에 맥압의 3분의 1을 더합니다. 안정 93.3, 운동 118.3입니다. 혈류 추진력은 여기서 **우심방압을 빼야** 합니다. 그러면 93.3과 113.3, 차이는 **20 mmHg**입니다.",
-  s22: "아직 직접 나오지 않은 내용입니다. **이중곱**은 심박수 곱하기 수축기 혈압으로 심근 산소 소비의 지표입니다. **발살바**는 숨을 참고 힘을 줄 때 흉강 내압이 올라 혈압이 급상승하는 현상입니다. 들어 올릴 때 숨을 내쉬도록 지도합니다.",
-  s23: "기출형 계산 문제입니다. 안정 평균동맥압 83.3에서 우심방압 2를 빼면 81.3, 운동 106에서 4를 빼면 102입니다. 차이는 20.7, 반올림해 **21 mmHg**입니다.",
-  s24: "피 100 mL에는 산소가 약 20 mL 들어 있습니다. 헤모글로빈 1 g이 산소 **1.34 mL**와 결합하기 때문입니다. 적혈구는 모세혈관을 지나며 근육에 산소를 내려놓습니다.",
-  s25: "산소해리곡선입니다. 운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 곡선이 오른쪽으로 이동해 같은 분압에서 산소를 더 내려놓습니다. 2015 A7번의 빈칸이 pH였습니다.",
-  s26: "픽 원리입니다. 산소섭취량은 심박출량 곱하기 동정맥 산소차입니다. 안정 250 mL, 최대 3,000 mL 정도입니다. 최대산소섭취량을 키우는 길은 **중추의 최대 심박출량**과 **말초의 산소 추출** 두 가지입니다.",
-  s27: "폐포 환기량은 1회 호흡량에서 **해부학적 사강 150 mL**을 빼고 호흡수를 곱합니다. 분당 환기량이 같아도 깊고 느린 호흡이 유리합니다. 확산은 면적과 **분압차**에 비례하고 두께에 반비례합니다.",
-  s28: "2025 B10을 바꾼 문제입니다. 96 kJ을 480초로 나누면 200 W입니다. 그때 심박수 150, 1회 박출량 120이므로 심박출량 **18 L/분**입니다. 산소차는 14 mL/100mL, 곧 140 mL/L이므로 2,520 mL/분, 체중 60으로 나누면 **42 mL/kg/분**입니다.",
-  s29: "같은 속도로 오래 달리면 심박수는 점점 오르고 1회 박출량은 줄어듭니다. 심박출량은 거의 유지됩니다. 이것이 **심혈관 표류**이고, 더울수록 커집니다. 2023 B9번입니다.",
-  s30: "체온이 오르면 피부로 피가 가고 땀으로 **혈장량이 줄어** 정맥환류와 이완기말 용적이 줄어듭니다. 그래서 1회 박출량이 줄고, 심박수가 보상적으로 올라 심박출량을 유지합니다.",
-  s31: "지구성 훈련은 좌심실의 **내강, 즉 용적**을 키웁니다. 그래서 1회 박출량과 최대 심박출량이 늘어납니다. 답안에는 벽이 두꺼워진다가 아니라 내강이 커진다고 써야 합니다. 2020 A7, 2025 B10입니다.",
-  s32: "훈련하면 **혈장량이 먼저**, 크게 늘어납니다. 적혈구는 수 주에 걸쳐 늘어납니다. 그래서 헤마토크릿은 오히려 약간 낮아지는데, 이것을 가성 빈혈이라고 합니다. 2021 B6의 서술 문항입니다.",
-  s33: "근육에서는 모세혈관과 미토콘드리아가 늘어 산소를 더 뽑습니다. 훈련을 멈추면 2~4주 안에 혈장량부터 줄어듭니다. 운동 한 번 뒤에도 혈압이 평균 5~8 mmHg 내려가는데, 이것이 **운동 후 저혈압**입니다.",
-  s34: "운동 처방은 카보넨 공식으로 합니다. 최대에서 안정 심박수를 빼고 강도를 곱한 뒤 안정 심박수를 더합니다. 2022 A3은 **141과 148**입니다. 운동 효과의 방향도 확인하세요. HDL과 인슐린 민감도는 올라가고, 인슐린 요구도는 내려갑니다.",
-  s35: "운동 중 심혈관 조절입니다. 대뇌의 **중추명령**, 근육에서 오는 **운동승압반사**, 그리고 **재설정되는 압수용기**가 연수 심혈관 중추로 모입니다. 아직 출제되지 않아 대비가 필요한 부분입니다.",
-  s36: "감점 함정 10가지입니다. 특히 우심방압 빼기, 박출계수 분모, 단위 환산, 부교감 철회, 심박출량 유지는 실제 채점 포인트입니다.",
-  s37: "한 장으로 정리합니다. 공식 네 개, 1회 박출량 3요인, 우측이동 조건, 급성 반응과 만성 적응을 기억하세요."
+  s5: "폐순환은 저압입니다. 폐동맥압은 약 25/8 mmHg로 대동맥의 5분의 1쯤이라 **우심실 벽이 얇습니다**. 운동하면 닫혀 있던 폐 모세혈관이 열리고 넓어져(**동원·팽창**) 압력은 조금만 오르고 가스교환 면적이 넓어집니다.",
+  s6: "심전도 한 번이 심장 한 번입니다. **P파는 심방 탈분극**, QRS군은 심실 탈분극, T파는 심실 재분극입니다. 박동 조율기는 우심방의 **동방결절**입니다. 운동하면 R-R 간격이 짧아지는데, 이것이 심박수 증가입니다. 2017학년도 A4번입니다.",
+  s7: "Wiggers 도표입니다. 판막은 압력이 큰 쪽에서 밀려 열립니다. 좌심실압이 대동맥압을 넘는 순간 **대동맥판이 열리고**, 다시 내려가면 닫힙니다. QRS 직후부터 대동맥판이 닫힐 때까지가 **수축기**입니다. 2024학년도 B4번에서 이 도표가 나왔습니다.",
+  s8: "기출형 문제입니다. 네 학생의 발표 중 틀린 것은 가람과 라희입니다. P파는 **심방**의 탈분극이고, 심박수가 증가하면 R-R 간격은 **짧아집니다**.",
+  s9: "심박출량은 심박수 곱하기 1회 박출량입니다. 안정 시 약 5 L, 최대 운동 시 일반인은 약 20 L, 지구성 선수는 30 L를 넘습니다. 최대 심박수는 비슷하므로 차이는 **1회 박출량**에서 납니다.",
+  s10: "심박수는 두 단계로 오릅니다. 약 100회까지는 **부교감 신경 활동이 줄어드는 것**, 즉 브레이크를 푸는 것이고, 그 위로는 **교감신경이 활성화**되는 것입니다. 2022학년도 B8번입니다. 처음부터 교감 증가라고만 쓰면 감점됩니다.",
+  s11: "1회 박출량은 세 가지로 정해집니다. **이완기말 용적**, **심실 수축력**, **평균 대동맥압**입니다. 앞의 둘은 올리고, 대동맥압이 높으면 덜 나갑니다. 2022 B8에서 수축력이 빈칸으로 나왔습니다.",
+  s12: "프랭크-스탈링 법칙입니다. 정맥환류가 늘어 심실이 더 차면 심근이 더 늘어나고, 그만큼 **더 세게 수축**합니다. 교감신경 자극은 곡선 자체를 위로 올리는 수축력 요인으로 구분합니다.",
+  s13: "박출계수는 1회 박출량을 **이완기말 용적**으로 나눈 값입니다. 2021 B6 표에서 훈련 후 57 나누기 95, **60퍼센트**입니다. 분모를 틀리지 마세요.",
+  s14: "기출형 문제입니다. ㉠은 **1회 박출량**, ㉡은 78 나누기 130으로 **60퍼센트**입니다. 총혈액량이 늘어난 이유는 **혈장량이 적혈구량보다 더 빨리, 더 많이 늘기** 때문입니다.",
+  s15: "종아리 근육은 두 번째 심장입니다. 근육이 수축하면 정맥이 눌려 피가 위로 밀리고, **정맥 판막**이 역류를 막습니다. 운동을 갑자기 멈추면 이 펌프가 멎으니 정리 운동을 합니다. 2015 A7번입니다.",
+  s16: "정맥환류는 **근육펌프, 호흡펌프, 정맥 수축** 세 가지로 돕습니다. 그런데 **등척성 수축**처럼 계속 힘을 주고 있으면 혈관이 눌린 채 풀리지 않아 오히려 환류가 막힙니다. 2022 B8의 빈칸입니다.",
+  s17: "최대 운동에서는 근육이 받는 몫이 약 20%에서 84%로 늘어납니다. 교감신경이 온몸 혈관을 조이지만 활동근에서는 대사산물이 혈관을 넓혀 그 조임을 무력화하는데, 이것을 **기능적 교감신경 억제**라고 합니다.",
+  s18: "점증 부하 운동에서 **수축기 혈압은 오르고, 이완기 혈압은 거의 그대로**입니다. 심박출량은 늘고, 활동근 혈관이 넓어져 말초저항은 줄기 때문입니다. 저항운동은 둘 다 크게 오릅니다.",
+  s19: "2014학년도 A3번입니다. 평균동맥압은 이완기에 맥압의 3분의 1을 더합니다. 안정 93.3, 운동 118.3입니다. 혈류 추진력은 여기서 **우심방압을 빼야** 합니다. 그러면 93.3과 113.3, 차이는 **20 mmHg**입니다.",
+  s20: "기출형 계산 문제입니다. 안정 평균동맥압 83.3에서 우심방압 2를 빼면 81.3, 운동 106에서 4를 빼면 102입니다. 차이는 20.7, 반올림해 **21 mmHg**입니다.",
+  s21: "피 100 mL에는 산소가 약 20 mL 들어 있습니다. 헤모글로빈 1 g이 산소 **1.34 mL**와 결합하기 때문입니다. 적혈구는 모세혈관을 지나며 근육에 산소를 내려놓습니다.",
+  s22: "산소해리곡선입니다. 운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 곡선이 오른쪽으로 이동해 같은 분압에서 산소를 더 내려놓습니다. 2015 A7번의 빈칸이 pH였습니다.",
+  s23: "픽 원리입니다. 산소섭취량은 심박출량 곱하기 동정맥 산소차입니다. 안정 250 mL, 최대 3,000 mL 정도입니다. 최대산소섭취량을 키우는 길은 **중추의 최대 심박출량**과 **말초의 산소 추출** 두 가지입니다.",
+  s24: "폐포 환기량은 1회 호흡량에서 **해부학적 사강 150 mL**을 빼고 호흡수를 곱합니다. 분당 환기량이 같아도 깊고 느린 호흡이 유리합니다. 확산은 면적과 **분압차**에 비례하고 두께에 반비례합니다.",
+  s25: "2025 B10을 바꾼 문제입니다. 96 kJ을 480초로 나누면 200 W입니다. 그때 심박수 150, 1회 박출량 120이므로 심박출량 **18 L/분**입니다. 산소차는 14 mL/100 mL, 곧 140 mL/L이므로 2,520 mL/분, 체중 60으로 나누면 **42 mL/kg/분**입니다.",
+  s26: "같은 속도로 오래 달리면 심박수는 점점 오르고 1회 박출량은 줄어듭니다. 심박출량은 거의 유지됩니다. 이것이 **심혈관 표류**이고, 더울수록 커집니다. 2023 B9번입니다.",
+  s27: "체온이 오르면 피부로 피가 가고 땀으로 **혈장량이 줄어** 정맥환류와 이완기말 용적이 줄어듭니다. 그래서 1회 박출량이 줄고, 심박수가 보상적으로 올라 심박출량을 유지합니다.",
+  s28: "지구성 훈련은 좌심실의 **내강, 즉 용적**을 키웁니다. 그래서 1회 박출량과 최대 심박출량이 늘어납니다. 답안에는 벽이 두꺼워진다가 아니라 내강이 커진다고 써야 합니다. 2020 A7, 2025 B10입니다.",
+  s29: "훈련하면 **혈장량이 먼저**, 크게 늘어납니다. 적혈구는 수 주에 걸쳐 늘어납니다. 그래서 헤마토크릿은 오히려 약간 낮아지는데, 이것을 가성 빈혈이라고 합니다. 2021 B6의 서술 문항입니다.",
+  s30: "훈련하면 근육은 **모세혈관과 미토콘드리아**가 늘어 산소를 더 뽑고, 심장은 1회 박출량이 커져 **안정 시 심박수가 낮아집니다**. 훈련을 멈추면 혈장량부터 빠집니다.",
+  s31: "운동 처방은 카보넨 공식으로 합니다. 최대에서 안정 심박수를 빼고 강도를 곱한 뒤 안정 심박수를 더합니다. 2022 A3은 **141과 148**입니다. 운동 효과의 방향도 확인하세요. HDL과 인슐린 민감도는 올라가고, 인슐린 요구도는 내려갑니다.",
+  s32: "아직 나오지 않은 네 가지입니다. **이중곱**은 심박수 곱하기 수축기 혈압, **발살바**는 숨을 참고 힘줄 때 혈압이 치솟는 현상, 조절은 **중추명령·운동승압반사·압수용기 재설정**, 그리고 **운동 후 저혈압**입니다.",
+  s33: "감점 함정 10가지입니다. 특히 우심방압 빼기, 박출계수 분모, 단위 환산, 부교감 철회, 심박출량 유지는 실제 채점 포인트입니다.",
+  s34: "한 장으로 정리합니다. 공식 네 개, 1회 박출량 3요인, 우측이동 조건, 급성 반응과 만성 적응을 기억하세요."
 };
 
 const $ = s => document.querySelector(s);
@@ -1052,7 +999,7 @@ function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS,
 // 14장 프랭크-스탈링
 (function(){
   const X = v => 300 + (v - 60) * 820 / 140, Y = s => 900 - s * 540 / 140;
-  const A = v => 140 * (1 - Math.exp(-(v - 50) / 60)), B = v => 150 * (1 - Math.exp(-(v - 45) / 45));
+  const A = v => 140 * (1 - Math.exp(-(v - 50) / 60)), B = v => Math.min(1.16 * A(v), 149);
   $('#fsA').setAttribute('d', fnPath(A, 60, 200, X, Y));
   $('#fsB').setAttribute('d', fnPath(B, 60, 200, X, Y));
   const l = $('#fsBl'); l.setAttribute('x', 800); l.setAttribute('y', 830); el('path', {d: 'M720 820H785', stroke: '#FF453A', 'stroke-width': 6, 'stroke-dasharray': '14 10'}, l.parentNode);
