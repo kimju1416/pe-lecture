@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>강의 · 운동과 내분비</title>
+<meta name="description" content="체육 임용 대비 운동생리학 — 분비선과 호르몬, 운동 중 호르몬 반응, 혈당 유지, 카테콜아민과 지방 동원, 인슐린 민감도, ADH·알도스테론을 13년 기출로 정리">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   운동과 내분비 — 임용 대비 강의 덱
+   무대 1920×1080 · 면 색이 구획 · 액션 블루 하나 · 그림자 없음
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --c-white:#ffffff; --c-parchment:#f5f5f7; --c-black:#000000; --c-dark:#1d1d1f; --c-graphite:#272729;
+  --ink:#1d1d1f; --ink-2:#6e6e73; --ink-3:#86868b; --on-dark:#f5f5f7; --on-dark-2:#a1a1a6; --on-dark-3:#6e6e73;
+  --hair:#e0e0e0; --hair-dark:#3a3a3c;
+  --action:#0066cc; --action-dark:#2997ff;
+  /* 몸 — 어두운 면 기본값 */
+  --hr:#FF453A; --low:#30D158; --mid:#FF9F0A; --high:#FF453A; --o2:#64D2FF;
+  --hr-lo:#D70015; --low-lo:#1E8B3E; --mid-lo:#B25000; --high-lo:#D70015; --o2-lo:#0077B6;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"SF Pro Display","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  --ease-out:cubic-bezier(.2,.8,.2,1); --ease-inout:cubic-bezier(.65,0,.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#000}
+body{font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ── 무대 ── */
+#viewport{position:fixed;inset:0;overflow:hidden;background:#000}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;overflow:hidden;background:#000}
+.slide{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .45s var(--ease-inout),visibility 0s .45s}
+.slide.is-on{opacity:1;visibility:visible;transition:opacity .45s var(--ease-inout);z-index:2}
+
+.slide[data-tile="black"]{background:var(--c-black);color:var(--on-dark)}
+.slide[data-tile="dark"]{background:var(--c-dark);color:var(--on-dark)}
+.slide[data-tile="graphite"]{background:var(--c-graphite);color:var(--on-dark)}
+.slide[data-tile="light"]{background:var(--c-white);color:var(--ink)}
+.slide[data-tile="parchment"]{background:var(--c-parchment);color:var(--ink)}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{
+  --hr:var(--hr-lo); --low:var(--low-lo); --mid:var(--mid-lo); --high:var(--high-lo); --o2:var(--o2-lo);
+  --t2:var(--ink-2); --t3:var(--ink-3); --hl:var(--hair); --act:var(--action); --panel:#f5f5f7;
+}
+.slide[data-tile="parchment"]{--panel:#ffffff}
+.slide[data-tile="black"],.slide[data-tile="dark"],.slide[data-tile="graphite"]{
+  --t2:var(--on-dark-2); --t3:var(--on-dark-3); --hl:var(--hair-dark); --act:var(--action-dark); --panel:#1d1d1f;
+}
+.slide[data-tile="dark"]{--panel:#2c2c2e}
+.slide[data-tile="graphite"]{--panel:#1d1d1f}
+
+/* ── 글자 체계(무대 px) ── */
+.t-title{font-size:96px;font-weight:600;line-height:1.1;letter-spacing:-.028em}
+.t-head{font-size:64px;font-weight:600;line-height:1.14;letter-spacing:-.022em}
+.t-lead{font-size:44px;font-weight:400;line-height:1.3;letter-spacing:-.012em}
+.t-label{font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.t-body{font-size:34px;font-weight:400;line-height:1.5;letter-spacing:-.01em}
+.t-cap{font-size:27px;font-weight:400;line-height:1.4}
+.t-eyebrow{font-size:30px;font-weight:600;line-height:1.2;color:var(--t2)}
+.t-eyebrow b{color:var(--act);margin-right:10px}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.mute{color:var(--t2)} .mute2{color:var(--t3)}
+.c-hr{color:var(--hr)} .c-low{color:var(--low)} .c-mid{color:var(--mid)} .c-high{color:var(--high)} .c-act{color:var(--act)}
+.abs{position:absolute}
+.full-svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+svg text{font-family:var(--font)}
+.hd{position:absolute;left:120px;top:88px;right:120px}
+.hd .t-head{margin-top:10px}
+.panel{background:var(--panel);border-radius:22px;padding:40px 48px}
+.center{text-align:center}
+
+/* ── 등장 ── */
+@keyframes in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.slide.is-on .in{animation:in .9s var(--ease-out) both;animation-delay:calc(var(--d,0)*1ms)}
+.slide.is-on .fin{animation:fadein 1.2s ease both;animation-delay:calc(var(--d,0)*1ms)}
+[data-step]{opacity:0;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+[data-step].rise{transform:translateY(24px)}
+[data-step].on{opacity:1}
+[data-step].rise.on{transform:none}
+
+/* ── 빈칸 ── */
+.blank{display:inline-block;position:relative;min-width:150px;padding:0 18px;text-align:center;border-bottom:3px solid var(--hl);line-height:1.25;vertical-align:baseline}
+.blank b{font-weight:600;color:var(--act);opacity:0;transition:opacity .5s var(--ease-out)}
+.blank.on b{opacity:1}
+.blank.on{border-bottom-color:var(--act)}
+.blank i{position:absolute;left:-10px;top:-16px;min-width:26px;height:26px;border-radius:13px;padding:0 6px;background:var(--act);color:#fff;font-style:normal;font-size:16px;font-weight:700;line-height:26px;text-align:center}
+
+/* ── 정의 표 ── */
+.def{display:grid;grid-template-columns:auto 1fr;gap:22px 36px;align-items:baseline}
+.def dt{font-size:26px;font-weight:600;color:var(--t2)}
+.def dd{font-size:36px;line-height:1.45}
+.def .top{grid-column:1/-1;display:flex;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--hl)}
+.def .top strong{font-size:44px;font-weight:600}
+.def .top span{font-size:28px;color:var(--t2)}
+
+/* ── 심장 ── */
+@keyframes beat{0%{transform:scale(1)}12%{transform:scale(1.13)}24%{transform:scale(1)}36%{transform:scale(1.07)}50%,100%{transform:scale(1)}}
+.beat{transform-box:fill-box;transform-origin:center}
+.slide.is-on .beat{animation:beat var(--beat,.83s) var(--ease-inout) infinite}
+@keyframes ecg{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.slide.is-on .ecg{animation:ecg 3.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-96}}
+.slide.is-on .flow{animation:flow var(--flow,2.2s) linear infinite}
+.slide.is-on .flow.rev{animation-direction:reverse}
+@keyframes ripple{0%{r:14;opacity:.9}100%{r:74;opacity:0}}
+.slide.is-on .ripple{animation:ripple var(--beat,.83s) ease-out infinite}
+
+/* 2장: 운동 시작 → 빨라짐 */
+#s2{--beat:.86s;--flow:2.4s}
+#s2.st-1{--beat:.4s;--flow:.9s}
+#s2 .mglow{opacity:0;transition:opacity .8s}
+#s2.st-1 .mglow{opacity:1}
+@keyframes squeeze{0%,100%{transform:scale(1)}50%{transform:scale(.95,1.03)}}
+#s2 .squeeze{transform-box:fill-box;transform-origin:center}
+#s2.is-on.st-1 .squeeze{animation:squeeze .8s var(--ease-inout) infinite}
+/* 5장: 15초 타이머 */
+#ring{stroke-dasharray:1;stroke-dashoffset:0}
+#s5.st-1 #ring{stroke-dashoffset:1;transition:stroke-dashoffset 5s linear}
+/* 8장: 호흡 */
+@keyframes breathe{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.wave i{display:inline-block;width:10px;height:70px;margin:0 5px;border-radius:5px;background:currentColor;transform-origin:center}
+.slide.is-on .wave i{animation:breathe var(--br,3s) ease-in-out infinite;animation-delay:calc(var(--k)*-0.12s)}
+/* 11장 */
+#s11 .a{--beat:.405s} #s11 .b{--beat:.341s}
+
+/* ── 구간 막대 ── */
+.zonebar{position:absolute;left:210px;top:520px;width:1500px;height:64px;border-radius:32px;overflow:hidden;background:var(--panel)}
+.zonebar span{position:absolute;top:0;bottom:0;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease-out)}
+.zonebar span.on{transform:scaleX(1);opacity:1}
+.tick{position:absolute;top:600px;transform:translateX(-50%);text-align:center;font-size:30px;font-weight:600}
+.tick small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:2px}
+.zlabel{position:absolute;top:410px;transform:translateX(-50%);text-align:center;font-size:36px;font-weight:600;white-space:nowrap}
+.zlabel small{display:block;font-size:24px;font-weight:400;color:var(--t2);margin-top:4px}
+
+/* ── 카드 ── */
+.cards{position:absolute;left:120px;right:120px;display:grid;gap:28px}
+.card{border-radius:22px;background:var(--panel);padding:40px 40px 44px}
+.card h4{font-size:40px;font-weight:600;letter-spacing:-.015em}
+.card p{font-size:30px;line-height:1.5;margin-top:14px;color:var(--t2)}
+.card .k{font-size:26px;font-weight:600;letter-spacing:.02em}
+.sum .card{padding:34px 30px 38px}.sum .card h4{font-size:36px}.sum .card p{font-size:27px}
+.card .big{font-size:88px;font-weight:600;letter-spacing:-.03em;line-height:1}
+
+/* ── 계산기 ── */
+.calc label{display:block;font-size:30px;font-weight:600;margin-top:34px}
+.calc label span{float:right;font-size:40px;font-weight:600;color:var(--act)}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:6px;background:var(--hair);margin-top:26px;outline:0}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;box-shadow:0 2px 6px rgba(0,0,0,.18);cursor:pointer}
+.calc input[type=range]::-moz-range-thumb{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;cursor:pointer}
+#mini{position:relative;height:28px;border-radius:14px;overflow:hidden;background:var(--hair);margin-top:36px}
+#mini span{position:absolute;top:0;bottom:0}
+#pin{position:absolute;top:-10px;width:6px;height:48px;border-radius:3px;background:var(--ink);margin-left:-3px;transition:left .3s var(--ease-out)}
+
+/* ── 조작 버튼 ── */
+#ui{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:50;transition:opacity .4s}
+#ui.idle{opacity:.22}
+#ui button,#ui .count{height:40px;min-width:40px;border-radius:20px;background:rgba(118,118,128,.55);color:#fff;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#ui .count{padding:0 16px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:480px){#ui{right:8px;left:8px;bottom:10px;gap:4px;justify-content:center}#ui button,#ui .count{height:36px;min-width:36px}#ui .count{padding:0 10px}}
+#ui svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ui button.act{background:#0071e3}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:rgba(134,134,139,.7);z-index:40;transition:width .4s var(--ease-out)}
+.overlay{position:fixed;inset:0;z-index:60;display:none;background:rgba(40,40,42,.96);color:#f5f5f7;overflow:auto;padding:40px clamp(16px,5vw,80px)}
+.overlay.show{display:block}
+.overlay h3{font-size:22px;font-weight:600;margin-bottom:20px}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+#grid button{aspect-ratio:16/9;border-radius:10px;padding:12px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;font-weight:600;line-height:1.3;border:2px solid transparent}
+#grid button small{font-size:11px;opacity:.6}
+#grid button.cur{border-color:#2997ff}
+#help table{border-collapse:collapse;font-size:15px}
+#help td{padding:7px 18px 7px 0;vertical-align:top}
+kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;background:#48484a;font:inherit;font-size:13px;text-align:center}
+#notes{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;max-height:38vh;overflow:auto;background:rgba(29,29,31,.94);color:#f5f5f7;padding:18px clamp(16px,5vw,64px) 70px;font-size:clamp(15px,1.5vw,20px);line-height:1.65;border-top:1px solid #3a3a3c}
+#notes.show{display:block}
+#notes b{color:#2997ff;font-weight:600}
+#blackout{position:fixed;inset:0;z-index:55;display:none}
+
+/* ── 운동과 순환 추가분 ── */
+:root{--vein:#5E8BFF}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{--vein:#2950C8}
+.c-vein{color:var(--vein)} .c-o2{color:var(--o2)}
+.credit{position:absolute;left:120px;bottom:36px;font-size:20px;color:var(--t3);z-index:3}
+.vid{background:#000}
+
+/* 기출 딱지 */
+.gx{position:absolute;right:120px;top:96px;display:flex;gap:10px;z-index:3}
+.gx.static{position:static;margin:18px 0 6px}
+.gx span{height:44px;padding:0 18px;border-radius:22px;font-size:24px;font-weight:600;display:inline-flex;align-items:center;background:var(--panel);color:var(--t2)}
+.gx span.y{background:var(--hr);color:#fff}
+.gx span.p{background:transparent;border:2px dashed var(--t3);color:var(--t2)}
+
+/* 오른쪽 글 기둥(사진·영상 장) */
+.side{position:absolute;left:1180px;top:110px;width:640px;z-index:3}
+.t-head.s{font-size:54px;margin-top:10px}
+.pt{font-size:31px;line-height:1.5;margin-top:28px}
+.route{margin-top:40px}
+.route .k{font-size:26px;font-weight:600}
+.route p{font-size:32px;line-height:1.7;margin-top:6px}
+.warn{margin-top:40px;font-size:29px;line-height:1.55;padding:24px 28px;border-radius:18px;background:var(--panel)}
+.warn .mute{font-size:24px}
+.three{list-style:none;margin-top:30px;counter-reset:n}
+.three li{font-size:30px;line-height:1.45;padding:14px 0;border-bottom:1px solid var(--hl)}
+.three li b{display:inline-block;min-width:150px}
+
+/* 기출 지도 */
+.ymap{position:absolute;left:120px;right:120px;top:300px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px}
+.yr{display:flex;align-items:baseline;gap:22px;padding:14px 0;border-bottom:1px solid var(--hl)}
+.yr b{font-size:30px;font-weight:700;min-width:150px;color:var(--hr);font-variant-numeric:tabular-nums}
+.yr span{font-size:29px}
+.yr.pred b{color:var(--t2)}
+
+/* 판막 사슬 */
+.chain{position:absolute;left:120px;right:120px;display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+.node{padding:20px 28px;border-radius:16px;font-size:34px;font-weight:600;white-space:nowrap}
+.node.v{background:#e8eefc;color:#2950C8}.node.a{background:#fde8ea;color:#D70015}
+.vl{font-size:30px;display:inline-flex;align-items:center;gap:6px}
+.vl::before,.vl::after{content:"";width:22px;height:3px;background:#c7c7cc}
+.ar{font-size:30px;color:var(--t2);white-space:nowrap}
+
+/* 전도계 */
+.cond{margin-top:40px;font-size:30px;line-height:1.6;padding:22px 26px;border-radius:18px;background:var(--panel)}
+
+/* 단계 구간 설명 */
+.zone2{margin-bottom:34px}.zone2 .k{font-size:28px;font-weight:600}.zone2 p{font-size:32px;line-height:1.6;margin-top:8px}
+
+/* 시험지 */
+.exam{position:absolute;background:#fff;color:#1d1d1f;border:2px solid #1d1d1f;border-radius:4px;padding:34px 42px;font-size:28px;line-height:1.6}
+.exam table{border-collapse:collapse;font-size:25px;margin-top:6px}
+.exam th,.exam td{border:1.5px solid #1d1d1f;padding:8px 16px;text-align:center;font-weight:400}
+.exam th{background:#f2f2f2}
+.howto{border:1.5px solid #1d1d1f;padding:14px 22px;margin-top:20px;font-size:24px;line-height:1.6}
+.stmt{list-style:none;margin-top:14px}.stmt li{padding:14px 0;border-top:1px dashed #c7c7cc;font-size:30px}.stmt b{display:inline-block;min-width:90px}
+.answer{position:absolute}
+.a-line{font-size:30px;line-height:1.5;margin-top:22px;padding-left:20px;border-left:4px solid var(--act)}
+.kw{display:inline-block;padding:6px 16px;border-radius:18px;background:var(--act);color:#fff;font-size:23px;font-weight:600;margin:10px 8px 0 0}
+
+/* 표 */
+.qt{border-collapse:collapse;margin-top:36px;width:100%;font-size:29px}
+.qt th{font-size:22px;font-weight:600;color:var(--t2);text-align:right;padding:8px 10px}
+.qt td{padding:14px 10px;border-top:1px solid var(--hl);text-align:right;font-variant-numeric:tabular-nums}
+.qt td:first-child,.qt th:first-child{text-align:left}
+.eq{font-size:76px;font-weight:600;margin-top:30px;letter-spacing:-.02em}
+.dtab{border-collapse:collapse;font-size:32px}
+.dtab th{font-size:24px;font-weight:600;color:var(--t2);padding:10px 26px;border-bottom:2px solid var(--hl)}
+.dtab td{padding:16px 26px;text-align:center;border-bottom:1px solid var(--hl);font-variant-numeric:tabular-nums}
+.lbl{font-size:28px;display:inline-block;min-width:170px}
+
+/* 재분배 막대 */
+.rbar{position:absolute;left:120px;right:120px;height:120px;border-radius:16px;overflow:hidden;display:flex}
+.rbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;border-right:2px solid #fff}
+.rbar i small{display:block;font-size:20px;font-weight:400;opacity:.9}
+.rbar i span{text-align:center;line-height:1.25}
+
+/* 문제 버튼 */
+.mcq{position:absolute}
+.mcq button{display:block;width:100%;text-align:left;padding:20px 28px;border-radius:16px;background:var(--panel);font-size:29px;margin-top:14px;border:2px solid transparent;color:inherit}
+.mcq button.good{border-color:var(--low)}.mcq button.bad{border-color:var(--hr)}
+.fb{font-size:26px;line-height:1.5;margin-top:18px;min-height:40px;color:var(--t2)}
+.mech{position:absolute;left:120px;right:120px;top:840px;font-size:30px;line-height:1.6;padding:22px 30px;border-radius:18px;background:var(--panel)}
+#s30 .mech{right:900px;top:820px;font-size:26px}
+
+/* 방향 칩 */
+.dirs{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+.dirs span{font-size:32px;padding:14px 26px;border-radius:16px;background:var(--panel)}
+
+/* 조절 흐름 */
+.ctrl .src{position:absolute;left:120px;width:640px;padding:24px 30px;border-radius:18px;background:var(--panel)}
+.ctrl .src .k{font-size:28px;font-weight:600}.ctrl .src p{font-size:27px;line-height:1.5;margin-top:6px}
+.ctrl .src:nth-child(1){top:330px}.ctrl .src:nth-child(2){top:530px}.ctrl .src:nth-child(3){top:720px}
+.ctrl .hub{position:absolute;left:900px;top:555px;width:340px;padding:26px;border-radius:18px;background:var(--act);color:#fff;font-size:34px;font-weight:600;text-align:center}
+.ctrl .out{position:absolute;left:1300px;top:520px;width:500px;padding:24px 28px;border-radius:18px;background:var(--panel);font-size:29px;line-height:1.5}
+
+/* 함정 */
+.traps{position:absolute;left:120px;right:120px;top:290px;columns:2;column-gap:60px;list-style:none;counter-reset:t}
+.traps li{counter-increment:t;font-size:30px;line-height:1.45;padding:18px 0 18px 64px;position:relative;break-inside:avoid;border-bottom:1px solid var(--hl)}
+.traps li::before{content:counter(t);position:absolute;left:0;top:16px;width:44px;height:44px;border-radius:22px;background:var(--hr);color:#fff;font-size:22px;font-weight:700;text-align:center;line-height:44px}
+
+/* 그리기 */
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.draw{stroke-dasharray:1}
+.slide.is-on .draw{animation:draw 1.6s var(--ease-inout) both .3s}
+
+/* ── 운동과 호흡 추가분 ── */
+.vol{border-collapse:collapse;width:100%;font-size:28px}
+.vol td{padding:11px 8px;border-bottom:1px solid var(--hl);font-variant-numeric:tabular-nums}
+.vol td:nth-child(2){font-weight:700;color:var(--o2);width:90px}
+.vol td:nth-child(3){text-align:right;width:90px}
+.vol tr.sum td{color:var(--t2)} .vol tr.sum td:nth-child(2){color:var(--mid)}
+.pmap .pbox{position:absolute;top:340px;width:320px;padding:26px 28px;border-radius:18px;background:var(--panel)}
+.pbox .k{font-size:26px;font-weight:600;color:var(--t2)}
+.pbox p{font-size:34px;line-height:1.5;margin-top:8px;font-variant-numeric:tabular-nums}
+.pbox small{font-size:22px;color:var(--t3)}
+.eq2{font-size:38px;font-weight:600;line-height:1.4;margin-top:34px;padding:22px 26px;border-radius:18px;background:var(--panel)}
+.rbc{position:absolute;left:120px;right:120px;top:300px;display:flex;gap:30px;align-items:stretch}
+.rbc-cell{flex:1;padding:30px 36px;border-radius:22px;background:#fde8ea}
+.rx{font-size:40px;font-weight:600;margin-top:12px;line-height:1.5}
+.enz{display:inline-block;font-size:20px;font-weight:600;color:#6e6e73;vertical-align:super;margin:0 4px}
+.shift{width:420px;padding:30px;border-radius:22px;background:var(--panel);display:flex;flex-direction:column;gap:12px;font-size:32px;font-weight:600;justify-content:center}
+.shift small{font-size:24px;color:var(--t2);font-weight:400}
+.chain2{position:absolute;left:120px;right:120px;top:300px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.node2{font-size:36px;line-height:1.4;padding:20px 30px;border-radius:18px;background:var(--panel)}
+.node2.big2{font-size:52px;font-weight:700;color:var(--mid)}
+.ar2{font-size:34px;color:var(--t3);padding-left:40px}
+.steps3 > div{font-size:30px;line-height:1.5;margin-top:24px;padding-left:22px;border-left:4px solid var(--o2)}
+.steps3 b:first-child{display:inline-block;min-width:80px;color:var(--o2)}
+
+/* ── 에너지 대사 추가분 ── */
+.flow3{position:absolute;left:120px;right:120px;top:320px;display:flex;align-items:center;gap:18px}
+.fbox{padding:26px 34px;border-radius:18px;background:var(--panel);font-size:36px;font-weight:600}
+.fbox.hi{background:#fff3e0;color:#B25000}
+.fbox small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:4px}
+.far{font-size:40px;color:var(--t3)}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 표지 -->
+<section class="slide" id="s1" data-tile="black" data-title="표지">
+  <video class="abs vid fin" src="img/endo-glands.mp4" poster="img/endo-glands.jpg" muted loop playsinline preload="auto" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.85) 72%,#000 100%)"></div>
+  <div class="abs center" style="left:0;right:0;top:700px">
+    <div class="t-eyebrow in" style="--d:300">체육 임용 대비 · 운동생리학</div>
+    <div class="t-title in" style="--d:450;margin-top:18px">운동과 내분비</div>
+    <div class="t-lead mute in" style="--d:600;margin-top:18px">혈당과 물을 지키는 호르몬 — 13년 기출 핵심만</div>
+  </div>
+  <div class="credit">사진·영상: AI 생성 이미지</div>
+</section>
+
+<!-- 기출 지도 -->
+<section class="slide" id="s2" data-tile="dark" data-title="13년 기출 지도">
+  <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">2023년부터는 거의 해마다 4점 서술형</div></div>
+  <div class="ymap">
+    <div class="yr in" style="--d:200"><b>2016 B4</b><span>지방 동원 — 부신수질 호르몬 2가지</span></div>
+    <div class="yr in" style="--d:240"><b>2017 A14</b><span>인슐린 요구도 · HDL 방향</span></div>
+    <div class="yr in" style="--d:280"><b>2020 B10</b><span>에피네프린과 연료 교차</span></div>
+    <div class="yr in" style="--d:320"><b>2023 B9</b><span>고온 운동 — ADH · 부신피질(알도스테론)</span></div>
+    <div class="yr in" style="--d:360"><b>2025 A11</b><span>EPOC 중 카테콜아민 · 포도당 신생</span></div>
+    <div class="yr in" style="--d:400"><b>2026 A9</b><span>운동 중 호르몬 그래프 · 부신수질 · 인슐린 민감도</span></div>
+  </div>
+  <div class="abs t-body in" style="--d:500;left:120px;top:700px;right:120px">반복 출제: <b class="c-hr">부신수질 카테콜아민</b> 3번 · <b class="c-act">인슐린 민감도↑ = 요구도↓</b> 2번 · 분비선 이름(수질/피질/후엽)</div>
+  <div class="abs t-cap mute in" style="--d:600;left:120px;top:800px;right:120px">함정 패턴: 증감 방향을 뒤집어 놓고 고치게 한다 — 인슐린 민감도·HDL·혈관신생은 모두 '증가'가 맞다.</div>
+</section>
+
+<!-- 1. 분비선 지도 -->
+<section class="slide" id="s3" data-tile="black" data-title="1. 분비선과 호르몬">
+  <img class="abs fin" src="img/endo-glands.jpg" alt="몸속 내분비샘 위치 시각화" style="left:-140px;top:0;width:1300px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>1</b>호르몬 기초</div>
+    <div class="t-head s in" style="--d:100">어디서 무엇이 나오나</div>
+    <table class="qt" data-step="1">
+      <tr><th>분비선</th><th>호르몬</th><th>운동 중</th></tr>
+      <tr><td>뇌하수체 전엽</td><td>성장호르몬</td><td>↑</td></tr>
+      <tr><td>뇌하수체 후엽</td><td>항이뇨호르몬(ADH)</td><td>↑</td></tr>
+      <tr><td><b class="c-hr">부신수질</b></td><td>에피·노르에피네프린</td><td>↑↑</td></tr>
+      <tr><td><b class="c-o2">부신피질</b></td><td>코티솔 · 알도스테론</td><td>↑</td></tr>
+      <tr><td>췌장</td><td>인슐린 / 글루카곤</td><td>↓ / ↑</td></tr>
+    </table>
+    <div class="t-cap mute" data-step="2" style="margin-top:18px">부신 = 신장 위의 작은 샘. 바깥이 피질, 안쪽이 수질. 수질과 피질을 바꿔 쓰면 오답.</div>
+  </div>
+</section>
+
+<!-- 호르몬 종류 -->
+<section class="slide" id="s4" data-tile="light" data-title="호르몬의 종류">
+  <div class="hd"><div class="t-eyebrow in"><b>1</b>호르몬 기초</div><div class="t-head in" style="--d:100">녹는 성질이 작용 방식을 정한다</div></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-o2">스테로이드</div><h4>코티솔 · 알도스테론 · 테스토스테론</h4><p>세포막을 통과 → 세포 안 수용체 → 유전자 발현 → 느리고 오래 간다</p></div>
+    <div class="card" data-step="2"><div class="k c-act">펩타이드</div><h4>인슐린 · 글루카곤 · 성장호르몬 · ADH</h4><p>세포막 수용체 → 2차 전달자(cAMP 등) → 빠르다</p></div>
+    <div class="card" data-step="3"><div class="k c-hr">아민</div><h4>에피·노르에피네프린</h4><p>세포막 수용체 → cAMP — 가장 빠르게 반응</p></div>
+  </div>
+  <div class="abs t-cap mute" data-step="3" style="left:120px;top:900px;right:120px">13년 동안 직접 나오지 않은 내용 — 이 정도만 알아 두면 된다.</div>
+</section>
+
+<!-- 2. 운동 중 반응 -->
+<section class="slide" id="s5" data-tile="dark" data-title="2. 운동 중 호르몬 반응">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>혈당과 연료</div><div class="t-head in" style="--d:100">운동하면 하나만 줄고 나머지는 오른다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2026 A9</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="200" y1="600" x2="1100" y2="600" stroke="#6e6e73" stroke-width="2" stroke-dasharray="8 8"/>
+    <line x1="200" y1="880" x2="1100" y2="880" stroke="#6e6e73" stroke-width="2"/><line x1="200" y1="880" x2="200" y2="330" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6"><text x="180" y="608" text-anchor="end">안정</text><text x="650" y="925" text-anchor="middle">운동 시간 (분) →</text><text x="150" y="315">혈장 농도</text></g>
+    <path class="draw" pathLength="1" d="M220 600C450 560 700 430 1080 410" fill="none" stroke="#FF453A" stroke-width="7"/>
+    <g data-step="2"><path d="M220 600C450 640 700 760 1080 800" fill="none" stroke="#64D2FF" stroke-width="7" stroke-dasharray="16 10"/><text x="900" y="845" font-size="30" font-weight="700" fill="#64D2FF">인슐린 ↓</text></g>
+    <text x="230" y="380" font-size="26" font-weight="600" fill="#FF453A">에피·노르에피 · 성장호르몬 · 코티솔 · 글루카곤 ↑</text>
+  </svg>
+  <div class="abs" style="left:1200px;top:340px;width:620px">
+    <div class="pt" data-step="1"><b class="c-hr">오르는 것</b>: 카테콜아민(가장 빠르고 강도에 비례), 글루카곤, 코티솔·성장호르몬(오래 할수록)</div>
+    <div class="pt" data-step="2"><b class="c-o2">줄어드는 것</b>: <span class="blank" data-reveal="2" style="min-width:130px"><i>1</i><b>인슐린</b></span> — 2026 A9 그래프는 이 선에 이름을 붙이지 않았다</div>
+    <div class="pt" data-step="3">목적은 하나 — <b>혈당을 지키고</b> 지방을 꺼내 쓰기</div>
+  </div>
+</section>
+
+<!-- 혈당 유지 -->
+<section class="slide" id="s6" data-tile="light" data-title="혈당을 지키는 네 가지 길">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>혈당과 연료</div><div class="t-head in" style="--d:100">근육은 당을 쓰는데, 혈당은 왜 유지되나</div></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(2,1fr)">
+    <div class="card" data-step="1"><div class="k c-hr">① 간 글리코겐 분해</div><p>글루카곤·에피네프린 → 간이 포도당을 혈액으로 — 고강도에서 중요</p></div>
+    <div class="card" data-step="2"><div class="k c-mid">② 간의 포도당 신생</div><p>젖산·글리세롤·아미노산으로 새 포도당 — 코티솔·글루카곤, 오래 할수록 중요</p></div>
+    <div class="card" data-step="3"><div class="k c-o2">③ 지방 분해로 포도당 절약</div><p>카테콜아민·성장호르몬 → 유리지방산을 연료로</p></div>
+    <div class="card" data-step="4"><div class="k c-act">④ 근육의 포도당 흡수</div><p>인슐린이 줄어도 <b>근수축 자체가 GLUT4를 세포막으로</b> 옮겨 당을 들인다</p></div>
+  </div>
+</section>
+
+<!-- 카테콜아민과 지방 -->
+<section class="slide" id="s7" data-tile="black" data-title="부신수질 카테콜아민과 지방 동원">
+  <video class="abs vid fin" src="img/endo-adrenal.mp4" poster="img/endo-adrenal.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
+  <div class="side">
+    <div class="t-eyebrow in"><b>2</b>혈당과 연료</div>
+    <div class="t-head s in" style="--d:100">부신수질 — 운동의 가속 페달</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2016 B4</span><span>2020 B10</span><span>2026 A9</span></div>
+    <div class="pt" data-step="1">부신수질 → <span class="blank" data-reveal="1" style="min-width:150px"><i>1</i><b>에피네프린</b></span> · <span class="blank" data-reveal="1" style="min-width:190px"><i>2</i><b>노르에피네프린</b></span></div>
+    <div class="pt" data-step="2">지방세포: 호르몬 민감성 지방분해효소 활성 → 중성지방 → <b>유리지방산</b> + 글리세롤</div>
+    <div class="pt" data-step="3">간·근육 글리코겐 분해↑, 심박수·수축력↑. 강도가 높을수록 급증 → 탄수화물 사용↑ (연료 교차, 2020 B10)</div>
+  </div>
+</section>
+
+<!-- 문제 ① 2016 B4 -->
+<section class="slide" id="s8" data-tile="parchment" data-title="기출 ① 2016 B4">
+  <div class="hd"><div class="t-eyebrow in">기출 ① · 2016학년도 B4 그대로</div><div class="t-head in" style="--d:100">운동과 비만</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:290px;width:1040px;font-size:27px">
+    체육 교사: 중강도 심폐지구력 운동은 ㉠ <u>유리지방산의 활동을 증대시켜</u> 체지방을 줄이는 데 도움이 된다고 알려져 있어요.<br>
+    학생: 근육 운동은 체지방을 줄이는 데 도움이 안 된다던데요?<br>
+    체육 교사: 그렇지 않아요. 근육을 키우는 ㉡ <u>저항성 트레이닝도 체지방을 줄이는 데 도움이 됩니다.</u>
+    <div class="howto">부신수질에서 분비되는 호르몬 중 ㉠의 변화를 일으키는 주요 호르몬 2가지를 쓰고, ㉡의 이유를 서술하시오.</div>
+  </div>
+  <div class="answer" style="left:1220px;top:290px;width:600px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉠ <b>에피네프린 · 노르에피네프린</b></div>
+    <div class="a-line" data-step="2">㉡ 근육량(제지방량)↑ → <b>안정 시 대사량↑</b> → 하루 에너지 소비↑</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:18px">분비선이 '부신수질'로 주어졌다 — 코티솔·성장호르몬을 쓰면 오답.</div>
+  </div>
+</section>
+
+<!-- 인슐린 -->
+<section class="slide" id="s9" data-tile="dark" data-title="인슐린과 인슐린 민감도">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>혈당과 연료</div><div class="t-head in" style="--d:100">운동하는 몸은 인슐린이 덜 필요하다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A14</span><span>2026 A9</span></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(2,1fr)">
+    <div class="card" data-step="1"><div class="k c-o2">운동 중</div><h4>인슐린↓ 인데도 당 흡수↑</h4><p>근수축이 GLUT4를 세포막으로 옮긴다. 인슐린이 줄어야 간의 포도당 방출과 지방 분해가 잘 된다.</p></div>
+    <div class="card" data-step="2"><div class="k c-act">규칙적 운동 후</div><h4>인슐린 민감도↑ = 요구도↓</h4><p>같은 혈당을 처리하는 데 인슐린이 <b>덜</b> 필요하다 — GLUT4 증가</p></div>
+  </div>
+  <div class="abs" data-step="3" style="left:120px;top:720px;right:120px">
+    <div class="t-label">함께 나온 운동 효과의 방향</div>
+    <div class="dirs"><span>인슐린 민감도 <b class="c-hr">↑</b></span><span>인슐린 요구도 <b class="c-low">↓</b></span><span>HDL <b class="c-hr">↑</b></span><span>혈관신생 <b class="c-hr">↑</b></span><span>안정 시 혈압 <b class="c-low">↓</b></span></div>
+  </div>
+</section>
+
+<!-- 문제 ② 2017 A14 변형 -->
+<section class="slide" id="s10" data-tile="light" data-title="기출 변형 ② 2017 A14">
+  <div class="hd"><div class="t-eyebrow in">기출 변형 ② · 2017학년도 A14의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">체중 조절 프로그램의 목표</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:290px;width:1040px;font-size:26px">
+    가람(17세 남)의 건강 검진: 체지방률·총콜레스테롤·혈압·혈당이 정상보다 약간 높음.<br>
+    프로그램 목표 ㉣ 규칙적인 운동을 통해 혈당 농도를 감소시켜 <u>인슐린 요구도를 감소시킨다.</u>
+    <div class="howto">&lt;작성 방법&gt; ① 규칙적인 운동 뒤 같은 양의 포도당을 먹었을 때 인슐린 분비량이 어떻게 달라지는지 쓰고, 그 까닭을 근육의 포도당 수송체 측면에서 서술할 것. ② 운동 중에는 인슐린이 줄어드는데도 근육이 포도당을 더 들이는 까닭을 쓸 것.</div>
+  </div>
+  <div class="answer" style="left:1220px;top:290px;width:600px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">① <b>감소</b>한다 — 근육의 <b>GLUT4↑</b>, 인슐린 민감도↑로 적은 인슐린으로도 혈당을 처리</div>
+    <div class="a-line" data-step="2">② <b>근수축 자체</b>가 GLUT4를 세포막으로 옮겨(인슐린과 무관) 포도당을 흡수</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:18px">원래 기출: 잘못된 목표 2가지 고치기 — HDL '감소' → 증가, 인슐린 요구도 '증가' → 감소. 감량 3 kg 계산.</div>
+  </div>
+</section>
+
+<!-- 문제 ③ 2026 A9 -->
+<section class="slide" id="s11" data-tile="parchment" data-title="기출 ③ 2026 A9">
+  <div class="hd"><div class="t-eyebrow in">기출 ③ · 2026학년도 A9 그대로</div><div class="t-head in" style="--d:100">운동 프로그램 계획과 호르몬 반응</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:270px;width:1080px;padding:22px 32px;font-size:22px;line-height:1.5">
+    <div style="display:flex;gap:26px">
+      <div style="flex:1">A 학생: 남 · 15세 · 안정 시 심박수 75 bpm<br>운동 강도: 최대 운동 강도의 ( ⓐ )% / 목표 심박수 140 bpm<br>기대 효과: ㉠ 안정 시 산화 스트레스 감소 ㉡ 고밀도 콜레스테롤 증가 ㉢ 지방조직 혈관 신생 감소 ㉣ 안정 시 혈압 감소 ㉤ 인슐린 민감도 감소</div>
+      <svg width="400" height="260" viewBox="0 0 400 260" style="flex:none">
+        <line x1="40" y1="230" x2="390" y2="230" stroke="#1d1d1f" stroke-width="1.5"/><line x1="40" y1="230" x2="40" y2="10" stroke="#1d1d1f" stroke-width="1.5"/>
+        <line x1="40" y1="130" x2="390" y2="130" stroke="#1d1d1f" stroke-width="1" stroke-dasharray="4 4"/>
+        <path d="M60 130C140 115 230 75 380 65" fill="none" stroke="#1d1d1f" stroke-width="2.5"/>
+        <path d="M60 130C140 150 230 190 380 205" fill="none" stroke="#1d1d1f" stroke-width="2.5" stroke-dasharray="7 5"/>
+        <g font-size="13" fill="#1d1d1f"><text x="34" y="134" text-anchor="end">안정</text><text x="34" y="20" text-anchor="end">증가</text><text x="34" y="230" text-anchor="end">감소</text>
+          <text x="140" y="30">ⓑ 에피네프린 · ⓒ 노르에피네프린</text><text x="140" y="48">성장호르몬 · 코티솔 · 글루카곤</text><text x="215" y="252" text-anchor="middle">시간(분)</text></g>
+      </svg>
+    </div>
+    <div class="howto" style="margin-top:10px">&lt;작성 방법&gt; 카보넨 공식으로 ⓐ를 쓸 것. ㉠~㉤ 중 잘못된 2가지를 찾아 '증감' 측면에서 고칠 것. ⓑ와 ⓒ의 공통 분비선을 쓸 것.</div>
+  </div>
+  <div class="answer" style="left:1260px;top:270px;width:560px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line num" data-step="1">ⓐ (140 − 75) ÷ (205 − 75) × 100 = <b>50%</b></div>
+    <div class="a-line" data-step="2">㉢ 혈관 신생 <b>증가</b> · ㉤ 인슐린 민감도 <b>증가</b></div>
+    <div class="a-line" data-step="3"><b>부신수질</b></div>
+    <div class="t-cap mute" data-step="4" style="margin-top:16px">최대 심박수는 220 − 15 = 205로 가정. 점선(이름 없음)은 인슐린.</div>
+  </div>
+</section>
+
+<!-- 3. 체액 조절 -->
+<section class="slide" id="s12" data-tile="black" data-title="3. 땀과 물 — ADH와 알도스테론">
+  <img class="abs fin" src="img/circ-runner.jpg" alt="더운 날 땀 흘리며 달리는 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>3</b>체액 조절</div>
+    <div class="t-head s in" style="--d:100">땀으로 잃은 물을 지키는 두 호르몬</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2023 B9</span></div>
+    <div class="pt" data-step="1"><b class="c-act">ADH</b> 땀 → 혈장 삼투압↑ → 시상하부 → <b>뇌하수체 후엽</b> → 신장 집합관에서 <b>물 재흡수</b></div>
+    <div class="pt" data-step="2"><b class="c-o2">알도스테론</b> 혈장량·혈압↓ → 신장 <b>레닌</b> → 안지오텐신 II → <span class="blank" data-reveal="2" style="min-width:150px"><i>1</i><b>부신피질</b></span> → <b>Na⁺ 재흡수</b>, 물도 함께 보존</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:20px">이 덕분에 혈장량이 지켜진다 — 그래도 덥고 길면 혈장량↓ → 심혈관 표류(1회 박출량↓, 심박수↑)</div>
+  </div>
+</section>
+
+<!-- 문제 ④ 2023 B9 -->
+<section class="slide" id="s13" data-tile="light" data-title="기출 ④ 2023 B9">
+  <div class="hd"><div class="t-eyebrow in">기출 ④ · 2023학년도 B9 그대로</div><div class="t-head in" style="--d:100">고온 환경에서의 운동</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1060px;font-size:24px;line-height:1.6">
+    교사: ㉠ <u>고온 환경에서 장시간 운동을 할 경우 수분 손실과 함께 심부 체온이 상승하고 심혈관계의 부담은 증가</u>하게 됩니다.<br>
+    교사: 먼저 ( ㉡ )이/가 있습니다. 주된 증상은 두통, 혼미, 혼란, 현기증, 무초점 응시, 의식 상실 등이 있으며, 체온 조절 시스템이 작동하지 않습니다. 심부 체온이 40℃보다 올라가게 됩니다.<br>
+    교사: 고온 환경에 노출되면 … 뇌하수체 후엽에서는 ( ㉢ ) 호르몬 분비가 증가하고, ( ㉣ )에서는 알도스테론 호르몬 분비가 증가합니다.
+    <div class="howto">&lt;작성 방법&gt; ㉠ 상황에서 나타나는 심장 1회 박출량과 분당 심박수의 변화를 서술할 것. ㉡에 해당하는 명칭, ㉢·㉣에 해당하는 명칭을 순서대로 쓸 것.</div>
+  </div>
+  <div class="answer" style="left:1240px;top:280px;width:580px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉠ 1회 박출량 <b>감소</b>, 심박수 <b>증가</b> (심혈관 표류 — 혈장량↓ → 정맥환류↓)</div>
+    <div class="a-line" data-step="2">㉡ <b>열사병</b></div>
+    <div class="a-line" data-step="3">㉢ <b>항이뇨호르몬(ADH)</b> · ㉣ <b>부신피질</b></div>
+  </div>
+</section>
+
+<!-- 4. 훈련 적응 -->
+<section class="slide" id="s14" data-tile="dark" data-title="4. 훈련 적응">
+  <div class="hd"><div class="t-eyebrow in"><b>4</b>훈련 적응</div><div class="t-head in" style="--d:100">훈련한 몸은 호르몬을 덜 쓴다</div></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-hr">카테콜아민</div><h4>같은 강도에서 덜 오른다</h4><p>같은 절대 강도가 상대적으로 쉬워져 에피·노르에피네프린 반응↓</p></div>
+    <div class="card" data-step="2"><div class="k c-mid">글루카곤 · 인슐린</div><h4>변화 폭이 작아진다</h4><p>글루카곤 상승↓, 인슐린 감소↓ — 혈당이 덜 흔들린다</p></div>
+    <div class="card" data-step="3"><div class="k c-act">조직의 반응</div><h4>민감도↑</h4><p>인슐린 민감도↑ · GLUT4↑ · 지방 이용↑(글리코겐 절약)</p></div>
+  </div>
+  <div class="panel abs" data-step="4" style="left:120px;top:760px;right:120px">
+    <div class="t-label">출제 예상 한 줄</div>
+    <div class="t-cap" style="margin-top:10px;line-height:1.7">저항운동 직후 테스토스테론·성장호르몬·IGF-1 일시적↑ → 근단백질 합성 · 에너지 섭취가 모자라면(RED-S) 에스트로겐↓ → 무월경·골밀도↓</div>
+  </div>
+</section>
+
+<!-- 함정 -->
+<section class="slide" id="s15" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
+  <ol class="traps">
+    <li class="in" style="--d:150">에피·노르에피네프린 = <b>부신수질</b></li>
+    <li class="in" style="--d:190">알도스테론·코티솔 = <b>부신피질</b></li>
+    <li class="in" style="--d:230">ADH = <b>뇌하수체 후엽</b>(시상하부에서 만듦)</li>
+    <li class="in" style="--d:270">운동 중 <b>인슐린만 감소</b>, 나머지는 증가</li>
+    <li class="in" style="--d:310">인슐린 민감도 <b>증가</b> = 요구도 <b>감소</b></li>
+    <li class="in" style="--d:350">HDL·혈관신생 <b>증가</b></li>
+    <li class="in" style="--d:390">근수축만으로도 GLUT4 이동 → 당 흡수↑</li>
+    <li class="in" style="--d:430">지방 동원 = 카테콜아민 → <b>유리지방산</b></li>
+    <li class="in" style="--d:470">훈련 후 같은 강도에서 카테콜아민 <b>덜</b> 오름</li>
+    <li class="in" style="--d:510">저항 운동도 체지방↓ — <b>안정 시 대사량↑</b></li>
+  </ol>
+</section>
+
+<!-- 요약 -->
+<section class="slide" id="s16" data-tile="light" data-title="한 장 요약">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
+  <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
+    <div class="card in" style="--d:150"><div class="k c-hr">분비선</div><h4>수질 · 피질 · 후엽</h4><p>부신수질: 에피·노르에피<br>부신피질: 코티솔·알도스테론<br>뇌하수체 후엽: ADH</p></div>
+    <div class="card in" style="--d:250"><div class="k c-act">운동 중</div><h4>인슐린만 ↓</h4><p>카테콜아민·글루카곤·코티솔·GH ↑<br>목적: 혈당 유지 + 지방 동원</p></div>
+    <div class="card in" style="--d:350"><div class="k c-mid">혈당 4길</div><h4>간 · 지방 · 근육</h4><p>간 글리코겐 분해 · 포도당 신생<br>지방 분해로 절약<br>근수축 GLUT4</p></div>
+    <div class="card in" style="--d:450"><div class="k c-o2">물</div><h4>ADH · 알도스테론</h4><p>삼투압↑ → ADH → 물 재흡수<br>레닌 → 안지오텐신 → 알도스테론 → Na⁺</p></div>
+    <div class="card in" style="--d:550"><div class="k c-low">적응</div><h4>덜 쓰고 더 민감</h4><p>같은 강도 카테콜아민↓<br>인슐린 민감도↑ · GLUT4↑</p></div>
+    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">기출 4문항</div><h4>2016 · 2017 · 2023 · 2026</h4><p>부신수질 호르몬 · 인슐린 방향<br>ADH·부신피질 · 카보넨+호르몬 그래프</p></div>
+  </div>
+</section>
+
+</div></div>
+
+<div id="bar"></div>
+<div id="blackout"></div>
+<div id="notes"></div>
+<div id="ov" class="overlay"><h3 id="ovT"></h3><div id="grid"></div></div>
+<div id="help" class="overlay"><h3>강의 조작</h3><table>
+<tr><td><kbd>→</kbd> <kbd>Space</kbd> 화면 클릭</td><td>다음 (단계 → 다음 장)</td></tr>
+<tr><td><kbd>←</kbd> 오른쪽 클릭</td><td>이전</td></tr>
+<tr><td><kbd>R</kbd></td><td>이 장 애니메이션 다시 보기</td></tr>
+<tr><td><kbd>T</kbd> <kbd>N</kbd></td><td>대본 보기</td></tr>
+<tr><td><kbd>O</kbd></td><td>전체 보기</td></tr>
+<tr><td><kbd>F</kbd></td><td>전체 화면</td></tr>
+<tr><td><kbd>B</kbd> / <kbd>W</kbd></td><td>검은 화면 / 흰 화면</td></tr>
+<tr><td>숫자 + <kbd>Enter</kbd></td><td>그 장으로 이동</td></tr>
+<tr><td>좌우로 밀기</td><td>전자칠판·폰에서 넘기기</td></tr>
+</table></div>
+
+<div id="ui">
+  <button id="bR" title="이 장 다시 보기(R)" aria-label="이 장 다시 보기"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4h4"/></svg></button>
+  <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
+  <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
+  <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="count" id="cnt">1 / 16</span>
+  <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+
+<script>
+// 대본 — 장 번호별
+const NOTES = {
+  s1: "오늘은 **운동과 내분비**입니다. 운동 중 혈당과 물을 지키는 호르몬을, 13년 기출 핵심 위주로 정리합니다.",
+  s2: "2023년부터는 거의 해마다 4점 서술형으로 나왔습니다. 부신수질 카테콜아민이 세 번, 인슐린 민감도가 두 번입니다. 증감 방향을 뒤집어 놓고 고치게 하는 형식이 반복됩니다.",
+  s3: "분비선과 호르몬입니다. **부신수질**은 에피네프린과 노르에피네프린, **부신피질**은 코티솔과 알도스테론, **뇌하수체 후엽**은 항이뇨호르몬입니다. 운동 중에는 인슐린만 줄고 나머지는 늘어납니다.",
+  s4: "호르몬은 스테로이드, 펩타이드, 아민으로 나눕니다. 스테로이드는 세포 안 수용체로 느리고 오래, 펩타이드와 아민은 세포막 수용체와 2차 전달자로 빠르게 작용합니다.",
+  s5: "운동하면 카테콜아민, 글루카곤, 코티솔, 성장호르몬은 오르고 **인슐린만 줄어듭니다**. 목적은 혈당을 지키고 지방을 꺼내 쓰는 것입니다. 2026 A9는 인슐린 선에 이름을 붙이지 않았습니다.",
+  s6: "근육이 당을 써도 혈당이 유지되는 네 가지 길입니다. 간의 글리코겐 분해, 간의 포도당 신생, 지방 분해로 포도당 절약, 그리고 근수축 자체가 GLUT4를 옮겨 당을 들이는 것입니다.",
+  s7: "부신수질의 **에피네프린과 노르에피네프린**은 지방세포에서 중성지방을 분해해 유리지방산을 내보내고, 간과 근육의 글리코겐 분해를 늘립니다. 강도가 높을수록 급증해 탄수화물 사용이 늘어납니다.",
+  s8: "2016 B4 기출 그대로입니다. 유리지방산 동원을 늘리는 부신수질 호르몬은 **에피네프린과 노르에피네프린**, 저항 트레이닝이 체지방을 줄이는 이유는 근육량이 늘어 **안정 시 대사량이 늘기** 때문입니다.",
+  s9: "운동 중에는 인슐린이 줄어도 근수축이 GLUT4를 옮겨 당을 들입니다. 규칙적으로 운동하면 **인슐린 민감도가 오르고 요구도는 내려갑니다**. HDL과 혈관신생도 증가가 맞습니다.",
+  s10: "2017 A14와 같은 자료로 다르게 묻습니다. 규칙적 운동 뒤에는 같은 포도당에도 인슐린이 **덜** 나옵니다. 근육의 **GLUT4**가 늘었기 때문입니다. 운동 중에는 근수축 자체가 GLUT4를 옮깁니다.",
+  s11: "2026 A9 기출 그대로입니다. 카보넨으로 ⓐ는 **50%**, 틀린 것은 ㉢ 혈관신생과 ㉤ 인슐린 민감도로 둘 다 **증가**가 맞습니다. 에피네프린과 노르에피네프린의 분비선은 **부신수질**입니다.",
+  s12: "땀을 흘리면 혈장 삼투압이 올라 **뇌하수체 후엽의 ADH**가 물을 재흡수시키고, 혈장량이 줄면 레닌-안지오텐신을 거쳐 **부신피질의 알도스테론**이 나트륨과 물을 보존합니다.",
+  s13: "2023 B9 기출 그대로입니다. 고온에서 오래 운동하면 1회 박출량은 **감소**, 심박수는 **증가**합니다. ㉡은 **열사병**, ㉢은 **항이뇨호르몬**, ㉣은 **부신피질**입니다.",
+  s14: "훈련한 몸은 같은 강도에서 카테콜아민이 덜 오르고, 글루카곤과 인슐린의 변화 폭도 작아집니다. 대신 인슐린 민감도와 GLUT4가 늘어납니다.",
+  s15: "감점 함정 10가지입니다. 수질과 피질, 후엽, 인슐린만 감소, 민감도와 요구도의 방향을 특히 확인하세요.",
+  s16: "한 장으로 정리합니다. 분비선, 운동 중 반응, 혈당 유지, 물 조절, 훈련 적응, 그리고 기출 네 문항입니다."
+};
+
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), slides = [...document.querySelectorAll('.slide')];
+const SVGNS = 'http://www.w3.org/2000/svg';
+let cur = 0, step = 0, numBuf = '';
+
+document.querySelectorAll('[data-step]').forEach(el => { if (el.namespaceURI !== SVGNS && el.tagName !== 'TR' && el.tagName !== 'TD') el.classList.add('rise'); });
+// 빈칸은 한 번에 하나씩: 문장이 먼저 빈칸으로 나타나고, 다음 클릭마다 답을 하나씩 공개한다
+slides.forEach(s => {
+  const items = [...s.querySelectorAll('[data-step],[data-reveal]')];
+  if (!items.length) return;
+  const own = e => e.dataset.step !== undefined;
+  const contStep = e => { const c = e.parentElement && e.parentElement.closest('[data-step]'); return c && s.contains(c) ? +c.dataset.step : 0; };
+  const at = e => own(e) ? +e.dataset.step : Math.max(+e.dataset.reveal, contStep(e));
+  const max = Math.max(...items.map(at));
+  let n = 0; const plan = [];
+  for (let k = 0; k <= max; k++){
+    const shows = items.filter(e => own(e) && at(e) === k), blanks = items.filter(e => !own(e) && at(e) === k);
+    blanks.filter(e => contStep(e) < k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+    if (k > 0 && shows.length) { n++; shows.forEach(e => plan.push([e, 'step', n])); }
+    blanks.filter(e => contStep(e) >= k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+  }
+  plan.forEach(([e, a, v]) => { e.dataset[a] = v; });
+});
+
+const maxStep = slides.map(s => Math.max(0, ...[...s.querySelectorAll('[data-step],[data-reveal]')].map(e => +(e.dataset.step || e.dataset.reveal))));
+
+function fit(){
+  const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(-50%,-50%) scale(${k})`;
+}
+addEventListener('resize', fit); fit();
+
+function fnPath(f, x0, x1, X, Y, n = 80){
+  const pts = []; for (let i = 0; i <= n; i++){ const x = x0 + (x1 - x0) * i / n; pts.push([X(x), Y(f(x))]); }
+  return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L');
+}
+function smooth(pts){
+  let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+  for (let i = 0; i < pts.length - 1; i++){
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  return d;
+}
+function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text) e.textContent = text; parent.append(e); return e; }
+const INK = '#1d1d1f';
+function txt(g, x, y, t, o = {}){ return el('text', Object.assign({x, y, 'font-size': 15, fill: INK}, o), g, t); }
+
+
+// 30장 문제
+document.querySelectorAll('.mcq').forEach(q => q.querySelectorAll('button').forEach(b => b.onclick = e => {
+  e.stopPropagation();
+  const ok = +b.dataset.i === +q.dataset.answer;
+  q.querySelectorAll('button').forEach(x => x.classList.remove('good', 'bad')); b.classList.add(ok ? 'good' : 'bad');
+  q.querySelector('.fb').textContent = ok ? '정답. 혈장량↓ → 이완기말 용적↓ → 1회 박출량↓, 심박수가 보상해 심박출량은 유지된다.' : '다시. 땀으로 혈장이 줄면 심실이 덜 찬다 — 1회 박출량은 어느 쪽으로 갈까?';
+}));
+
+function applyStep(animate){
+  const s = slides[cur];
+  s.querySelectorAll('[data-step]').forEach(e => e.classList.toggle('on', +e.dataset.step <= step));
+  s.querySelectorAll('[data-reveal]').forEach(e => e.classList.toggle('on', +e.dataset.reveal <= step));
+  for (let k = 1; k <= maxStep[cur]; k++) s.classList.toggle('st-' + k, k <= step);
+  $('#cnt').textContent = (cur + 1) + ' / ' + slides.length;
+  const total = maxStep.reduce((a, b) => a + b + 1, 0), done = maxStep.slice(0, cur).reduce((a, b) => a + b + 1, 0) + step;
+  $('#bar').style.width = (done / (total - 1) * 100) + '%';
+  history.replaceState(null, '', '#' + (cur + 1) + (step ? '.' + step : ''));
+}
+
+function playVideos(){
+  document.querySelectorAll('video').forEach(v => { if (slides[cur].contains(v)) { v.currentTime = 0; const p = v.play(); if (p) p.catch(() => {}); } else v.pause(); });
+}
+function go(i, st, animate){
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  const changed = i !== cur || !slides[cur].classList.contains('is-on');
+  if (changed) { slides[cur].classList.remove('is-on'); cur = i; }
+  step = Math.max(0, Math.min(maxStep[cur], st));
+  if (changed) { applyStep(false); void slides[cur].offsetWidth; slides[cur].classList.add('is-on'); showNotes(); playVideos(); }
+  else applyStep(animate !== false);
+}
+const next = () => step < maxStep[cur] ? go(cur, step + 1) : cur < slides.length - 1 && go(cur + 1, 0);
+const prev = () => step > 0 ? go(cur, step - 1) : cur > 0 && go(cur - 1, maxStep[cur - 1]);
+function replay(){ const s = slides[cur]; s.classList.remove('is-on'); step = 0; applyStep(false); void s.offsetWidth; s.classList.add('is-on'); playVideos(); }
+
+function md(t){ return t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+function showNotes(){ $('#notes').innerHTML = md(NOTES[slides[cur].id] || ''); }
+function toggleNotes(){ $('#notes').classList.toggle('show'); $('#bT').classList.toggle('act', $('#notes').classList.contains('show')); }
+
+function buildGrid(){
+  $('#ovT').textContent = '전체 보기 · ' + slides.length + '장';
+  $('#grid').innerHTML = '';
+  slides.forEach((s, i) => {
+    const b = document.createElement('button'), lightTile = /light|parchment/.test(s.dataset.tile);
+    b.style.background = getComputedStyle(s).backgroundColor === 'rgb(0, 0, 0)' ? '#1d1d1f' : getComputedStyle(s).backgroundColor;
+    b.style.color = lightTile ? '#1d1d1f' : '#f5f5f7';
+    b.className = i === cur ? 'cur' : '';
+    const n = document.createElement('small'); n.textContent = String(i + 1).padStart(2, '0');
+    const t = document.createElement('span'); t.textContent = s.dataset.title;
+    b.append(n, t);
+    b.onclick = () => { closeOverlays(); go(i, 0); };
+    $('#grid').append(b);
+  });
+}
+function toggleOv(id){ const o = $(id), was = o.classList.contains('show'); closeOverlays(); if (!was) { if (id === '#ov') buildGrid(); o.classList.add('show'); } }
+function closeOverlays(){ document.querySelectorAll('.overlay').forEach(o => o.classList.remove('show')); }
+const overlayOpen = () => !!document.querySelector('.overlay.show');
+function blackout(c){ const b = $('#blackout'); if (b.style.display === 'block' && b.dataset.c === c) b.style.display = 'none'; else { b.style.display = 'block'; b.style.background = c; b.dataset.c = c; } }
+function fullscreen(){ document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(() => {}); }
+
+addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (k === 'Escape') { closeOverlays(); $('#blackout').style.display = 'none'; numBuf = ''; return; }
+  if (/^\d$/.test(k)) { numBuf += k; return; }
+  if (k === 'Enter' && numBuf) { closeOverlays(); go(+numBuf - 1, 0); numBuf = ''; return; }
+  numBuf = '';
+  if (e.target.tagName === 'INPUT') return;
+  if (overlayOpen() && !/^[oO?hH]$/.test(k)) return;
+  if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'Enter') { e.preventDefault(); next(); }
+  else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+  else if (k === 'Home') go(0, 0);
+  else if (k === 'End') go(slides.length - 1, 0);
+  else if (/^r$/i.test(k)) replay();
+  else if (/^[tn]$/i.test(k)) toggleNotes();
+  else if (/^o$/i.test(k)) toggleOv('#ov');
+  else if (/^f$/i.test(k)) fullscreen();
+  else if (/^b$/i.test(k)) blackout('#000');
+  else if (/^w$/i.test(k)) blackout('#fff');
+  else if (k === '?' || /^h$/i.test(k)) toggleOv('#help');
+});
+
+const vp = $('#viewport');
+let sx = null, sy = 0, swiped = false;
+vp.addEventListener('click', e => { if (swiped) { swiped = false; return; } if (e.target.closest('.no-nav')) return; next(); });
+vp.addEventListener('contextmenu', e => { e.preventDefault(); prev(); });
+vp.addEventListener('touchstart', e => { if (e.touches.length === 1 && !e.target.closest('.no-nav')) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } else sx = null; }, {passive: true});
+vp.addEventListener('touchend', e => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; dx < 0 ? next() : prev(); setTimeout(() => swiped = false, 400); }
+}, {passive: true});
+$('#blackout').onclick = () => $('#blackout').style.display = 'none';
+$('#bR').onclick = replay; $('#bT').onclick = toggleNotes; $('#bO').onclick = () => toggleOv('#ov');
+$('#bP').onclick = prev; $('#bN').onclick = next; $('#bF').onclick = fullscreen;
+$('#cnt').onclick = () => toggleOv('#help');
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeOverlays(); }));
+
+let idleT; const ui = $('#ui');
+function wake(){ ui.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => ui.classList.add('idle'), 3000); }
+['mousemove', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, wake, {passive: true})); wake();
+
+const m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
+go(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+</script>
+</body>
+</html>
