@@ -3,3 +3,6 @@ img-src/circ-out/
 img-src/kling/
 _build/
 img-src/circ-out.log
+img-src/resp-out/
+img-src/resp-out2/
+img-src/resp-out*.log
