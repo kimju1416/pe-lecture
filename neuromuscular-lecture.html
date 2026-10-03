@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>강의 · 운동과 신경근 생리</title>
+<meta name="description" content="체육 임용 대비 운동생리학 — 근수축 기전, 운동단위와 힘 조절, 근섬유 유형, 수축 형태, 근방추·골지건기관과 반사, 근력 적응을 13년 기출로 정리">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   운동과 신경근 생리 — 임용 대비 강의 덱
+   무대 1920×1080 · 면 색이 구획 · 액션 블루 하나 · 그림자 없음
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --c-white:#ffffff; --c-parchment:#f5f5f7; --c-black:#000000; --c-dark:#1d1d1f; --c-graphite:#272729;
+  --ink:#1d1d1f; --ink-2:#6e6e73; --ink-3:#86868b; --on-dark:#f5f5f7; --on-dark-2:#a1a1a6; --on-dark-3:#6e6e73;
+  --hair:#e0e0e0; --hair-dark:#3a3a3c;
+  --action:#0066cc; --action-dark:#2997ff;
+  /* 몸 — 어두운 면 기본값 */
+  --hr:#FF453A; --low:#30D158; --mid:#FF9F0A; --high:#FF453A; --o2:#64D2FF;
+  --hr-lo:#D70015; --low-lo:#1E8B3E; --mid-lo:#B25000; --high-lo:#D70015; --o2-lo:#0077B6;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"SF Pro Display","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  --ease-out:cubic-bezier(.2,.8,.2,1); --ease-inout:cubic-bezier(.65,0,.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#000}
+body{font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ── 무대 ── */
+#viewport{position:fixed;inset:0;overflow:hidden;background:#000}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;overflow:hidden;background:#000}
+.slide{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .45s var(--ease-inout),visibility 0s .45s}
+.slide.is-on{opacity:1;visibility:visible;transition:opacity .45s var(--ease-inout);z-index:2}
+
+.slide[data-tile="black"]{background:var(--c-black);color:var(--on-dark)}
+.slide[data-tile="dark"]{background:var(--c-dark);color:var(--on-dark)}
+.slide[data-tile="graphite"]{background:var(--c-graphite);color:var(--on-dark)}
+.slide[data-tile="light"]{background:var(--c-white);color:var(--ink)}
+.slide[data-tile="parchment"]{background:var(--c-parchment);color:var(--ink)}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{
+  --hr:var(--hr-lo); --low:var(--low-lo); --mid:var(--mid-lo); --high:var(--high-lo); --o2:var(--o2-lo);
+  --t2:var(--ink-2); --t3:var(--ink-3); --hl:var(--hair); --act:var(--action); --panel:#f5f5f7;
+}
+.slide[data-tile="parchment"]{--panel:#ffffff}
+.slide[data-tile="black"],.slide[data-tile="dark"],.slide[data-tile="graphite"]{
+  --t2:var(--on-dark-2); --t3:var(--on-dark-3); --hl:var(--hair-dark); --act:var(--action-dark); --panel:#1d1d1f;
+}
+.slide[data-tile="dark"]{--panel:#2c2c2e}
+.slide[data-tile="graphite"]{--panel:#1d1d1f}
+
+/* ── 글자 체계(무대 px) ── */
+.t-title{font-size:96px;font-weight:600;line-height:1.1;letter-spacing:-.028em}
+.t-head{font-size:64px;font-weight:600;line-height:1.14;letter-spacing:-.022em}
+.t-lead{font-size:44px;font-weight:400;line-height:1.3;letter-spacing:-.012em}
+.t-label{font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.t-body{font-size:34px;font-weight:400;line-height:1.5;letter-spacing:-.01em}
+.t-cap{font-size:27px;font-weight:400;line-height:1.4}
+.t-eyebrow{font-size:30px;font-weight:600;line-height:1.2;color:var(--t2)}
+.t-eyebrow b{color:var(--act);margin-right:10px}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.mute{color:var(--t2)} .mute2{color:var(--t3)}
+.c-hr{color:var(--hr)} .c-low{color:var(--low)} .c-mid{color:var(--mid)} .c-high{color:var(--high)} .c-act{color:var(--act)}
+.abs{position:absolute}
+.full-svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+svg text{font-family:var(--font)}
+.hd{position:absolute;left:120px;top:88px;right:120px}
+.hd .t-head{margin-top:10px}
+.panel{background:var(--panel);border-radius:22px;padding:40px 48px}
+.center{text-align:center}
+
+/* ── 등장 ── */
+@keyframes in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.slide.is-on .in{animation:in .9s var(--ease-out) both;animation-delay:calc(var(--d,0)*1ms)}
+.slide.is-on .fin{animation:fadein 1.2s ease both;animation-delay:calc(var(--d,0)*1ms)}
+[data-step]{opacity:0;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+[data-step].rise{transform:translateY(24px)}
+[data-step].on{opacity:1}
+[data-step].rise.on{transform:none}
+
+/* ── 빈칸 ── */
+.blank{display:inline-block;position:relative;min-width:150px;padding:0 18px;text-align:center;border-bottom:3px solid var(--hl);line-height:1.25;vertical-align:baseline}
+.blank b{font-weight:600;color:var(--act);opacity:0;transition:opacity .5s var(--ease-out)}
+.blank.on b{opacity:1}
+.blank.on{border-bottom-color:var(--act)}
+.blank i{position:absolute;left:-10px;top:-16px;min-width:26px;height:26px;border-radius:13px;padding:0 6px;background:var(--act);color:#fff;font-style:normal;font-size:16px;font-weight:700;line-height:26px;text-align:center}
+
+/* ── 정의 표 ── */
+.def{display:grid;grid-template-columns:auto 1fr;gap:22px 36px;align-items:baseline}
+.def dt{font-size:26px;font-weight:600;color:var(--t2)}
+.def dd{font-size:36px;line-height:1.45}
+.def .top{grid-column:1/-1;display:flex;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--hl)}
+.def .top strong{font-size:44px;font-weight:600}
+.def .top span{font-size:28px;color:var(--t2)}
+
+/* ── 심장 ── */
+@keyframes beat{0%{transform:scale(1)}12%{transform:scale(1.13)}24%{transform:scale(1)}36%{transform:scale(1.07)}50%,100%{transform:scale(1)}}
+.beat{transform-box:fill-box;transform-origin:center}
+.slide.is-on .beat{animation:beat var(--beat,.83s) var(--ease-inout) infinite}
+@keyframes ecg{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.slide.is-on .ecg{animation:ecg 3.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-96}}
+.slide.is-on .flow{animation:flow var(--flow,2.2s) linear infinite}
+.slide.is-on .flow.rev{animation-direction:reverse}
+@keyframes ripple{0%{r:14;opacity:.9}100%{r:74;opacity:0}}
+.slide.is-on .ripple{animation:ripple var(--beat,.83s) ease-out infinite}
+
+/* 2장: 운동 시작 → 빨라짐 */
+#s2{--beat:.86s;--flow:2.4s}
+#s2.st-1{--beat:.4s;--flow:.9s}
+#s2 .mglow{opacity:0;transition:opacity .8s}
+#s2.st-1 .mglow{opacity:1}
+@keyframes squeeze{0%,100%{transform:scale(1)}50%{transform:scale(.95,1.03)}}
+#s2 .squeeze{transform-box:fill-box;transform-origin:center}
+#s2.is-on.st-1 .squeeze{animation:squeeze .8s var(--ease-inout) infinite}
+/* 5장: 15초 타이머 */
+#ring{stroke-dasharray:1;stroke-dashoffset:0}
+#s5.st-1 #ring{stroke-dashoffset:1;transition:stroke-dashoffset 5s linear}
+/* 8장: 호흡 */
+@keyframes breathe{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.wave i{display:inline-block;width:10px;height:70px;margin:0 5px;border-radius:5px;background:currentColor;transform-origin:center}
+.slide.is-on .wave i{animation:breathe var(--br,3s) ease-in-out infinite;animation-delay:calc(var(--k)*-0.12s)}
+/* 11장 */
+#s11 .a{--beat:.405s} #s11 .b{--beat:.341s}
+
+/* ── 구간 막대 ── */
+.zonebar{position:absolute;left:210px;top:520px;width:1500px;height:64px;border-radius:32px;overflow:hidden;background:var(--panel)}
+.zonebar span{position:absolute;top:0;bottom:0;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease-out)}
+.zonebar span.on{transform:scaleX(1);opacity:1}
+.tick{position:absolute;top:600px;transform:translateX(-50%);text-align:center;font-size:30px;font-weight:600}
+.tick small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:2px}
+.zlabel{position:absolute;top:410px;transform:translateX(-50%);text-align:center;font-size:36px;font-weight:600;white-space:nowrap}
+.zlabel small{display:block;font-size:24px;font-weight:400;color:var(--t2);margin-top:4px}
+
+/* ── 카드 ── */
+.cards{position:absolute;left:120px;right:120px;display:grid;gap:28px}
+.card{border-radius:22px;background:var(--panel);padding:40px 40px 44px}
+.card h4{font-size:40px;font-weight:600;letter-spacing:-.015em}
+.card p{font-size:30px;line-height:1.5;margin-top:14px;color:var(--t2)}
+.card .k{font-size:26px;font-weight:600;letter-spacing:.02em}
+.sum .card{padding:34px 30px 38px}.sum .card h4{font-size:36px}.sum .card p{font-size:27px}
+.card .big{font-size:88px;font-weight:600;letter-spacing:-.03em;line-height:1}
+
+/* ── 계산기 ── */
+.calc label{display:block;font-size:30px;font-weight:600;margin-top:34px}
+.calc label span{float:right;font-size:40px;font-weight:600;color:var(--act)}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:6px;background:var(--hair);margin-top:26px;outline:0}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;box-shadow:0 2px 6px rgba(0,0,0,.18);cursor:pointer}
+.calc input[type=range]::-moz-range-thumb{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;cursor:pointer}
+#mini{position:relative;height:28px;border-radius:14px;overflow:hidden;background:var(--hair);margin-top:36px}
+#mini span{position:absolute;top:0;bottom:0}
+#pin{position:absolute;top:-10px;width:6px;height:48px;border-radius:3px;background:var(--ink);margin-left:-3px;transition:left .3s var(--ease-out)}
+
+/* ── 조작 버튼 ── */
+#ui{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:50;transition:opacity .4s}
+#ui.idle{opacity:.22}
+#ui button,#ui .count{height:40px;min-width:40px;border-radius:20px;background:rgba(118,118,128,.55);color:#fff;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#ui .count{padding:0 16px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:480px){#ui{right:8px;left:8px;bottom:10px;gap:4px;justify-content:center}#ui button,#ui .count{height:36px;min-width:36px}#ui .count{padding:0 10px}}
+#ui svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ui button.act{background:#0071e3}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:rgba(134,134,139,.7);z-index:40;transition:width .4s var(--ease-out)}
+.overlay{position:fixed;inset:0;z-index:60;display:none;background:rgba(40,40,42,.96);color:#f5f5f7;overflow:auto;padding:40px clamp(16px,5vw,80px)}
+.overlay.show{display:block}
+.overlay h3{font-size:22px;font-weight:600;margin-bottom:20px}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+#grid button{aspect-ratio:16/9;border-radius:10px;padding:12px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;font-weight:600;line-height:1.3;border:2px solid transparent}
+#grid button small{font-size:11px;opacity:.6}
+#grid button.cur{border-color:#2997ff}
+#help table{border-collapse:collapse;font-size:15px}
+#help td{padding:7px 18px 7px 0;vertical-align:top}
+kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;background:#48484a;font:inherit;font-size:13px;text-align:center}
+#notes{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;max-height:38vh;overflow:auto;background:rgba(29,29,31,.94);color:#f5f5f7;padding:18px clamp(16px,5vw,64px) 70px;font-size:clamp(15px,1.5vw,20px);line-height:1.65;border-top:1px solid #3a3a3c}
+#notes.show{display:block}
+#notes b{color:#2997ff;font-weight:600}
+#blackout{position:fixed;inset:0;z-index:55;display:none}
+
+/* ── 운동과 순환 추가분 ── */
+:root{--vein:#5E8BFF}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{--vein:#2950C8}
+.c-vein{color:var(--vein)} .c-o2{color:var(--o2)}
+.credit{position:absolute;left:120px;bottom:36px;font-size:20px;color:var(--t3);z-index:3}
+.vid{background:#000}
+
+/* 기출 딱지 */
+.gx{position:absolute;right:120px;top:96px;display:flex;gap:10px;z-index:3}
+.gx.static{position:static;margin:18px 0 6px}
+.gx span{height:44px;padding:0 18px;border-radius:22px;font-size:24px;font-weight:600;display:inline-flex;align-items:center;background:var(--panel);color:var(--t2)}
+.gx span.y{background:var(--hr);color:#fff}
+.gx span.p{background:transparent;border:2px dashed var(--t3);color:var(--t2)}
+
+/* 오른쪽 글 기둥(사진·영상 장) */
+.side{position:absolute;left:1180px;top:110px;width:640px;z-index:3}
+.t-head.s{font-size:54px;margin-top:10px}
+.pt{font-size:31px;line-height:1.5;margin-top:28px}
+.route{margin-top:40px}
+.route .k{font-size:26px;font-weight:600}
+.route p{font-size:32px;line-height:1.7;margin-top:6px}
+.warn{margin-top:40px;font-size:29px;line-height:1.55;padding:24px 28px;border-radius:18px;background:var(--panel)}
+.warn .mute{font-size:24px}
+.three{list-style:none;margin-top:30px;counter-reset:n}
+.three li{font-size:30px;line-height:1.45;padding:14px 0;border-bottom:1px solid var(--hl)}
+.three li b{display:inline-block;min-width:150px}
+
+/* 기출 지도 */
+.ymap{position:absolute;left:120px;right:120px;top:300px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px}
+.yr{display:flex;align-items:baseline;gap:22px;padding:14px 0;border-bottom:1px solid var(--hl)}
+.yr b{font-size:30px;font-weight:700;min-width:150px;color:var(--hr);font-variant-numeric:tabular-nums}
+.yr span{font-size:29px}
+.yr.pred b{color:var(--t2)}
+
+/* 판막 사슬 */
+.chain{position:absolute;left:120px;right:120px;display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+.node{padding:20px 28px;border-radius:16px;font-size:34px;font-weight:600;white-space:nowrap}
+.node.v{background:#e8eefc;color:#2950C8}.node.a{background:#fde8ea;color:#D70015}
+.vl{font-size:30px;display:inline-flex;align-items:center;gap:6px}
+.vl::before,.vl::after{content:"";width:22px;height:3px;background:#c7c7cc}
+.ar{font-size:30px;color:var(--t2);white-space:nowrap}
+
+/* 전도계 */
+.cond{margin-top:40px;font-size:30px;line-height:1.6;padding:22px 26px;border-radius:18px;background:var(--panel)}
+
+/* 단계 구간 설명 */
+.zone2{margin-bottom:34px}.zone2 .k{font-size:28px;font-weight:600}.zone2 p{font-size:32px;line-height:1.6;margin-top:8px}
+
+/* 시험지 */
+.exam{position:absolute;background:#fff;color:#1d1d1f;border:2px solid #1d1d1f;border-radius:4px;padding:34px 42px;font-size:28px;line-height:1.6}
+.exam table{border-collapse:collapse;font-size:25px;margin-top:6px}
+.exam th,.exam td{border:1.5px solid #1d1d1f;padding:8px 16px;text-align:center;font-weight:400}
+.exam th{background:#f2f2f2}
+.howto{border:1.5px solid #1d1d1f;padding:14px 22px;margin-top:20px;font-size:24px;line-height:1.6}
+.stmt{list-style:none;margin-top:14px}.stmt li{padding:14px 0;border-top:1px dashed #c7c7cc;font-size:30px}.stmt b{display:inline-block;min-width:90px}
+.answer{position:absolute}
+.a-line{font-size:30px;line-height:1.5;margin-top:22px;padding-left:20px;border-left:4px solid var(--act)}
+.kw{display:inline-block;padding:6px 16px;border-radius:18px;background:var(--act);color:#fff;font-size:23px;font-weight:600;margin:10px 8px 0 0}
+
+/* 표 */
+.qt{border-collapse:collapse;margin-top:36px;width:100%;font-size:29px}
+.qt th{font-size:22px;font-weight:600;color:var(--t2);text-align:right;padding:8px 10px}
+.qt td{padding:14px 10px;border-top:1px solid var(--hl);text-align:right;font-variant-numeric:tabular-nums}
+.qt td:first-child,.qt th:first-child{text-align:left}
+.eq{font-size:76px;font-weight:600;margin-top:30px;letter-spacing:-.02em}
+.dtab{border-collapse:collapse;font-size:32px}
+.dtab th{font-size:24px;font-weight:600;color:var(--t2);padding:10px 26px;border-bottom:2px solid var(--hl)}
+.dtab td{padding:16px 26px;text-align:center;border-bottom:1px solid var(--hl);font-variant-numeric:tabular-nums}
+.lbl{font-size:28px;display:inline-block;min-width:170px}
+
+/* 재분배 막대 */
+.rbar{position:absolute;left:120px;right:120px;height:120px;border-radius:16px;overflow:hidden;display:flex}
+.rbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;border-right:2px solid #fff}
+.rbar i small{display:block;font-size:20px;font-weight:400;opacity:.9}
+.rbar i span{text-align:center;line-height:1.25}
+
+/* 문제 버튼 */
+.mcq{position:absolute}
+.mcq button{display:block;width:100%;text-align:left;padding:20px 28px;border-radius:16px;background:var(--panel);font-size:29px;margin-top:14px;border:2px solid transparent;color:inherit}
+.mcq button.good{border-color:var(--low)}.mcq button.bad{border-color:var(--hr)}
+.fb{font-size:26px;line-height:1.5;margin-top:18px;min-height:40px;color:var(--t2)}
+.mech{position:absolute;left:120px;right:120px;top:840px;font-size:30px;line-height:1.6;padding:22px 30px;border-radius:18px;background:var(--panel)}
+#s30 .mech{right:900px;top:820px;font-size:26px}
+
+/* 방향 칩 */
+.dirs{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+.dirs span{font-size:32px;padding:14px 26px;border-radius:16px;background:var(--panel)}
+
+/* 조절 흐름 */
+.ctrl .src{position:absolute;left:120px;width:640px;padding:24px 30px;border-radius:18px;background:var(--panel)}
+.ctrl .src .k{font-size:28px;font-weight:600}.ctrl .src p{font-size:27px;line-height:1.5;margin-top:6px}
+.ctrl .src:nth-child(1){top:330px}.ctrl .src:nth-child(2){top:530px}.ctrl .src:nth-child(3){top:720px}
+.ctrl .hub{position:absolute;left:900px;top:555px;width:340px;padding:26px;border-radius:18px;background:var(--act);color:#fff;font-size:34px;font-weight:600;text-align:center}
+.ctrl .out{position:absolute;left:1300px;top:520px;width:500px;padding:24px 28px;border-radius:18px;background:var(--panel);font-size:29px;line-height:1.5}
+
+/* 함정 */
+.traps{position:absolute;left:120px;right:120px;top:290px;columns:2;column-gap:60px;list-style:none;counter-reset:t}
+.traps li{counter-increment:t;font-size:30px;line-height:1.45;padding:18px 0 18px 64px;position:relative;break-inside:avoid;border-bottom:1px solid var(--hl)}
+.traps li::before{content:counter(t);position:absolute;left:0;top:16px;width:44px;height:44px;border-radius:22px;background:var(--hr);color:#fff;font-size:22px;font-weight:700;text-align:center;line-height:44px}
+
+/* 그리기 */
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.draw{stroke-dasharray:1}
+.slide.is-on .draw{animation:draw 1.6s var(--ease-inout) both .3s}
+
+/* ── 운동과 호흡 추가분 ── */
+.vol{border-collapse:collapse;width:100%;font-size:28px}
+.vol td{padding:11px 8px;border-bottom:1px solid var(--hl);font-variant-numeric:tabular-nums}
+.vol td:nth-child(2){font-weight:700;color:var(--o2);width:90px}
+.vol td:nth-child(3){text-align:right;width:90px}
+.vol tr.sum td{color:var(--t2)} .vol tr.sum td:nth-child(2){color:var(--mid)}
+.pmap .pbox{position:absolute;top:340px;width:320px;padding:26px 28px;border-radius:18px;background:var(--panel)}
+.pbox .k{font-size:26px;font-weight:600;color:var(--t2)}
+.pbox p{font-size:34px;line-height:1.5;margin-top:8px;font-variant-numeric:tabular-nums}
+.pbox small{font-size:22px;color:var(--t3)}
+.eq2{font-size:38px;font-weight:600;line-height:1.4;margin-top:34px;padding:22px 26px;border-radius:18px;background:var(--panel)}
+.rbc{position:absolute;left:120px;right:120px;top:300px;display:flex;gap:30px;align-items:stretch}
+.rbc-cell{flex:1;padding:30px 36px;border-radius:22px;background:#fde8ea}
+.rx{font-size:40px;font-weight:600;margin-top:12px;line-height:1.5}
+.enz{display:inline-block;font-size:20px;font-weight:600;color:#6e6e73;vertical-align:super;margin:0 4px}
+.shift{width:420px;padding:30px;border-radius:22px;background:var(--panel);display:flex;flex-direction:column;gap:12px;font-size:32px;font-weight:600;justify-content:center}
+.shift small{font-size:24px;color:var(--t2);font-weight:400}
+.chain2{position:absolute;left:120px;right:120px;top:300px;display:flex;flex-direction:column;align-items:flex-start;gap:6px}
+.node2{font-size:36px;line-height:1.4;padding:20px 30px;border-radius:18px;background:var(--panel)}
+.node2.big2{font-size:52px;font-weight:700;color:var(--mid)}
+.ar2{font-size:34px;color:var(--t3);padding-left:40px}
+.steps3 > div{font-size:30px;line-height:1.5;margin-top:24px;padding-left:22px;border-left:4px solid var(--o2)}
+.steps3 b:first-child{display:inline-block;min-width:80px;color:var(--o2)}
+
+/* ── 에너지 대사 추가분 ── */
+.flow3{position:absolute;left:120px;right:120px;top:320px;display:flex;align-items:center;gap:18px}
+.fbox{padding:26px 34px;border-radius:18px;background:var(--panel);font-size:36px;font-weight:600}
+.fbox.hi{background:#fff3e0;color:#B25000}
+.fbox small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:4px}
+.far{font-size:40px;color:var(--t3)}
+
+/* ── 신경근 추가분 ── */
+.seq7{position:absolute;left:120px;right:120px;top:300px;list-style:none}
+.seq7 li{font-size:32px;line-height:1.4;padding:13px 0;border-bottom:1px solid var(--hl);display:flex;gap:22px;align-items:baseline}
+.seq7 li>b:first-child{flex:none;width:44px;height:44px;border-radius:22px;background:var(--act);color:#fff;font-size:22px;text-align:center;line-height:44px}
+#sarc .zl,#sarc .zr{transition:transform 1.2s cubic-bezier(.65,0,.35,1)}
+#s5.st-1 #sarc .zl{transform:translateX(70px)}
+#s5.st-1 #sarc .zr{transform:translateX(-70px)}
+#sarc .relaxB,#sarc .contrB{transition:opacity .6s}
+#sarc .contrB{opacity:0}
+#s5.st-1 #sarc .contrB{opacity:1}
+#s5.st-1 #sarc .relaxB{opacity:0}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 표지 -->
+<section class="slide" id="s1" data-tile="black" data-title="표지">
+  <video class="abs vid fin" src="img/nm-muscle.mp4" poster="img/nm-muscle.jpg" muted loop playsinline preload="auto" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.85) 72%,#000 100%)"></div>
+  <div class="abs center" style="left:0;right:0;top:700px">
+    <div class="t-eyebrow in" style="--d:300">체육 임용 대비 · 운동생리학</div>
+    <div class="t-title in" style="--d:450;margin-top:18px">운동과 신경근 생리</div>
+    <div class="t-lead mute in" style="--d:600;margin-top:18px">근육은 어떻게 힘을 내고, 신경은 어떻게 조절하나 — 13년 기출 핵심만</div>
+  </div>
+  <div class="credit">사진·영상: AI 생성 이미지</div>
+</section>
+
+<!-- 기출 지도 -->
+<section class="slide" id="s2" data-tile="dark" data-title="13년 기출 지도">
+  <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">2018년부터는 거의 해마다 한 문항</div></div>
+  <div class="ymap">
+    <div class="yr in" style="--d:200"><b>2014 A10</b><span>근력 조절 — 동원 수 · 발화 빈도</span></div>
+    <div class="yr in" style="--d:230"><b>2015 A6</b><span>근수축 과정 순서 · Type I</span></div>
+    <div class="yr in" style="--d:260"><b>2016 A7</b><span>지연성 근통증(DOMS)</span></div>
+    <div class="yr in" style="--d:290"><b>2017 B4</b><span>근비대 · 플라이오메트릭 · 신장-단축</span></div>
+    <div class="yr in" style="--d:320"><b>2018 B6</b><span>근방추 · 신장반사 · PNF</span></div>
+    <div class="yr in" style="--d:350"><b>2019 B5</b><span>근섬유 동원 그래프</span></div>
+    <div class="yr in" style="--d:380"><b>2020 B10</b><span>속근 동원과 연료 교차</span></div>
+    <div class="yr in" style="--d:410"><b>2021 A6</b><span>단축성·신장성 · 힘-속도</span></div>
+    <div class="yr in" style="--d:440"><b>2022 A9</b><span>활동전위 · 가중 · 크기의 원리</span></div>
+    <div class="yr in" style="--d:470"><b>2022 B8</b><span>등척성 수축과 근육펌프</span></div>
+    <div class="yr in" style="--d:500"><b>2026 B4</b><span>고유수용기 · 미오글로빈 · ATPase</span></div>
+  </div>
+  <div class="abs t-cap mute in" style="--d:600;left:120px;top:960px;right:120px">가장 자주: 근섬유 유형 4번 · 수축 형태와 힘-속도 3번 · 고유수용기 2번 · 운동단위 2번</div>
+</section>
+
+<!-- 1. 구조 -->
+<section class="slide" id="s3" data-tile="black" data-title="1. 근육의 구조">
+  <img class="abs fin" src="img/nm-muscle.jpg" alt="근육 다발과 근섬유 단면 시각화" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>1</b>근육 구조와 수축</div>
+    <div class="t-head s in" style="--d:100">근육은 다발 속의 다발</div>
+    <div class="steps3">
+      <div data-step="1"><b>근육</b> → 근다발 → <b>근섬유</b>(근세포 1개)</div>
+      <div data-step="2"><b>근원섬유</b> → 반복 단위 <span class="blank" data-reveal="2" style="min-width:110px"><i>1</i><b>근절</b></span> (Z선 ~ Z선)</div>
+      <div data-step="3">근절 안: 굵은 <b>미오신</b> + 가는 <b>액틴</b>(트로포닌·트로포미오신이 붙어 있음)</div>
+      <div data-step="4">근섬유를 둘러싼 <b>근형질세망</b>은 Ca²⁺ 저장고, <b>가로소관</b>은 흥분을 안으로 전달</div>
+    </div>
+  </div>
+</section>
+
+<!-- 근수축 과정 -->
+<section class="slide" id="s4" data-tile="light" data-title="근수축 과정 7단계">
+  <div class="hd"><div class="t-eyebrow in"><b>1</b>근육 구조와 수축</div><div class="t-head in" style="--d:100">신경 신호가 힘이 되기까지</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A6</span></div>
+  <ol class="seq7">
+    <li data-step="1"><b>1</b>운동신경 자극이 <b>운동종판</b>에 도달</li>
+    <li data-step="1"><b>2</b><b class="c-act">아세틸콜린</b> 분비 → 근섬유막 탈분극</li>
+    <li data-step="2"><b>3</b>흥분이 <b>가로소관</b>을 타고 근섬유 안으로</li>
+    <li data-step="3"><b>4</b><b>근형질세망</b>에서 <b class="c-hr">Ca²⁺</b> 방출</li>
+    <li data-step="4"><b>5</b>Ca²⁺가 <b>트로포닌</b>과 결합 → <b>트로포미오신</b>이 비켜 액틴 결합 부위 노출</li>
+    <li data-step="5"><b>6</b>미오신 머리가 액틴에 붙어 <b>교차결합</b> → 당김(파워 스트로크)</li>
+    <li data-step="6"><b>7</b><b class="c-mid">ATP</b>가 붙어 교차결합 분리 → 분해해 머리 재장전 → 반복</li>
+  </ol>
+  <div class="abs t-cap mute" data-step="6" style="left:120px;top:960px;right:120px">순서 함정: 가로소관 전파 → Ca²⁺ 방출 → 트로포미오신 이동 → 교차결합 (2015 A6)</div>
+</section>
+
+<!-- 슬라이딩 필라멘트 -->
+<section class="slide" id="s5" data-tile="black" data-title="슬라이딩 필라멘트">
+  <div class="hd"><div class="t-eyebrow in"><b>1</b>근육 구조와 수축</div><div class="t-head in" style="--d:100">필라멘트는 줄지 않고, 미끄러진다</div></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="sarc"></svg>
+  <div class="abs" style="left:1260px;top:330px;width:560px">
+    <div class="pt" data-step="1">수축하면 <b>Z선끼리 가까워진다</b> = 근절이 짧아진다</div>
+    <div class="pt" data-step="2"><b class="c-o2">I대</b>와 <b class="c-mid">H대</b>는 <b>짧아지고</b>, 미오신 길이인 <b class="c-hr">A대</b>는 <span class="blank" data-reveal="2" style="min-width:150px"><i>1</i><b>그대로</b></span></div>
+    <div class="pt" data-step="3">ATP의 세 역할: ① 파워 스트로크 에너지 ② 교차결합 <b>분리</b> ③ Ca²⁺를 근형질세망으로 되돌리기(이완)</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:14px">ATP가 없으면 교차결합이 풀리지 않는다 → 사후경직</div>
+  </div>
+</section>
+
+<!-- 문제 ① 2015 A6 -->
+<section class="slide" id="s6" data-tile="parchment" data-title="기출 ① 2015 A6">
+  <div class="hd"><div class="t-eyebrow in">기출 ① · 2015학년도 A6 그대로</div><div class="t-head in" style="--d:100">근수축 과정과 근섬유</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:26px 36px">
+    <p style="font-weight:600">퀴즈 1. 근수축 과정 중 3)~6)을 올바른 순서로 배열하시오.</p>
+    <ol class="stmt" style="margin-top:6px">
+      <li>1) 자극이 운동신경에서 운동종판에 도달한다.</li>
+      <li>2) 아세틸콜린이 분비된다.</li>
+      <li>3) 근형질세망에서 Ca²⁺을 방출한다.</li>
+      <li>4) 자극이 가로소관과 근형질세망을 통해 근섬유 전체로 퍼져 나간다.</li>
+      <li>5) 액틴과 마이오신이 십자형교를 형성한다.</li>
+      <li>6) 액틴 위의 활성 부위를 막고 있는 트로포마이오신의 위치가 변화된다.</li>
+      <li>7) ATP가 분해되고 십자형교가 변형되며 근세사가 활주된다.</li>
+    </ol>
+    <p style="font-weight:600;margin-top:10px">퀴즈 2. 근글리코겐 저장량 낮음 · 미토콘드리아 밀도 높음 · 운동신경 가는 편인 근섬유는?</p>
+  </div>
+  <div class="answer" style="left:1220px;top:280px;width:600px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉠ <b>4) → 3) → 6) → 5)</b></div>
+    <div class="a-line" data-step="2">㉡ <b>Type I</b> (지근, 서근 산화형)</div>
+  </div>
+</section>
+
+<!-- 2. 활동전위 -->
+<section class="slide" id="s7" data-tile="dark" data-title="2. 활동전위와 가중">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>운동단위와 힘 조절</div><div class="t-head in" style="--d:100">역치를 넘으면 한꺼번에 — 활동전위</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 A9</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="apG">
+    <line x1="200" y1="880" x2="1140" y2="880" stroke="#6e6e73" stroke-width="2"/><line x1="200" y1="880" x2="200" y2="330" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6"><text x="150" y="310">막전위 (mV)</text><text x="670" y="930" text-anchor="middle">시간 →</text></g>
+    <path id="apPath" class="draw" pathLength="1" fill="none" stroke="#f5f5f7" stroke-width="6"/>
+    <g id="apMarks"></g>
+  </svg>
+  <div class="abs" style="left:1240px;top:330px;width:580px">
+    <div class="pt" data-step="1">약한 자극 하나는 역치에 못 미친다 → 자극이 겹쳐 쌓이는 <b>가중</b>: <span class="blank" data-reveal="1" style="min-width:110px"><i>1</i><b>시간적</b></span>·<span class="blank" data-reveal="1" style="min-width:110px"><i>2</i><b>공간적</b></span></div>
+    <div class="pt" data-step="2">역치 도달 → <b>전압개폐성 Na⁺ 통로</b>가 열려 Na⁺ 유입 → <b class="c-hr">탈분극</b></div>
+    <div class="pt" data-step="3">이어서 <span class="blank" data-reveal="3" style="min-width:90px"><i>3</i><b>K⁺</b></span> 이 밖으로 나가 <b class="c-o2">재분극</b></div>
+  </div>
+</section>
+
+<!-- 운동단위 -->
+<section class="slide" id="s8" data-tile="black" data-title="운동단위와 힘 조절">
+  <img class="abs fin" src="img/nm-lift.jpg" alt="기합을 넣으며 바벨을 드는 역도 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>2</b>운동단위와 힘 조절</div>
+    <div class="t-head s in" style="--d:100">힘을 키우는 두 가지 방법</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2014 A10</span><span>2022 A9</span></div>
+    <div class="pt" data-step="1"><b>운동단위</b> = 운동신경 1개 + 그것이 지배하는 근섬유 전부</div>
+    <div class="pt" data-step="2">① 동원하는 운동단위 <b>수↑</b> ② 신경의 <b>발화 빈도↑</b> (자극이 겹쳐 연축 → 강축)</div>
+    <div class="pt" data-step="3">작은 운동단위(Type I)부터 큰 운동단위 순으로 동원 = <span class="blank" data-reveal="3" style="min-width:180px"><i>1</i><b>크기의 원리</b></span></div>
+  </div>
+</section>
+
+<!-- 문제 ② 2022 A9 변형 -->
+<section class="slide" id="s9" data-tile="light" data-title="기출 변형 ② 2022 A9">
+  <div class="hd"><div class="t-eyebrow in">기출 변형 ② · 2022학년도 A9의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">신경 신호와 운동단위 동원</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1060px;padding:26px 36px;font-size:24px">
+    ○ 시냅스 후 뉴런에서 활동 전위를 만들려면 충분한 자극이 필요하나, 개별 자극은 부족하다. ㉠ 가중 효과에 의해 자극이 누적되어 ㉡ 신호 자극이 역치 전압에 도달하면 나트륨 통로가 열려 활동 전위가 발생한다.<br>○ 운동 단위는 순차적으로 동원된다. ㉢ 가벼운 무게를 들 때는 작은 운동 단위가 먼저, 큰 힘이 필요할 때는 큰 운동 단위가 동원된다.
+    <div class="howto">&lt;작성 방법&gt; ① ㉠의 두 종류를 자극의 '시점'과 '위치'로 구분해 설명할 것. ② ㉡에서 활동전위가 '전부 아니면 전무'로 발생한다는 것이 근력 조절에 주는 의미를 쓸 것. ③ ㉢의 원리에 따라 투포환을 던질 때 마지막에 동원되는 근섬유 유형과, 동원 수 말고 근력을 더 높이는 방법을 쓸 것.</div>
+  </div>
+  <div class="answer" style="left:1240px;top:280px;width:580px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">① <b>시간적</b> 가중: 한 곳의 자극이 짧은 간격으로 반복 / <b>공간적</b> 가중: 여러 곳의 자극이 동시에</div>
+    <div class="a-line" data-step="2">② 근섬유 하나의 힘은 조절할 수 없으므로, 근력은 <b>동원 수와 발화 빈도</b>로 조절한다</div>
+    <div class="a-line" data-step="3">③ <b>Type IIx</b>(속근) · <b>발화 빈도 증가</b>(강축)</div>
+    <div class="t-cap mute" data-step="4" style="margin-top:18px">원래 기출: 가중 요인 2가지, Na⁺ 통로 변화, 재분극 이온(K⁺), 크기의 원리</div>
+  </div>
+</section>
+
+<!-- 3. 근섬유 유형 -->
+<section class="slide" id="s10" data-tile="light" data-title="3. 근섬유 유형">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>근섬유 유형</div><div class="t-head in" style="--d:100">지근과 속근 — 기출이 가장 많이 나온 표</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A6</span><span>2019 B5</span><span>2026 B4</span></div>
+  <table class="dtab abs in" style="--d:250;left:120px;top:300px;font-size:30px">
+    <tr><th></th><th>Type I (지근)</th><th>Type IIa</th><th>Type IIx (속근)</th></tr>
+    <tr data-step="1"><td>미오신 ATPase · 수축 속도</td><td>느림</td><td>빠름</td><td>가장 빠름</td></tr>
+    <tr data-step="2"><td>미토콘드리아 · 모세혈관 · <b>미오글로빈</b></td><td>많음</td><td>중간</td><td>적음</td></tr>
+    <tr data-step="2"><td>근글리코겐 · 해당 효소</td><td>적음</td><td>많음</td><td>많음</td></tr>
+    <tr data-step="3"><td>피로 저항</td><td>높음</td><td>중간</td><td>낮음</td></tr>
+    <tr data-step="4"><td>운동신경 굵기 · 전도 속도</td><td>가늘고 느림</td><td>중간</td><td>굵고 빠름</td></tr>
+    <tr data-step="4"><td>동원 순서</td><td>1</td><td>2</td><td>3</td></tr>
+  </table>
+  <div class="abs t-cap mute" data-step="4" style="left:120px;top:900px;right:120px">최대 수축 속도가 다른 이유 = 미오신 <b style="color:var(--ink)">ATPase</b>의 양과 형태 (2026 B4). 미오글로빈 = 근육 속 산소 저장 단백질.</div>
+</section>
+
+<!-- 동원 그래프 -->
+<section class="slide" id="s11" data-tile="black" data-title="힘에 따른 근섬유 동원">
+  <img class="abs" src="img/circ-athletes.jpg" alt="" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover;opacity:.14">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>근섬유 유형</div><div class="t-head in" style="--d:100">힘을 낼수록 위층이 쌓인다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2019 B5</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="recG"></svg>
+  <div class="abs" style="left:1240px;top:340px;width:580px">
+    <div class="pt" data-step="1">저강도: <b class="c-o2">Type I</b>만 — 가장 먼저, 가장 오래</div>
+    <div class="pt" data-step="2">중강도: <b class="c-mid">Type IIa</b>가 더해진다</div>
+    <div class="pt" data-step="3">고강도: <b class="c-hr">Type IIx</b>까지 모두</div>
+    <div class="pt" data-step="4">Type I 비율: <b>마라톤 &gt; 800 m &gt; 투포환</b></div>
+  </div>
+</section>
+
+<!-- 문제 ③ 2019 B5 -->
+<section class="slide" id="s12" data-tile="parchment" data-title="기출 ③ 2019 B5">
+  <div class="hd"><div class="t-eyebrow in">기출 ③ · 2019학년도 B5 그대로</div><div class="t-head in" style="--d:100">근력 발휘 수준과 동원 근섬유 비율</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1000px;padding:26px 36px">
+    <svg width="920" height="330" viewBox="0 0 920 330" id="q3g"></svg>
+    <div class="howto">&lt;작성 방법&gt; ○ ㉡에 해당하는 근섬유 명칭을 동원 순서와 수축 속도 측면에서 각각 1가지 쓸 것. ○ 투포환, 마라톤, 800 m를 ㉡의 비율이 높은 종목부터 쓸 것. ○ ㉡을 운동 신경의 전도 속도와 모세혈관 밀도 측면에서 ㉠과 비교할 것.</div>
+  </div>
+  <div class="answer" style="left:1180px;top:280px;width:640px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉡ <b>Type I(지근)</b> — 가장 먼저 동원, 수축 속도 느림</div>
+    <div class="a-line" data-step="2"><b>마라톤 &gt; 800 m &gt; 투포환</b></div>
+    <div class="a-line" data-step="3">㉡은 ㉠(IIx)보다 전도 속도 <b>느리고</b>, 모세혈관 밀도 <b>높다</b></div>
+    <div class="t-cap mute" data-step="4" style="margin-top:18px">함정: 맨 아래층이 가장 먼저 동원되는 Type I이다.</div>
+  </div>
+</section>
+
+<!-- 4. 수축 형태 -->
+<section class="slide" id="s13" data-tile="black" data-title="4. 근수축 형태">
+  <img class="abs fin" src="img/nm-curl.jpg" alt="덤벨 컬을 하는 모습 측면" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>4</b>수축 형태</div>
+    <div class="t-head s in" style="--d:100">길이가 어떻게 되느냐로 나눈다</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2021 A6</span><span>2022 B8</span></div>
+    <div class="pt" data-step="1"><b class="c-o2">단축성</b> 근육이 짧아지며 힘 — 근력 토크 <b>&gt;</b> 저항 토크 (컬 올리기)</div>
+    <div class="pt" data-step="2"><b class="c-hr">신장성</b> 늘어나며 힘 — 근력 토크 <b>&lt;</b> 저항 토크 (천천히 내리기)</div>
+    <div class="pt" data-step="3"><b>등척성</b> 길이 변화 없이 힘 — 계속 힘주면 혈관이 눌려 <b>근육펌프가 작동하지 않는다</b> (2022 B8)</div>
+    <div class="pt" data-step="4"><b>등속성</b> 기계가 속도를 일정하게 유지</div>
+  </div>
+</section>
+
+<!-- 힘-속도·길이-장력 -->
+<section class="slide" id="s14" data-tile="dark" data-title="힘-속도 관계와 길이-장력 관계">
+  <div class="hd"><div class="t-eyebrow in"><b>4</b>수축 형태</div><div class="t-head in" style="--d:100">빠르게 줄면 약하고, 빠르게 늘면 강하다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2021 A6</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="fvG"></svg>
+  <div class="abs" style="left:1240px;top:330px;width:580px">
+    <div class="pt" data-step="1"><b class="c-o2">단축성</b>: 속도가 빠를수록 힘↓</div>
+    <div class="pt" data-step="2"><b class="c-hr">신장성</b>: 속도가 빠를수록 힘↑ (어느 수준에서 정체) — 단축성 그래프를 그대로 외우면 틀린다</div>
+    <div class="pt" data-step="3">길이-장력: 액틴·미오신이 가장 잘 겹치는 <b>중간 길이</b>에서 힘이 가장 크다</div>
+  </div>
+</section>
+
+<!-- 신장-단축 주기 -->
+<section class="slide" id="s15" data-tile="black" data-title="신장-단축 주기와 플라이오메트릭">
+  <img class="abs fin" src="img/nm-jump.jpg" alt="박스에서 떨어져 착지 후 뛰어오르는 뎁스 점프" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>4</b>수축 형태</div>
+    <div class="t-head s in" style="--d:100">늘렸다가 바로 줄이면 더 세다</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2017 B4</span></div>
+    <div class="pt" data-step="1">착지 순간 비복근: <b class="c-hr">신장성</b> → 곧바로 <b class="c-o2">단축성</b> = 신장-단축 주기</div>
+    <div class="pt" data-step="2">이를 이용한 훈련 = <span class="blank" data-reveal="2" style="min-width:220px"><i>1</i><b>플라이오메트릭</b></span></div>
+    <div class="pt" data-step="3">더 세지는 이유: 근방추 <b>신장반사</b> + 늘어날 때 저장된 <b>탄성 에너지</b> 재사용 — 전환이 빨라야 한다</div>
+  </div>
+</section>
+
+<!-- DOMS -->
+<section class="slide" id="s16" data-tile="light" data-title="지연성 근통증(DOMS)">
+  <div class="hd"><div class="t-eyebrow in"><b>4</b>수축 형태</div><div class="t-head in" style="--d:100">다음 날 아픈 이유 — 젖산이 아니다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2016 A7</span><span>2018 B6</span></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-hr">원인 수축</div><h4>신장성 수축</h4><p>익숙하지 않은 신장성 운동(내리막 달리기, 천천히 내리기)</p></div>
+    <div class="card" data-step="2"><div class="k c-act">기전</div><h4>미세손상 → 염증</h4><p>근섬유·결합조직의 <b>미세 손상</b> → <b>염증</b> 반응 → 통증 수용기 민감화</p></div>
+    <div class="card" data-step="3"><div class="k c-o2">경과</div><h4>24~72시간 정점</h4><p>5~7일에 사라진다. 같은 운동을 반복하면 덜 아프다(반복 시행 효과)</p></div>
+  </div>
+  <div class="abs t-cap mute" data-step="3" style="left:120px;top:900px;right:120px">젖산은 운동 후 1시간 안에 대부분 제거되므로 다음 날 통증의 원인이 아니다.</div>
+</section>
+
+<!-- 5. 고유수용기 -->
+<section class="slide" id="s17" data-tile="black" data-title="5. 근방추와 골지건기관">
+  <video class="abs vid fin" src="img/nm-spindle.mp4" poster="img/nm-spindle.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
+  <div class="side">
+    <div class="t-eyebrow in"><b>5</b>고유수용기와 반사</div>
+    <div class="t-head s in" style="--d:100">길이를 재는 센서, 힘을 재는 센서</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2018 B6</span><span>2026 B4</span></div>
+    <table class="qt" data-step="1">
+      <tr><th></th><th>근방추</th><th>골지건기관</th></tr>
+      <tr><td>위치</td><td>근육 속(추내근)</td><td>근육-건 이음부</td></tr>
+      <tr><td>감지</td><td>길이·늘어나는 속도</td><td>장력(힘)</td></tr>
+      <tr><td>신경</td><td>Ia 구심</td><td>Ib 구심</td></tr>
+      <tr><td>반응</td><td>같은 근육 <b>수축</b></td><td>같은 근육 <b>억제</b></td></tr>
+    </table>
+    <div class="pt" data-step="2"><b>감마운동신경</b>은 추내근을 조여 근방추의 민감도를 유지한다</div>
+  </div>
+</section>
+
+<!-- 반사 -->
+<section class="slide" id="s18" data-tile="dark" data-title="신장반사 · 상호억제 · 자가억제">
+  <div class="hd"><div class="t-eyebrow in"><b>5</b>고유수용기와 반사</div><div class="t-head in" style="--d:100">세 가지 반사만 기억하면 된다</div></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-hr">신장반사</div><h4>늘어나면 수축</h4><p>근방추 → Ia → 같은 근육의 알파운동신경 → <b>수축</b><br>반동 스트레칭이 위험한 이유</p></div>
+    <div class="card" data-step="2"><div class="k c-o2">상호억제</div><h4>주동근 수축 → 길항근 이완</h4><p>Ia → 억제성 사이신경원 → <b>반대쪽 근육 억제</b></p></div>
+    <div class="card" data-step="3"><div class="k c-low">자가억제</div><h4>힘이 크면 스스로 이완</h4><p>골지건기관 → Ib → <b>같은 근육 억제</b> — 과도한 장력으로부터 보호</p></div>
+  </div>
+  <div class="abs t-body" data-step="4" style="left:120px;top:800px;right:120px">반동(탄성) 스트레칭 → 근방추 흥분 → <b>신장반사</b>로 늘어나는 근육이 수축 → 수축 중 강제로 늘어나 <b class="c-hr">미세 손상·통증</b> (2018 B6)</div>
+</section>
+
+<!-- PNF -->
+<section class="slide" id="s19" data-tile="black" data-title="PNF 스트레칭">
+  <img class="abs fin" src="img/nm-pnf.jpg" alt="파트너가 돕는 햄스트링 PNF 스트레칭" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>5</b>고유수용기와 반사</div>
+    <div class="t-head s in" style="--d:100">PNF — 수축했다가 늘린다</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2018 B6</span></div>
+    <div class="pt" data-step="1"><b>유지-이완</b>: 늘린 상태에서 대상근을 <b>등척성 수축</b> → 이완하며 더 늘린다</div>
+    <div class="pt" data-step="2">답안 기전: 골지건기관(Ib) → <span class="blank" data-reveal="2" style="min-width:150px"><i>1</i><b>자가억제</b></span> → 가동범위↑</div>
+    <div class="pt" data-step="3">길항근까지 수축시키는 방식(CRAC)은 <b>상호억제</b>를 더한다</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:16px">최근 연구는 늘어나는 이유를 '신장 내성' 증가로 보기도 한다. 시험 답은 위 교과서 기전으로 쓴다.</div>
+  </div>
+</section>
+
+<!-- 문제 ④ 2026 B4 -->
+<section class="slide" id="s20" data-tile="light" data-title="기출 ④ 2026 B4">
+  <div class="hd"><div class="t-eyebrow in">기출 ④ · 2026학년도 B4 그대로</div><div class="t-head in" style="--d:100">고유수용기와 근섬유</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:270px;width:1080px;padding:24px 34px;font-size:23px;line-height:1.55">
+    [가] 우리 몸에는 근육의 길이와 발휘하는 힘을 감지하는 고유수용기가 있어요. ㉠ <u>근방추</u>는 감각신경을 통해 근육 길이 정보를 중추신경계에 전달합니다. 고위 중추신경계로부터 되돌아오는 신호는 ㉡ <u>감마운동신경</u>을 통해 추내근 섬유로 전달되어 근육의 수축을 조절하죠. 그리고 건에 위치한 ㉢ <u>전정기관</u>은 근육의 수축 강도를 중추신경계에 전달하는 역할을 수행하고, 강한 근육 수축이 일어나면 ㉣ <u>알파운동신경</u>의 활성을 제어하여 근육 수축을 억제합니다.<br>
+    … ( ⓐ )은 원자량 24.305인 다량무기질로 근육의 이완과 ATP 대사에 관여한다. Type I 근육에는 Type II보다 ( ⓑ )이/가 많고, ( ⓑ )은 산소와 결합해 미토콘드리아로 운반하는 산소 저장고 역할을 한다. ㉤ <u>근육의 유형별로 최대수축속도가 다른 이유</u>는 ㉥ ATPase의 양과 형태 때문이다.
+    <div class="howto">&lt;작성 방법&gt; ㉠~㉣ 중 잘못 쓰인 용어 1가지를 고칠 것. ⓐ, ⓑ를 쓸 것. ㉤을 ㉥의 측면에서 서술할 것.</div>
+  </div>
+  <div class="answer" style="left:1260px;top:270px;width:560px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉢ 전정기관 → <b>골지건기관</b></div>
+    <div class="a-line" data-step="2">ⓐ <b>마그네슘</b> · ⓑ <b>미오글로빈</b></div>
+    <div class="a-line" data-step="3">㉤ Type II는 미오신 <b>ATPase 활성이 높아</b> ATP를 빨리 분해 → 교차결합 주기가 빨라 수축 속도가 빠르다</div>
+  </div>
+</section>
+
+<!-- 문제 ⑤ 2018 B6 변형 -->
+<section class="slide" id="s21" data-tile="parchment" data-title="기출 변형 ⑤ 2018 B6">
+  <div class="hd"><div class="t-eyebrow in">기출 변형 ⑤ · 2018학년도 B6의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">탄성 스트레칭과 PNF</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:26px 36px;font-size:25px">
+    ○ 탄성 스트레칭: 스윙·바운스 등 반동 동작을 이용 — 위험성: ㉡ 근육 손상이나 통증을 유발할 수 있다.<br>
+    ○ ( ㉢ ) 스트레칭(유지-이완): Ⅰ단계 대상근을 늘린 자세 → Ⅱ단계 파트너 저항에 대해 대상근을 수축 → Ⅲ단계 이완하며 더 늘림.
+    <div class="howto">&lt;작성 방법&gt; ① 탄성 스트레칭에서 늘어나는 근육 속 근방추가 흥분해 일어나는 반사의 이름과, 그 반사가 ㉡을 일으키는 과정을 쓸 것. ② Ⅱ단계에서 대상근 대신 '길항근'을 수축시키면 이용하는 반사의 이름을 쓸 것.</div>
+  </div>
+  <div class="answer" style="left:1220px;top:280px;width:600px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">① <b>신장반사</b> — 반동으로 빠르게 늘어남 → 근방추 흥분 → 늘어나는 근육이 수축 → 수축 중 강제로 늘어나 미세 손상</div>
+    <div class="a-line" data-step="2">② <b>상호억제</b> (길항근 수축 → 대상근 억제)</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:18px">원래 기출: ㉠ 근방추 명칭·기능, ㉡ 발생 기전, ㉢ PNF 명칭과 근육계·신경계(골지건기관·자가억제) 측면 정의</div>
+  </div>
+</section>
+
+<!-- 6. 근력 적응 -->
+<section class="slide" id="s22" data-tile="dark" data-title="6. 근력 트레이닝 적응">
+  <div class="hd"><div class="t-eyebrow in"><b>6</b>근력 적응</div><div class="t-head in" style="--d:100">처음 몇 주는 신경, 그다음은 근육</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2014 A10</span><span>2017 B4</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="adG"></svg>
+  <div class="abs" style="left:1240px;top:330px;width:580px">
+    <div class="pt" data-step="1">초기(약 4~8주) 근력 증가 = 주로 <b class="c-o2">신경 적응</b> — 동원 수↑, 발화 빈도↑, 동기화</div>
+    <div class="pt" data-step="2">이후 = <b class="c-hr">근비대</b> — 근원섬유 단백질 합성↑ → 근섬유 횡단면적↑ (근섬유 증식은 논쟁 중)</div>
+    <div class="t-cap mute" data-step="2" style="margin-top:16px">그래프는 경향을 보여 주는 모식도</div>
+  </div>
+</section>
+
+<!-- 함정 -->
+<section class="slide" id="s23" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
+  <ol class="traps">
+    <li class="in" style="--d:150">가로소관 전파 → Ca²⁺ 방출 → <b>트로포미오신 이동</b> → 교차결합</li>
+    <li class="in" style="--d:190">수축해도 <b>A대는 그대로</b>, I대·H대만 짧아진다</li>
+    <li class="in" style="--d:230">ATP는 교차결합 <b>분리</b>에도 필요(없으면 경직)</li>
+    <li class="in" style="--d:270">근력 조절 = <b>동원 수 + 발화 빈도</b></li>
+    <li class="in" style="--d:310">동원 그래프 맨 아래층 = <b>Type I</b></li>
+    <li class="in" style="--d:350">신장성은 빠를수록 힘 <b>증가</b></li>
+    <li class="in" style="--d:390">등척성 수축에서는 근육펌프 <b>작동 안 함</b></li>
+    <li class="in" style="--d:430">건에 있는 것은 <b>골지건기관</b>(전정기관 아님)</li>
+    <li class="in" style="--d:470">PNF 유지-이완 = <b>자가억제</b>, 길항근 수축 = 상호억제</li>
+    <li class="in" style="--d:510">DOMS 원인은 젖산이 아니라 <b>미세 손상·염증</b></li>
+  </ol>
+</section>
+
+<!-- 요약 -->
+<section class="slide" id="s24" data-tile="light" data-title="한 장 요약">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
+  <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
+    <div class="card in" style="--d:150"><div class="k c-hr">수축</div><h4>Ca²⁺ · 트로포닌 · ATP</h4><p>아세틸콜린 → 가로소관 → Ca²⁺<br>트로포미오신 이동 → 교차결합<br>A대 그대로, I·H대 짧아짐</p></div>
+    <div class="card in" style="--d:250"><div class="k c-act">힘 조절</div><h4>동원 수 · 발화 빈도</h4><p>크기의 원리: I → IIa → IIx<br>가중: 시간적·공간적<br>Na⁺ 유입 탈분극, K⁺ 재분극</p></div>
+    <div class="card in" style="--d:350"><div class="k c-o2">근섬유</div><h4>지근 vs 속근</h4><p>I: 미토콘드리아·미오글로빈·모세혈관↑<br>II: ATPase·해당 효소↑<br>마라톤 &gt; 800 m &gt; 투포환</p></div>
+    <div class="card in" style="--d:450"><div class="k c-mid">수축 형태</div><h4>단축 · 신장 · 등척</h4><p>신장성은 빠를수록 힘↑<br>신장-단축 주기 → 플라이오메트릭<br>DOMS = 신장성 → 미세손상·염증</p></div>
+    <div class="card in" style="--d:550"><div class="k c-low">반사</div><h4>근방추 · 골지건</h4><p>신장반사(Ia) · 상호억제<br>자가억제(Ib)<br>PNF 유지-이완 = 자가억제</p></div>
+    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">적응</div><h4>신경 → 근비대</h4><p>초기 4~8주: 신경 적응<br>이후: 근원섬유 단백질↑<br>근력↑ = 근비대 없이도 가능</p></div>
+  </div>
+</section>
+
+</div></div>
+
+<div id="bar"></div>
+<div id="blackout"></div>
+<div id="notes"></div>
+<div id="ov" class="overlay"><h3 id="ovT"></h3><div id="grid"></div></div>
+<div id="help" class="overlay"><h3>강의 조작</h3><table>
+<tr><td><kbd>→</kbd> <kbd>Space</kbd> 화면 클릭</td><td>다음 (단계 → 다음 장)</td></tr>
+<tr><td><kbd>←</kbd> 오른쪽 클릭</td><td>이전</td></tr>
+<tr><td><kbd>R</kbd></td><td>이 장 애니메이션 다시 보기</td></tr>
+<tr><td><kbd>T</kbd> <kbd>N</kbd></td><td>대본 보기</td></tr>
+<tr><td><kbd>O</kbd></td><td>전체 보기</td></tr>
+<tr><td><kbd>F</kbd></td><td>전체 화면</td></tr>
+<tr><td><kbd>B</kbd> / <kbd>W</kbd></td><td>검은 화면 / 흰 화면</td></tr>
+<tr><td>숫자 + <kbd>Enter</kbd></td><td>그 장으로 이동</td></tr>
+<tr><td>좌우로 밀기</td><td>전자칠판·폰에서 넘기기</td></tr>
+</table></div>
+
+<div id="ui">
+  <button id="bR" title="이 장 다시 보기(R)" aria-label="이 장 다시 보기"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4h4"/></svg></button>
+  <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
+  <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
+  <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="count" id="cnt">1 / 24</span>
+  <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+
+<script>
+// 대본 — 장 번호별
+const NOTES = {
+  s1: "오늘은 **운동과 신경근 생리**입니다. 근육이 어떻게 힘을 내고, 신경이 그 힘을 어떻게 조절하는지 13년 기출 핵심만 정리합니다.",
+  s2: "2018년부터는 거의 해마다 한 문항씩 나왔습니다. 근섬유 유형이 네 번, 수축 형태와 힘-속도가 세 번, 고유수용기와 운동단위가 두 번씩입니다.",
+  s3: "근육은 근다발, 근섬유, 근원섬유로 점점 가늘어지고, 근원섬유의 반복 단위가 **근절**입니다. 근절 안에는 굵은 미오신과 가는 액틴이 있고, 근형질세망은 칼슘을 저장합니다.",
+  s4: "운동신경 자극이 운동종판에 오면 **아세틸콜린**이 나오고, 흥분이 **가로소관**을 타고 들어가 **근형질세망에서 칼슘**이 나옵니다. 칼슘이 트로포닌에 붙으면 **트로포미오신**이 비켜 액틴이 드러나고, 미오신이 붙어 당깁니다. ATP가 붙어야 다시 떨어집니다.",
+  s5: "근육이 수축하면 필라멘트 자체가 줄어드는 게 아니라 액틴이 미오신 사이로 미끄러져 들어갑니다. **Z선이 가까워지고, I대와 H대는 짧아지며, A대는 그대로**입니다. ATP는 당기는 힘, 떨어지는 것, 칼슘을 되돌리는 데 모두 쓰입니다.",
+  s6: "2015 A6 기출 그대로입니다. 3)부터 6)의 순서는 **4) → 3) → 6) → 5)**, 퀴즈 2의 근섬유는 **Type I**입니다.",
+  s7: "약한 자극 하나로는 역치에 못 미치지만, 자극이 겹치는 **가중**으로 역치에 닿습니다. 시간적 가중과 공간적 가중이 있습니다. 역치를 넘으면 **나트륨 통로**가 열려 탈분극, 이어서 **칼륨**이 나가 재분극됩니다.",
+  s8: "운동단위는 운동신경 하나와 그것이 지배하는 근섬유 전부입니다. 힘은 **동원하는 운동단위 수**와 **발화 빈도**로 키웁니다. 작은 운동단위부터 동원되는 것이 **크기의 원리**입니다.",
+  s9: "2022 A9와 같은 자료로 다르게 묻습니다. 시간적 가중은 한 곳의 반복, 공간적 가중은 여러 곳의 동시 자극입니다. 근섬유 하나의 힘은 조절할 수 없으니 **동원 수와 발화 빈도**로 조절합니다. 투포환 마지막에는 **Type IIx**가 동원되고, 발화 빈도를 높여 힘을 더 냅니다.",
+  s10: "근섬유 유형 표입니다. Type I은 미토콘드리아, 모세혈관, **미오글로빈**이 많고 피로에 강합니다. Type II는 **미오신 ATPase**가 빨라 수축이 빠르고 해당 효소가 많습니다. 운동신경도 Type II가 굵고 빠릅니다.",
+  s11: "힘을 낼수록 근섬유가 위층으로 쌓이듯 더해집니다. 저강도에는 Type I만, 중강도에 IIa, 고강도에 IIx까지. 그래서 Type I 비율은 **마라톤, 800 m, 투포환** 순입니다.",
+  s12: "2019 B5 기출 그대로입니다. ㉡은 가장 먼저 동원되고 느리게 수축하는 **Type I**, 비율은 **마라톤 > 800 m > 투포환**, Type I은 전도 속도가 **느리고** 모세혈관 밀도는 **높습니다**.",
+  s13: "근육이 짧아지며 힘을 내면 **단축성**, 늘어나며 버티면 **신장성**, 길이 변화 없이 힘을 내면 **등척성**입니다. 등척성으로 계속 힘을 주면 혈관이 눌려 근육펌프가 작동하지 않습니다.",
+  s14: "힘-속도 관계입니다. 단축성은 빠를수록 힘이 **약해지고**, 신장성은 빠를수록 힘이 **커집니다**. 길이-장력 관계에서는 액틴과 미오신이 가장 잘 겹치는 중간 길이에서 힘이 가장 큽니다.",
+  s15: "착지하는 순간 비복근은 먼저 **늘어나며 버티고**, 곧바로 **짧아지며 밀어냅니다**. 이것이 신장-단축 주기이고, 이를 이용한 훈련이 **플라이오메트릭**입니다. 신장반사와 탄성 에너지 덕분에 더 세집니다.",
+  s16: "다음 날 아픈 지연성 근통증은 젖산 때문이 아닙니다. 익숙하지 않은 **신장성 수축**으로 생긴 **미세 손상과 염증** 때문이고, 24~72시간에 가장 아픕니다.",
+  s17: "근방추는 근육 속에서 **길이와 늘어나는 속도**를 재고, 골지건기관은 근육과 건 사이에서 **장력**을 잽니다. 근방추는 같은 근육을 수축시키고, 골지건기관은 같은 근육을 억제합니다. 감마운동신경은 근방추의 민감도를 유지합니다.",
+  s18: "반사 세 가지입니다. 늘어나면 수축하는 **신장반사**, 주동근이 수축하면 길항근이 풀리는 **상호억제**, 힘이 너무 크면 스스로 풀리는 **자가억제**입니다. 반동 스트레칭이 위험한 것은 신장반사 때문입니다.",
+  s19: "PNF 유지-이완은 늘린 상태에서 대상근을 등척성으로 수축했다가 이완하며 더 늘립니다. 답안 기전은 골지건기관에 의한 **자가억제**입니다. 길항근을 수축시키면 상호억제를 더합니다.",
+  s20: "2026 B4 기출 그대로입니다. 틀린 용어는 ㉢ 전정기관, 바르게는 **골지건기관**입니다. ⓐ는 **마그네슘**, ⓑ는 **미오글로빈**, 수축 속도 차이는 **미오신 ATPase 활성** 때문입니다.",
+  s21: "2018 B6와 같은 자료로 다르게 묻습니다. 반동 스트레칭에서 일어나는 반사는 **신장반사**이고, 길항근을 수축시키는 방식은 **상호억제**를 이용합니다.",
+  s22: "근력 훈련을 시작하면 처음 몇 주의 근력 증가는 주로 **신경 적응**입니다. 동원 수와 발화 빈도가 늘고 동기화됩니다. 그 뒤로 **근비대**가 커집니다.",
+  s23: "감점 함정 10가지입니다. 수축 순서, A대, 신장성 힘-속도, 골지건기관, PNF 기전을 특히 확인하세요.",
+  s24: "한 장으로 정리합니다. 수축 기전, 힘 조절, 근섬유, 수축 형태, 반사, 적응입니다."
+};
+
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), slides = [...document.querySelectorAll('.slide')];
+const SVGNS = 'http://www.w3.org/2000/svg';
+let cur = 0, step = 0, numBuf = '';
+
+document.querySelectorAll('[data-step]').forEach(el => { if (el.namespaceURI !== SVGNS && el.tagName !== 'TR' && el.tagName !== 'TD') el.classList.add('rise'); });
+// 빈칸은 한 번에 하나씩: 문장이 먼저 빈칸으로 나타나고, 다음 클릭마다 답을 하나씩 공개한다
+slides.forEach(s => {
+  const items = [...s.querySelectorAll('[data-step],[data-reveal]')];
+  if (!items.length) return;
+  const own = e => e.dataset.step !== undefined;
+  const contStep = e => { const c = e.parentElement && e.parentElement.closest('[data-step]'); return c && s.contains(c) ? +c.dataset.step : 0; };
+  const at = e => own(e) ? +e.dataset.step : Math.max(+e.dataset.reveal, contStep(e));
+  const max = Math.max(...items.map(at));
+  let n = 0; const plan = [];
+  for (let k = 0; k <= max; k++){
+    const shows = items.filter(e => own(e) && at(e) === k), blanks = items.filter(e => !own(e) && at(e) === k);
+    blanks.filter(e => contStep(e) < k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+    if (k > 0 && shows.length) { n++; shows.forEach(e => plan.push([e, 'step', n])); }
+    blanks.filter(e => contStep(e) >= k).forEach(e => { n++; plan.push([e, 'reveal', n]); });
+  }
+  plan.forEach(([e, a, v]) => { e.dataset[a] = v; });
+});
+
+const maxStep = slides.map(s => Math.max(0, ...[...s.querySelectorAll('[data-step],[data-reveal]')].map(e => +(e.dataset.step || e.dataset.reveal))));
+
+function fit(){
+  const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(-50%,-50%) scale(${k})`;
+}
+addEventListener('resize', fit); fit();
+
+function fnPath(f, x0, x1, X, Y, n = 80){
+  const pts = []; for (let i = 0; i <= n; i++){ const x = x0 + (x1 - x0) * i / n; pts.push([X(x), Y(f(x))]); }
+  return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L');
+}
+function smooth(pts){
+  let d = `M${pts[0][0].toFixed(1)} ${pts[0][1].toFixed(1)}`;
+  for (let i = 0; i < pts.length - 1; i++){
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  return d;
+}
+function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text) e.textContent = text; parent.append(e); return e; }
+const INK = '#1d1d1f';
+function txt(g, x, y, t, o = {}){ return el('text', Object.assign({x, y, 'font-size': 15, fill: INK}, o), g, t); }
+
+// 5장 근절 (이완 ↔ 수축) — 미오신은 고정, Z선과 액틴이 안쪽으로 70 px
+(function(){
+  const sv = $('#sarc'), y0 = 600, D = 70;
+  const left = el('g', {class: 'zl'}, sv), right = el('g', {class: 'zr'}, sv);
+  [[left, 360, 640], [right, 1100, 820]].forEach(([g, z, end]) => {
+    el('line', {x1: z, y1: 430, x2: z, y2: 770, stroke: '#f5f5f7', 'stroke-width': 8}, g);
+    el('text', {x: z, y: 415, 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700, fill: '#f5f5f7'}, g, 'Z');
+    [-110, -40, 40, 110].forEach(dy => el('line', {x1: z, y1: y0 + dy, x2: end, y2: y0 + dy, stroke: '#FF9F9A', 'stroke-width': 7, 'stroke-linecap': 'round'}, g));
+  });
+  const my = el('g', {}, sv);
+  [-75, 0, 75].forEach(dy => {
+    el('line', {x1: 510, y1: y0 + dy, x2: 950, y2: y0 + dy, stroke: '#FF9F0A', 'stroke-width': 16, 'stroke-linecap': 'round'}, my);
+    for (let x = 530; x <= 930; x += 34){ if (Math.abs(x - 730) < 30) continue; const dir = x < 730 ? -1 : 1;
+      [-1, 1].forEach(s => el('line', {x1: x, y1: y0 + dy + s * 8, x2: x + dir * 14, y2: y0 + dy + s * 26, stroke: '#FF9F0A', 'stroke-width': 5, 'stroke-linecap': 'round'}, my)); }
+  });
+  el('line', {x1: 730, y1: 500, x2: 730, y2: 700, stroke: '#FF9F0A', 'stroke-width': 3, 'stroke-dasharray': '6 6'}, my);
+  el('text', {x: 760, y: 470, 'font-size': 22, fill: '#FF9F0A'}, my, 'M선');
+  const br = (g, a, b, y, t, c) => { el('path', {d: `M${a} ${y - 10}V${y}H${b}V${y - 10}`, fill: 'none', stroke: c, 'stroke-width': 3}, g); el('text', {x: (a + b) / 2, y: y + 32, 'text-anchor': 'middle', 'font-size': 24, 'font-weight': 700, fill: c}, g, t); };
+  const A = el('g', {}, sv); br(A, 510, 950, 820, 'A대 (그대로)', '#FF453A');
+  const r = el('g', {class: 'relaxB'}, sv), c = el('g', {class: 'contrB'}, sv);
+  br(r, 360, 510, 880, 'I대', '#64D2FF'); br(r, 950, 1100, 880, 'I대', '#64D2FF'); br(r, 640, 820, 380, 'H대', '#FF9F0A');
+  br(c, 360 + D, 510, 880, 'I대', '#64D2FF'); br(c, 950, 1100 - D, 880, 'I대', '#64D2FF'); br(c, 640 + D, 820 - D, 380, 'H대', '#FF9F0A');
+  el('text', {x: 730, y: 970, 'text-anchor': 'middle', 'font-size': 28, fill: '#a1a1a6', class: 'relaxB'}, sv, '이완');
+  el('text', {x: 730, y: 970, 'text-anchor': 'middle', 'font-size': 28, 'font-weight': 700, fill: '#f5f5f7', class: 'contrB'}, sv, '수축 — Z선이 가까워진다');
+  el('text', {x: 250, y: 600, 'text-anchor': 'end', 'font-size': 24, fill: '#FF9F9A'}, sv, '액틴');
+  el('text', {x: 250, y: 640, 'text-anchor': 'end', 'font-size': 24, fill: '#FF9F0A'}, sv, '미오신');
+})();
+
+// 7장 활동전위
+(function(){
+  const X = t => 220 + t * 9, Y = mv => 880 - (mv + 90) * 4.4;
+  const pts = [[0,-70],[10,-70],[14,-64],[18,-70],[30,-70],[34,-62],[37,-58],[40,-55],[43,-20],[46,30],[49,10],[53,-40],[57,-80],[64,-76],[74,-71],[100,-70]];
+  $('#apPath').setAttribute('d', smooth(pts.map(([t, v]) => [X(t), Y(v)])));
+  const sv = $('#apG'), g = $('#apMarks');
+  [[30, '+30'], [0, '0'], [-55, '-55'], [-70, '-70']].forEach(([v, t]) => el('text', {x: 185, y: Y(v) + 8, 'text-anchor': 'end', 'font-size': 22, fill: '#a1a1a6'}, sv, t));
+  el('line', {x1: 200, y1: Y(-55), x2: 1140, y2: Y(-55), stroke: '#a1a1a6', 'stroke-width': 2, 'stroke-dasharray': '8 8'}, sv);
+  el('text', {x: 1130, y: Y(-55) - 12, 'text-anchor': 'end', 'font-size': 24, fill: '#a1a1a6'}, sv, '역치');
+  const g1 = el('g', {'data-step': 1}, g); el('text', {x: X(14), y: Y(-64) - 20, 'text-anchor': 'middle', 'font-size': 22, fill: '#a1a1a6'}, g1, '역치 아래'); el('text', {x: X(36), y: Y(-58) + 50, 'text-anchor': 'middle', 'font-size': 22, fill: '#f5f5f7'}, g1, '가중 → 역치');
+  const g2 = el('g', {'data-step': 2}, g); el('text', {x: X(43) - 20, y: Y(10), 'text-anchor': 'end', 'font-size': 28, 'font-weight': 700, fill: '#FF453A'}, g2, '탈분극 Na⁺ 유입');
+  const g3 = el('g', {'data-step': 3}, g); el('text', {x: X(53) + 24, y: Y(-15), 'font-size': 28, 'font-weight': 700, fill: '#64D2FF'}, g3, '재분극 K⁺ 유출');
+})();
+
+// 동원 그래프 (2019 B5 모양) — x 0~1 근력 수준, 누적 비율
+const REC = { top: [[0,5],[.35,30],[.6,62],[1,92]], mid: [[0,5],[.35,30],[.65,45],[1,73]], bot: [[0,5],[.35,30],[.65,45],[1,55]] };
+REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
+(function(){
+  const sv = $('#recG'), X = f => 220 + f * 900, Y = p => 860 - p * 5;
+  const poly = (upper, lower) => 'M' + upper.map(([f, p]) => X(f) + ' ' + Y(p)).join('L') + 'L' + lower.slice().reverse().map(([f, p]) => X(f) + ' ' + Y(p)).join('L') + 'Z';
+  const base = [[0, 0], [1, 0]];
+  el('line', {x1: 220, y1: 860, x2: 1140, y2: 860, stroke: '#6e6e73', 'stroke-width': 2}, sv); el('line', {x1: 220, y1: 860, x2: 220, y2: 360, stroke: '#6e6e73', 'stroke-width': 2}, sv);
+  const g1 = el('g', {'data-step': 1}, sv); el('path', {d: poly(REC.bot, [[0, 5], [1, 0]].map(([f]) => [f, 0])), fill: '#64D2FF', 'fill-opacity': .55}, g1);
+  const g2 = el('g', {'data-step': 2}, sv); el('path', {d: poly(REC.mid, REC.bot), fill: '#FF9F0A', 'fill-opacity': .55}, g2);
+  const g3 = el('g', {'data-step': 3}, sv); el('path', {d: poly(REC.top, REC.mid), fill: '#FF453A', 'fill-opacity': .6}, g3);
+  el('text', {x: X(.75), y: Y(30), 'text-anchor': 'middle', 'font-size': 30, 'font-weight': 700, fill: '#fff'}, g1, 'Type I');
+  el('text', {x: X(.85), y: Y(60), 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700, fill: '#fff'}, g2, 'IIa');
+  el('text', {x: X(.9), y: Y(80), 'text-anchor': 'middle', 'font-size': 26, 'font-weight': 700, fill: '#fff'}, g3, 'IIx');
+  [['저', 0], ['중', .5], ['고', 1]].forEach(([t, f]) => el('text', {x: X(f), y: 895, 'text-anchor': 'middle', 'font-size': 24, fill: '#a1a1a6'}, sv, t));
+  el('text', {x: 680, y: 935, 'text-anchor': 'middle', 'font-size': 24, fill: '#a1a1a6'}, sv, '근력 발휘 수준 →');
+  el('text', {x: 170, y: 345, 'font-size': 24, fill: '#a1a1a6'}, sv, '동원 근섬유 비율');
+})();
+(function(){
+  const sv = $('#q3g'), X = f => 120 + f * 640, Y = p => 290 - p * 2.8;
+  const defs = el('defs', {}, sv), pat = el('pattern', {id: 'hatch', width: 8, height: 8, patternUnits: 'userSpaceOnUse', patternTransform: 'rotate(45)'}, defs); el('line', {x1: 0, y1: 0, x2: 0, y2: 8, stroke: INK, 'stroke-width': 1.5}, pat);
+  const dots = el('pattern', {id: 'dots', width: 7, height: 7, patternUnits: 'userSpaceOnUse'}, defs); el('circle', {cx: 2, cy: 2, r: 1.1, fill: INK}, dots);
+  const poly = (upper, lower) => 'M' + upper.map(([f, p]) => X(f) + ' ' + Y(p)).join('L') + 'L' + lower.slice().reverse().map(([f, p]) => X(f) + ' ' + Y(p)).join('L') + 'Z';
+  el('path', {d: poly(REC.bot, [[0, 0], [1, 0]]), fill: 'url(#hatch)', stroke: INK}, sv);
+  el('path', {d: poly(REC.mid, REC.bot), fill: 'url(#dots)', stroke: INK}, sv);
+  el('path', {d: poly(REC.top, REC.mid), fill: '#cfcfcf', stroke: INK}, sv);
+  el('line', {x1: 120, y1: 290, x2: 770, y2: 290, stroke: INK, 'stroke-width': 1.5}, sv); el('line', {x1: 120, y1: 290, x2: 120, y2: 10, stroke: INK, 'stroke-width': 1.5}, sv);
+  txt(sv, 800, 60, '㉠', {'font-size': 18}); el('line', {x1: 795, y1: 55, x2: X(.88), y2: Y(78), stroke: INK}, sv);
+  txt(sv, 800, 200, '㉡', {'font-size': 18}); el('line', {x1: 795, y1: 195, x2: X(.85), y2: Y(30), stroke: INK}, sv);
+  [['저', 0], ['중', .5], ['고', 1]].forEach(([t, f]) => txt(sv, X(f), 310, t, {'text-anchor': 'middle'}));
+  txt(sv, 440, 328, '근력 발휘 수준(%)', {'text-anchor': 'middle'});
+  txt(sv, 108, 290, '저', {'text-anchor': 'end'}); txt(sv, 108, 150, '중', {'text-anchor': 'end'}); txt(sv, 108, 20, '고', {'text-anchor': 'end'});
+  txt(sv, 10, 160, '동원 근섬유 비율(%)', {'font-size': 13});
+})();
+
+// 14장 힘-속도
+(function(){
+  const sv = $('#fvG'), X = v => 680 + v * 440, Y = F => 860 - F * 320;
+  el('line', {x1: 240, y1: 860, x2: 1120, y2: 860, stroke: '#6e6e73', 'stroke-width': 2}, sv); el('line', {x1: 680, y1: 870, x2: 680, y2: 330, stroke: '#6e6e73', 'stroke-width': 2}, sv);
+  const con = v => (1 - v) / (1 + v / .25), ecc = v => 1.5 - .5 * Math.exp(4 * v);
+  const g1 = el('g', {'data-step': 1}, sv); el('path', {d: fnPath(con, 0, 1, X, Y), fill: 'none', stroke: '#64D2FF', 'stroke-width': 7}, g1);
+  el('text', {x: X(.5), y: Y(con(.5)) - 30, 'font-size': 28, 'font-weight': 700, fill: '#64D2FF'}, g1, '단축성');
+  const g2 = el('g', {'data-step': 2}, sv); el('path', {d: fnPath(ecc, -1, 0, X, Y), fill: 'none', stroke: '#FF453A', 'stroke-width': 7}, g2);
+  el('text', {x: X(-.75), y: Y(1.5) - 24, 'font-size': 28, 'font-weight': 700, fill: '#FF453A'}, g2, '신장성');
+  el('circle', {cx: X(0), cy: Y(1), r: 10, fill: '#f5f5f7'}, sv); el('text', {x: X(0) + 18, y: Y(1) - 14, 'font-size': 24, fill: '#f5f5f7'}, sv, '등척성');
+  el('text', {x: 260, y: 900, 'font-size': 24, fill: '#a1a1a6'}, sv, '← 늘어나는 속도');
+  el('text', {x: 1110, y: 900, 'text-anchor': 'end', 'font-size': 24, fill: '#a1a1a6'}, sv, '짧아지는 속도 →');
+  el('text', {x: 695, y: 345, 'font-size': 24, fill: '#a1a1a6'}, sv, '힘');
+})();
+
+// 22장 신경 적응 vs 근비대 (모식도)
+(function(){
+  const sv = $('#adG'), X = w => 220 + w * 37, Y = p => 860 - p * 5;
+  el('line', {x1: 220, y1: 860, x2: 1130, y2: 860, stroke: '#6e6e73', 'stroke-width': 2}, sv); el('line', {x1: 220, y1: 860, x2: 220, y2: 340, stroke: '#6e6e73', 'stroke-width': 2}, sv);
+  const neu = w => 100 * Math.exp(-w / 12) * .85 + 15, hyp = w => 100 - neu(w);
+  const g1 = el('g', {'data-step': 1}, sv); el('path', {d: fnPath(neu, 0, 24, X, Y), fill: 'none', stroke: '#64D2FF', 'stroke-width': 7}, g1); el('text', {x: X(2), y: Y(neu(2)) - 20, 'font-size': 28, 'font-weight': 700, fill: '#64D2FF'}, g1, '신경 적응');
+  const g2 = el('g', {'data-step': 2}, sv); el('path', {d: fnPath(hyp, 0, 24, X, Y), fill: 'none', stroke: '#FF453A', 'stroke-width': 7}, g2); el('text', {x: X(18), y: Y(hyp(18)) - 20, 'font-size': 28, 'font-weight': 700, fill: '#FF453A'}, g2, '근비대');
+  [0, 4, 8, 12, 16, 20, 24].forEach(w => el('text', {x: X(w), y: 895, 'text-anchor': 'middle', 'font-size': 22, fill: '#a1a1a6'}, sv, String(w)));
+  el('text', {x: 680, y: 935, 'text-anchor': 'middle', 'font-size': 24, fill: '#a1a1a6'}, sv, '훈련 기간 (주) →');
+  el('text', {x: 170, y: 325, 'font-size': 24, fill: '#a1a1a6'}, sv, '근력 증가에 대한 기여');
+})();
+
+// 30장 문제
+document.querySelectorAll('.mcq').forEach(q => q.querySelectorAll('button').forEach(b => b.onclick = e => {
+  e.stopPropagation();
+  const ok = +b.dataset.i === +q.dataset.answer;
+  q.querySelectorAll('button').forEach(x => x.classList.remove('good', 'bad')); b.classList.add(ok ? 'good' : 'bad');
+  q.querySelector('.fb').textContent = ok ? '정답. 혈장량↓ → 이완기말 용적↓ → 1회 박출량↓, 심박수가 보상해 심박출량은 유지된다.' : '다시. 땀으로 혈장이 줄면 심실이 덜 찬다 — 1회 박출량은 어느 쪽으로 갈까?';
+}));
+
+function applyStep(animate){
+  const s = slides[cur];
+  s.querySelectorAll('[data-step]').forEach(e => e.classList.toggle('on', +e.dataset.step <= step));
+  s.querySelectorAll('[data-reveal]').forEach(e => e.classList.toggle('on', +e.dataset.reveal <= step));
+  for (let k = 1; k <= maxStep[cur]; k++) s.classList.toggle('st-' + k, k <= step);
+  $('#cnt').textContent = (cur + 1) + ' / ' + slides.length;
+  const total = maxStep.reduce((a, b) => a + b + 1, 0), done = maxStep.slice(0, cur).reduce((a, b) => a + b + 1, 0) + step;
+  $('#bar').style.width = (done / (total - 1) * 100) + '%';
+  history.replaceState(null, '', '#' + (cur + 1) + (step ? '.' + step : ''));
+}
+
+function playVideos(){
+  document.querySelectorAll('video').forEach(v => { if (slides[cur].contains(v)) { v.currentTime = 0; const p = v.play(); if (p) p.catch(() => {}); } else v.pause(); });
+}
+function go(i, st, animate){
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  const changed = i !== cur || !slides[cur].classList.contains('is-on');
+  if (changed) { slides[cur].classList.remove('is-on'); cur = i; }
+  step = Math.max(0, Math.min(maxStep[cur], st));
+  if (changed) { applyStep(false); void slides[cur].offsetWidth; slides[cur].classList.add('is-on'); showNotes(); playVideos(); }
+  else applyStep(animate !== false);
+}
+const next = () => step < maxStep[cur] ? go(cur, step + 1) : cur < slides.length - 1 && go(cur + 1, 0);
+const prev = () => step > 0 ? go(cur, step - 1) : cur > 0 && go(cur - 1, maxStep[cur - 1]);
+function replay(){ const s = slides[cur]; s.classList.remove('is-on'); step = 0; applyStep(false); void s.offsetWidth; s.classList.add('is-on'); playVideos(); }
+
+function md(t){ return t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+function showNotes(){ $('#notes').innerHTML = md(NOTES[slides[cur].id] || ''); }
+function toggleNotes(){ $('#notes').classList.toggle('show'); $('#bT').classList.toggle('act', $('#notes').classList.contains('show')); }
+
+function buildGrid(){
+  $('#ovT').textContent = '전체 보기 · ' + slides.length + '장';
+  $('#grid').innerHTML = '';
+  slides.forEach((s, i) => {
+    const b = document.createElement('button'), lightTile = /light|parchment/.test(s.dataset.tile);
+    b.style.background = getComputedStyle(s).backgroundColor === 'rgb(0, 0, 0)' ? '#1d1d1f' : getComputedStyle(s).backgroundColor;
+    b.style.color = lightTile ? '#1d1d1f' : '#f5f5f7';
+    b.className = i === cur ? 'cur' : '';
+    const n = document.createElement('small'); n.textContent = String(i + 1).padStart(2, '0');
+    const t = document.createElement('span'); t.textContent = s.dataset.title;
+    b.append(n, t);
+    b.onclick = () => { closeOverlays(); go(i, 0); };
+    $('#grid').append(b);
+  });
+}
+function toggleOv(id){ const o = $(id), was = o.classList.contains('show'); closeOverlays(); if (!was) { if (id === '#ov') buildGrid(); o.classList.add('show'); } }
+function closeOverlays(){ document.querySelectorAll('.overlay').forEach(o => o.classList.remove('show')); }
+const overlayOpen = () => !!document.querySelector('.overlay.show');
+function blackout(c){ const b = $('#blackout'); if (b.style.display === 'block' && b.dataset.c === c) b.style.display = 'none'; else { b.style.display = 'block'; b.style.background = c; b.dataset.c = c; } }
+function fullscreen(){ document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(() => {}); }
+
+addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (k === 'Escape') { closeOverlays(); $('#blackout').style.display = 'none'; numBuf = ''; return; }
+  if (/^\d$/.test(k)) { numBuf += k; return; }
+  if (k === 'Enter' && numBuf) { closeOverlays(); go(+numBuf - 1, 0); numBuf = ''; return; }
+  numBuf = '';
+  if (e.target.tagName === 'INPUT') return;
+  if (overlayOpen() && !/^[oO?hH]$/.test(k)) return;
+  if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'Enter') { e.preventDefault(); next(); }
+  else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+  else if (k === 'Home') go(0, 0);
+  else if (k === 'End') go(slides.length - 1, 0);
+  else if (/^r$/i.test(k)) replay();
+  else if (/^[tn]$/i.test(k)) toggleNotes();
+  else if (/^o$/i.test(k)) toggleOv('#ov');
+  else if (/^f$/i.test(k)) fullscreen();
+  else if (/^b$/i.test(k)) blackout('#000');
+  else if (/^w$/i.test(k)) blackout('#fff');
+  else if (k === '?' || /^h$/i.test(k)) toggleOv('#help');
+});
+
+const vp = $('#viewport');
+let sx = null, sy = 0, swiped = false;
+vp.addEventListener('click', e => { if (swiped) { swiped = false; return; } if (e.target.closest('.no-nav')) return; next(); });
+vp.addEventListener('contextmenu', e => { e.preventDefault(); prev(); });
+vp.addEventListener('touchstart', e => { if (e.touches.length === 1 && !e.target.closest('.no-nav')) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } else sx = null; }, {passive: true});
+vp.addEventListener('touchend', e => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; dx < 0 ? next() : prev(); setTimeout(() => swiped = false, 400); }
+}, {passive: true});
+$('#blackout').onclick = () => $('#blackout').style.display = 'none';
+$('#bR').onclick = replay; $('#bT').onclick = toggleNotes; $('#bO').onclick = () => toggleOv('#ov');
+$('#bP').onclick = prev; $('#bN').onclick = next; $('#bF').onclick = fullscreen;
+$('#cnt').onclick = () => toggleOv('#help');
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeOverlays(); }));
+
+let idleT; const ui = $('#ui');
+function wake(){ ui.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => ui.classList.add('idle'), 3000); }
+['mousemove', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, wake, {passive: true})); wake();
+
+const m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
+go(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+</script>
+</body>
+</html>
