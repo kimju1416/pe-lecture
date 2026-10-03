@@ -1,1 +1,5 @@
 img-src/out/
+img-src/circ-out/
+img-src/kling/
+_build/
+img-src/circ-out.log

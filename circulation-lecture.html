@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>강의 · 운동과 순환</title>
+<meta name="description" content="체육 임용 대비 운동생리학 — 체순환·폐순환, 심박출량, 혈류 재분배, 산소 운반, 심혈관 표류, 훈련 적응을 13년 기출로 정리">
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+/* ═══════════════════════════════════════════════════════════════
+   운동과 순환 — 임용 대비 강의 덱
+   무대 1920×1080 · 면 색이 구획 · 액션 블루 하나 · 그림자 없음
+   ═══════════════════════════════════════════════════════════════ */
+:root{
+  --c-white:#ffffff; --c-parchment:#f5f5f7; --c-black:#000000; --c-dark:#1d1d1f; --c-graphite:#272729;
+  --ink:#1d1d1f; --ink-2:#6e6e73; --ink-3:#86868b; --on-dark:#f5f5f7; --on-dark-2:#a1a1a6; --on-dark-3:#6e6e73;
+  --hair:#e0e0e0; --hair-dark:#3a3a3c;
+  --action:#0066cc; --action-dark:#2997ff;
+  /* 몸 — 어두운 면 기본값 */
+  --hr:#FF453A; --low:#30D158; --mid:#FF9F0A; --high:#FF453A; --o2:#64D2FF;
+  --hr-lo:#D70015; --low-lo:#1E8B3E; --mid-lo:#B25000; --high-lo:#D70015; --o2-lo:#0077B6;
+  --font:"Pretendard Variable",Pretendard,-apple-system,BlinkMacSystemFont,"SF Pro Display","Apple SD Gothic Neo","Malgun Gothic","Noto Sans KR",sans-serif;
+  --ease-out:cubic-bezier(.2,.8,.2,1); --ease-inout:cubic-bezier(.65,0,.35,1);
+}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html,body{height:100%;overflow:hidden;background:#000}
+body{font-family:var(--font);color:var(--ink);-webkit-font-smoothing:antialiased;word-break:keep-all;overflow-wrap:break-word;-webkit-user-select:none;user-select:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+
+/* ── 무대 ── */
+#viewport{position:fixed;inset:0;overflow:hidden;background:#000}
+#stage{position:absolute;left:50%;top:50%;width:1920px;height:1080px;overflow:hidden;background:#000}
+.slide{position:absolute;inset:0;overflow:hidden;opacity:0;visibility:hidden;transition:opacity .45s var(--ease-inout),visibility 0s .45s}
+.slide.is-on{opacity:1;visibility:visible;transition:opacity .45s var(--ease-inout);z-index:2}
+
+.slide[data-tile="black"]{background:var(--c-black);color:var(--on-dark)}
+.slide[data-tile="dark"]{background:var(--c-dark);color:var(--on-dark)}
+.slide[data-tile="graphite"]{background:var(--c-graphite);color:var(--on-dark)}
+.slide[data-tile="light"]{background:var(--c-white);color:var(--ink)}
+.slide[data-tile="parchment"]{background:var(--c-parchment);color:var(--ink)}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{
+  --hr:var(--hr-lo); --low:var(--low-lo); --mid:var(--mid-lo); --high:var(--high-lo); --o2:var(--o2-lo);
+  --t2:var(--ink-2); --t3:var(--ink-3); --hl:var(--hair); --act:var(--action); --panel:#f5f5f7;
+}
+.slide[data-tile="parchment"]{--panel:#ffffff}
+.slide[data-tile="black"],.slide[data-tile="dark"],.slide[data-tile="graphite"]{
+  --t2:var(--on-dark-2); --t3:var(--on-dark-3); --hl:var(--hair-dark); --act:var(--action-dark); --panel:#1d1d1f;
+}
+.slide[data-tile="dark"]{--panel:#2c2c2e}
+.slide[data-tile="graphite"]{--panel:#1d1d1f}
+
+/* ── 글자 체계(무대 px) ── */
+.t-title{font-size:96px;font-weight:600;line-height:1.1;letter-spacing:-.028em}
+.t-head{font-size:64px;font-weight:600;line-height:1.14;letter-spacing:-.022em}
+.t-lead{font-size:44px;font-weight:400;line-height:1.3;letter-spacing:-.012em}
+.t-label{font-size:36px;font-weight:600;line-height:1.2;letter-spacing:-.01em}
+.t-body{font-size:34px;font-weight:400;line-height:1.5;letter-spacing:-.01em}
+.t-cap{font-size:27px;font-weight:400;line-height:1.4}
+.t-eyebrow{font-size:30px;font-weight:600;line-height:1.2;color:var(--t2)}
+.t-eyebrow b{color:var(--act);margin-right:10px}
+.num{font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.mute{color:var(--t2)} .mute2{color:var(--t3)}
+.c-hr{color:var(--hr)} .c-low{color:var(--low)} .c-mid{color:var(--mid)} .c-high{color:var(--high)} .c-act{color:var(--act)}
+.abs{position:absolute}
+.full-svg{position:absolute;inset:0;width:1920px;height:1080px;overflow:visible}
+svg text{font-family:var(--font)}
+.hd{position:absolute;left:120px;top:88px;right:120px}
+.hd .t-head{margin-top:10px}
+.panel{background:var(--panel);border-radius:22px;padding:40px 48px}
+.center{text-align:center}
+
+/* ── 등장 ── */
+@keyframes in{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+.slide.is-on .in{animation:in .9s var(--ease-out) both;animation-delay:calc(var(--d,0)*1ms)}
+.slide.is-on .fin{animation:fadein 1.2s ease both;animation-delay:calc(var(--d,0)*1ms)}
+[data-step]{opacity:0;transition:opacity .6s var(--ease-out),transform .6s var(--ease-out)}
+[data-step].rise{transform:translateY(24px)}
+[data-step].on{opacity:1}
+[data-step].rise.on{transform:none}
+
+/* ── 빈칸 ── */
+.blank{display:inline-block;position:relative;min-width:150px;padding:0 18px;text-align:center;border-bottom:3px solid var(--hl);line-height:1.25;vertical-align:baseline}
+.blank b{font-weight:600;color:var(--act);opacity:0;transition:opacity .5s var(--ease-out)}
+.blank.on b{opacity:1}
+.blank.on{border-bottom-color:var(--act)}
+.blank i{position:absolute;left:-10px;top:-16px;min-width:26px;height:26px;border-radius:13px;padding:0 6px;background:var(--act);color:#fff;font-style:normal;font-size:16px;font-weight:700;line-height:26px;text-align:center}
+
+/* ── 정의 표 ── */
+.def{display:grid;grid-template-columns:auto 1fr;gap:22px 36px;align-items:baseline}
+.def dt{font-size:26px;font-weight:600;color:var(--t2)}
+.def dd{font-size:36px;line-height:1.45}
+.def .top{grid-column:1/-1;display:flex;align-items:baseline;gap:20px;padding-bottom:22px;border-bottom:1px solid var(--hl)}
+.def .top strong{font-size:44px;font-weight:600}
+.def .top span{font-size:28px;color:var(--t2)}
+
+/* ── 심장 ── */
+@keyframes beat{0%{transform:scale(1)}12%{transform:scale(1.13)}24%{transform:scale(1)}36%{transform:scale(1.07)}50%,100%{transform:scale(1)}}
+.beat{transform-box:fill-box;transform-origin:center}
+.slide.is-on .beat{animation:beat var(--beat,.83s) var(--ease-inout) infinite}
+@keyframes ecg{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.slide.is-on .ecg{animation:ecg 3.2s linear infinite}
+@keyframes flow{to{stroke-dashoffset:-96}}
+.slide.is-on .flow{animation:flow var(--flow,2.2s) linear infinite}
+.slide.is-on .flow.rev{animation-direction:reverse}
+@keyframes ripple{0%{r:14;opacity:.9}100%{r:74;opacity:0}}
+.slide.is-on .ripple{animation:ripple var(--beat,.83s) ease-out infinite}
+
+/* 2장: 운동 시작 → 빨라짐 */
+#s2{--beat:.86s;--flow:2.4s}
+#s2.st-1{--beat:.4s;--flow:.9s}
+#s2 .mglow{opacity:0;transition:opacity .8s}
+#s2.st-1 .mglow{opacity:1}
+@keyframes squeeze{0%,100%{transform:scale(1)}50%{transform:scale(.95,1.03)}}
+#s2 .squeeze{transform-box:fill-box;transform-origin:center}
+#s2.is-on.st-1 .squeeze{animation:squeeze .8s var(--ease-inout) infinite}
+/* 5장: 15초 타이머 */
+#ring{stroke-dasharray:1;stroke-dashoffset:0}
+#s5.st-1 #ring{stroke-dashoffset:1;transition:stroke-dashoffset 5s linear}
+/* 8장: 호흡 */
+@keyframes breathe{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1)}}
+.wave i{display:inline-block;width:10px;height:70px;margin:0 5px;border-radius:5px;background:currentColor;transform-origin:center}
+.slide.is-on .wave i{animation:breathe var(--br,3s) ease-in-out infinite;animation-delay:calc(var(--k)*-0.12s)}
+/* 11장 */
+#s11 .a{--beat:.405s} #s11 .b{--beat:.341s}
+
+/* ── 구간 막대 ── */
+.zonebar{position:absolute;left:210px;top:520px;width:1500px;height:64px;border-radius:32px;overflow:hidden;background:var(--panel)}
+.zonebar span{position:absolute;top:0;bottom:0;transform-origin:left;transform:scaleX(0);transition:transform .9s var(--ease-out)}
+.zonebar span.on{transform:scaleX(1);opacity:1}
+.tick{position:absolute;top:600px;transform:translateX(-50%);text-align:center;font-size:30px;font-weight:600}
+.tick small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:2px}
+.zlabel{position:absolute;top:410px;transform:translateX(-50%);text-align:center;font-size:36px;font-weight:600;white-space:nowrap}
+.zlabel small{display:block;font-size:24px;font-weight:400;color:var(--t2);margin-top:4px}
+
+/* ── 카드 ── */
+.cards{position:absolute;left:120px;right:120px;display:grid;gap:28px}
+.card{border-radius:22px;background:var(--panel);padding:40px 40px 44px}
+.card h4{font-size:40px;font-weight:600;letter-spacing:-.015em}
+.card p{font-size:30px;line-height:1.5;margin-top:14px;color:var(--t2)}
+.card .k{font-size:26px;font-weight:600;letter-spacing:.02em}
+.sum .card{padding:34px 30px 38px}.sum .card h4{font-size:36px}.sum .card p{font-size:27px}
+.card .big{font-size:88px;font-weight:600;letter-spacing:-.03em;line-height:1}
+
+/* ── 계산기 ── */
+.calc label{display:block;font-size:30px;font-weight:600;margin-top:34px}
+.calc label span{float:right;font-size:40px;font-weight:600;color:var(--act)}
+.calc input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:12px;border-radius:6px;background:var(--hair);margin-top:26px;outline:0}
+.calc input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;box-shadow:0 2px 6px rgba(0,0,0,.18);cursor:pointer}
+.calc input[type=range]::-moz-range-thumb{width:48px;height:48px;border-radius:50%;background:#fff;border:1px solid #d2d2d7;cursor:pointer}
+#mini{position:relative;height:28px;border-radius:14px;overflow:hidden;background:var(--hair);margin-top:36px}
+#mini span{position:absolute;top:0;bottom:0}
+#pin{position:absolute;top:-10px;width:6px;height:48px;border-radius:3px;background:var(--ink);margin-left:-3px;transition:left .3s var(--ease-out)}
+
+/* ── 조작 버튼 ── */
+#ui{position:fixed;right:16px;bottom:16px;display:flex;gap:8px;align-items:center;z-index:50;transition:opacity .4s}
+#ui.idle{opacity:.22}
+#ui button,#ui .count{height:40px;min-width:40px;border-radius:20px;background:rgba(118,118,128,.55);color:#fff;display:inline-flex;align-items:center;justify-content:center;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
+#ui .count{padding:0 16px;font-size:13px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+@media (max-width:480px){#ui{right:8px;left:8px;bottom:10px;gap:4px;justify-content:center}#ui button,#ui .count{height:36px;min-width:36px}#ui .count{padding:0 10px}}
+#ui svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+#ui button.act{background:#0071e3}
+#bar{position:fixed;left:0;bottom:0;height:3px;background:rgba(134,134,139,.7);z-index:40;transition:width .4s var(--ease-out)}
+.overlay{position:fixed;inset:0;z-index:60;display:none;background:rgba(40,40,42,.96);color:#f5f5f7;overflow:auto;padding:40px clamp(16px,5vw,80px)}
+.overlay.show{display:block}
+.overlay h3{font-size:22px;font-weight:600;margin-bottom:20px}
+#grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+#grid button{aspect-ratio:16/9;border-radius:10px;padding:12px;text-align:left;display:flex;flex-direction:column;justify-content:space-between;font-size:14px;font-weight:600;line-height:1.3;border:2px solid transparent}
+#grid button small{font-size:11px;opacity:.6}
+#grid button.cur{border-color:#2997ff}
+#help table{border-collapse:collapse;font-size:15px}
+#help td{padding:7px 18px 7px 0;vertical-align:top}
+kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;background:#48484a;font:inherit;font-size:13px;text-align:center}
+#notes{position:fixed;left:0;right:0;bottom:0;z-index:45;display:none;max-height:38vh;overflow:auto;background:rgba(29,29,31,.94);color:#f5f5f7;padding:18px clamp(16px,5vw,64px) 70px;font-size:clamp(15px,1.5vw,20px);line-height:1.65;border-top:1px solid #3a3a3c}
+#notes.show{display:block}
+#notes b{color:#2997ff;font-weight:600}
+#blackout{position:fixed;inset:0;z-index:55;display:none}
+
+/* ── 운동과 순환 추가분 ── */
+:root{--vein:#5E8BFF}
+.slide[data-tile="light"],.slide[data-tile="parchment"]{--vein:#2950C8}
+.c-vein{color:var(--vein)} .c-o2{color:var(--o2)}
+.credit{position:absolute;left:120px;bottom:36px;font-size:20px;color:var(--t3);z-index:3}
+.vid{background:#000}
+
+/* 기출 딱지 */
+.gx{position:absolute;right:120px;top:96px;display:flex;gap:10px;z-index:3}
+.gx.static{position:static;margin:18px 0 6px}
+.gx span{height:44px;padding:0 18px;border-radius:22px;font-size:24px;font-weight:600;display:inline-flex;align-items:center;background:var(--panel);color:var(--t2)}
+.gx span.y{background:var(--hr);color:#fff}
+.gx span.p{background:transparent;border:2px dashed var(--t3);color:var(--t2)}
+
+/* 오른쪽 글 기둥(사진·영상 장) */
+.side{position:absolute;left:1180px;top:110px;width:640px;z-index:3}
+.t-head.s{font-size:54px;margin-top:10px}
+.pt{font-size:31px;line-height:1.5;margin-top:28px}
+.route{margin-top:40px}
+.route .k{font-size:26px;font-weight:600}
+.route p{font-size:32px;line-height:1.7;margin-top:6px}
+.warn{margin-top:40px;font-size:29px;line-height:1.55;padding:24px 28px;border-radius:18px;background:var(--panel)}
+.warn .mute{font-size:24px}
+.three{list-style:none;margin-top:30px;counter-reset:n}
+.three li{font-size:30px;line-height:1.45;padding:14px 0;border-bottom:1px solid var(--hl)}
+.three li b{display:inline-block;min-width:150px}
+
+/* 기출 지도 */
+.ymap{position:absolute;left:120px;right:120px;top:300px;display:grid;grid-template-columns:repeat(2,1fr);gap:14px 40px}
+.yr{display:flex;align-items:baseline;gap:22px;padding:14px 0;border-bottom:1px solid var(--hl)}
+.yr b{font-size:30px;font-weight:700;min-width:150px;color:var(--hr);font-variant-numeric:tabular-nums}
+.yr span{font-size:29px}
+.yr.pred b{color:var(--t2)}
+
+/* 판막 사슬 */
+.chain{position:absolute;left:120px;right:120px;display:flex;align-items:center;gap:14px;flex-wrap:nowrap}
+.node{padding:20px 28px;border-radius:16px;font-size:34px;font-weight:600;white-space:nowrap}
+.node.v{background:#e8eefc;color:#2950C8}.node.a{background:#fde8ea;color:#D70015}
+.vl{font-size:30px;display:inline-flex;align-items:center;gap:6px}
+.vl::before,.vl::after{content:"";width:22px;height:3px;background:#c7c7cc}
+.ar{font-size:30px;color:var(--t2);white-space:nowrap}
+
+/* 전도계 */
+.cond{margin-top:40px;font-size:30px;line-height:1.6;padding:22px 26px;border-radius:18px;background:var(--panel)}
+
+/* 단계 구간 설명 */
+.zone2{margin-bottom:34px}.zone2 .k{font-size:28px;font-weight:600}.zone2 p{font-size:32px;line-height:1.6;margin-top:8px}
+
+/* 시험지 */
+.exam{position:absolute;background:#fff;color:#1d1d1f;border:2px solid #1d1d1f;border-radius:4px;padding:34px 42px;font-size:28px;line-height:1.6}
+.exam table{border-collapse:collapse;font-size:25px;margin-top:6px}
+.exam th,.exam td{border:1.5px solid #1d1d1f;padding:8px 16px;text-align:center;font-weight:400}
+.exam th{background:#f2f2f2}
+.howto{border:1.5px solid #1d1d1f;padding:14px 22px;margin-top:20px;font-size:24px;line-height:1.6}
+.stmt{list-style:none;margin-top:14px}.stmt li{padding:14px 0;border-top:1px dashed #c7c7cc;font-size:30px}.stmt b{display:inline-block;min-width:90px}
+.answer{position:absolute}
+.a-line{font-size:30px;line-height:1.5;margin-top:22px;padding-left:20px;border-left:4px solid var(--act)}
+.kw{display:inline-block;padding:6px 16px;border-radius:18px;background:var(--act);color:#fff;font-size:23px;font-weight:600;margin:10px 8px 0 0}
+
+/* 표 */
+.qt{border-collapse:collapse;margin-top:36px;width:100%;font-size:29px}
+.qt th{font-size:22px;font-weight:600;color:var(--t2);text-align:right;padding:8px 10px}
+.qt td{padding:14px 10px;border-top:1px solid var(--hl);text-align:right;font-variant-numeric:tabular-nums}
+.qt td:first-child,.qt th:first-child{text-align:left}
+.eq{font-size:76px;font-weight:600;margin-top:30px;letter-spacing:-.02em}
+.dtab{border-collapse:collapse;font-size:32px}
+.dtab th{font-size:24px;font-weight:600;color:var(--t2);padding:10px 26px;border-bottom:2px solid var(--hl)}
+.dtab td{padding:16px 26px;text-align:center;border-bottom:1px solid var(--hl);font-variant-numeric:tabular-nums}
+.lbl{font-size:28px;display:inline-block;min-width:170px}
+
+/* 재분배 막대 */
+.rbar{position:absolute;left:120px;right:120px;height:120px;border-radius:16px;overflow:hidden;display:flex}
+.rbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;border-right:2px solid #fff}
+.rbar i small{display:block;font-size:20px;font-weight:400;opacity:.9}
+.rbar i span{text-align:center;line-height:1.25}
+
+/* 문제 버튼 */
+.mcq{position:absolute}
+.mcq button{display:block;width:100%;text-align:left;padding:20px 28px;border-radius:16px;background:var(--panel);font-size:29px;margin-top:14px;border:2px solid transparent;color:inherit}
+.mcq button.good{border-color:var(--low)}.mcq button.bad{border-color:var(--hr)}
+.fb{font-size:26px;line-height:1.5;margin-top:18px;min-height:40px;color:var(--t2)}
+.mech{position:absolute;left:120px;right:120px;top:840px;font-size:30px;line-height:1.6;padding:22px 30px;border-radius:18px;background:var(--panel)}
+#s30 .mech{right:900px;top:820px;font-size:26px}
+
+/* 방향 칩 */
+.dirs{display:flex;flex-wrap:wrap;gap:14px;margin-top:20px}
+.dirs span{font-size:32px;padding:14px 26px;border-radius:16px;background:var(--panel)}
+
+/* 조절 흐름 */
+.ctrl .src{position:absolute;left:120px;width:640px;padding:24px 30px;border-radius:18px;background:var(--panel)}
+.ctrl .src .k{font-size:28px;font-weight:600}.ctrl .src p{font-size:27px;line-height:1.5;margin-top:6px}
+.ctrl .src:nth-child(1){top:330px}.ctrl .src:nth-child(2){top:530px}.ctrl .src:nth-child(3){top:720px}
+.ctrl .hub{position:absolute;left:900px;top:555px;width:340px;padding:26px;border-radius:18px;background:var(--act);color:#fff;font-size:34px;font-weight:600;text-align:center}
+.ctrl .out{position:absolute;left:1300px;top:520px;width:500px;padding:24px 28px;border-radius:18px;background:var(--panel);font-size:29px;line-height:1.5}
+
+/* 함정 */
+.traps{position:absolute;left:120px;right:120px;top:290px;columns:2;column-gap:60px;list-style:none;counter-reset:t}
+.traps li{counter-increment:t;font-size:30px;line-height:1.45;padding:18px 0 18px 64px;position:relative;break-inside:avoid;border-bottom:1px solid var(--hl)}
+.traps li::before{content:counter(t);position:absolute;left:0;top:16px;width:44px;height:44px;border-radius:22px;background:var(--hr);color:#fff;font-size:22px;font-weight:700;text-align:center;line-height:44px}
+
+/* 그리기 */
+@keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
+.draw{stroke-dasharray:1}
+.slide.is-on .draw{animation:draw 1.6s var(--ease-inout) both .3s}
+</style>
+</head>
+<body>
+<div id="viewport"><div id="stage">
+
+<!-- 01 표지 -->
+<section class="slide" id="s1" data-tile="black" data-title="표지">
+  <video class="abs vid fin" src="img/circ-heart.mp4" poster="img/circ-heart.jpg" muted loop playsinline preload="auto" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,0) 40%,rgba(0,0,0,.85) 72%,#000 100%)"></div>
+  <div class="abs center" style="left:0;right:0;top:700px">
+    <div class="t-eyebrow in" style="--d:300">체육 임용 대비 · 운동생리학</div>
+    <div class="t-title in" style="--d:450;margin-top:18px">운동과 순환</div>
+    <div class="t-lead mute in" style="--d:600;margin-top:18px">피는 어떻게 근육까지 가는가 — 13년 기출로 정리</div>
+  </div>
+  <div class="credit">사진·영상: AI 생성 이미지</div>
+</section>
+
+<!-- 02 기출 지도 -->
+<section class="slide" id="s2" data-tile="dark" data-title="13년 기출 지도">
+  <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">2014~2026학년도, 순환·호흡에서 나온 것</div></div>
+  <div class="ymap">
+    <div class="yr in" style="--d:200"><b>2014 A3</b><span>평균동맥압 · 혈류 추진력 계산</span></div>
+    <div class="yr in" style="--d:240"><b>2015 A7</b><span>해리곡선 우측이동 · 정맥 판막</span></div>
+    <div class="yr in" style="--d:280"><b>2017 A4</b><span>동방결절 · QRS군</span></div>
+    <div class="yr in" style="--d:320"><b>2018 A7</b><span>해부학적 사강 · 폐포 환기량</span></div>
+    <div class="yr in" style="--d:360"><b>2020 A7</b><span>좌심실 용적 · 미토콘드리아</span></div>
+    <div class="yr in" style="--d:400"><b>2021 B6</b><span>프랭크-스탈링 · 박출계수 · 혈장량</span></div>
+    <div class="yr in" style="--d:440"><b>2022 A3</b><span>카보넨 목표 심박수</span></div>
+    <div class="yr in" style="--d:480"><b>2022 B8</b><span>심박수 증가 기전 · 1회 박출량 3요인 · 등척성</span></div>
+    <div class="yr in" style="--d:520"><b>2023 B9</b><span>고온 운동 · 심혈관 표류</span></div>
+    <div class="yr in" style="--d:560"><b>2024 A12</b><span>흡기 · 픽의 확산 법칙</span></div>
+    <div class="yr in" style="--d:600"><b>2024 B4</b><span>Wiggers 도표 · P파</span></div>
+    <div class="yr in" style="--d:640"><b>2025 B10</b><span>픽 원리로 심박출량·산소섭취량</span></div>
+    <div class="yr in" style="--d:680"><b>2026 A9</b><span>카보넨 강도 · 운동 효과 방향</span></div>
+    <div class="yr pred" data-step="1"><b>출제 예상</b><span>압수용기 · 운동승압반사 · 이중곱 · 발살바 · 운동 후 저혈압</span></div>
+  </div>
+  <div class="abs t-cap mute" data-step="1" style="left:120px;top:960px;right:120px">13년 동안 2016·2019학년도를 빼면 해마다 나왔다. 계산 문항(2014·2021·2025)은 단위까지 맞아야 점수가 된다.</div>
+</section>
+
+<!-- 03 두 순환 -->
+<section class="slide" id="s3" data-tile="black" data-title="1. 체순환과 폐순환">
+  <video class="abs vid fin" src="img/circ-body.mp4" poster="img/circ-body.jpg" muted loop playsinline preload="metadata" style="left:-160px;top:0;width:1300px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
+  <div class="side">
+    <div class="t-eyebrow in"><b>1</b>두 개의 순환</div>
+    <div class="t-head s in" style="--d:100">피는 8자로 돈다</div>
+    <div class="route" data-step="1">
+      <div class="k c-hr">체순환 · 대순환</div>
+      <p>좌심실 → <span class="blank" data-reveal="1" style="min-width:150px"><i>1</i><b>대동맥</b></span> → 온몸 모세혈관 → 대정맥 → 우심방</p>
+    </div>
+    <div class="route" data-step="2">
+      <div class="k c-vein">폐순환 · 소순환</div>
+      <p>우심실 → <span class="blank" data-reveal="2" style="min-width:150px"><i>2</i><b>폐동맥</b></span> → 폐 모세혈관 → <span class="blank" data-reveal="2" style="min-width:150px"><i>3</i><b>폐정맥</b></span> → 좌심방</p>
+    </div>
+    <div class="warn" data-step="3">폐동맥에는 <b class="c-vein">정맥혈</b>, 폐정맥에는 <b class="c-hr">동맥혈</b>이 흐른다.<br><span class="mute">동맥·정맥은 피의 종류가 아니라 '심장에서 나가느냐, 들어오느냐'로 나눈다.</span></div>
+  </div>
+</section>
+
+<!-- 04 판막 경로 -->
+<section class="slide" id="s4" data-tile="light" data-title="심장 속 길과 판막 4개">
+  <div class="hd"><div class="t-eyebrow in"><b>1</b>두 개의 순환</div><div class="t-head in" style="--d:100">심장 안에서는 판막 네 개가 길을 정한다</div></div>
+  <div class="chain in" style="--d:200;top:330px">
+    <span class="node v">우심방</span><span class="vl"><span class="blank" data-reveal="1" style="min-width:140px"><i>1</i><b>삼첨판</b></span></span><span class="node v">우심실</span><span class="vl"><span class="blank" data-reveal="2" style="min-width:150px"><i>2</i><b>폐동맥판</b></span></span><span class="node v">폐동맥</span><span class="ar">→ 폐</span>
+  </div>
+  <div class="chain in" style="--d:300;top:530px">
+    <span class="node a">폐정맥</span><span class="ar">→</span><span class="node a">좌심방</span><span class="vl"><span class="blank" data-reveal="3" style="min-width:150px"><i>3</i><b>승모판</b></span></span><span class="node a">좌심실</span><span class="vl"><span class="blank" data-reveal="4" style="min-width:150px"><i>4</i><b>대동맥판</b></span></span><span class="node a">대동맥</span>
+  </div>
+  <div class="abs t-body" data-step="5" style="left:120px;top:740px;right:120px">
+    방실판(삼첨판·승모판)이 닫히는 소리가 <b>제1심음</b>, 반월판(폐동맥판·대동맥판)이 닫히는 소리가 <b>제2심음</b>이다.
+    <div class="t-cap mute" style="margin-top:14px">관상순환: 대동맥 뿌리에서 관상동맥이 갈라져 심근을 먹이고, 관상정맥동을 거쳐 우심방으로 돌아온다.</div>
+  </div>
+</section>
+
+<!-- 05 폐순환은 저압 -->
+<section class="slide" id="s5" data-tile="parchment" data-title="폐순환은 저압·저저항">
+  <div class="hd"><div class="t-eyebrow in"><b>1</b>두 개의 순환</div><div class="t-head in" style="--d:100">같은 양의 피를 보내는데, 압력은 5분의 1</div></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="200" y1="900" x2="1100" y2="900" stroke="#c7c7cc" stroke-width="2"/>
+    <g class="in" style="--d:250">
+      <rect x="300" y="580" width="220" height="320" fill="#D70015" opacity=".35"/>
+      <rect x="300" y="420" width="220" height="160" fill="#D70015"/>
+      <text x="410" y="395" text-anchor="middle" font-size="40" font-weight="600" fill="#1d1d1f">120 / 80</text>
+      <text x="410" y="960" text-anchor="middle" font-size="30" fill="#6e6e73">대동맥 (체순환)</text>
+    </g>
+    <g data-step="1">
+      <rect x="700" y="868" width="220" height="32" fill="#0077B6" opacity=".35"/>
+      <rect x="700" y="800" width="220" height="68" fill="#0077B6"/>
+      <text x="810" y="775" text-anchor="middle" font-size="40" font-weight="600" fill="#1d1d1f">25 / 8</text>
+      <text x="810" y="960" text-anchor="middle" font-size="30" fill="#6e6e73">폐동맥 (폐순환)</text>
+    </g>
+    <text x="200" y="1010" font-size="24" fill="#86868b">막대: 아래 = 이완기, 진한 부분 = 수축기까지. 단위 mmHg</text>
+  </svg>
+  <div class="abs" style="left:1180px;top:340px;width:620px">
+    <div class="t-lead" data-step="2">우심실 벽은 좌심실보다 <b>얇다</b></div>
+    <div class="t-body mute" data-step="2" style="margin-top:20px">혈관이 짧고 넓어 저항이 작으니, 낮은 압력으로도 심박출량 전부를 폐로 보낼 수 있다.</div>
+    <div class="t-body" data-step="3" style="margin-top:40px">압력이 낮아야 폐 모세혈관에서 물이 새지 않고 <b>폐부종</b>을 막는다.</div>
+  </div>
+</section>
+
+<!-- 06 폐 모세혈관 동원 -->
+<section class="slide" id="s6" data-tile="black" data-title="운동하면 폐 모세혈관이 열린다">
+  <img class="abs fin" src="img/circ-alveoli.jpg" alt="폐포를 감싼 모세혈관망 표본" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>1</b>두 개의 순환</div>
+    <div class="t-head s in" style="--d:100">운동하면 폐 혈류가 몇 배로 는다</div>
+    <div class="pt" data-step="1"><b class="c-o2">동원</b> 쉴 때 닫혀 있던 모세혈관이 열린다 (주로 폐 윗부분)</div>
+    <div class="pt" data-step="2"><b class="c-o2">팽창</b> 이미 열린 혈관이 더 넓어진다</div>
+    <div class="pt" data-step="3">그래서 혈류가 크게 늘어도 폐동맥압은 <b>조금만</b> 오르고, 가스교환 <b>면적</b>은 넓어진다.</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:26px">면적↑ → 픽의 확산 법칙에서 확산량↑ (2024 A12와 연결)</div>
+  </div>
+</section>
+
+<!-- 07 관상순환 -->
+<section class="slide" id="s7" data-tile="black" data-title="관상순환 — 심장의 몫">
+  <img class="abs fin" src="img/circ-heart.jpg" alt="관상동맥이 보이는 심장" style="left:-260px;top:0;width:1920px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 55%,transparent 80%);mask-image:linear-gradient(90deg,#000 55%,transparent 80%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>1</b>두 개의 순환</div>
+    <div class="t-head s in" style="--d:100">심장도 피를 받아야 뛴다</div>
+    <div class="pt" data-step="1">좌심실 근육은 <b>이완기</b>에 주로 관상혈류를 받는다 — 수축할 때는 혈관이 눌린다.</div>
+    <div class="pt" data-step="2">심근은 쉴 때도 산소를 <b>70~80%</b> 뽑아 쓴다. 더 뽑을 여유가 없어서, 운동 때는 <b>혈류를 늘려</b> 산소를 받는다.</div>
+    <div class="pt" data-step="3">심박수↑ → 이완기↓ → 관상혈류를 받을 시간↓.<br>심근 산소 요구의 지표는 <b class="c-hr">이중곱</b>(심박수 × 수축기 혈압)이다.</div>
+  </div>
+</section>
+
+<!-- 08 심전도 -->
+<section class="slide" id="s8" data-tile="black" data-title="2. 심전도와 박동 조율기">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>심장의 전기</div><div class="t-head in" style="--d:100">심전도 한 번 = 심장 한 번</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A4</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <path d="M140 640H320C340 640 350 590 380 590C410 590 420 640 440 640H500L520 680L550 330L580 740L600 640H690C730 640 750 560 790 560C830 560 850 640 890 640H1090" fill="none" stroke="#3a3a3c" stroke-width="8" stroke-linejoin="round"/>
+    <path class="ecg" pathLength="1" stroke-dasharray=".3 .7" d="M140 640H320C340 640 350 590 380 590C410 590 420 640 440 640H500L520 680L550 330L580 740L600 640H690C730 640 750 560 790 560C830 560 850 640 890 640H1090" fill="none" stroke="#FF453A" stroke-width="8" stroke-linejoin="round" stroke-linecap="round"/>
+    <g data-step="1"><text x="380" y="560" text-anchor="middle" font-size="44" font-weight="700" fill="#f5f5f7">P</text><text x="380" y="800" text-anchor="middle" font-size="28" fill="#a1a1a6">심방 탈분극</text></g>
+    <g data-step="2"><text x="550" y="300" text-anchor="middle" font-size="44" font-weight="700" fill="#FF453A">QRS</text><text x="550" y="840" text-anchor="middle" font-size="28" fill="#a1a1a6">심실 탈분극 → 심실 수축</text></g>
+    <g data-step="3"><text x="790" y="530" text-anchor="middle" font-size="44" font-weight="700" fill="#f5f5f7">T</text><text x="790" y="800" text-anchor="middle" font-size="28" fill="#a1a1a6">심실 재분극</text></g>
+  </svg>
+  <div class="abs" style="left:1180px;top:330px;width:640px">
+    <div class="t-label" data-step="4">박동 조율기 = <span class="blank" data-reveal="4" style="min-width:200px"><i>1</i><b>동방결절</b></span></div>
+    <div class="t-cap mute" data-step="4" style="margin-top:12px">우심방 벽에 있다</div>
+    <div class="cond" data-step="5">동방결절 → 방실결절 → 히스속 → 좌·우 각 → 푸르키네 섬유</div>
+    <div class="t-body" data-step="6" style="margin-top:34px">운동하면 <b>R-R 간격이 짧아진다</b> = 심박수 증가</div>
+  </div>
+</section>
+
+<!-- 09 Wiggers -->
+<section class="slide" id="s9" data-tile="light" data-title="Wiggers 도표 읽기">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>심장의 전기</div><div class="t-head in" style="--d:100">판막은 압력이 큰 쪽에서 밀려 열린다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2024 B4</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080" id="wig">
+    <rect id="wSys" x="0" y="300" width="0" height="580" fill="#D70015" fill-opacity=".07" data-step="1"/>
+    <g font-size="22" fill="#86868b">
+      <text x="270" y="824" text-anchor="end">0</text><text x="270" y="594" text-anchor="end">70</text><text x="270" y="364" text-anchor="end">140</text>
+      <text x="230" y="300" font-size="22">mmHg</text>
+    </g>
+    <line x1="290" y1="820" x2="1200" y2="820" stroke="#c7c7cc" stroke-width="2"/>
+    <path id="wAo" fill="none" stroke="#D70015" stroke-width="6" stroke-linecap="round"/>
+    <path id="wLv" fill="none" stroke="#1d1d1f" stroke-width="6" stroke-linecap="round"/>
+    <path id="wEcg" fill="none" stroke="#6e6e73" stroke-width="4" stroke-linejoin="round"/>
+    <text id="lAo" font-size="26" font-weight="600" fill="#D70015">대동맥압</text>
+    <text id="lLv" font-size="26" font-weight="600" fill="#1d1d1f">좌심실압</text>
+    <g id="wMarks" data-step="2"></g>
+  </svg>
+  <div class="abs" style="left:1280px;top:320px;width:540px">
+    <div class="pt" data-step="1"><b class="c-hr">수축기</b> QRS 직후 ~ 대동맥판이 닫힐 때까지 (등용적 수축기 + 박출기)</div>
+    <div class="pt" data-step="2">① 승모판 닫힘(제1심음) ② 대동맥판 열림 ③ 대동맥판 닫힘(제2심음) ④ 승모판 열림</div>
+    <div class="pt" data-step="3">좌심실압 &gt; 대동맥압 → 대동맥판이 <b>열려</b> 피가 나간다. 대동맥판이 닫힐 때 대동맥압에 생기는 작은 홈 = <b>중복절흔</b>.</div>
+  </div>
+</section>
+
+<!-- 10 문제 ① -->
+<section class="slide" id="s10" data-tile="parchment" data-title="기출형 문제 ① 심전도·심장주기">
+  <div class="hd"><div class="t-eyebrow in">기출형 문제 ①</div><div class="t-head in" style="--d:100">발표 중 틀린 것 2개를 찾아 고치시오</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:300px;width:1040px">
+    <p>다음은 학생들이 심전도와 심장 주기에 대해 발표한 내용이다.</p>
+    <ol class="stmt">
+      <li><b>가람</b> : P파는 심실이 탈분극할 때 나타난다.</li>
+      <li><b>나래</b> : QRS군 직후 심실은 등용적 수축을 한다.</li>
+      <li><b>다온</b> : 좌심실압이 대동맥압보다 높아지면 대동맥판이 열린다.</li>
+      <li><b>라희</b> : 운동 중에는 R-R 간격이 길어져 심박수가 증가한다.</li>
+    </ol>
+  </div>
+  <div class="answer" style="left:1220px;top:300px;width:580px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1"><b class="c-hr">가람</b> P파 → <b>심방</b>의 탈분극</div>
+    <div class="a-line" data-step="2"><b class="c-hr">라희</b> R-R 간격이 <b>짧아져</b> 심박수 증가</div>
+    <div data-step="3" style="margin-top:30px"><div class="t-cap mute">채점 키워드</div><span class="kw">심방 탈분극</span><span class="kw">R-R 간격 감소</span></div>
+  </div>
+</section>
+
+<!-- 11 Q = HR × SV -->
+<section class="slide" id="s11" data-tile="black" data-title="3. 심박출량 = 심박수 × 1회 박출량">
+  <img class="abs fin" src="img/circ-vo2test.jpg" alt="자전거 에르고미터 운동부하검사" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>3</b>심박출량</div>
+    <div class="t-head s in" style="--d:100">심장이 1분에 내보내는 피</div>
+    <div class="eq in" style="--d:250">Q = HR × SV</div>
+    <table class="qt" data-step="1">
+      <tr><th></th><th>HR</th><th>SV</th><th>Q</th></tr>
+      <tr><td>안정</td><td>70</td><td>72 mL</td><td><b>약 5 L</b></td></tr>
+      <tr data-step="2"><td>최대 · 일반인</td><td>195</td><td>110 mL</td><td><b class="c-hr">약 21 L</b></td></tr>
+      <tr data-step="3"><td>최대 · 지구성 선수</td><td>190</td><td>180 mL</td><td><b class="c-hr">약 34 L</b></td></tr>
+    </table>
+    <div class="t-cap mute" data-step="3" style="margin-top:20px">최대 심박수는 둘이 비슷하다. 차이는 <b style="color:var(--on-dark)">1회 박출량</b>에서 난다. (값은 교재 범위 안의 예시)</div>
+  </div>
+</section>
+
+<!-- 12 심박수 두 단계 -->
+<section class="slide" id="s12" data-tile="dark" data-title="심박수가 오르는 두 단계">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">심박수는 '브레이크를 풀고' 나서 '가속한다'</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 B8</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <rect x="260" y="713" width="900" height="125" fill="#30D158" fill-opacity=".16" data-step="1"/>
+    <rect x="260" y="402" width="900" height="311" fill="#FF453A" fill-opacity=".14" data-step="2"/>
+    <line x1="260" y1="900" x2="1180" y2="900" stroke="#6e6e73" stroke-width="2"/>
+    <line x1="260" y1="900" x2="260" y2="360" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6">
+      <text x="240" y="846" text-anchor="end">60</text><text x="240" y="721" text-anchor="end">100</text><text x="240" y="410" text-anchor="end">200</text>
+      <text x="260" y="940" text-anchor="middle">0</text><text x="710" y="940" text-anchor="middle">50</text><text x="1160" y="940" text-anchor="middle">100</text>
+      <text x="710" y="985" text-anchor="middle">유산소 운동 강도 (%)</text><text x="200" y="340">심박수 (회/분)</text>
+    </g>
+    <line x1="260" y1="713" x2="1160" y2="713" stroke="#a1a1a6" stroke-width="2" stroke-dasharray="8 8"/>
+    <path class="draw" pathLength="1" d="M260 838L1160 402" stroke="#f5f5f7" stroke-width="7" stroke-linecap="round" fill="none"/>
+  </svg>
+  <div class="abs" style="left:1240px;top:360px;width:580px">
+    <div class="zone2" data-step="1"><div class="k c-low">초기 · 약 100회/분까지</div><p><span class="blank" data-reveal="1" style="min-width:300px"><i>1</i><b>부교감(미주)신경 활동 감소</b></span></p></div>
+    <div class="zone2" data-step="2"><div class="k c-hr">후기 · 100회/분 이상</div><p><span class="blank" data-reveal="2" style="min-width:250px"><i>2</i><b>교감신경 활성 증가</b></span> + 부신수질 카테콜아민</p></div>
+    <div class="t-cap mute" data-step="3" style="margin-top:28px">함정: 처음부터 "교감 증가"라고만 쓰면 감점. 초기 핵심은 <b style="color:var(--on-dark)">부교감 철회</b>.</div>
+  </div>
+</section>
+
+<!-- 13 SV 3요인 -->
+<section class="slide" id="s13" data-tile="light" data-title="1회 박출량을 정하는 세 가지">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">1회 박출량 = 이완기말 용적 − 수축기말 용적</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 B8</span><span>2021 B6</span></div>
+  <div class="cards" style="top:330px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-o2">전부하</div><h4>이완기말 용적 (EDV)</h4><div class="big c-o2" style="margin-top:28px">↑</div><p>정맥환류가 늘면 심실이 더 차고, 더 늘어난 만큼 세게 수축 → SV↑</p></div>
+    <div class="card" data-step="2"><div class="k c-hr">수축력</div><h4 style="margin-top:22px"><span class="blank" data-reveal="2" style="min-width:230px"><i>1</i><b>심실 수축력</b></span></h4><div class="big c-hr" style="margin-top:28px">↑</div><p>교감신경·에피네프린 → 더 짜낸다 → 수축기말 용적↓ → SV↑</p></div>
+    <div class="card" data-step="3"><div class="k" style="color:var(--t2)">후부하</div><h4>평균 대동맥압</h4><div class="big" style="margin-top:28px;color:var(--t2)">↑ → SV↓</div><p>나가야 할 문의 압력이 높으면 덜 나간다</p></div>
+  </div>
+  <div class="abs t-cap mute" data-step="3" style="left:120px;top:920px;right:120px">2022 B8은 이 셋 중 하나를 빈칸으로 냈다 — 셋을 이름 그대로 외워 둔다: 이완기말 용적, 평균 대동맥압, 심실 수축력.</div>
+</section>
+
+<!-- 14 프랭크-스탈링 -->
+<section class="slide" id="s14" data-tile="black" data-title="프랭크-스탈링 법칙">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">늘어난 만큼 세게 — 프랭크-스탈링</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="300" y1="900" x2="1120" y2="900" stroke="#6e6e73" stroke-width="2"/>
+    <line x1="300" y1="900" x2="300" y2="360" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6"><text x="710" y="960" text-anchor="middle">이완기말 용적 (mL) →</text><text x="250" y="340">1회 박출량 (mL)</text>
+      <text x="300" y="935" text-anchor="middle">60</text><text x="710" y="935" text-anchor="middle">130</text><text x="1100" y="935" text-anchor="middle">200</text></g>
+    <path id="fsA" class="draw" pathLength="1" fill="none" stroke="#f5f5f7" stroke-width="7" stroke-linecap="round"/>
+    <g data-step="2"><path id="fsB" fill="none" stroke="#FF453A" stroke-width="7" stroke-linecap="round" stroke-dasharray="14 10"/><text id="fsBl" font-size="28" font-weight="600" fill="#FF453A">교감신경↑ (수축력↑)</text></g>
+    <g data-step="1"><circle id="fsP1" r="12" fill="#64D2FF"/><circle id="fsP2" r="12" fill="#64D2FF"/><path id="fsArr" stroke="#64D2FF" stroke-width="4" fill="none"/></g>
+  </svg>
+  <div class="abs" style="left:1240px;top:360px;width:580px">
+    <div class="pt" data-step="1">정맥환류↑ → EDV↑ → 심근이 더 늘어남 → <b>더 강하게 수축</b> → SV↑</div>
+    <div class="pt" data-step="2">같은 EDV에서도 교감신경이 오면 곡선 자체가 <b class="c-hr">위로</b> 올라간다 — 이건 프랭크-스탈링이 아니라 '수축력' 요인.</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:24px">2021 B6: "연구자의 이름에서 유래한 법칙" → 프랭크-스탈링 법칙(기전)</div>
+  </div>
+</section>
+
+<!-- 15 박출계수 -->
+<section class="slide" id="s15" data-tile="parchment" data-title="박출계수 계산">
+  <div class="hd"><div class="t-eyebrow in"><b>3</b>심박출량</div><div class="t-head in" style="--d:100">박출계수 — 분모는 이완기말 용적</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
+  <div class="panel abs in" style="--d:250;left:120px;top:300px;right:120px">
+    <div style="font-size:58px;font-weight:600;letter-spacing:-.02em">박출계수(%) = <span class="c-act">1회 박출량</span> ÷ <span class="c-hr">이완기말 용적</span> × 100</div>
+  </div>
+  <table class="dtab abs in" style="--d:350;left:120px;top:500px">
+    <tr><th></th><th>이완기말 용적</th><th>수축기말 용적</th><th>1회 박출량</th><th>박출계수</th></tr>
+    <tr><td>훈련 전</td><td>90</td><td>40</td><td data-step="1">50</td><td><span class="blank" data-reveal="2" style="min-width:160px"><i>1</i><b>55.6 %</b></span></td></tr>
+    <tr><td>훈련 후</td><td>95</td><td>38</td><td data-step="1">57</td><td><span class="blank" data-reveal="3" style="min-width:160px"><i>2</i><b>60 %</b></span></td></tr>
+  </table>
+  <div class="abs t-body" data-step="3" style="left:120px;top:800px;right:120px">57 ÷ 95 × 100 = <b class="c-act">60</b> — 수축기말 용적이나 혈액량으로 나누면 오답이다.
+    <div class="t-cap mute" style="margin-top:10px">안정 시 정상 범위 약 55~70 %. 2021 B6 표의 값 그대로.</div></div>
+</section>
+
+<!-- 16 문제 ② -->
+<section class="slide" id="s16" data-tile="light" data-title="기출형 문제 ② 박출계수·혈액량">
+  <div class="hd"><div class="t-eyebrow in">기출형 문제 ②</div><div class="t-head in" style="--d:100">유산소 지구성 훈련 전·후의 변화</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:290px;width:1060px">
+    <table>
+      <tr><th>구분</th><th>이완기말 용적(mL)</th><th>( ㉠ )(mL)</th><th>수축기말 용적(mL)</th><th>박출계수(%)</th><th>총혈액량(L)</th></tr>
+      <tr><td>훈련 전</td><td>110</td><td>60</td><td>50</td><td>( ? )</td><td>4.8</td></tr>
+      <tr><td>훈련 후</td><td>130</td><td>78</td><td>52</td><td>( ㉡ )</td><td>5.3</td></tr>
+    </table>
+    <div class="howto">&lt;작성 방법&gt;<br>○ ㉠에 해당하는 용어를 쓰고, ㉡의 값을 쓸 것.<br>○ 총혈액량이 증가한 이유를 적혈구량과 혈장량의 상대적 기여도 측면에서 서술할 것.</div>
+  </div>
+  <div class="answer" style="left:1240px;top:290px;width:560px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">㉠ <b>1회 박출량</b></div>
+    <div class="a-line" data-step="2">㉡ 78 ÷ 130 × 100 = <b>60 %</b></div>
+    <div class="a-line" data-step="3">훈련 초기 <b>혈장량</b>이 적혈구량보다 더 빨리, 더 많이 늘어 총혈액량 증가에 더 크게 기여한다.</div>
+    <div data-step="4" style="margin-top:26px"><div class="t-cap mute">채점 키워드</div><span class="kw">1회 박출량</span><span class="kw">60%</span><span class="kw">혈장량 증가 &gt; 적혈구 증가</span></div>
+  </div>
+</section>
+
+<!-- 17 근육펌프 -->
+<section class="slide" id="s17" data-tile="black" data-title="4. 근육펌프와 정맥 판막">
+  <video class="abs vid fin" src="img/circ-calf.mp4" poster="img/circ-calf.jpg" muted loop playsinline preload="metadata" style="left:-120px;top:0;width:1300px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
+  <div class="side">
+    <div class="t-eyebrow in"><b>4</b>정맥환류</div>
+    <div class="t-head s in" style="--d:100">종아리는 두 번째 심장</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2015 A7</span></div>
+    <div class="pt" data-step="1">근육이 수축하면 그 사이 정맥이 눌려 피가 <b>위로</b> 밀린다.</div>
+    <div class="pt" data-step="2">아래로 새지 않게 막는 것 = <span class="blank" data-reveal="2" style="min-width:200px"><i>1</i><b>정맥 판막</b></span></div>
+    <div class="pt" data-step="3">운동을 갑자기 멈추면 펌프가 멎어 환류↓ → 혈압↓ · 어지럼 → <b>정리 운동</b>이 필요한 이유.</div>
+  </div>
+</section>
+
+<!-- 18 정맥환류 3기전 -->
+<section class="slide" id="s18" data-tile="black" data-title="정맥환류 3기전 · 등척성 예외">
+  <img class="abs fin" src="img/circ-isometric.jpg" alt="벽 스쿼트로 버티는 학생" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>4</b>정맥환류</div>
+    <div class="t-head s in" style="--d:100">피를 심장으로 돌려보내는 세 가지</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2022 B8</span></div>
+    <ol class="three" data-step="1"><li><b>근육펌프</b> 동적 수축 + 판막</li><li><b>호흡펌프</b> 들숨 때 흉강 내압↓ · 복강 내압↑</li><li><b>정맥 수축</b> 교감신경이 정맥을 조임</li></ol>
+    <div class="warn" data-step="2">근육펌프가 작동하지 않는 수축 = <span class="blank" data-reveal="2" style="min-width:230px"><i>1</i><b>등척성(정적) 수축</b></span><br><span class="mute">계속 힘을 주면 혈관이 눌린 채 풀리지 않아 환류가 막힌다.</span></div>
+  </div>
+</section>
+
+<!-- 19 혈류 재분배 -->
+<section class="slide" id="s19" data-tile="light" data-title="5. 혈류 재분배">
+  <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">근육이 받는 몫: 5분의 1 → 5분의 4 이상</div></div>
+  <div class="rbar in" style="--d:250;top:360px" id="rb1"></div>
+  <div class="rbar" data-step="1" style="top:560px" id="rb2"></div>
+  <div class="abs t-cap" style="left:120px;top:322px">안정 · 심박출량 약 5 L/분</div>
+  <div class="abs t-cap" data-step="1" style="left:120px;top:522px">최대 운동 · 약 25 L/분</div>
+  <div class="abs" data-step="2" style="left:120px;top:720px;right:120px">
+    <div class="t-body"><b>교감신경</b>이 온몸 혈관을 조이지만(내장·신장↓), 활동근에서는 대사산물(H⁺·CO₂·K⁺·아데노신·NO)이 혈관을 넓혀 그 조임을 무력화한다 = <b class="c-act">기능적 교감신경 억제</b></div>
+    <div class="t-cap mute" style="margin-top:14px">뇌 혈류는 비율만 줄 뿐 양은 유지되거나 약간 는다 (15 % × 5 L = 0.75 L → 4 % × 25 L = 1 L). 비율은 교재 대표값(대략).</div>
+  </div>
+</section>
+
+<!-- 20 혈압 반응 -->
+<section class="slide" id="s20" data-tile="black" data-title="운동 중 혈압 반응">
+  <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">수축기는 오르고, 이완기는 거의 그대로</div></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="260" y1="900" x2="1180" y2="900" stroke="#6e6e73" stroke-width="2"/><line x1="260" y1="900" x2="260" y2="360" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6"><text x="240" y="784" text-anchor="end">80</text><text x="240" y="604" text-anchor="end">140</text><text x="240" y="424" text-anchor="end">200</text>
+      <text x="710" y="960" text-anchor="middle">유산소 운동 강도 →</text><text x="200" y="340">혈압 (mmHg)</text></g>
+    <path class="draw" pathLength="1" d="M260 660L1160 420" stroke="#FF453A" stroke-width="7" fill="none" stroke-linecap="round"/>
+    <text x="1170" y="410" font-size="30" font-weight="600" fill="#FF453A">수축기 120→200</text>
+    <g data-step="1"><path d="M260 780L1160 786" stroke="#64D2FF" stroke-width="7" fill="none" stroke-linecap="round"/><text x="1170" y="800" font-size="30" font-weight="600" fill="#64D2FF">이완기 ≈ 80</text></g>
+    <g data-step="2"><path d="M260 740L1160 658" stroke="#a1a1a6" stroke-width="5" stroke-dasharray="12 10" fill="none"/><text x="1170" y="660" font-size="28" fill="#a1a1a6">평균동맥압 약간↑</text></g>
+  </svg>
+  <div class="abs" style="left:1240px;top:830px;width:600px" data-step="3"><div class="t-cap mute">수축기↑ = 심박출량↑ / 이완기 유지 = 활동근 혈관 확장으로 말초저항↓. 저항운동은 둘 다 크게 오른다.</div></div>
+</section>
+
+<!-- 21 혈류 추진력 -->
+<section class="slide" id="s21" data-tile="parchment" data-title="혈류 추진력 계산">
+  <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">혈류 추진력 = 평균동맥압 − 우심방압</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2014 A3</span></div>
+  <div class="panel abs in" style="--d:250;left:120px;top:300px;width:760px">
+    <div class="t-cap mute">2014 A3 검사 결과</div>
+    <div class="t-body" style="margin-top:10px">안정 120 / 80 · 우심방압 0<br>운동 185 / 85 · 우심방압 5</div>
+    <div class="t-cap mute" style="margin-top:24px">평균동맥압 = 이완기 + ⅓ × (수축기 − 이완기)</div>
+  </div>
+  <div class="abs num" style="left:960px;top:300px;font-size:44px;line-height:1.85;font-weight:500">
+    <div data-step="1"><span class="mute lbl">안정 MAP</span>80 + 40/3 = <span class="blank" data-reveal="2" style="min-width:150px"><i>1</i><b>93.3</b></span></div>
+    <div data-step="1"><span class="mute lbl">운동 MAP</span>85 + 100/3 = <span class="blank" data-reveal="2" style="min-width:150px"><i>2</i><b>118.3</b></span></div>
+    <div data-step="3"><span class="mute lbl">추진력</span>93.3 − 0 · 118.3 − 5 = <b>113.3</b></div>
+    <div data-step="4"><span class="mute lbl">차이</span>113.3 − 93.3 = <span class="blank" data-reveal="5" style="min-width:150px"><i>3</i><b>20</b></span> mmHg</div>
+  </div>
+  <div class="abs t-body" data-step="5" style="left:120px;top:820px;right:120px">혈류 = 압력차 ÷ 저항 → 압력차가 커지고 활동근 저항은 줄어 <b>혈류량이 증가</b>한다.
+    <div class="t-cap mute" style="margin-top:8px">RER 1.20 → 젖산을 중탄산염이 완충하며 나온 '비대사성 CO₂' 때문에 1.0을 넘는다.</div></div>
+</section>
+
+<!-- 22 이중곱·발살바 -->
+<section class="slide" id="s22" data-tile="black" data-title="이중곱 · 발살바 (출제 예상)">
+  <img class="abs fin" src="img/circ-legpress.jpg" alt="숨을 참고 레그프레스를 미는 모습" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>5</b>재분배와 혈압</div>
+    <div class="t-head s in" style="--d:100">심장이 얼마나 힘든가</div>
+    <div class="gx static in" style="--d:200"><span class="p">출제 예상</span></div>
+    <div class="pt" data-step="1"><b class="c-hr">이중곱</b> = 심박수 × 수축기 혈압 → 심근 산소 소비량의 지표<br><span class="mute num">안정 70 × 120 = 8,400 · 운동 170 × 190 = 32,300</span></div>
+    <div class="pt" data-step="2"><b class="c-hr">발살바</b> 숨을 참고 성문을 닫은 채 힘을 주면 흉강 내압↑ → 정맥환류↓, 혈압은 급상승. 무거운 레그프레스에서 수축기 300 mmHg 이상이 보고됐다.</div>
+    <div class="pt" data-step="3">지도: 들어 올릴 때 <b>내쉬고</b>, 내릴 때 들이쉰다.</div>
+  </div>
+</section>
+
+<!-- 23 문제 ③ -->
+<section class="slide" id="s23" data-tile="light" data-title="기출형 문제 ③ 혈류 추진력">
+  <div class="hd"><div class="t-eyebrow in">기출형 문제 ③</div><div class="t-head in" style="--d:100">혈류 추진력의 차이를 구하시오</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:290px;width:900px">
+    <p>운동 부하 검사 결과 (소수점 이하 첫째 자리에서 반올림)</p>
+    <table><tr><th></th><th>수축기</th><th>이완기</th><th>우심방압</th></tr>
+      <tr><td>안정 시</td><td>110</td><td>70</td><td>2</td></tr>
+      <tr><td>운동 시</td><td>170</td><td>74</td><td>4</td></tr></table>
+    <div class="howto">&lt;작성 방법&gt; 안정 시와 운동 시 체순환 혈류 추진력의 차이 값을 구하고, 그 차이가 혈류에 미치는 영향을 서술할 것.</div>
+  </div>
+  <div class="answer" style="left:1100px;top:290px;width:700px">
+    <div class="t-cap mute">풀이</div>
+    <div class="a-line num" data-step="1">안정 MAP 70 + 40/3 = 83.3 → 추진력 83.3 − 2 = 81.3</div>
+    <div class="a-line num" data-step="2">운동 MAP 74 + 96/3 = 106.0 → 추진력 106 − 4 = 102.0</div>
+    <div class="a-line num" data-step="3">차이 102.0 − 81.3 = 20.7 → <b>21 mmHg</b></div>
+    <div class="a-line" data-step="4">압력차↑ → 혈류량 증가</div>
+    <div data-step="4" style="margin-top:20px"><span class="kw">평균동맥압</span><span class="kw">우심방압을 뺌</span><span class="kw">혈류 증가</span></div>
+  </div>
+</section>
+
+<!-- 24 산소 운반 -->
+<section class="slide" id="s24" data-tile="black" data-title="6. 피 100 mL에 산소 20 mL">
+  <video class="abs vid fin" src="img/circ-rbc.mp4" poster="img/circ-rbc.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 34%,rgba(0,0,0,0) 55%,rgba(0,0,0,.9) 82%)"></div>
+  <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">적혈구 하나하나가 산소를 내려놓는다</div></div>
+  <div class="abs center num" style="left:0;right:0;top:830px">
+    <div style="font-size:54px;font-weight:600" data-step="1">헤모글로빈 15 g/dL × <span class="c-act">1.34</span> mL × 98 % ≈ <span class="c-hr">20 mL / 100 mL</span></div>
+    <div class="t-cap mute" data-step="2" style="margin-top:16px">산소 대부분은 헤모글로빈에 붙어 간다. 혈장에 녹은 것은 약 0.3 mL뿐이다.</div>
+  </div>
+</section>
+
+<!-- 25 산소해리곡선 -->
+<section class="slide" id="s25" data-tile="dark" data-title="산소해리곡선 우측이동">
+  <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">근육에서는 곡선이 오른쪽으로 — 산소를 더 내려놓는다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A7</span></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="260" y1="900" x2="1160" y2="900" stroke="#6e6e73" stroke-width="2"/><line x1="260" y1="900" x2="260" y2="360" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="24" fill="#a1a1a6"><text x="240" y="908" text-anchor="end">0</text><text x="240" y="638" text-anchor="end">50</text><text x="240" y="368" text-anchor="end">100</text>
+      <text x="260" y="940" text-anchor="middle">0</text><text x="440" y="940" text-anchor="middle">20</text><text x="620" y="940" text-anchor="middle">40</text><text x="1160" y="940" text-anchor="middle">100</text>
+      <text x="710" y="985" text-anchor="middle">산소 분압 PO₂ (mmHg)</text><text x="200" y="340">헤모글로빈 포화도 (%)</text></g>
+    <path id="odA" class="draw" pathLength="1" fill="none" stroke="#f5f5f7" stroke-width="7" stroke-linecap="round"/>
+    <g data-step="2"><path id="odB" fill="none" stroke="#FF453A" stroke-width="7" stroke-linecap="round"/></g>
+    <g data-step="1" id="odMarks"></g>
+    <g data-step="3" id="odShift"></g>
+  </svg>
+  <div class="abs" style="left:1240px;top:350px;width:580px">
+    <div class="pt" data-step="1">폐(PO₂ 100) 약 97 % → 쉬는 조직(40) 약 75 % → 운동 근육(20) 약 31 %</div>
+    <div class="pt" data-step="2">우측이동 조건: 체온↑ · PCO₂↑ · <span class="blank" data-reveal="2" style="min-width:110px"><i>1</i><b>pH</b></span>↓ (H⁺↑, 보어 효과) · 2,3-BPG↑</div>
+    <div class="pt" data-step="3">같은 PO₂ 20에서 포화도가 더 낮아진다 = 그만큼 <b class="c-hr">더 내려놓음</b> → 동정맥 산소차↑</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:14px">곡선은 힐 식(n = 2.7, P50 26.8 → 32 mmHg)으로 그린 모형이다.</div>
+  </div>
+</section>
+
+<!-- 26 Fick -->
+<section class="slide" id="s26" data-tile="light" data-title="픽 원리 — 산소섭취량">
+  <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">산소섭취량 = 심박출량 × 동정맥 산소차</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2025 B10</span></div>
+  <div class="cards" style="top:330px;grid-template-columns:1fr 1fr">
+    <div class="card" data-step="1"><div class="k" style="color:var(--t2)">안정</div><div class="num" style="font-size:52px;font-weight:600;margin-top:20px">5 L × 50 mL/L</div><div class="big" style="margin-top:18px">250 <span style="font-size:36px;color:var(--t2)">mL/분</span></div><p>동정맥 산소차 약 5 mL/100 mL</p></div>
+    <div class="card" data-step="2"><div class="k c-hr">최대 운동</div><div class="num" style="font-size:52px;font-weight:600;margin-top:20px">20 L × 150 mL/L</div><div class="big c-hr" style="margin-top:18px">3,000 <span style="font-size:36px;color:var(--t2)">mL/분</span></div><p>동정맥 산소차 약 15 mL/100 mL</p></div>
+  </div>
+  <div class="abs t-body" data-step="3" style="left:120px;top:800px;right:120px">최대산소섭취량을 키우는 두 길: <b>중추</b> — 최대 심박출량(1회 박출량↑) / <b>말초</b> — 산소 추출(모세혈관 밀도·미토콘드리아↑)
+    <div class="t-cap mute" style="margin-top:10px">단위 함정: mL/100 mL을 L 단위로 바꿀 때 × 10 (14 mL/100 mL = 140 mL/L).</div></div>
+</section>
+
+<!-- 27 사강·확산 -->
+<section class="slide" id="s27" data-tile="parchment" data-title="사강 · 폐포 환기량 · 확산">
+  <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">숨은 깊게 — 사강 150 mL은 매번 버려진다</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2018 A7</span><span>2024 A12</span></div>
+  <table class="dtab abs in" style="--d:300;left:120px;top:320px">
+    <tr><th></th><th>1회 호흡량</th><th>호흡수</th><th>분당 환기량</th><th>폐포 환기량</th></tr>
+    <tr><td>A</td><td>300</td><td>30</td><td>9.0 L</td><td><span class="blank" data-reveal="1" style="min-width:140px"><i>1</i><b>4.5 L</b></span></td></tr>
+    <tr><td>B</td><td>600</td><td>15</td><td>9.0 L</td><td><span class="blank" data-reveal="1" style="min-width:140px"><i>2</i><b>6.75 L</b></span></td></tr>
+    <tr><td>C</td><td>1000</td><td>9</td><td>9.0 L</td><td><span class="blank" data-reveal="1" style="min-width:140px"><i>3</i><b>7.65 L</b></span></td></tr>
+  </table>
+  <div class="abs t-body" data-step="1" style="left:120px;top:640px;width:900px">폐포 환기량 = (1회 호흡량 − <b>해부학적 사강 150</b>) × 호흡수<br><span class="mute">분당 환기량이 같아도 깊고 느린 C가 가장 많다.</span></div>
+  <div class="panel abs" data-step="2" style="left:1100px;top:320px;width:700px">
+    <div class="t-label">픽의 확산 법칙</div>
+    <div class="num" style="font-size:40px;font-weight:600;margin-top:20px">확산량 ∝ 면적 × 분압차 ÷ 두께</div>
+    <div class="t-cap mute" style="margin-top:18px;line-height:1.6">운동하면 근육이 산소를 많이 써서 정맥혈 PO₂↓ → 폐에서 <b style="color:var(--ink)">분압차↑</b> → 확산↑ (2024 A12 근거 문장)</div>
+  </div>
+</section>
+
+<!-- 28 문제 ④ -->
+<section class="slide" id="s28" data-tile="light" data-title="기출형 문제 ④ 픽 원리 계산">
+  <div class="hd"><div class="t-eyebrow in">기출형 문제 ④</div><div class="t-head in" style="--d:100">픽 원리로 심박출량과 산소섭취량을 구하시오</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:28px 38px">
+    <div style="display:flex;gap:36px;align-items:flex-start">
+      <div>
+        <table><tr><th>파워(W)</th><th>심박수</th><th>1회 박출량(mL)</th></tr><tr><td>100</td><td>110</td><td>90</td></tr><tr><td>200</td><td>150</td><td>120</td></tr><tr><td>300</td><td>185</td><td>125</td></tr></table>
+        <p style="margin-top:16px;font-size:24px;line-height:1.55">○ 체중 60 kg<br>○ 운동 시간 8분, 일량 96 kJ<br>※ 1 W = 1 J·s⁻¹</p>
+      </div>
+      <svg width="420" height="330" viewBox="0 0 420 330" style="flex:none">
+        <line x1="50" y1="280" x2="400" y2="280" stroke="#1d1d1f" stroke-width="1.5"/><line x1="50" y1="280" x2="50" y2="20" stroke="#1d1d1f" stroke-width="1.5"/>
+        <line x1="50" y1="46" x2="400" y2="46" stroke="#1d1d1f" stroke-width="2" stroke-dasharray="6 5"/>
+        <path d="M50 93C100 118 130 136 166 152S245 198 282 210S365 231 398 233" fill="none" stroke="#1d1d1f" stroke-width="2.5"/>
+        <g stroke="#1d1d1f" stroke-dasharray="3 4" stroke-width="1"><line x1="282" y1="210" x2="282" y2="280"/><line x1="50" y1="210" x2="282" y2="210"/></g>
+        <circle cx="282" cy="210" r="5" fill="#1d1d1f"/>
+        <g font-size="15" fill="#1d1d1f"><text x="40" y="50" text-anchor="end">20</text><text x="40" y="214" text-anchor="end">6</text><text x="40" y="284" text-anchor="end">0</text>
+          <text x="166" y="300" text-anchor="middle">100</text><text x="282" y="300" text-anchor="middle">200</text><text x="398" y="300" text-anchor="middle">300</text>
+          <text x="225" y="325" text-anchor="middle">파워(W)</text><text x="300" y="38">동맥</text><text x="300" y="196">정맥</text><text x="56" y="16">산소(mL/100mL)</text></g>
+      </svg>
+    </div>
+    <div class="howto">&lt;작성 방법&gt; ㉠ 심박출량(L·min⁻¹), ㉡ 산소섭취량(mL·kg⁻¹·min⁻¹)을 단위와 함께 쓰고, 훈련으로 1회 박출량이 늘어나는 좌심실 내 요인 2가지를 서술할 것.</div>
+  </div>
+  <div class="answer" style="left:1220px;top:280px;width:600px">
+    <div class="t-cap mute">풀이</div>
+    <div class="a-line num" data-step="1">96,000 J ÷ 480 s = <b>200 W</b></div>
+    <div class="a-line num" data-step="2">㉠ 150 × 120 mL = <b>18 L·min⁻¹</b></div>
+    <div class="a-line num" data-step="3">산소차 20 − 6 = 14 mL/100mL = 140 mL/L</div>
+    <div class="a-line num" data-step="4">㉡ 18 × 140 = 2,520 ÷ 60 = <b>42 mL·kg⁻¹·min⁻¹</b></div>
+    <div class="a-line" data-step="5">좌심실 <b>내강(이완기말 용적)↑</b>, 심근 두께·<b>수축력↑</b></div>
+  </div>
+</section>
+
+<!-- 29 심혈관 표류 -->
+<section class="slide" id="s29" data-tile="black" data-title="7. 심혈관 표류">
+  <video class="abs vid fin" src="img/circ-runner.mp4" poster="img/circ-runner.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
+  <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.85) 62%)"></div>
+  <div class="side" style="left:1180px;width:660px">
+    <div class="t-eyebrow in"><b>7</b>오래, 덥게</div>
+    <div class="t-head s in" style="--d:100">같은 속도인데 심장은 점점 빨라진다</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2023 B9</span></div>
+    <div class="pt" data-step="1">일정한 강도로 10분 넘게 운동하면 심박수↑ · 1회 박출량↓ · 심박출량은 거의 유지 =<br><span class="blank" data-reveal="1" style="min-width:240px"><i>1</i><b>심혈관 표류</b></span></div>
+    <div class="pt" data-step="2">더울수록, 땀을 많이 흘릴수록 크다.</div>
+  </div>
+</section>
+
+<!-- 30 표류 기전 -->
+<section class="slide" id="s30" data-tile="dark" data-title="표류의 기전과 문제">
+  <div class="hd"><div class="t-eyebrow in"><b>7</b>오래, 덥게</div><div class="t-head in" style="--d:100">왜 1회 박출량이 줄어드나</div></div>
+  <svg class="full-svg" viewBox="0 0 1920 1080">
+    <line x1="160" y1="760" x2="900" y2="760" stroke="#6e6e73" stroke-width="2"/><line x1="160" y1="760" x2="160" y2="330" stroke="#6e6e73" stroke-width="2"/>
+    <g font-size="22" fill="#a1a1a6"><text x="160" y="795" text-anchor="middle">0</text><text x="280" y="795" text-anchor="middle">10</text><text x="880" y="795" text-anchor="middle">60분</text><text x="150" y="320">10분 값 = 100</text></g>
+    <line x1="160" y1="545" x2="900" y2="545" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="6 8"/>
+    <path class="draw" pathLength="1" d="M160 640L280 545C450 520 700 475 880 460" fill="none" stroke="#FF453A" stroke-width="6"/>
+    <path class="draw" pathLength="1" d="M160 600L280 545C450 570 700 615 880 630" fill="none" stroke="#64D2FF" stroke-width="6"/>
+    <path class="draw" pathLength="1" d="M160 610L280 545C500 548 700 551 880 553" fill="none" stroke="#f5f5f7" stroke-width="5" stroke-dasharray="12 8"/>
+    <g font-size="26" font-weight="600"><text x="900" y="465" fill="#FF453A">심박수 +12 %</text><text x="900" y="640" fill="#64D2FF">1회 박출량 −12 %</text><text x="900" y="560" fill="#f5f5f7">심박출량 ≈</text></g>
+  </svg>
+  <div class="mech" data-step="1">체온↑ → 피부 혈류↑ + 땀으로 <b>혈장량↓</b> → 정맥환류↓ → 이완기말 용적↓ → <b class="c-o2">1회 박출량↓</b> → <b class="c-hr">심박수 보상적↑</b> → 심박출량 유지</div>
+  <div class="abs t-cap mute" data-step="2" style="left:120px;top:960px;right:120px">최근 해석: 교감신경 → 심박수가 먼저 올라 충만 시간이 짧아져 1회 박출량이 준다는 설명도 있다(논쟁 중). 시험 답은 위 흐름으로 쓴다.</div>
+  <div class="mcq no-nav" style="left:1080px;top:300px;width:740px" data-answer="1">
+    <div class="t-label">고온에서 60분 달리기 후반, 맞는 조합은?</div>
+    <button data-i="0">심박수↓ · 1회 박출량↑ · 심박출량↑</button>
+    <button data-i="1">심박수↑ · 1회 박출량↓ · 심박출량 유지</button>
+    <button data-i="2">심박수↑ · 1회 박출량↑ · 심박출량↑</button>
+    <p class="fb" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- 31 심장 적응 -->
+<section class="slide" id="s31" data-tile="black" data-title="8. 심장의 훈련 적응">
+  <img class="abs fin" src="img/circ-athletes.jpg" alt="마라톤 선수와 역도 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
+    <div class="t-head s in" style="--d:100">지구성 훈련은 좌심실 '방'을 키운다</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2020 A7</span><span>2025 B10</span></div>
+    <div class="pt" data-step="1"><b class="c-o2">지구성</b> 좌심실 <span class="blank" data-reveal="1" style="min-width:200px"><i>1</i><b>내강(용적)</b></span>↑ — 원심성 비대 → 1회 박출량↑ → 최대 심박출량↑</div>
+    <div class="pt" data-step="2"><b class="c-hr">저항</b> 벽 두께↑ — 구심성 비대 (고전적 설명)</div>
+    <div class="pt" data-step="3">답안에는 '벽이 두꺼워진다'가 아니라 <b>'내강(용적)이 커진다'</b>를 쓴다.</div>
+    <div class="t-cap mute" data-step="4" style="margin-top:20px">최근 메타분석은 종목별 벽 두께 차이가 작고, 누적 훈련량이 더 중요하다고 본다 (Br Med Bull 2024).</div>
+  </div>
+</section>
+
+<!-- 32 혈장량 -->
+<section class="slide" id="s32" data-tile="black" data-title="혈장량이 먼저 늘어난다">
+  <img class="abs fin" src="img/circ-hematocrit.jpg" alt="원심분리한 혈액 튜브 두 개" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
+  <div class="side">
+    <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
+    <div class="t-head s in" style="--d:100">위는 혈장, 아래는 적혈구</div>
+    <div class="t-cap mute in" style="--d:150;margin-top:10px">왼쪽 훈련 전 · 오른쪽 훈련 후 — 혈장 층이 더 두껍다 (예시 사진)</div>
+    <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2021 B6</span></div>
+    <div class="pt" data-step="1">혈장량: 운동 후 <b>24시간 안에 약 10 %</b>↑ / 적혈구량: <b>수 주</b>에 걸쳐 천천히↑</div>
+    <div class="pt" data-step="2">혈장이 더 많이 늘어 헤마토크릿은 오히려 약간↓ — 병이 아닌 <b>가성 빈혈</b></div>
+    <div class="pt" data-step="3">혈액량↑ → 정맥환류·이완기말 용적↑ → 1회 박출량↑ · 점성↓ · 땀 낼 여유↑</div>
+  </div>
+</section>
+
+<!-- 33 근육·탈훈련·PEH -->
+<section class="slide" id="s33" data-tile="light" data-title="근육 적응 · 탈훈련 · 운동 후 저혈압">
+  <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">얻는 것, 잃는 속도, 한 번의 효과</div></div>
+  <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
+    <div class="card" data-step="1"><div class="k c-act">근육</div><h4>산소를 더 뽑는다</h4><p>모세혈관 밀도↑(지속훈련 약 +13 %) · 미토콘드리아↑(약 +25 %) → 동정맥 산소차↑<br>안정 시 심박수↓ (선수 40~50회/분)</p></div>
+    <div class="card" data-step="2"><div class="k c-hr">탈훈련</div><h4>혈장부터 빠진다</h4><p>2~4주: 혈장량 약 −12 %<br>최대산소섭취량 2주 −4~7 %, 8주 −13~20 %<br>초기 감소는 혈액량, 이후 산소차↓</p></div>
+    <div class="card" data-step="3"><div class="k c-low">운동 후 저혈압</div><h4>한 번 해도 내려간다</h4><p>평균 5~8 mmHg, 최대 24시간<br>혈압이 높은 사람일수록 크다<br>주된 기전: 말초저항↓</p></div>
+  </div>
+  <div class="abs t-cap mute" data-step="3" style="left:120px;top:900px;right:120px">출처: Mølmen 외 Sports Med 2024 · Barbieri 외 Front Physiol 2024 · Farinatti 외 Front Physiol 2022</div>
+</section>
+
+<!-- 34 카보넨 -->
+<section class="slide" id="s34" data-tile="parchment" data-title="카보넨 목표 심박수 · 운동 효과 방향">
+  <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">처방은 여유심박수로 — 카보넨 공식</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2022 A3</span><span>2026 A9</span></div>
+  <div class="panel abs in" style="--d:250;left:120px;top:300px;right:120px"><div style="font-size:50px;font-weight:600">목표 심박수 = (최대 HR − 안정 HR) × <span class="c-act">강도</span> + 안정 HR</div></div>
+  <div class="abs num" style="left:120px;top:500px;font-size:44px;line-height:1.8">
+    <div data-step="1"><span class="mute lbl">예</span>안정 64 · 최대 204 → 여유 <span class="blank" data-reveal="2" style="min-width:110px"><i>1</i><b>140</b></span></div>
+    <div data-step="3"><span class="mute lbl">55 %</span>140 × 0.55 + 64 = <b>141</b> · <span class="mute">60 %</span> 140 × 0.60 + 64 = <b>148</b></div>
+  </div>
+  <div class="abs" data-step="4" style="left:120px;top:760px;right:120px">
+    <div class="t-label">운동 효과 — 방향을 틀리기 쉬운 것</div>
+    <div class="dirs"><span>안정 시 혈압 <b class="c-low">↓</b></span><span>HDL <b class="c-hr">↑</b></span><span>인슐린 민감도 <b class="c-hr">↑</b></span><span>인슐린 요구도 <b class="c-low">↓</b></span><span>혈관신생 <b class="c-hr">↑</b></span></div>
+  </div>
+</section>
+
+<!-- 35 조절 -->
+<section class="slide" id="s35" data-tile="dark" data-title="9. 운동 중 심혈관 조절 (출제 예상)">
+  <div class="hd"><div class="t-eyebrow in"><b>9</b>조절</div><div class="t-head in" style="--d:100">누가 심장에 '더 뛰어라'고 하나</div></div>
+  <div class="gx in" style="--d:200"><span class="p">출제 예상</span></div>
+  <div class="ctrl">
+    <div class="src" data-step="1"><div class="k c-act">① 중추명령</div><p>대뇌 운동 영역 → 운동 시작과 <b>동시에</b> 심박수·혈압↑</p></div>
+    <div class="src" data-step="2"><div class="k c-act">② 운동승압반사</div><p>근육의 Ⅲ군(기계수용기)·Ⅳ군(대사수용기) 구심신경</p></div>
+    <div class="src" data-step="3"><div class="k c-act">③ 동맥 압수용기</div><p>경동맥동·대동맥궁. 운동 중 꺼지지 않고 <b>더 높은 설정점으로 재설정</b></p></div>
+    <div class="hub" data-step="4">연수 심혈관 중추</div>
+    <div class="out" data-step="5">교감↑ · 부교감↓ → 심박수↑ · 수축력↑ · 비활동 부위 혈관 수축</div>
+  </div>
+  <svg class="full-svg" viewBox="0 0 1920 1080"><g data-step="4" stroke="#6e6e73" stroke-width="3" fill="none"><path d="M760 410H900V560"/><path d="M760 600H900"/><path d="M760 790H900V640"/></g><g data-step="5" stroke="#6e6e73" stroke-width="3"><path d="M1240 600H1300"/></g></svg>
+</section>
+
+<!-- 36 함정 -->
+<section class="slide" id="s36" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
+  <ol class="traps">
+    <li class="in" style="--d:150">혈류 추진력에서 <b>우심방압을 안 뺌</b></li>
+    <li class="in" style="--d:190">박출계수 분모를 수축기말 용적으로 — 분모는 <b>이완기말 용적</b></li>
+    <li class="in" style="--d:230">W → J/s 환산, <b>mL/100mL → mL/L</b> 누락</li>
+    <li class="in" style="--d:270">심박수 초기 구간을 "교감 증가"만 — 핵심은 <b>부교감 철회</b></li>
+    <li class="in" style="--d:310">근육펌프는 <b>등척성 수축</b>에선 안 된다</li>
+    <li class="in" style="--d:350">P파 = <b>심방</b> 탈분극 (심실 아님)</li>
+    <li class="in" style="--d:390">심혈관 표류: SV↓ HR↑, <b>심박출량 유지</b>까지 쓴다</li>
+    <li class="in" style="--d:430">지구성 적응은 벽 두께가 아니라 <b>좌심실 내강(용적)</b></li>
+    <li class="in" style="--d:470">폐포 환기량은 <b>사강 150 mL을 빼고</b></li>
+    <li class="in" style="--d:510">운동 중 이완기 혈압은 <b>거의 그대로</b></li>
+  </ol>
+</section>
+
+<!-- 37 요약 -->
+<section class="slide" id="s37" data-tile="light" data-title="한 장 요약">
+  <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
+  <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
+    <div class="card in" style="--d:150"><div class="k c-hr">공식</div><h4>Q = HR × SV</h4><p>VO₂ = Q × 동정맥 산소차<br>EF = SV ÷ EDV<br>MAP = DBP + ⅓ 맥압<br>추진력 = MAP − 우심방압</p></div>
+    <div class="card in" style="--d:250"><div class="k c-act">조절</div><h4>SV 3요인</h4><p>이완기말 용적 · 수축력 · 평균 대동맥압<br>HR: 부교감 철회 → 교감<br>환류: 근육·호흡펌프·정맥 수축</p></div>
+    <div class="card in" style="--d:350"><div class="k c-o2">운반</div><h4>우측이동</h4><p>온도↑ · PCO₂↑ · pH↓ · 2,3-BPG↑<br>폐포 환기 = (VT − 150) × f<br>확산 ∝ 면적 × 분압차 ÷ 두께</p></div>
+    <div class="card in" style="--d:450"><div class="k c-mid">급성 반응</div><h4>재분배 · 혈압</h4><p>근육 20 % → 84 %<br>수축기↑ 이완기≈<br>표류: HR↑ SV↓ Q 유지</p></div>
+    <div class="card in" style="--d:550"><div class="k c-low">만성 적응</div><h4>좌심실 내강↑</h4><p>혈장량 먼저↑ (가성 빈혈)<br>안정 HR↓ · 모세혈관·미토콘드리아↑<br>탈훈련은 혈장부터</p></div>
+    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">출제 예상</div><h4>아직 안 나온 것</h4><p>압수용기 재설정 · 운동승압반사<br>이중곱 · 발살바 · 운동 후 저혈압<br>CO₂ 운반(중탄산 약 70 %)</p></div>
+  </div>
+</section>
+
+</div></div>
+
+<div id="bar"></div>
+<div id="blackout"></div>
+<div id="notes"></div>
+<div id="ov" class="overlay"><h3 id="ovT"></h3><div id="grid"></div></div>
+<div id="help" class="overlay"><h3>강의 조작</h3><table>
+<tr><td><kbd>→</kbd> <kbd>Space</kbd> 화면 클릭</td><td>다음 (단계 → 다음 장)</td></tr>
+<tr><td><kbd>←</kbd> 오른쪽 클릭</td><td>이전</td></tr>
+<tr><td><kbd>R</kbd></td><td>이 장 애니메이션 다시 보기</td></tr>
+<tr><td><kbd>T</kbd> <kbd>N</kbd></td><td>대본 보기</td></tr>
+<tr><td><kbd>O</kbd></td><td>전체 보기</td></tr>
+<tr><td><kbd>F</kbd></td><td>전체 화면</td></tr>
+<tr><td><kbd>B</kbd> / <kbd>W</kbd></td><td>검은 화면 / 흰 화면</td></tr>
+<tr><td>숫자 + <kbd>Enter</kbd></td><td>그 장으로 이동</td></tr>
+<tr><td>좌우로 밀기</td><td>전자칠판·폰에서 넘기기</td></tr>
+</table></div>
+
+<div id="ui">
+  <button id="bR" title="이 장 다시 보기(R)" aria-label="이 장 다시 보기"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 1 0 2.6-5.9M4 4v4h4"/></svg></button>
+  <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
+  <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
+  <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
+  <span class="count" id="cnt">1 / 37</span>
+  <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
+  <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
+</div>
+
+<script>
+// 대본 — 장 번호별
+const NOTES = {
+  s1: "오늘은 **운동과 순환**을 다룹니다. 피가 심장에서 근육까지 어떻게 가는지, 운동하면 무엇이 바뀌는지를 13년치 임용 기출에 맞춰 정리합니다.",
+  s2: "2014학년도부터 2026학년도까지 순환·호흡 문항입니다. 2016·2019학년도를 빼면 해마다 나왔습니다. **계산 문항**은 2014, 2021, 2025년에 나왔고, 단위까지 맞아야 점수가 됩니다. 아직 안 나온 압수용기, 이중곱, 발살바도 뒤에서 다룹니다.",
+  s3: "피는 8자로 돕니다. 좌심실에서 **대동맥**으로 나가 온몸을 돌고 우심방으로 오는 것이 체순환, 우심실에서 **폐동맥**으로 폐에 갔다가 **폐정맥**으로 좌심방에 오는 것이 폐순환입니다. 폐동맥에는 정맥혈이 흐릅니다. 동맥과 정맥은 피의 종류가 아니라 방향으로 나눕니다.",
+  s4: "심장 안에서는 판막 네 개가 길을 정합니다. 우심방과 우심실 사이 **삼첨판**, 우심실 출구 **폐동맥판**, 좌심방과 좌심실 사이 **승모판**, 좌심실 출구 **대동맥판**입니다. 방실판이 닫히는 소리가 제1심음, 반월판이 닫히는 소리가 제2심음입니다.",
+  s5: "폐순환은 같은 양의 피를 보내지만 압력은 대동맥의 약 5분의 1입니다. 폐동맥압은 약 25/8 mmHg입니다. 저항이 작아 **우심실 벽이 얇고**, 압력이 낮아 폐 모세혈관에서 물이 새지 않습니다.",
+  s6: "운동하면 폐 혈류가 몇 배로 늘어납니다. 그래도 폐동맥압이 조금만 오르는 이유는 닫혀 있던 모세혈관이 열리는 **동원**과, 열린 혈관이 넓어지는 **팽창** 때문입니다. 가스교환 면적도 함께 넓어집니다.",
+  s7: "심장도 피를 받아야 뜁니다. 좌심실 근육은 **이완기**에 주로 관상혈류를 받습니다. 심근은 쉴 때도 산소를 70~80% 뽑아 쓰기 때문에 운동 때는 혈류를 늘려야 합니다. 그래서 심근 산소 요구의 지표로 **이중곱**을 씁니다.",
+  s8: "심전도 한 번이 심장 한 번입니다. **P파는 심방 탈분극**, QRS군은 심실 탈분극, T파는 심실 재분극입니다. 박동 조율기는 우심방의 **동방결절**입니다. 운동하면 R-R 간격이 짧아지는데, 이것이 심박수 증가입니다. 2017학년도 A4번입니다.",
+  s9: "Wiggers 도표입니다. 판막은 압력이 큰 쪽에서 밀려 열립니다. 좌심실압이 대동맥압을 넘는 순간 **대동맥판이 열리고**, 다시 내려가면 닫힙니다. QRS 직후부터 대동맥판이 닫힐 때까지가 **수축기**입니다. 2024학년도 B4번에서 이 도표가 나왔습니다.",
+  s10: "기출형 문제입니다. 네 학생의 발표 중 틀린 것은 가람과 라희입니다. P파는 **심방**의 탈분극이고, 운동 중에는 R-R 간격이 **짧아집니다**.",
+  s11: "심박출량은 심박수 곱하기 1회 박출량입니다. 안정 시 약 5 L, 최대 운동 시 일반인은 약 21 L, 지구성 선수는 30 L를 넘습니다. 최대 심박수는 비슷하므로 차이는 **1회 박출량**에서 납니다.",
+  s12: "심박수는 두 단계로 오릅니다. 약 100회까지는 **부교감 신경 활동이 줄어드는 것**, 즉 브레이크를 푸는 것이고, 그 위로는 **교감신경이 활성화**되는 것입니다. 2022학년도 B8번입니다. 처음부터 교감 증가라고만 쓰면 감점됩니다.",
+  s13: "1회 박출량은 세 가지로 정해집니다. **이완기말 용적**, **심실 수축력**, **평균 대동맥압**입니다. 앞의 둘은 올리고, 대동맥압이 높으면 덜 나갑니다. 2022 B8에서 수축력이 빈칸으로 나왔습니다.",
+  s14: "프랭크-스탈링 법칙입니다. 정맥환류가 늘어 심실이 더 차면 심근이 더 늘어나고, 그만큼 **더 세게 수축**합니다. 교감신경 자극은 곡선 자체를 위로 올리는 수축력 요인으로 구분합니다.",
+  s15: "박출계수는 1회 박출량을 **이완기말 용적**으로 나눈 값입니다. 2021 B6 표에서 훈련 후 57 나누기 95, **60퍼센트**입니다. 분모를 틀리지 마세요.",
+  s16: "기출형 문제입니다. ㉠은 **1회 박출량**, ㉡은 78 나누기 130으로 **60퍼센트**입니다. 총혈액량이 늘어난 이유는 **혈장량이 적혈구량보다 더 빨리, 더 많이 늘기** 때문입니다.",
+  s17: "종아리 근육은 두 번째 심장입니다. 근육이 수축하면 정맥이 눌려 피가 위로 밀리고, **정맥 판막**이 역류를 막습니다. 운동을 갑자기 멈추면 이 펌프가 멎으니 정리 운동을 합니다. 2015 A7번입니다.",
+  s18: "정맥환류는 **근육펌프, 호흡펌프, 정맥 수축** 세 가지로 돕습니다. 그런데 **등척성 수축**처럼 계속 힘을 주고 있으면 혈관이 눌린 채 풀리지 않아 오히려 환류가 막힙니다. 2022 B8의 빈칸입니다.",
+  s19: "최대 운동에서는 근육이 받는 몫이 약 20%에서 84%로 늘어납니다. 교감신경이 온몸 혈관을 조이지만 활동근에서는 대사산물이 혈관을 넓혀 그 조임을 무력화하는데, 이것을 **기능적 교감신경 억제**라고 합니다.",
+  s20: "점증 부하 운동에서 **수축기 혈압은 오르고, 이완기 혈압은 거의 그대로**입니다. 심박출량은 늘고, 활동근 혈관이 넓어져 말초저항은 줄기 때문입니다. 저항운동은 둘 다 크게 오릅니다.",
+  s21: "2014학년도 A3번입니다. 평균동맥압은 이완기에 맥압의 3분의 1을 더합니다. 안정 93.3, 운동 118.3입니다. 혈류 추진력은 여기서 **우심방압을 빼야** 합니다. 그러면 93.3과 113.3, 차이는 **20 mmHg**입니다.",
+  s22: "아직 직접 나오지 않은 내용입니다. **이중곱**은 심박수 곱하기 수축기 혈압으로 심근 산소 소비의 지표입니다. **발살바**는 숨을 참고 힘을 줄 때 흉강 내압이 올라 혈압이 급상승하는 현상입니다. 들어 올릴 때 숨을 내쉬도록 지도합니다.",
+  s23: "기출형 계산 문제입니다. 안정 평균동맥압 83.3에서 우심방압 2를 빼면 81.3, 운동 106에서 4를 빼면 102입니다. 차이는 20.7, 반올림해 **21 mmHg**입니다.",
+  s24: "피 100 mL에는 산소가 약 20 mL 들어 있습니다. 헤모글로빈 1 g이 산소 **1.34 mL**와 결합하기 때문입니다. 적혈구는 모세혈관을 지나며 근육에 산소를 내려놓습니다.",
+  s25: "산소해리곡선입니다. 운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 곡선이 오른쪽으로 이동해 같은 분압에서 산소를 더 내려놓습니다. 2015 A7번의 빈칸이 pH였습니다.",
+  s26: "픽 원리입니다. 산소섭취량은 심박출량 곱하기 동정맥 산소차입니다. 안정 250 mL, 최대 3,000 mL 정도입니다. 최대산소섭취량을 키우는 길은 **중추의 최대 심박출량**과 **말초의 산소 추출** 두 가지입니다.",
+  s27: "폐포 환기량은 1회 호흡량에서 **해부학적 사강 150 mL**을 빼고 호흡수를 곱합니다. 분당 환기량이 같아도 깊고 느린 호흡이 유리합니다. 확산은 면적과 **분압차**에 비례하고 두께에 반비례합니다.",
+  s28: "2025 B10을 바꾼 문제입니다. 96 kJ을 480초로 나누면 200 W입니다. 그때 심박수 150, 1회 박출량 120이므로 심박출량 **18 L/분**입니다. 산소차는 14 mL/100mL, 곧 140 mL/L이므로 2,520 mL/분, 체중 60으로 나누면 **42 mL/kg/분**입니다.",
+  s29: "같은 속도로 오래 달리면 심박수는 점점 오르고 1회 박출량은 줄어듭니다. 심박출량은 거의 유지됩니다. 이것이 **심혈관 표류**이고, 더울수록 커집니다. 2023 B9번입니다.",
+  s30: "체온이 오르면 피부로 피가 가고 땀으로 **혈장량이 줄어** 정맥환류와 이완기말 용적이 줄어듭니다. 그래서 1회 박출량이 줄고, 심박수가 보상적으로 올라 심박출량을 유지합니다.",
+  s31: "지구성 훈련은 좌심실의 **내강, 즉 용적**을 키웁니다. 그래서 1회 박출량과 최대 심박출량이 늘어납니다. 답안에는 벽이 두꺼워진다가 아니라 내강이 커진다고 써야 합니다. 2020 A7, 2025 B10입니다.",
+  s32: "훈련하면 **혈장량이 먼저**, 크게 늘어납니다. 적혈구는 수 주에 걸쳐 늘어납니다. 그래서 헤마토크릿은 오히려 약간 낮아지는데, 이것을 가성 빈혈이라고 합니다. 2021 B6의 서술 문항입니다.",
+  s33: "근육에서는 모세혈관과 미토콘드리아가 늘어 산소를 더 뽑습니다. 훈련을 멈추면 2~4주 안에 혈장량부터 줄어듭니다. 운동 한 번 뒤에도 혈압이 평균 5~8 mmHg 내려가는데, 이것이 **운동 후 저혈압**입니다.",
+  s34: "운동 처방은 카보넨 공식으로 합니다. 최대에서 안정 심박수를 빼고 강도를 곱한 뒤 안정 심박수를 더합니다. 2022 A3은 **141과 148**입니다. 운동 효과의 방향도 확인하세요. HDL과 인슐린 민감도는 올라가고, 인슐린 요구도는 내려갑니다.",
+  s35: "운동 중 심혈관 조절입니다. 대뇌의 **중추명령**, 근육에서 오는 **운동승압반사**, 그리고 **재설정되는 압수용기**가 연수 심혈관 중추로 모입니다. 아직 출제되지 않아 대비가 필요한 부분입니다.",
+  s36: "감점 함정 10가지입니다. 특히 우심방압 빼기, 박출계수 분모, 단위 환산, 부교감 철회, 심박출량 유지는 실제 채점 포인트입니다.",
+  s37: "한 장으로 정리합니다. 공식 네 개, 1회 박출량 3요인, 우측이동 조건, 급성 반응과 만성 적응을 기억하세요."
+};
+
+const $ = s => document.querySelector(s);
+const stage = $('#stage'), slides = [...document.querySelectorAll('.slide')];
+const SVGNS = 'http://www.w3.org/2000/svg';
+let cur = 0, step = 0, numBuf = '';
+
+document.querySelectorAll('[data-step]').forEach(el => { if (el.namespaceURI !== SVGNS && el.tagName !== 'TR' && el.tagName !== 'TD') el.classList.add('rise'); });
+const maxStep = slides.map(s => Math.max(0, ...[...s.querySelectorAll('[data-step],[data-reveal]')].map(e => +(e.dataset.step || e.dataset.reveal)),
+  ...[...s.querySelectorAll('[data-num],[data-text]')].map(e => (e.dataset.num || e.dataset.text).split(',').length - 1)));
+
+function fit(){
+  const k = Math.min(innerWidth / 1920, innerHeight / 1080);
+  stage.style.transform = `translate(-50%,-50%) scale(${k})`;
+}
+addEventListener('resize', fit); fit();
+
+// ── 그래프 ──
+function smooth(pts){
+  let d = `M${pts[0][0]} ${pts[0][1]}`;
+  for (let i = 0; i < pts.length - 1; i++){
+    const p0 = pts[i - 1] || pts[i], p1 = pts[i], p2 = pts[i + 1], p3 = pts[i + 2] || p2;
+    const c1 = [p1[0] + (p2[0] - p0[0]) / 6, p1[1] + (p2[1] - p0[1]) / 6], c2 = [p2[0] - (p3[0] - p1[0]) / 6, p2[1] - (p3[1] - p1[1]) / 6];
+    d += `C${c1[0].toFixed(1)} ${c1[1].toFixed(1)} ${c2[0].toFixed(1)} ${c2[1].toFixed(1)} ${p2[0].toFixed(1)} ${p2[1].toFixed(1)}`;
+  }
+  return d;
+}
+function fnPath(f, x0, x1, X, Y, n = 80){
+  const pts = []; for (let i = 0; i <= n; i++){ const x = x0 + (x1 - x0) * i / n; pts.push([X(x), Y(f(x))]); }
+  return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L');
+}
+function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text) e.textContent = text; parent.append(e); return e; }
+
+// 9장 Wiggers
+(function(){
+  const X = t => 300 + t * 1050, Y = p => 820 - p * 3.2857;
+  const lv = [[0,6],[.06,7],[.10,9],[.115,30],[.14,80],[.18,108],[.24,122],[.30,116],[.35,100],[.38,88],[.40,50],[.43,8],[.48,3],[.6,4],[.72,6],[.8,7]];
+  const ao = [[0,84],[.07,81],[.14,79.5],[.18,106],[.24,119],[.30,114],[.35,100],[.38,90],[.39,86],[.405,91],[.45,90],[.6,86],[.8,82]];
+  $('#wLv').setAttribute('d', smooth(lv.map(p => [X(p[0]), Y(p[1])])));
+  $('#wAo').setAttribute('d', smooth(ao.map(p => [X(p[0]), Y(p[1])])));
+  const b = 960, x = X;
+  $('#wEcg').setAttribute('d', `M${x(0)} ${b}L${x(.015)} ${b}C${x(.03)} ${b-18} ${x(.055)} ${b-18} ${x(.07)} ${b}L${x(.1)} ${b}L${x(.108)} ${b+10}L${x(.118)} ${b-70}L${x(.128)} ${b+22}L${x(.135)} ${b}L${x(.27)} ${b}C${x(.3)} ${b-30} ${x(.34)} ${b-30} ${x(.37)} ${b}L${x(.8)} ${b}`);
+  el('text', {x: 250, y: b + 8, 'text-anchor': 'end', 'font-size': 22, fill: '#86868b'}, $('#wig'), '심전도');
+  const s = $('#wSys'); s.setAttribute('x', X(.11)); s.setAttribute('width', X(.38) - X(.11)); s.setAttribute('y', 330); s.setAttribute('height', 670);
+  const lA = $('#lAo'); lA.setAttribute('x', X(.55)); lA.setAttribute('y', Y(88) - 16);
+  const lL = $('#lLv'); lL.setAttribute('x', X(.55)); lL.setAttribute('y', Y(5) - 16);
+  const g = $('#wMarks');
+  [[.11,'①'],[.14,'②'],[.38,'③'],[.435,'④']].forEach(([t, n]) => {
+    el('line', {x1: X(t), y1: 340, x2: X(t), y2: 820, stroke: '#0066cc', 'stroke-width': 2, 'stroke-dasharray': '6 6'}, g);
+    el('text', {x: X(t) + (n === '①' ? -14 : n === '②' ? 14 : 0), y: 330, 'text-anchor': 'middle', 'font-size': 28, 'font-weight': 700, fill: '#0066cc'}, g, n);
+  });
+})();
+
+// 14장 프랭크-스탈링
+(function(){
+  const X = v => 300 + (v - 60) * 820 / 140, Y = s => 900 - s * 540 / 140;
+  const A = v => 140 * (1 - Math.exp(-(v - 50) / 60)), B = v => 150 * (1 - Math.exp(-(v - 45) / 45));
+  $('#fsA').setAttribute('d', fnPath(A, 60, 200, X, Y));
+  $('#fsB').setAttribute('d', fnPath(B, 60, 200, X, Y));
+  const l = $('#fsBl'); l.setAttribute('x', 800); l.setAttribute('y', 830); el('path', {d: 'M720 820H785', stroke: '#FF453A', 'stroke-width': 6, 'stroke-dasharray': '14 10'}, l.parentNode);
+  const p1 = [X(105), Y(A(105))], p2 = [X(150), Y(A(150))];
+  $('#fsP1').setAttribute('cx', p1[0]); $('#fsP1').setAttribute('cy', p1[1]);
+  $('#fsP2').setAttribute('cx', p2[0]); $('#fsP2').setAttribute('cy', p2[1]);
+  $('#fsArr').setAttribute('d', `M${p1[0]} ${p1[1] + 40}H${p2[0]}V${p2[1] + 22}`);
+})();
+
+// 25장 산소해리곡선 (힐 식)
+(function(){
+  const X = p => 260 + p * 9, Y = s => 900 - s * 5.4;
+  const hill = p50 => p => 100 * Math.pow(p, 2.7) / (Math.pow(p, 2.7) + Math.pow(p50, 2.7));
+  const A = hill(26.8), B = hill(32);
+  $('#odA').setAttribute('d', fnPath(A, 0.5, 100, X, Y, 120));
+  $('#odB').setAttribute('d', fnPath(B, 0.5, 100, X, Y, 120));
+  const m = $('#odMarks');
+  [[100,'폐'],[40,'쉬는 조직'],[20,'운동 근육']].forEach(([p, t]) => {
+    el('circle', {cx: X(p), cy: Y(A(p)), r: 11, fill: '#64D2FF'}, m);
+    el('text', {x: X(p) + (p === 100 ? -20 : 22), y: Y(A(p)) + (p === 100 ? 46 : 8), 'text-anchor': p === 100 ? 'end' : 'start', 'font-size': 26, 'font-weight': 600, fill: '#64D2FF'}, m, `${t} ${Math.round(A(p))}%`);
+  });
+  const s = $('#odShift');
+  el('circle', {cx: X(20), cy: Y(B(20)), r: 11, fill: '#FF453A'}, s);
+  el('path', {d: `M${X(20) - 26} ${Y(A(20))}V${Y(B(20)) - 4}`, stroke: '#FF453A', 'stroke-width': 4, fill: 'none'}, s);
+  el('text', {x: X(20) + 22, y: Y(B(20)) + 34, 'font-size': 26, 'font-weight': 600, fill: '#FF453A'}, s, `우측이동 ${Math.round(B(20))}%`);
+})();
+
+// 19장 재분배 막대 (교재 대표값, 대략)
+(function(){
+  const C = {근육:'#D70015', 내장:'#B25000', 신장:'#8E6A00', 뇌:'#0077B6', 심장:'#6B2FB3', 피부:'#1E8B3E', 기타:'#86868b'};
+  const rest = [['근육',20],['내장',25],['신장',20],['뇌',15],['심장',4],['피부',6],['기타',10]];
+  const max = [['근육',84],['내장',1],['신장',1],['뇌',4],['심장',4],['피부',2],['기타',4]];
+  [[rest, '#rb1'], [max, '#rb2']].forEach(([arr, id]) => {
+    arr.forEach(([k, v]) => { const i = document.createElement('i'); i.style.width = v + '%'; i.style.background = C[k]; if (v >= 6) i.innerHTML = `<span>${k}<small>${v}%</small></span>`; $(id).append(i); });
+  });
+})();
+
+// 30장 문제
+document.querySelectorAll('.mcq').forEach(q => q.querySelectorAll('button').forEach(b => b.onclick = e => {
+  e.stopPropagation();
+  const ok = +b.dataset.i === +q.dataset.answer;
+  q.querySelectorAll('button').forEach(x => x.classList.remove('good', 'bad')); b.classList.add(ok ? 'good' : 'bad');
+  q.querySelector('.fb').textContent = ok ? '정답. 혈장량↓ → 이완기말 용적↓ → 1회 박출량↓, 심박수가 보상해 심박출량은 유지된다.' : '다시. 땀으로 혈장이 줄면 심실이 덜 찬다 — 1회 박출량은 어느 쪽으로 갈까?';
+}));
+
+function applyStep(animate){
+  const s = slides[cur];
+  s.querySelectorAll('[data-step]').forEach(e => e.classList.toggle('on', +e.dataset.step <= step));
+  s.querySelectorAll('[data-reveal]').forEach(e => e.classList.toggle('on', +e.dataset.reveal <= step));
+  for (let k = 1; k <= maxStep[cur]; k++) s.classList.toggle('st-' + k, k <= step);
+  $('#cnt').textContent = (cur + 1) + ' / ' + slides.length;
+  const total = maxStep.reduce((a, b) => a + b + 1, 0), done = maxStep.slice(0, cur).reduce((a, b) => a + b + 1, 0) + step;
+  $('#bar').style.width = (done / (total - 1) * 100) + '%';
+  history.replaceState(null, '', '#' + (cur + 1) + (step ? '.' + step : ''));
+}
+
+function playVideos(){
+  document.querySelectorAll('video').forEach(v => { if (slides[cur].contains(v)) { v.currentTime = 0; const p = v.play(); if (p) p.catch(() => {}); } else v.pause(); });
+}
+function go(i, st, animate){
+  i = Math.max(0, Math.min(slides.length - 1, i));
+  const changed = i !== cur || !slides[cur].classList.contains('is-on');
+  if (changed) { slides[cur].classList.remove('is-on'); cur = i; }
+  step = Math.max(0, Math.min(maxStep[cur], st));
+  if (changed) { applyStep(false); void slides[cur].offsetWidth; slides[cur].classList.add('is-on'); showNotes(); playVideos(); }
+  else applyStep(animate !== false);
+}
+const next = () => step < maxStep[cur] ? go(cur, step + 1) : cur < slides.length - 1 && go(cur + 1, 0);
+const prev = () => step > 0 ? go(cur, step - 1) : cur > 0 && go(cur - 1, maxStep[cur - 1]);
+function replay(){ const s = slides[cur]; s.classList.remove('is-on'); step = 0; applyStep(false); void s.offsetWidth; s.classList.add('is-on'); playVideos(); }
+
+function md(t){ return t.replace(/\*\*(.+?)\*\*/g, '<b>$1</b>'); }
+function showNotes(){ $('#notes').innerHTML = md(NOTES[slides[cur].id] || ''); }
+function toggleNotes(){ $('#notes').classList.toggle('show'); $('#bT').classList.toggle('act', $('#notes').classList.contains('show')); }
+
+function buildGrid(){
+  $('#ovT').textContent = '전체 보기 · ' + slides.length + '장';
+  $('#grid').innerHTML = '';
+  slides.forEach((s, i) => {
+    const b = document.createElement('button'), lightTile = /light|parchment/.test(s.dataset.tile);
+    b.style.background = getComputedStyle(s).backgroundColor === 'rgb(0, 0, 0)' ? '#1d1d1f' : getComputedStyle(s).backgroundColor;
+    b.style.color = lightTile ? '#1d1d1f' : '#f5f5f7';
+    b.className = i === cur ? 'cur' : '';
+    const n = document.createElement('small'); n.textContent = String(i + 1).padStart(2, '0');
+    const t = document.createElement('span'); t.textContent = s.dataset.title;
+    b.append(n, t);
+    b.onclick = () => { closeOverlays(); go(i, 0); };
+    $('#grid').append(b);
+  });
+}
+function toggleOv(id){ const o = $(id), was = o.classList.contains('show'); closeOverlays(); if (!was) { if (id === '#ov') buildGrid(); o.classList.add('show'); } }
+function closeOverlays(){ document.querySelectorAll('.overlay').forEach(o => o.classList.remove('show')); }
+const overlayOpen = () => !!document.querySelector('.overlay.show');
+function blackout(c){ const b = $('#blackout'); if (b.style.display === 'block' && b.dataset.c === c) b.style.display = 'none'; else { b.style.display = 'block'; b.style.background = c; b.dataset.c = c; } }
+function fullscreen(){ document.fullscreenElement ? document.exitFullscreen() : document.documentElement.requestFullscreen && document.documentElement.requestFullscreen().catch(() => {}); }
+
+addEventListener('keydown', e => {
+  if (e.ctrlKey || e.metaKey || e.altKey) return;
+  const k = e.key;
+  if (k === 'Escape') { closeOverlays(); $('#blackout').style.display = 'none'; numBuf = ''; return; }
+  if (/^\d$/.test(k)) { numBuf += k; return; }
+  if (k === 'Enter' && numBuf) { closeOverlays(); go(+numBuf - 1, 0); numBuf = ''; return; }
+  numBuf = '';
+  if (e.target.tagName === 'INPUT') return;
+  if (overlayOpen() && !/^[oO?hH]$/.test(k)) return;
+  if (k === 'ArrowRight' || k === ' ' || k === 'PageDown' || k === 'Enter') { e.preventDefault(); next(); }
+  else if (k === 'ArrowLeft' || k === 'PageUp' || k === 'Backspace') { e.preventDefault(); prev(); }
+  else if (k === 'Home') go(0, 0);
+  else if (k === 'End') go(slides.length - 1, 0);
+  else if (/^r$/i.test(k)) replay();
+  else if (/^[tn]$/i.test(k)) toggleNotes();
+  else if (/^o$/i.test(k)) toggleOv('#ov');
+  else if (/^f$/i.test(k)) fullscreen();
+  else if (/^b$/i.test(k)) blackout('#000');
+  else if (/^w$/i.test(k)) blackout('#fff');
+  else if (k === '?' || /^h$/i.test(k)) toggleOv('#help');
+});
+
+const vp = $('#viewport');
+let sx = null, sy = 0, swiped = false;
+vp.addEventListener('click', e => { if (swiped) { swiped = false; return; } if (e.target.closest('.no-nav')) return; next(); });
+vp.addEventListener('contextmenu', e => { e.preventDefault(); prev(); });
+vp.addEventListener('touchstart', e => { if (e.touches.length === 1 && !e.target.closest('.no-nav')) { sx = e.touches[0].clientX; sy = e.touches[0].clientY; } else sx = null; }, {passive: true});
+vp.addEventListener('touchend', e => {
+  if (sx === null) return;
+  const dx = e.changedTouches[0].clientX - sx, dy = e.changedTouches[0].clientY - sy; sx = null;
+  if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) { swiped = true; dx < 0 ? next() : prev(); setTimeout(() => swiped = false, 400); }
+}, {passive: true});
+$('#blackout').onclick = () => $('#blackout').style.display = 'none';
+$('#bR').onclick = replay; $('#bT').onclick = toggleNotes; $('#bO').onclick = () => toggleOv('#ov');
+$('#bP').onclick = prev; $('#bN').onclick = next; $('#bF').onclick = fullscreen;
+$('#cnt').onclick = () => toggleOv('#help');
+document.querySelectorAll('.overlay').forEach(o => o.addEventListener('click', e => { if (e.target === o) closeOverlays(); }));
+
+let idleT; const ui = $('#ui');
+function wake(){ ui.classList.remove('idle'); clearTimeout(idleT); idleT = setTimeout(() => ui.classList.add('idle'), 3000); }
+['mousemove', 'touchstart', 'keydown'].forEach(ev => addEventListener(ev, wake, {passive: true})); wake();
+
+const m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
+go(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+</script>
+</body>
+</html>
