@@ -252,6 +252,10 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 .rbar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:24px;font-weight:600;color:#fff;white-space:nowrap;overflow:hidden;border-right:2px solid #fff}
 .rbar i small{display:block;font-size:20px;font-weight:400;opacity:.9}
 .rbar i span{text-align:center;line-height:1.25}
+.rleg{display:flex;flex-wrap:wrap;align-items:center;gap:10px 30px;font-size:24px;font-weight:600}
+.rleg span{display:inline-flex;align-items:center;gap:10px}
+.rleg i{display:inline-block;width:26px;height:26px;border-radius:6px}
+.rleg .mute{font-weight:400;font-size:22px}
 
 /* 문제 버튼 */
 .mcq{position:absolute}
@@ -300,26 +304,26 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 
 <!-- 02 기출 지도 -->
 <section class="slide" id="s2" data-tile="dark" data-title="13년 기출 지도">
-  <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">2014~2026학년도, 순환·호흡에서 나온 것</div></div>
+  <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">2014~2026학년도, 순환 강의에서 다루는 기출</div></div>
   <div class="ymap">
     <div class="yr in" style="--d:200"><b>2014 A 서술3</b><span>평균동맥압 · 혈류 추진력 계산</span></div>
     <div class="yr in" style="--d:240"><b>2015 A7</b><span>해리곡선 우측이동 · 정맥 판막</span></div>
     <div class="yr in" style="--d:280"><b>2017 A4</b><span>동방결절 · QRS군</span></div>
     <div class="yr in" style="--d:300"><b>2017 A14</b><span>운동 효과 방향 (혈압↓ · HDL↑ · 인슐린 요구도↓)</span></div>
-    <div class="yr in" style="--d:320"><b>2018 A7</b><span>해부학적 사강 · 폐포 환기량</span></div>
+    <div class="yr in" style="--d:320"><b>2018 A7</b><span>해부학적 사강 · 폐포 환기량 (산소 운반 연계)</span></div>
     <div class="yr in" style="--d:360"><b>2020 A7</b><span>좌심실 용적 · 미토콘드리아</span></div>
     <div class="yr in" style="--d:400"><b>2021 B6</b><span>프랭크-스탈링 · 박출계수 · 혈장량</span></div>
     <div class="yr in" style="--d:440"><b>2022 A3</b><span>카보넨 목표 심박수</span></div>
     <div class="yr in" style="--d:480"><b>2022 B8</b><span>심박수 증가 기전 · 1회 박출량 3요인 · 등척성</span></div>
     <div class="yr in" style="--d:520"><b>2023 B9</b><span>고온 운동 · 심혈관 표류</span></div>
-    <div class="yr in" style="--d:560"><b>2024 A12</b><span>흡기 · 픽의 확산 법칙</span></div>
+    <div class="yr in" style="--d:560"><b>2024 A12</b><span>흡기 · 픽의 확산 법칙 (산소 운반 연계)</span></div>
     <div class="yr in" style="--d:600"><b>2024 B4</b><span>Wiggers 도표 · P파</span></div>
     <div class="yr in" style="--d:640"><b>2025 B10</b><span>픽 원리로 심박출량·산소섭취량</span></div>
     <div class="yr in" style="--d:680"><b>2026 A9</b><span>카보넨 강도 · 운동 효과 방향</span></div>
     <div class="yr in" style="--d:720"><b>2026 B4</b><span>미오글로빈 (Type Ⅰ 근육의 산소 저장)</span></div>
     <div class="yr pred" data-step="1"><b>출제 예상</b><span>압수용기 · 운동승압반사 · 이중곱 · 발살바 · 운동 후 저혈압</span></div>
   </div>
-  <div class="abs t-cap mute" data-step="1" style="left:120px;top:960px;right:120px">13번 시험 중 순환·호흡 문항이 없던 해는 2016·2019학년도 두 번뿐이다. 계산 문항(2014·2021·2022·2025·2026)은 단위까지 맞아야 점수가 된다.</div>
+  <div class="abs t-cap mute" data-step="1" style="left:120px;top:960px;right:120px">13번 시험 중 순환·호흡 문항이 없던 해는 2016학년도뿐이다(2019 A13 등 호흡 기출은 호흡 강의에서). 계산 문항(2014·2021·2022·2025·2026)은 단위까지 맞아야 점수가 된다.</div>
 </section>
 
 <!-- 03 두 순환 -->
@@ -562,7 +566,8 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="rbar" data-step="1" style="top:560px" id="rb2"></div>
   <div class="abs t-cap" style="left:120px;top:322px">안정 · 심박출량 약 5 L/분</div>
   <div class="abs t-cap" data-step="1" style="left:120px;top:522px">최대 운동 · 약 20~25 L/분</div>
-  <div class="abs" data-step="2" style="left:120px;top:720px;right:120px">
+  <div class="abs rleg in" style="--d:300;left:120px;top:700px;right:120px"><span><i style="background:#D70015"></i>근육</span><span><i style="background:#B25000"></i>내장</span><span><i style="background:#8E6A00"></i>신장</span><span><i style="background:#0077B6"></i>뇌</span><span><i style="background:#6B2FB3"></i>심장</span><span><i style="background:#1E8B3E"></i>피부</span><span><i style="background:#86868b"></i>기타</span><span class="mute">· 좁은 칸(6% 미만)은 색으로 읽는다</span></div>
+  <div class="abs" data-step="2" style="left:120px;top:780px;right:120px">
     <div class="t-body"><b>교감신경</b>이 온몸 혈관을 조이지만(내장·신장↓), 활동근에서는 대사산물(H⁺·CO₂·K⁺·아데노신)이 혈관을 넓혀 그 조임을 무력화한다 = <b class="c-act">기능적 교감신경 억제</b></div>
     <div class="t-cap mute" style="margin-top:14px">뇌 혈류는 비율만 줄 뿐 양은 유지된다. 비율은 교재 대표값(대략).</div>
   </div>
@@ -884,7 +889,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 // 대본 — 장 번호별
 const NOTES = {
   s1: "오늘은 **운동과 순환**을 다룹니다. 피가 심장에서 근육까지 어떻게 가는지, 운동하면 무엇이 바뀌는지를 13년치 임용 기출에 맞춰 정리합니다.",
-  s2: "2014학년도부터 2026학년도까지 순환·호흡 문항입니다. 13번 시험 중 순환·호흡 문항이 없던 해는 2016과 2019학년도 두 번뿐입니다. **계산 문항**은 2014, 2021, 2022, 2025, 2026년에 나왔고, 단위까지 맞아야 점수가 됩니다. 2026 B4에서는 근육의 산소 저장 단백질 **미오글로빈**도 나왔습니다. 아직 안 나온 압수용기, 이중곱, 발살바도 뒤에서 다룹니다.",
+  s2: "2014학년도부터 2026학년도까지 이 순환 강의에서 다루는 기출입니다. 사강과 확산처럼 산소 운반과 이어지는 호흡 문항 두 개도 함께 넣었습니다. 13번 시험 중 순환·호흡 문항이 없던 해는 2016학년도 한 번뿐입니다. 2019 A13 같은 호흡 기출은 호흡 강의에서 다룹니다. **계산 문항**은 2014, 2021, 2022, 2025, 2026년에 나왔고, 단위까지 맞아야 점수가 됩니다. 2026 B4에서는 근육의 산소 저장 단백질 **미오글로빈**도 나왔습니다. 아직 안 나온 압수용기, 이중곱, 발살바도 뒤에서 다룹니다.",
   s3: "피는 8자로 돕니다. 좌심실에서 **대동맥**으로 나가 온몸을 돌고 우심방으로 오는 것이 체순환, 우심실에서 **폐동맥**으로 폐에 갔다가 **폐정맥**으로 좌심방에 오는 것이 폐순환입니다. 폐동맥에는 정맥혈이 흐릅니다. 동맥과 정맥은 피의 종류가 아니라 방향으로 나눕니다.",
   s4: "심장 안에서는 판막 네 개가 길을 정합니다. 우심방과 우심실 사이 **삼첨판**, 우심실 출구 **폐동맥판**, 좌심방과 좌심실 사이 **승모판**, 좌심실 출구 **대동맥판**입니다. 방실판이 닫히는 소리가 제1심음, 반월판이 닫히는 소리가 제2심음입니다. 폐순환은 저압이라 우심실 벽이 좌심실보다 얇습니다.",
   s5: "심전도 한 번이 심장 한 번입니다. **P파는 심방 탈분극**, QRS군은 심실 탈분극, T파는 심실 재분극입니다. 박동 조율기는 우심방의 **동방결절**입니다. 운동하면 R-R 간격이 짧아지는데, 이것이 심박수 증가입니다. 2017학년도 A4번입니다.",
@@ -1010,7 +1015,8 @@ function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS,
   const m = $('#odMarks');
   [[100,'폐'],[40,'쉬는 조직'],[20,'운동 근육']].forEach(([p, t]) => {
     el('circle', {cx: X(p), cy: Y(A(p)), r: 11, fill: '#64D2FF'}, m);
-    el('text', {x: X(p) + (p === 100 ? -20 : 22), y: Y(A(p)) + (p === 100 ? 46 : 8), 'text-anchor': p === 100 ? 'end' : 'start', 'font-size': 26, 'font-weight': 600, fill: '#64D2FF'}, m, `${t} ${Math.round(A(p))}%`);
+    // 쉬는 조직·운동 근육 라벨은 점의 왼쪽 위(흰 곡선 위쪽)에 둬서 오른쪽의 빨간 우측이동 곡선과 겹치지 않게 한다
+    el('text', {x: X(p) - (p === 100 ? 20 : 24), y: Y(A(p)) + (p === 100 ? 46 : -16), 'text-anchor': 'end', 'font-size': 26, 'font-weight': 600, fill: '#64D2FF'}, m, `${t} ${Math.round(A(p))}%`);
   });
   const s = $('#odShift');
   el('circle', {cx: X(20), cy: Y(B(20)), r: 11, fill: '#FF453A'}, s);
