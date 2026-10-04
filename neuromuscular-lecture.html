@@ -342,7 +342,11 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 .g-bar i{display:block;height:100%;width:0;border-radius:11px}
 .gauge small{display:block;font-size:16px;color:#a1a1a6;margin-top:7px;line-height:1.4}
 .gauge.dim{opacity:.35}
-.lab-src{font-size:15px;color:#6e6e73;line-height:1.5}
+.lab-src{font-size:18px;color:#8e8e93;line-height:1.5}
+.g-ax{display:flex;justify-content:space-between;font-size:15px;color:#8e8e93;margin-top:3px}
+.lab-note{position:absolute;left:880px;right:120px;top:256px;min-height:52px;display:flex;align-items:center;gap:8px;padding:0 22px;border-radius:26px;background:#2c2c2e;font-size:22px;color:#f5f5f7}
+.lab-note b{color:#FFD60A}
+.lab-note span{color:#a1a1a6;font-size:19px}
 .ev-btns{position:absolute;left:120px;top:250px;display:flex;gap:12px;flex-wrap:wrap}
 .lab2-photo{position:absolute;left:120px;top:340px;width:520px;height:600px;border-radius:20px;overflow:hidden;background:#000}
 .lab2-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
@@ -359,45 +363,38 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 .ev-leg span:last-child{margin-left:auto;color:#f5f5f7;font-weight:600}
 .ev-dom{margin-top:22px;font-size:27px;line-height:1.5;padding:18px 24px;border-radius:14px;background:#2c2c2e}
 .ev-curve{width:1110px;height:340px;margin-top:20px}
-
 /* ── 몸속 실험실 (신경근) ── */
-.nl-left{position:absolute;left:120px;top:244px;width:560px}
-.nl-mus{display:flex;gap:10px}
-.nl-mus button{flex:1;height:52px;padding:0 10px;border-radius:26px;background:#2c2c2e;color:#f5f5f7;font-size:19px;font-weight:600;border:2px solid transparent;white-space:nowrap}
-.nl-mus button:hover{border-color:#6e6e73}
-.nl-mus button.on{background:#f5f5f7;color:#1d1d1f}
-.nl-force{display:flex;justify-content:space-between;align-items:baseline;margin-top:14px}
-.nl-force span{font-size:26px;font-weight:600;color:#f5f5f7}
-.nl-force small{font-size:17px;color:#a1a1a6;font-weight:400}
-.nl-force b{font-size:56px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
-.nl-left input[type=range]{width:100%;margin-top:4px;accent-color:#f5f5f7;height:26px}
-.nl-ticks{position:relative;height:28px;font-size:15px;color:#a1a1a6}
+.nl-left,.nl-right{position:absolute;top:262px;height:712px;display:flex;flex-direction:column;justify-content:space-between}
+.nl-left{left:120px;width:540px}
+.nl-force{display:flex;justify-content:space-between;align-items:baseline}
+.nl-force span{font-size:28px;font-weight:600;color:#f5f5f7}
+.nl-force small{font-size:18px;color:#a1a1a6;font-weight:400}
+.nl-force b{font-size:84px;line-height:1;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.nl-left input[type=range]{width:100%;margin-top:14px;accent-color:#f5f5f7;height:30px}
+.nl-ticks{position:relative;height:30px;font-size:17px;color:#a1a1a6}
 .nl-ticks span{position:absolute;top:2px;white-space:nowrap}
-.nl-ticks i{position:absolute;top:-27px;height:16px;border-radius:5px;background:rgba(255,214,10,.6)}
-#nlLimT{color:#FFD60A;font-weight:600;transform:translateX(-50%)}
-.nl-left .lab-btns{align-items:center;margin-top:8px}
-.nl-hint{font-size:17px;color:#6e6e73;margin-left:6px}
-.nl-card{margin-top:16px;padding:12px 18px 12px;border-radius:16px;background:#1c1c1e}
-.nl-cap{font-size:19px;font-weight:600}
-.nl-cap small{font-size:15px;color:#a1a1a6;font-weight:400}
-.nl-emg{display:block;width:524px;height:178px;margin-top:4px}
-.nl-ir{display:flex;align-items:center;gap:12px;margin-top:8px;font-size:17px;color:#d1d1d6}
-.nl-ir span{width:190px;flex:none}
-.nl-ir i{display:block;height:14px;border-radius:7px;background:#a1a1a6;flex:none}
-.nl-ir b{font-size:18px;font-variant-numeric:tabular-nums}
-.nl-cell{position:absolute;left:712px;top:244px;width:576px;height:720px}
-.nl-right{position:absolute;left:1320px;top:244px;width:500px}
-.nl-right .gauge{margin-bottom:22px}
+.nl-ticks i{position:absolute;top:-30px;height:18px;border-radius:5px;background:rgba(255,214,10,.75)}
+#nlLimT{color:#FFD60A;font-weight:600}
+.nl-left .lab-btns{align-items:center;margin-top:14px}
+.nl-hint{font-size:18px;color:#6e6e73;margin-left:6px}
+.nl-g{margin:0}
+.nl-g .g-bar{height:30px;border-radius:15px}
+.nl-g small{font-size:17px}
+.nl-cell{position:absolute;left:700px;top:236px;width:600px;height:750px}
+.nl-right{left:1340px;width:480px}
 .nl-stack{display:flex}
 .nl-stack i{border-radius:0}
-.nl-how{margin-top:10px;font-size:30px;white-space:nowrap;letter-spacing:-.02em;font-weight:700;padding:10px 20px;border-radius:14px;background:#2c2c2e;min-height:62px}
+.nl-how{margin-top:12px;font-size:36px;white-space:nowrap;letter-spacing:-.02em;font-weight:700;padding:14px 24px;border-radius:16px;background:#2c2c2e;min-height:78px}
 .nl-how em{font-style:normal;color:#FFD60A}
-.nl-sub{margin-top:12px;font-size:19px;color:#a1a1a6}
-.nl-sub b{font-weight:600}
-.nl-say{margin-top:0;font-size:25px;min-height:150px}
+.nl-sub{margin-top:16px;font-size:20px;color:#a1a1a6;font-weight:600}
+.nl-right .g-bar{height:40px;border-radius:20px}
+.nl-right .nl-sub{margin-top:22px;font-size:22px}
+.nl-right .g-bar+small{margin-top:14px;font-size:18px}
+.nl-say{margin-top:0;font-size:30px;min-height:300px;display:flex;align-items:center}
+.nl-say>span{display:block}
 .nl-say b{color:#FFD60A;white-space:nowrap}
-.nl-slow{margin-top:10px;font-size:16px;color:#6e6e73}
-.nl-src{position:absolute;left:120px;right:120px;top:984px}
+.nl-slow{margin-top:14px;font-size:16px;color:#6e6e73}
+.nl-src{position:absolute;left:120px;right:120px;top:1004px;white-space:nowrap}
 
 /* ── 신경근 추가분 ── */
 .seq7{position:absolute;left:120px;right:120px;top:300px;list-style:none}
@@ -520,7 +517,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="answer" style="left:1220px;top:280px;width:600px">
     <div class="t-cap mute">모범답안</div>
     <div class="a-line" data-step="1">㉠ <b>4) → 3) → 6) → 5)</b></div>
-    <div class="a-line" data-step="2">㉡ <b>Type I</b> (지근, 서근 산화형)</div>
+    <div class="a-line" data-step="2">㉡ <b>Type I</b>(지근, SO)</div>
   </div>
 </section>
 
@@ -558,56 +555,37 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 <section class="slide" id="s9" data-tile="black" data-title="몸속 실험실 — 힘을 올리면 운동단위가 켜진다">
   <div class="hd"><div class="t-eyebrow in"><b>2</b>몸속 실험실</div><div class="t-head in" style="--d:100">힘을 올리면 운동단위가 켜진다</div></div>
   <div class="nl-left no-nav">
-    <div class="nl-mus"><button id="nlBig" class="on">큰 근육(위팔두갈래근)</button><button id="nlSmall">작은 근육(손 근육)</button></div>
+    <div>
     <div class="nl-force"><span>힘 <small>(최대 수의 수축 대비)</small></span><b id="nlF">0%</b></div>
     <input type="range" id="nlRange" min="0" max="100" step="0.5" value="0" aria-label="힘 (최대 수의 수축 대비 %)">
     <div class="nl-ticks"><span style="left:0">0</span><i id="nlBand"></i><span id="nlLimT"></span><span style="right:0">100%</span></div>
     <div class="lab-btns"><button id="nlPlay">▶ 재생</button><span class="nl-hint">0 → 100% → 0 천천히</span></div>
-    <div class="nl-card">
-      <div class="nl-cap">근전도 진폭과 힘 <small>(모양만 · 원 연구는 80%까지 측정 · Lawrence &amp; De Luca 1983)</small></div>
-      <svg viewBox="0 0 560 190" class="nl-emg" id="nlEmg">
-        <line x1="50" y1="160" x2="540" y2="160" stroke="#6e6e73" stroke-width="2"/>
-        <line x1="50" y1="160" x2="50" y2="14" stroke="#6e6e73" stroke-width="2"/>
-        <text x="540" y="184" text-anchor="end" font-size="16" fill="#a1a1a6">힘 →</text>
-        <text x="30" y="88" text-anchor="middle" font-size="16" fill="#a1a1a6" transform="rotate(-90 30 88)">근전도 진폭 →</text>
-        <path id="nlEmgS" fill="none" stroke-width="3"/>
-        <path id="nlEmgB" fill="none" stroke-width="3"/>
-        <text id="nlEmgBT" font-size="16" font-weight="600"></text>
-        <text id="nlEmgST" font-size="16" font-weight="600"></text>
-        <circle id="nlEmgDot" r="8" fill="#f5f5f7"/>
-      </svg>
     </div>
-    <div class="nl-card">
-      <div class="nl-cap">운동단위 하나의 근섬유 수 <small>(Feinstein 1955)</small></div>
-      <div class="nl-ir"><span>손 근육(첫째 벌레근)</span><i style="width:16px"></i><b>약 100</b></div>
-      <div class="nl-ir"><span>제1배측골간근(손)</span><i style="width:41px"></i><b>약 340</b></div>
-      <div class="nl-ir"><span>비복근(종아리)</span><i style="width:240px"></i><b>약 2000</b></div>
-    </div>
+    <div class="gauge nl-g"><div class="g-h"><b>켜진 운동단위</b><span id="nlN"></span></div><div class="g-bar nl-stack"><i id="nlB1" style="background:#64D2FF"></i><i id="nlB2" style="background:#FF9F0A"></i><i id="nlB3" style="background:#FF453A"></i></div><small>작은 단위가 많고 큰 단위는 적다(모형)</small></div>
+    <div class="gauge nl-g"><div class="g-h"><b id="nlHowT">지금 힘을 키우는 방법</b></div><div class="nl-how" id="nlHow"></div></div>
   </div>
   <svg class="nl-cell no-nav" viewBox="0 0 560 700" id="nlCell">
     <rect x="4" y="4" width="552" height="692" rx="36" fill="#0e1014" stroke="#3a3a3c" stroke-width="3"/>
-    <text x="280" y="40" text-anchor="middle" font-size="19" fill="#a1a1a6">척수의 운동뉴런 — 원 크기 = 운동단위 크기 (작은 것부터 차례로)</text>
+    <text x="280" y="40" text-anchor="middle" font-size="19" fill="#a1a1a6">척수의 운동뉴런 — 원 크기 = 운동단위 크기</text>
     <g id="nlPool"></g>
     <text id="nlAx" x="280" y="318" text-anchor="middle" font-size="17" fill="#6e6e73">↓ 축삭 → 자기 근섬유 전부</text>
     <g id="nlSec"></g>
-    <text id="nlSecT" x="280" y="612" text-anchor="middle" font-size="17" fill="#a1a1a6">근육 단면 — 한 단위의 근섬유는 흩어져 섞여 있다</text>
+    <text id="nlSecT" x="280" y="612" text-anchor="middle" font-size="17" fill="#a1a1a6">근육 단면 — 켜진 단위의 근섬유가 빛난다</text>
     <g font-size="18" font-weight="600">
-      <circle cx="40" cy="646" r="9" fill="#64D2FF"/><text x="56" y="652" fill="#64D2FF">Type I (지근)</text>
-      <circle cx="210" cy="646" r="9" fill="#FF9F0A"/><text x="226" y="652" fill="#FF9F0A">Type IIa</text>
-      <circle cx="340" cy="646" r="9" fill="#FF453A"/><text x="356" y="652" fill="#FF453A">Type IIx (속근)</text>
+      <circle cx="30" cy="660" r="9" fill="#64D2FF"/><text x="46" y="666" fill="#64D2FF">Type I (지근)</text>
+      <circle cx="205" cy="660" r="9" fill="#FF9F0A"/><text x="221" y="666" fill="#FF9F0A">Type IIa (속근)</text>
+      <circle cx="390" cy="660" r="9" fill="#FF453A"/><text x="406" y="666" fill="#FF453A">Type IIx (속근)</text>
     </g>
-    <text x="280" y="680" text-anchor="middle" font-size="15" fill="#6e6e73">유형 경계는 개념도(사람에서 % 경계 실측 아님) · 2019 B5 그래프의 층이 이것</text>
   </svg>
   <div class="nl-right no-nav">
-    <div class="gauge"><div class="g-h"><b>켜진 운동단위</b><span id="nlN"></span></div><div class="g-bar nl-stack"><i id="nlB1" style="background:#64D2FF"></i><i id="nlB2" style="background:#FF9F0A"></i><i id="nlB3" style="background:#FF453A"></i></div><small>모형의 단위 수 — 작은 단위가 많고 큰 단위는 적다</small></div>
-    <div class="gauge"><div class="g-h"><b id="nlHowT">지금 힘을 키우는 방법</b></div><div class="nl-how" id="nlHow"></div></div>
-    <div class="gauge"><div class="g-h"><b style="color:#64D2FF">가장 먼저 켜진 단위의 발화 빈도</b><span id="nlR1"></span></div><div class="g-bar"><i id="nlRB1" style="background:#64D2FF"></i></div>
-      <div class="g-h nl-sub"><b>지금 켜진 가장 큰 단위</b></div><div class="g-bar"><i id="nlRB2"></i></div>
-      <small>동원 직후 약 8 Hz → 천천히 올리는 최대 수축에서 대개 25~35 Hz(50 미만). 그 사이는 막대만. 천천히 올릴 때는 먼저 켜진 작은 단위가 더 빠르다(양파 껍질 원리 — 빠른·폭발적 수축에선 다른 보고도 있음)</small></div>
-    <div class="lab-say nl-say" id="nlSay"></div>
-    <div class="nl-slow">깜빡임은 실제보다 약 6배 느리게</div>
+    <div class="gauge nl-g"><div class="g-h"><b>발화 빈도</b><span id="nlR1"></span></div>
+      <div class="nl-sub" style="color:#64D2FF">가장 먼저 켜진 단위(Type I)</div><div class="g-bar"><i id="nlRB1" style="background:#64D2FF"></i></div>
+      <div class="nl-sub">지금 켜진 가장 큰 단위</div><div class="g-bar"><i id="nlRB2"></i></div>
+      <small>동원 직후 약 8 Hz → 최대 수축에서 대개 25~35 Hz · 힘이 오를수록 켜진 단위 모두 빨라진다</small></div>
+    <div><div class="lab-say nl-say" id="nlSay"></div>
+    <div class="nl-slow">깜빡임은 실제보다 약 6배 느리게 · 유형 경계는 개념도</div></div>
   </div>
-  <div class="lab-src nl-src">근거: Henneman 1957·1965(크기의 원리) · Milner-Brown 1973 · Kukulka &amp; Clamann 1981 · Lawrence &amp; De Luca 1983 · Feinstein 1955 · De Luca &amp; Hostage 2010 · Enoka &amp; Duchateau 2017 · Duchateau &amp; Enoka 2022(팔다리 근육 대부분 약 90%까지 동원). 단위 수·크기·유형 경계는 모형.</div>
+  <div class="lab-src nl-src">근거: Henneman 1957(크기의 원리) · Milner-Brown 1973 · Kukulka &amp; Clamann 1981 · Enoka &amp; Duchateau 2017 — 단위 수·크기·유형 경계는 모형</div>
 </section>
 
 
@@ -622,7 +600,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="t-cap mute">모범답안</div>
     <div class="a-line" data-step="1">① <b>시간적</b> 가중: 한 곳의 자극이 짧은 간격으로 반복 / <b>공간적</b> 가중: 여러 곳의 자극이 동시에</div>
     <div class="a-line" data-step="2">② 활동전위는 크기가 일정(전부 아니면 전무)해 자극 세기로 힘을 조절할 수 없으므로, 근력은 동원하는 <b>운동단위 수</b>와 <b>발화 빈도</b>로 조절</div>
-    <div class="a-line" data-step="3">③ <b>Type IIx</b>(속근) · <b>발화 빈도 증가</b>(강축)</div>
+    <div class="a-line" data-step="3">③ <b>Type IIx</b>(속근 해당형) · <b>발화 빈도 증가</b>(강축)</div>
     <div class="t-cap mute" data-step="4" style="margin-top:18px">원래 기출: 가중 요인 2가지, Na⁺ 통로 변화, 재분극 이온(K⁺), 크기의 원리</div>
   </div>
 </section>
@@ -632,7 +610,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="hd"><div class="t-eyebrow in"><b>3</b>근섬유 유형</div><div class="t-head in" style="--d:100">지근과 속근 — 기출이 가장 많이 나온 표</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A6</span><span>2019 B5</span><span>2026 B4</span></div>
   <table class="dtab abs in" style="--d:250;left:120px;top:300px;font-size:30px">
-    <tr><th></th><th>Type I (지근)</th><th>Type IIa</th><th>Type IIx (속근)</th></tr>
+    <tr><th></th><th>Type I<br><small style="font-size:22px">지근 · 산화형</small></th><th>Type IIa<br><small style="font-size:22px">속근 · 산화-해당형</small></th><th>Type IIx<br><small style="font-size:22px">속근 · 해당형</small></th></tr>
     <tr data-step="1"><td>미오신 ATPase · 수축 속도</td><td>느림</td><td>빠름</td><td>가장 빠름</td></tr>
     <tr data-step="2"><td>미토콘드리아 · 모세혈관 · <b>미오글로빈</b></td><td>많음</td><td>중간</td><td>적음</td></tr>
     <tr data-step="2"><td>근글리코겐 · 해당 효소</td><td>적음</td><td>많음</td><td>많음</td></tr>
@@ -661,14 +639,15 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 <!-- 문제 ③ 2019 B5 -->
 <section class="slide" id="s13" data-tile="parchment" data-title="기출 ③ 2019 B5">
   <div class="hd"><div class="t-eyebrow in">기출 ③ · 2019학년도 B5 그대로</div><div class="t-head in" style="--d:100">근력 발휘 수준과 동원 근섬유 비율</div></div>
-  <div class="exam in" style="--d:200;left:120px;top:280px;width:1000px;padding:26px 36px">
+  <div class="exam in" style="--d:200;left:120px;top:250px;width:1000px;padding:20px 36px">
+    <p style="margin:0 0 6px;font-size:22px;line-height:1.45">다음은 운동 중 근력 발휘 수준과 동원 근섬유 비율에 대한 수업 자료이다. &lt;작성 방법&gt;에 따라 순서대로 서술하시오. [4점]</p>
     <svg width="920" height="330" viewBox="0 0 920 330" id="q3g"></svg>
     <div style="font-size:22px;line-height:1.5;margin-top:6px">• 저강도, 중강도, 고강도에 따라 동원되는 근섬유 비율이 다름.<br>• 이유: 에너지 저장량, 흥분 역치, 수축 속도 등에 의해 차이가 나타남.</div>
     <div class="howto" style="font-size:21px;line-height:1.5;margin-top:14px;padding:10px 20px">&lt;작성 방법&gt;<br>○ ㉡에 해당하는 근섬유 명칭을 동원 순서와 수축 속도 측면에서 각각 1가지 쓸 것.<br>○ 투포환, 마라톤, 800 m 달리기를 ㉡의 비율이 높은 종목부터 낮은 종목 순으로 쓸 것.<br>○ ㉡을 운동 신경의 전도 속도와 모세혈관 밀도의 측면에서 ㉠과 비교하여 기술할 것.</div>
   </div>
   <div class="answer" style="left:1180px;top:280px;width:640px">
     <div class="t-cap mute">모범답안</div>
-    <div class="a-line" data-step="1">㉡ <b>Type I(지근)</b> — 가장 먼저 동원, 수축 속도 느림</div>
+    <div class="a-line" data-step="1">㉡ 동원 순서 측면 — <b>Type I</b>(가장 먼저 동원)<br>&ensp;&ensp;수축 속도 측면 — <b>지근</b>(느린 연축, ST)</div>
     <div class="a-line" data-step="2"><b>마라톤 &gt; 800 m &gt; 투포환</b></div>
     <div class="a-line" data-step="3">㉡은 ㉠(IIx)보다 전도 속도 <b>느리고</b>, 모세혈관 밀도 <b>높다</b></div>
     <div class="t-cap mute" data-step="4" style="margin-top:18px">함정: 맨 아래층이 가장 먼저 동원되는 Type I이다.</div>
@@ -732,7 +711,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <video class="abs vid fin" src="img/nm-spindle.mp4" poster="img/nm-spindle.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
   <div class="side">
     <div class="t-eyebrow in"><b>5</b>고유수용기와 반사</div>
-    <div class="t-head s in" style="--d:100">길이를 재는 센서, 힘을 재는 센서</div>
+    <div class="t-head s in" style="--d:100">길이를 재는 센서,<br>힘을 재는 센서</div>
     <div class="gx static in" style="--d:200"><span class="y">기출</span><span>2018 B6</span><span>2026 B4</span></div>
     <table class="qt" data-step="1">
       <tr><th></th><th>근방추</th><th>골지건기관</th></tr>
@@ -777,7 +756,8 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </style>
 <section class="slide" id="s21" data-tile="light" data-title="기출 ④ 2026 B4">
   <div class="hd"><div class="t-eyebrow in">기출 ④ · 2026학년도 B4 그대로</div><div class="t-head in" style="--d:100">고유수용기와 근섬유</div></div>
-  <div class="exam in dlg" style="--d:200;left:120px;top:250px;width:1180px;padding:16px 28px;font-size:20px;line-height:1.48">
+  <div class="exam in dlg" style="--d:200;left:120px;top:236px;width:1180px;padding:14px 28px;font-size:20px;line-height:1.46">
+    <p style="margin:0 0 4px">다음은 교사와 학생의 대화 내용이다. &lt;작성 방법&gt;에 따라 순서대로 서술하시오. [4점]</p>
     <div class="c">… (상략) …</div>
     <div class="t"><b class="mk">[가]</b><span>교사:</span>스트레칭의 기전에 대해 알아볼게요. 우리 몸에는 근육의 길이와 발휘하는 힘을 감지하는 고유수용기가 있어요. ㉠ <u>근방추</u>는 감각신경을 통해 근육 길이에 관한 정보를 중추신경계에 전달합니다. 고위 중추신경계로부터 되돌아오는 신호는 ㉡ <u>감마운동신경</u>을 통해 추내근 섬유로 전달되어 근육의 수축을 조절하죠. 그리고 건에 위치한 ㉢ <u>전정기관</u>은 근육의 수축 강도를 중추신경계에 전달하는 역할을 수행하고, 강한 근육 수축이 일어나면 ㉣ <u>알파운동신경</u>의 활성을 제어하여 근육 수축을 억제합니다.</div>
     <div class="c">… (중략) …</div>
@@ -803,26 +783,26 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 <section class="slide" id="s22" data-tile="parchment" data-title="기출 변형 ⑤ 2018 B6">
   <div class="hd"><div class="t-eyebrow in">기출 변형 ⑤ · 2018학년도 B6의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">탄성 스트레칭과 PNF</div></div>
   <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:26px 36px;font-size:25px">
-    ○ 탄성 스트레칭: 스윙·바운스 등 반동 동작을 이용 — 위험성: ㉡ 근육 손상이나 통증을 유발할 수 있다.<br>
-    ○ ( ㉢ ) 스트레칭(유지-이완): Ⅰ단계 대상근을 늘린 자세 → Ⅱ단계 파트너 저항에 대해 대상근을 수축 → Ⅲ단계 이완하며 더 늘림.
-    <div class="howto">&lt;작성 방법&gt; ① 탄성 스트레칭에서 늘어나는 근육 속 근방추가 흥분해 일어나는 반사의 이름과, 그 반사가 ㉡을 일으키는 과정을 쓸 것. ② Ⅱ단계에서 대상근 대신 '길항근'을 수축시키면 이용하는 반사의 이름을 쓸 것. ③ ㉢에 해당하는 스트레칭의 명칭을 쓸 것.</div>
+    ○ 탄성 스트레칭: 스윙·바운스 등 반동 동작을 이용 — 위험성: 근육 손상이나 통증을 유발할 수 있다.<br>
+    ○ PNF 스트레칭(유지-이완): Ⅰ단계 ㉠ <u>대상근을 늘린 자세를 유지</u> → Ⅱ단계 ㉡ <u>파트너 저항에 대해 대상근을 수축</u> → Ⅲ단계 이완하며 더 늘림.
+    <div class="howto" style="font-size:22px;line-height:1.5">&lt;작성 방법&gt;<br>① 반동 없이 ㉠처럼 늘린 자세를 유지하면 탄성 스트레칭보다 신장반사가 덜 일어나는 이유를 근방추가 감지하는 정보의 측면에서 서술할 것.<br>② ㉡에서 대상근의 장력 증가를 감지하는 고유수용기의 명칭을 쓰고, 이것이 Ⅲ단계에서 대상근을 더 늘릴 수 있게 하는 과정을 반사의 명칭을 포함하여 서술할 것.<br>③ ㉡에서 대상근 대신 길항근을 수축시킬 때 대상근이 이완되는 반사의 명칭을 쓸 것.</div>
   </div>
   <div class="answer" style="left:1220px;top:280px;width:600px">
     <div class="t-cap mute">모범답안</div>
-    <div class="a-line" data-step="1">① <b>신장반사</b> — 반동으로 빠르게 늘어남 → 근방추 흥분 → 늘어나는 근육이 수축 → 수축 중 강제로 늘어나 미세 손상</div>
-    <div class="a-line" data-step="2">② <b>상호억제</b> (길항근 수축 → 대상근 억제)</div>
-    <div class="a-line" data-step="3">③ <b>PNF</b>(고유수용성 신경근 촉진법) 스트레칭</div>
-    <div class="t-cap mute" data-step="4" style="margin-top:18px">원래 기출: ㉠ 근방추 명칭·기능, ㉡ 발생 기전, ㉢ PNF 명칭과 근육계·신경계(골지건기관·자가억제) 측면 정의</div>
+    <div class="a-line" data-step="1">① 근방추는 길이뿐 아니라 <b>늘어나는 속도</b>도 감지 — 반동 없이 자세를 유지하면 늘어나는 속도가 작아 근방추 흥분이 적으므로 신장반사(대상근 수축)가 덜 일어난다</div>
+    <div class="a-line" data-step="2">② <b>골지건기관</b> — 대상근 수축으로 장력↑ → Ib 구심신경 → 같은 근육(대상근)의 운동신경 억제 = <b>자가억제</b> → 대상근 이완 → 더 늘어난다</div>
+    <div class="a-line" data-step="3">③ <b>상호억제</b> (길항근 수축 → 대상근 억제)</div>
+    <div class="t-cap mute" data-step="4" style="margin-top:18px">원래 기출: 근방추 명칭·기능, 근육 손상 발생 기전, PNF 명칭과 근육계·신경계 측면 정의</div>
   </div>
 </section>
 
 <!-- 6. 근력 적응 -->
 <section class="slide" id="s23" data-tile="dark" data-title="6. 근력 트레이닝 적응">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>근력 적응</div><div class="t-head in" style="--d:100">처음 몇 주는 신경, 그다음은 근육</div></div>
-  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2014 A10</span><span>2017 B4</span></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 B4</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080" id="adG"></svg>
   <div class="abs" style="left:1240px;top:330px;width:580px">
-    <div class="pt" data-step="1">초기(약 4~8주) 근력 증가 = 주로 <b class="c-o2">신경 적응</b> — 동원 수↑, 발화 빈도↑, 동기화</div>
+    <div class="pt" data-step="1">처음 몇 주(대략 8주 안팎) 근력 증가 = 주로 <b class="c-o2">신경 적응</b> — 동원 수↑, 발화 빈도↑, 동기화</div>
     <div class="pt" data-step="2">이후 = <b class="c-hr">근 횡단면적↑</b> — 기전 2가지 (2017 B4)<br>① <b>근비대</b>: 근원섬유 단백질 합성↑ → 근섬유가 굵어짐<br>② <b>근섬유 증식</b>: 근섬유 수↑</div>
     <div class="t-cap mute" data-step="2" style="margin-top:16px">그래프는 경향을 보여 주는 모식도</div>
   </div>
@@ -854,7 +834,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="card in" style="--d:350"><div class="k c-o2">근섬유</div><h4>지근 vs 속근</h4><p>I: 미토콘드리아·미오글로빈·모세혈관↑<br>II: ATPase 활성·해당 효소↑<br>마라톤 &gt; 800 m &gt; 투포환</p></div>
     <div class="card in" style="--d:450"><div class="k c-mid">수축 형태</div><h4>단축 · 신장 · 등척</h4><p>신장성은 빠를수록 힘↑<br>신장-단축 주기 → 플라이오메트릭<br>DOMS = 신장성 → 미세손상·염증</p></div>
     <div class="card in" style="--d:550"><div class="k c-low">반사</div><h4>근방추 · 골지건</h4><p>신장반사(Ia) · 상호억제<br>자가억제(Ib)<br>PNF 유지-이완 = 자가억제</p></div>
-    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">적응</div><h4>신경 → 근비대</h4><p>초기 4~8주: 신경 적응<br>이후: 근비대 · 근섬유 증식<br>근력↑ = 근비대 없이도 가능</p></div>
+    <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">적응</div><h4>신경 → 근비대</h4><p>처음 몇 주: 신경 적응<br>이후: 근비대 · 근섬유 증식<br>근력↑ = 근비대 없이도 가능</p></div>
   </div>
 </section>
 
@@ -897,11 +877,11 @@ const NOTES = {
   s6: "2015 A6 기출 그대로입니다. 3)부터 6)의 순서는 **4) → 3) → 6) → 5)**, 퀴즈 2의 근섬유는 **Type I**입니다.",
   s7: "약한 자극 하나로는 역치에 못 미치지만, 자극이 겹치는 **가중**으로 역치에 닿습니다. 시간적 가중과 공간적 가중이 있습니다. 역치를 넘으면 **나트륨 통로**가 열려 탈분극, 이어서 **칼륨**이 나가 재분극됩니다.",
   s8: "운동단위는 운동신경 하나와 그것이 지배하는 근섬유 전부입니다. 힘은 **동원하는 운동단위 수**와 **발화 빈도**로 키웁니다. 작은 운동단위부터 동원되는 것이 **크기의 원리**입니다.",
-  s9: "몸속 실험실입니다. 가운데 원 하나가 운동단위 하나이고, 원 크기가 그 단위의 크기입니다. 힘을 올리면 **작은 단위(Type I)부터 켜지고 큰 단위가 나중에** 켜집니다. 이것이 **크기의 원리**이고, 힘을 뺄 때는 거꾸로 큰 단위부터 꺼집니다. 근육이 힘을 키우는 방법은 두 가지입니다. 켜는 단위 수를 늘리는 **동원**, 이미 켜진 단위가 더 자주 신호를 보내는 **발화 빈도 증가**입니다. 동원 상한은 근육마다 다릅니다. 위팔두갈래근 같은 큰 근육은 약 88%까지 새 단위를 동원하고, 손 근육은 약 50~60%에서 동원이 끝나 그 위는 발화 빈도만으로 힘을 키웁니다. 발화 빈도는 동원 직후 약 8 Hz에서 시작해, 천천히 올리는 최대 수축에서는 대개 25~35 Hz까지 오릅니다. 이처럼 천천히 힘을 올릴 때는 **먼저 켜진 작은 단위가 더 빨리 발화**합니다. 이것을 **양파 껍질 원리**라고 합니다. 다만 아주 빠르고 폭발적인 수축에서는 큰 단위가 더 빨리 발화한다는 보고도 있어, 천천히 올리는 수축에 한정된 설명으로 기억해 둡니다. 근전도 그래프도 보세요. 손 근육은 힘과 근전도가 거의 직선으로 같이 오르지만, 위팔두갈래근 같은 큰 근육은 높은 힘으로 갈수록 근전도가 더 가파르게 오릅니다. 큰 근육은 높은 힘까지 큰 단위를 새로 동원하는 것이 한 이유로 설명됩니다. 마지막으로, 큰 힘을 낼 때도 **Type I은 꺼지지 않고 계속 켜져 있습니다**. 속근만 쓰는 게 아니라 지근 위에 속근이 더해지는 것이고, 2019 B5 그래프의 층이 바로 이것입니다. 유형별 경계 퍼센트는 사람에서 직접 잰 값이 아니어서 개념도로만 그렸습니다.",
-  s10: "2022 A9와 같은 자료로 다르게 묻습니다. 시간적 가중은 한 곳의 반복, 공간적 가중은 여러 곳의 동시 자극입니다. 활동전위는 전부 아니면 전무, 크기가 일정해서 자극 세기로는 힘을 조절할 수 없습니다. 그래서 근력은 **동원하는 운동단위 수와 발화 빈도**로 조절합니다. 투포환 마지막에는 **Type IIx**가 동원되고, 발화 빈도 측면에서는 **발화 빈도를 높여 강축**을 만들면 힘이 커집니다.",
+  s9: "몸속 실험실입니다. 원 하나가 운동단위 하나, 원 크기가 그 단위의 크기입니다. 힘을 올리면 **작은 단위인 Type I부터 켜지고 IIa, IIx 순서로** 큰 단위가 더해집니다. 이것이 **크기의 원리**입니다. 힘은 켜는 단위 수를 늘리는 **동원**과, 켜진 단위가 더 자주 신호를 보내는 **발화 빈도 증가**로 키우고, 큰 힘에서는 새로 켤 단위가 없어 **발화 빈도만** 올라갑니다. 그리고 최대 힘에서도 **Type I은 꺼지지 않고 계속 켜져 있습니다**. 2019 B5 그래프에서 맨 아래층 Type I 위에 속근이 쌓이는 것이 바로 이 모습입니다.",
+  s10: "2022 A9와 같은 자료로 다르게 묻습니다. 시간적 가중은 한 곳의 반복, 공간적 가중은 여러 곳의 동시 자극입니다. 활동전위는 전부 아니면 전무, 크기가 일정해서 자극 세기로는 힘을 조절할 수 없습니다. 그래서 근력은 **동원하는 운동단위 수와 발화 빈도**로 조절합니다. 투포환 마지막에는 속근 중에서도 **Type IIx**가 동원되고, 발화 빈도 측면에서는 **발화 빈도를 높여 강축**을 만들면 힘이 커집니다.",
   s11: "근섬유 유형 표입니다. Type I은 미토콘드리아, 모세혈관, **미오글로빈**이 많고 피로에 강합니다. Type II는 **미오신 ATPase**가 빨라 수축이 빠르고 해당 효소가 많습니다. 운동신경도 Type II가 굵고 빠릅니다.",
   s12: "힘을 낼수록 근섬유가 위층으로 쌓이듯 더해집니다. 저강도에는 Type I만, 중강도에 IIa, 고강도에 IIx까지. 그래서 Type I 비율은 **마라톤, 800 m, 투포환** 순입니다. 강도가 올라가 속근 동원이 늘면 **탄수화물** 사용이 늘어나는데, 이것이 2020 B10의 연료 교차입니다.",
-  s13: "2019 B5 기출 그대로입니다. 강도에 따라 동원 근섬유 비율이 다르고, 그 이유는 에너지 저장량, 흥분 역치, 수축 속도 차이입니다. ㉡은 가장 먼저 동원되고 느리게 수축하는 **Type I**, 비율은 **마라톤 > 800 m > 투포환**, Type I은 전도 속도가 **느리고** 모세혈관 밀도는 **높습니다**.",
+  s13: "2019 B5 기출 그대로입니다. 강도에 따라 동원 근섬유 비율이 다르고, 그 이유는 에너지 저장량, 흥분 역치, 수축 속도 차이입니다. ㉡의 명칭은 동원 순서 측면에서 가장 먼저 동원되는 **Type I**, 수축 속도 측면에서 느리게 수축하는 **지근**입니다. 비율은 **마라톤 > 800 m > 투포환**, Type I은 전도 속도가 **느리고** 모세혈관 밀도는 **높습니다**.",
   s14: "근육이 짧아지며 힘을 내면 **단축성**, 늘어나며 버티면 **신장성**, 길이 변화 없이 힘을 내면 **등척성**입니다. 등척성으로 계속 힘을 주면 혈관이 눌려 근육펌프가 작동하지 않습니다.",
   s15: "힘-속도 관계입니다. 단축성은 빠를수록 힘이 **약해지고**, 신장성은 빠를수록 힘이 **커집니다**. 신장성은 0 근처에서 단축성보다 가파르게 올라가다가 어느 수준에서 정체합니다. 길이-장력 관계에서는 액틴과 미오신이 가장 잘 겹치는 중간 길이에서 힘이 가장 큽니다. 2024 A5에서는 팔을 위로 돌리면 몸통 토크 때문에 다리 주동근이 **더 천천히** 짧아져, 힘-속도 관계에 따라 **더 큰 힘**과 지면반력을 냅니다.",
   s16: "착지하는 순간 비복근은 먼저 **늘어나며 버티고**, 곧바로 **짧아지며 밀어냅니다**. 이것이 신장-단축 주기이고, 이를 이용한 훈련이 **플라이오메트릭**입니다. 신장반사와 탄성 에너지 덕분에 더 세집니다.",
@@ -910,8 +890,8 @@ const NOTES = {
   s19: "반사 세 가지입니다. 늘어나면 수축하는 **신장반사**, 주동근이 수축하면 길항근이 풀리는 **상호억제**, 힘이 너무 크면 스스로 풀리는 **자가억제**입니다. 반동 스트레칭이 위험한 것은 신장반사 때문입니다.",
   s20: "PNF 유지-이완은 늘린 상태에서 대상근을 등척성으로 수축했다가 이완하며 더 늘립니다. 답안 기전은 골지건기관에 의한 **자가억제**입니다. 길항근을 수축시키면 상호억제를 더합니다.",
   s21: "2026 B4 기출 그대로입니다. 틀린 용어는 ㉢ 전정기관, 바르게는 **골지건기관**입니다. 근경련 결핍 원인인 다량무기질 ⓐ는 **마그네슘**, ⓑ는 **미오글로빈**입니다. ㉤은 Type II가 미오신 ATPase **활성이 높은 형태**를 많이 가져 ATP 분해와 교차결합 주기가 빨라 최대수축속도가 빠르다고 씁니다.",
-  s22: "2018 B6와 같은 자료로 다르게 묻습니다. 반동 스트레칭에서 일어나는 반사는 **신장반사**이고, 길항근을 수축시키는 방식은 **상호억제**를 이용합니다. ㉢의 유지-이완 방식은 **PNF**, 고유수용성 신경근 촉진법 스트레칭입니다.",
-  s23: "근력 훈련을 시작하면 처음 몇 주의 근력 증가는 주로 **신경 적응**입니다. 동원 수와 발화 빈도가 늘고 동기화됩니다. 그 뒤로는 근 횡단면적이 커지는데, 2017 B4가 물은 기전 두 가지는 근원섬유 단백질 합성이 늘어 근섬유가 굵어지는 **근비대**와 근섬유 수가 늘어나는 **근섬유 증식**입니다.",
+  s22: "2018 B6와 같은 자료로 다르게 묻습니다. 첫째, 근방추는 길이뿐 아니라 **늘어나는 속도**도 감지하므로, 반동 없이 늘린 자세를 유지하면 신장반사가 덜 일어납니다. 둘째, 대상근을 수축시키면 **골지건기관**이 장력을 감지해 Ib 신경을 거쳐 같은 근육을 억제하는 **자가억제**가 일어나, 대상근이 풀리면서 더 늘어납니다. 셋째, 길항근을 수축시키면 **상호억제**로 대상근이 이완됩니다.",
+  s23: "근력 훈련을 시작하면 처음 몇 주, 대략 8주 안팎까지의 근력 증가는 주로 **신경 적응**입니다. 동원 수와 발화 빈도가 늘고 동기화됩니다. 그 뒤로는 근 횡단면적이 커지는데, 2017 B4가 물은 기전 두 가지는 근원섬유 단백질 합성이 늘어 근섬유가 굵어지는 **근비대**와 근섬유 수가 늘어나는 **근섬유 증식**입니다.",
   s24: "감점 함정 10가지입니다. 수축 순서, A대, 신장성 힘-속도, 골지건기관, PNF 기전을 특히 확인하세요.",
   s25: "한 장으로 정리합니다. 수축 기전, 힘 조절, 근섬유, 수축 형태, 반사, 적응입니다."
 };
@@ -990,8 +970,14 @@ function txt(g, x, y, t, o = {}){ return el('text', Object.assign({x, y, 'font-s
   br(c, 360 + D, 510, 880, 'I대', '#64D2FF'); br(c, 950, 1100 - D, 880, 'I대', '#64D2FF'); br(c, 640 + D, 820 - D, 380, 'H대', '#FF9F0A');
   el('text', {x: 730, y: 970, 'text-anchor': 'middle', 'font-size': 28, fill: '#a1a1a6', class: 'relaxB'}, sv, '이완');
   el('text', {x: 730, y: 970, 'text-anchor': 'middle', 'font-size': 28, 'font-weight': 700, fill: '#f5f5f7', class: 'contrB'}, sv, '수축 — Z선이 가까워진다');
-  el('text', {x: 250, y: 600, 'text-anchor': 'end', 'font-size': 24, fill: '#FF9F9A'}, sv, '액틴');
-  el('text', {x: 250, y: 640, 'text-anchor': 'end', 'font-size': 24, fill: '#FF9F0A'}, sv, '미오신');
+  // 이름표: 그림과 같은 굵기·색의 견본 선을 붙여 어느 필라멘트인지 바로 보이게
+  el('line', {x1: 130, y1: 548, x2: 230, y2: 548, stroke: '#FF9F9A', 'stroke-width': 7, 'stroke-linecap': 'round'}, sv);
+  el('text', {x: 130, y: 590, 'font-size': 26, 'font-weight': 700, fill: '#FF9F9A'}, sv, '액틴');
+  el('text', {x: 130, y: 618, 'font-size': 19, fill: '#a1a1a6'}, sv, '가는 필라멘트');
+  el('line', {x1: 130, y1: 668, x2: 230, y2: 668, stroke: '#FF9F0A', 'stroke-width': 16, 'stroke-linecap': 'round'}, sv);
+  for (let x = 150; x <= 214; x += 32) [-1, 1].forEach(s => el('line', {x1: x, y1: 668 + s * 8, x2: x + 14, y2: 668 + s * 26, stroke: '#FF9F0A', 'stroke-width': 5, 'stroke-linecap': 'round'}, sv));
+  el('text', {x: 130, y: 730, 'font-size': 26, 'font-weight': 700, fill: '#FF9F0A'}, sv, '미오신');
+  el('text', {x: 130, y: 758, 'font-size': 19, fill: '#a1a1a6'}, sv, '굵은 필라멘트');
 })();
 
 // 7장 활동전위
@@ -1071,6 +1057,8 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
 })();
 
 // ── 몸속 실험실 : 힘을 올리면 운동단위가 켜진다 ──
+// 보여 줄 것 세 가지: ① 크기의 원리(작은 단위 → 큰 단위, Type I → IIa → IIx)
+// ② 힘 조절 = 동원 + 발화 빈도(큰 힘에서는 발화 빈도만) ③ 큰 힘에서도 Type I은 계속 켜져 있음
 (function(){
   const $i = id => document.getElementById(id);
   const cell = $i('nlCell'); if (!cell) return; const sec = cell.closest('.slide');
@@ -1079,34 +1067,30 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
   const COL = ['#64D2FF', '#FF9F0A', '#FF453A']; // Type I · IIa · IIx
   const N = 60;          // 모형의 운동단위 수(실제 수가 아님)
   const SLOW = 6;        // 화면 깜빡임 = 실제 발화 빈도 ÷ 6
-  // 근육별 동원 상한(모형값). 큰 근육: 약 88% MVC (Kukulka & Clamann 1981, 위팔두갈래근)
-  // 작은 근육(손): 약 50~60% MVC에서 동원 완료 (Kukulka & Clamann 1981; De Luca & Hostage 2010) → 모형은 그 가운데 55
-  const MUS = {
-    big:   {lim: 88, limTxt: '약 88%', rScale: 1, fib: 0.5, rx: 250, ry: 106, name: '큰 근육'},
-    small: {lim: 55, limTxt: '약 50~60%', rScale: 0.8, fib: 0.22, rx: 175, ry: 88, name: '작은 근육'},
-  };
-  // 발화 빈도(모형): 동원 순간 약 8 Hz(Milner-Brown 1973), 힘에 비례해 오름. 모든 단위가 같은 기울기 →
-  // 먼저(낮은 문턱에서) 켜진 단위가 언제나 더 빠르다 = 양파 껍질 원리(De Luca & Hostage 2010).
-  // 첫 단위는 100%에서 약 30 Hz → '천천히 올리는 최대 수축에서 대개 25~35 Hz'(Enoka & Duchateau 2017) 범위 안
-  const R0 = 8, K = 0.22;
-  const rate = (F, T) => F >= T ? R0 + K * (F - T) : 0;
+  // 동원 상한(모형값): 위팔두갈래근 같은 큰 근육은 약 88% MVC까지 새 단위 동원(Kukulka & Clamann 1981)
+  const LIM = 88;
+  const M = {fib: 0.5, rx: 250, ry: 106};
+  // 발화 빈도(모형): 동원 순간 약 8 Hz(Milner-Brown 1973)에서 출발해 힘이 오를수록 켜진 단위가 모두 빨라진다.
+  // 100%에서 먼저 켜진 단위 약 33 Hz, 마지막 단위 약 25 Hz → '최대 수축에서 대개 25~35 Hz'(Enoka & Duchateau 2017)
+  const R0 = 8, rMax = T => 33 - 8 * T / LIM;
+  const rate = (F, T) => F >= T ? R0 + (rMax(T) - R0) * (F - T) / (100 - T) : 0;
   // 단위 i(0=가장 작음)의 상대 크기: 1 → 100 지수 분포(작은 단위가 많고 큰 단위가 적다)
   const size = i => Math.pow(100, i / (N - 1));
   // 유형(개념도): 작은 쪽 50% Type I, 다음 30% IIa, 큰 쪽 20% IIx — 경계는 실측값이 아님
   const typ = i => i < N * 0.5 ? 0 : i < N * 0.8 ? 1 : 2;
   // 동원 문턱: 지수 분포 — 낮은 힘 쪽에 단위가 많고 높은 쪽에 적다. 마지막 단위 = 동원 상한
   const C = 3;
-  const thr = (i, lim) => lim * (Math.exp(C * (i + 1) / N) - 1) / (Math.exp(C) - 1);
+  const thr = i => LIM * (Math.exp(C * (i + 1) / N) - 1) / (Math.exp(C) - 1);
   // 결정적 난수(매번 같은 그림)
   let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
 
   const pool = $i('nlPool'), secG = $i('nlSec');
-  let M = 'big', units = [];
+  let units = [];
   function build(){
-    const m = MUS[M]; pool.textContent = ''; secG.textContent = ''; seed = 7;
+    pool.textContent = ''; secG.textContent = ''; seed = 7;
     units = [];
     // 운동뉴런 원: 작은 것 → 큰 것 순서로 줄지어 배치
-    const rs = []; for (let i = 0; i < N; i++) rs.push(m.rScale * 5.5 * Math.pow(size(i), 1 / 3));
+    const rs = []; for (let i = 0; i < N; i++) rs.push(5.5 * Math.pow(size(i), 1 / 3));
     const rows = []; let row = [], w = 0; const W = 520, gap = 6;
     rs.forEach((r, i) => { if (w + 2 * r + (row.length ? gap : 0) > W){ rows.push(row); row = []; w = 0; } w += 2 * r + (row.length ? gap : 0); row.push(i); });
     if (row.length) rows.push(row);
@@ -1118,20 +1102,20 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
       rw.forEach(i => {
         const r = rs[i], cx = x + r, cy = y + h / 2; x += 2 * r + gap;
         const c = mk('circle', {cx, cy, r, fill: COL[typ(i)], 'fill-opacity': 0, stroke: COL[typ(i)], 'stroke-opacity': .4, 'stroke-width': 2}, pool);
-        units[i] = {i, r, t: typ(i), T: thr(i, m.lim), c, g: null, ph: rnd(), last: -9, on: false};
+        units[i] = {i, r, t: typ(i), T: thr(i), c, g: null, ph: rnd(), last: -9, on: false};
       });
       y += h + gap * 2;
     });
     // 근육 단면: 단위마다 크기에 비례한 수의 근섬유, 단면 전체에 흩어 섞는다
-    const cx0 = 280, cy0 = 456, nf = units.map(u => Math.max(1, Math.round(size(u.i) * m.fib)));
+    const cx0 = 280, cy0 = 456, nf = units.map(u => Math.max(1, Math.round(size(u.i) * M.fib)));
     const tot = nf.reduce((a, b) => a + b, 0);
-    mk('ellipse', {cx: cx0, cy: cy0, rx: m.rx + 14, ry: m.ry + 14, fill: '#16090b', stroke: '#7a3a40', 'stroke-width': 3}, secG);
-    let sp = Math.sqrt(Math.PI * m.rx * m.ry / (tot * 0.866)) * 1.05, pts;
+    mk('ellipse', {cx: cx0, cy: cy0, rx: M.rx + 14, ry: M.ry + 14, fill: '#16090b', stroke: '#7a3a40', 'stroke-width': 3}, secG);
+    let sp = Math.sqrt(Math.PI * M.rx * M.ry / (tot * 0.866)) * 1.05, pts;
     do {
       pts = []; sp *= 0.97;
-      for (let yy = -m.ry, k = 0; yy <= m.ry; yy += sp * 0.866, k++)
-        for (let xx = -m.rx + (k % 2) * sp / 2; xx <= m.rx; xx += sp)
-          if ((xx * xx) / (m.rx * m.rx) + (yy * yy) / (m.ry * m.ry) <= 1) pts.push([cx0 + xx, cy0 + yy]);
+      for (let yy = -M.ry, k = 0; yy <= M.ry; yy += sp * 0.866, k++)
+        for (let xx = -M.rx + (k % 2) * sp / 2; xx <= M.rx; xx += sp)
+          if ((xx * xx) / (M.rx * M.rx) + (yy * yy) / (M.ry * M.ry) <= 1) pts.push([cx0 + xx, cy0 + yy]);
     } while (pts.length < tot);
     for (let i = pts.length - 1; i > 0; i--){ const j = Math.floor(rnd() * (i + 1)); [pts[i], pts[j]] = [pts[j], pts[i]]; }
     const fr = Math.min(5, sp * 0.36); let p = 0;
@@ -1140,41 +1124,23 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
       u.g = mk('g', {fill: COL[u.t], opacity: 0}, secG);
       for (let j = 0; j < nf[k]; j++, p++) mk('circle', {cx: pts[p][0], cy: pts[p][1], r: fr}, u.g);
     });
-    $i('nlSecT').setAttribute('y', cy0 + m.ry + 42);
-    // 눈금: 동원 상한
+    $i('nlSecT').setAttribute('y', cy0 + M.ry + 42);
+    // 눈금: 동원이 끝나는 자리(숫자 없이)
     const band = $i('nlBand'), lt = $i('nlLimT'), pos = v => `calc(8px + (100% - 16px) * ${v / 100})`;
-    if (M === 'big'){ band.style.left = `calc(${pos(88)} - 2px)`; band.style.width = '4px'; lt.style.left = pos(88); lt.style.transform = 'translateX(-100%)'; }
-    else { band.style.left = pos(50); band.style.width = `calc((100% - 16px) * .1)`; lt.style.left = pos(55); lt.style.transform = 'translateX(-50%)'; }
-    lt.textContent = (M === 'big' ? '약 88%' : '약 50~60%') + ' 동원 끝';
-    $i('nlBig').classList.toggle('on', M === 'big'); $i('nlSmall').classList.toggle('on', M === 'small');
-    drawEmg();
-  }
-
-  // 근전도 진폭-힘 모양(숫자 없음): 손 근육(FDI) 거의 직선, 위팔두갈래근·어깨세모근은 곡선(높은 힘에서 기울기↑) — Lawrence & De Luca 1983
-  const EX = f => 50 + f / 100 * 480, EY = a => 160 - a * 138;
-  const emg = (f, m) => m === 'big' ? Math.pow(f / 100, 1.7) : f / 100;
-  function drawEmg(){
-    ['small', 'big'].forEach(m => {
-      let d = ''; for (let f = 0; f <= 100; f += 2) d += (f ? 'L' : 'M') + EX(f).toFixed(1) + ' ' + EY(emg(f, m)).toFixed(1);
-      const pth = $i(m === 'big' ? 'nlEmgB' : 'nlEmgS'), on = m === M;
-      pth.setAttribute('d', d); pth.setAttribute('stroke', on ? '#f5f5f7' : '#48484a'); pth.setAttribute('stroke-dasharray', on ? '' : '6 6');
-      const tx = $i(m === 'big' ? 'nlEmgBT' : 'nlEmgST');
-      tx.textContent = m === 'big' ? '큰 근육: 곡선' : '손 근육: 거의 직선';
-      tx.setAttribute('fill', on ? '#f5f5f7' : '#6e6e73');
-      if (m === 'big'){ tx.setAttribute('x', EX(62)); tx.setAttribute('y', EY(emg(62, 'big')) + 26); }
-      else { tx.setAttribute('x', EX(40) - 12); tx.setAttribute('y', EY(.40) - 12); tx.setAttribute('text-anchor', 'end'); }
-    });
+    band.style.left = `calc(${pos(LIM)} - 2px)`; band.style.width = '4px';
+    lt.style.left = pos(LIM); lt.style.transform = 'translateX(-100%)';
+    lt.textContent = '동원 끝 — 그 위는 발화 빈도만 ';
   }
 
   let F = 0, dir = 1, playing = false, paused = false, pPhase = 0, hold = 0, last = 0;
   const range = $i('nlRange');
   function setF(v){ v = Math.max(0, Math.min(100, v)); if (v !== F) dir = v > F ? 1 : -1; F = v; }
   function say(){
-    const m = MUS[M], on = units.filter(u => F >= u.T), top = on.length ? on[on.length - 1].t : -1;
+    const on = units.filter(u => F >= u.T), top = on.length ? on[on.length - 1].t : -1;
     if (F <= 0) return '힘 0 — 켜진 운동단위가 없다. 막대를 올리거나 <b>▶ 재생</b>';
-    if (dir < 0 && F < 99.5) return F > m.lim ? '힘을 빼면 먼저 <b>발화 빈도</b>가 내려가고, 더 빼면 <b>큰 단위부터 꺼진다</b>' : '힘을 빼면 반대 순서 — <b>큰 단위부터 꺼지고</b> 작은 Type I은 끝까지 남는다';
+    if (dir < 0 && F < 99.5) return F > LIM ? '힘을 빼면 먼저 <b>발화 빈도</b>가 내려가고, 더 빼면 <b>큰 단위부터 꺼진다</b>' : '힘을 빼면 반대 순서 — <b>큰 단위부터 꺼지고</b> 작은 Type I은 끝까지 남는다';
     if (F >= 95) return '최대 근처 — 먼저 켜진 단위는 대개 <b>25~35 Hz</b>. 큰 힘에서도 <b>Type I은 계속 켜져 있다</b>';
-    if (F > m.lim) return M === 'big' ? '<b>약 88%</b>를 넘으면 새로 켜지는 단위 없이 <b>발화 빈도만</b> 오른다' : '손 근육은 <b>약 50~60%</b>에서 동원이 끝난다 — 그 위는 <b>발화 빈도만</b> 오른다';
+    if (F > LIM) return '큰 힘에서는 새로 켜질 단위가 없다 — <b>발화 빈도만</b> 올라 힘을 키운다';
     if (top === 2) return '가장 큰 단위(<b>Type IIx</b>)까지 켜진다 — 새 단위 동원 + 더 빠른 발화';
     if (top === 1) return '<b>Type IIa</b> 단위가 더해진다 — 이미 켜진 단위는 더 빨리 발화';
     if (F - units[0].T <= 3) return '작은 단위(<b>Type I</b>)부터 켜진다 — 동원 직후 약 <b>8 Hz</b>';
@@ -1182,7 +1148,6 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
   }
   const RMAX = 40; // 발화 빈도 막대 끝(눈금 숫자 없음)
   function draw(now){
-    const m = MUS[M];
     $i('nlF').textContent = Math.round(F) + '%';
     range.value = F;
     const cnt = [0, 0, 0]; let topU = null;
@@ -1201,15 +1166,14 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
     $i('nlB1').style.width = cnt[0] / N * 100 + '%'; $i('nlB2').style.width = cnt[1] / N * 100 + '%'; $i('nlB3').style.width = cnt[2] / N * 100 + '%';
     const down = dir < 0 && F > 0 && F < 99.5;
     $i('nlHowT').textContent = down ? '지금 힘을 줄이는 방법' : '지금 힘을 키우는 방법';
-    $i('nlHow').innerHTML = F <= 0 ? '—' : down ? (F > m.lim ? '<em>발화 빈도↓만</em>' : '발화 빈도↓ + 큰 단위부터 꺼짐') : F > m.lim ? '<em>발화 빈도만</em>' : '동원 + 발화 빈도';
+    $i('nlHow').innerHTML = F <= 0 ? '—' : down ? (F > LIM ? '<em>발화 빈도↓만</em>' : '발화 빈도↓ + 큰 단위부터 꺼짐') : F > LIM ? '<em>발화 빈도만</em>' : '동원 + 발화 빈도';
     const r1 = rate(F, units[0].T);
     $i('nlRB1').style.width = r1 / RMAX * 100 + '%';
     $i('nlR1').textContent = F > 0 && F - units[0].T <= 3 ? '약 8 Hz' : F >= 95 ? '약 25~35 Hz' : '';
     const b2 = $i('nlRB2');
     if (topU && topU !== units[0]){ b2.style.width = rate(F, topU.T) / RMAX * 100 + '%'; b2.style.background = COL[topU.t]; }
     else b2.style.width = '0';
-    const ex = EX(F), ey = EY(emg(F, M)); $i('nlEmgDot').setAttribute('cx', ex); $i('nlEmgDot').setAttribute('cy', ey);
-    $i('nlSay').innerHTML = say();
+    $i('nlSay').innerHTML = '<span>' + say() + '</span>';
   }
   function frame(now){
     const dt = Math.min(.05, (now - last) / 1000 || 0); last = now;
@@ -1226,14 +1190,11 @@ REC.mid = [[0,5],[.35,30],[.6,62],[1,73]];
   }
   const stopPlay = () => { playing = false; $i('nlPlay').textContent = '▶ 재생'; };
   $i('nlPlay').onclick = e => { e.stopPropagation(); if (playing){ stopPlay(); paused = true; return; } if (!paused){ F = 0; dir = 1; pPhase = 0; } paused = false; playing = true; $i('nlPlay').textContent = '❚❚ 멈춤'; };
-  $i('nlBig').onclick = e => { e.stopPropagation(); M = 'big'; build(); draw(performance.now()); };
-  $i('nlSmall').onclick = e => { e.stopPropagation(); M = 'small'; build(); draw(performance.now()); };
   range.oninput = () => { stopPlay(); paused = false; pPhase = 0; setF(+range.value); };
   ['click', 'touchstart', 'keydown', 'pointerdown'].forEach(ev => range.addEventListener(ev, e => e.stopPropagation()));
   window.__labNeuro = {
     set(v, d){ stopPlay(); paused = false; pPhase = 0; F = Math.max(0, Math.min(100, v)); dir = d || 1; draw(performance.now()); },
-    muscle(k){ M = k === 'small' ? 'small' : 'big'; build(); draw(performance.now()); },
-    state(){ return {F, M, dir, on: units.filter(u => F >= u.T).length, lim: MUS[M].lim, r1: rate(F, units[0].T), rTop: (u => u ? rate(F, u.T) : 0)(units.filter(u => F >= u.T).pop()), thr: units.map(u => +u.T.toFixed(2))}; }
+    state(){ const on = units.filter(u => F >= u.T); return {F, dir, on: on.length, typeIOn: on.filter(u => u.t === 0).length, lim: LIM, r1: rate(F, units[0].T), rTop: on.length ? rate(F, on[on.length - 1].T) : 0, thr: units.map(u => +u.T.toFixed(2))}; }
   };
   build(); draw(0); requestAnimationFrame(frame);
 })();
@@ -1341,6 +1302,19 @@ function wake(){ ui.classList.remove('idle'); clearTimeout(idleT); idleT = setTi
 
 const m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
 go(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+
+// 폰 세로 화면 안내 · 폰 가로에서는 쉬는 조작 막대를 완전히 숨김
+(() => {
+  const st = document.createElement('style');
+  st.textContent = '#rot{display:none;position:fixed;left:12px;right:12px;bottom:max(16px,env(safe-area-inset-bottom));z-index:99;padding:12px 16px;border-radius:14px;background:rgba(28,28,30,.94);color:#f5f5f7;font:600 15px/1.45 "Pretendard Variable",Pretendard,sans-serif;text-align:center;word-break:keep-all}'
+    + '@media (orientation:portrait) and (max-width:820px){#rot{display:block}}'
+    + '@media (max-height:500px){#ui.idle{opacity:0!important}}';
+  document.head.appendChild(st);
+  const d = document.createElement('div'); d.id = 'rot'; d.className = 'no-nav';
+  d.textContent = '폰을 가로로 돌리면 크게 볼 수 있습니다 (눌러서 닫기)';
+  d.onclick = e => { e.stopPropagation(); d.remove(); };
+  document.body.appendChild(d);
+})();
 </script>
 </body>
 </html>

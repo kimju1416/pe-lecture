@@ -335,7 +335,11 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 .g-bar i{display:block;height:100%;width:0;border-radius:11px}
 .gauge small{display:block;font-size:16px;color:#a1a1a6;margin-top:7px;line-height:1.4}
 .gauge.dim{opacity:.35}
-.lab-src{font-size:15px;color:#6e6e73;line-height:1.5}
+.lab-src{font-size:18px;color:#8e8e93;line-height:1.5}
+.g-ax{display:flex;justify-content:space-between;font-size:15px;color:#8e8e93;margin-top:3px}
+.lab-note{position:absolute;left:880px;right:120px;top:256px;min-height:52px;display:flex;align-items:center;gap:8px;padding:0 22px;border-radius:26px;background:#2c2c2e;font-size:22px;color:#f5f5f7}
+.lab-note b{color:#FFD60A}
+.lab-note span{color:#a1a1a6;font-size:19px}
 .ev-btns{position:absolute;left:120px;top:250px;display:flex;gap:12px;flex-wrap:wrap}
 .lab2-photo{position:absolute;left:120px;top:340px;width:520px;height:600px;border-radius:20px;overflow:hidden;background:#000}
 .lab2-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
@@ -407,7 +411,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="hd"><div class="t-eyebrow in">기출 지도</div><div class="t-head in" style="--d:100">호흡에서 나온 것 — 절반은 '가스로 대사 읽기'</div></div>
   <div class="ymap">
     <div class="yr in" style="--d:200"><b>2014 A 서술3</b><span>호흡교환율 1.20의 의미</span></div>
-    <div class="yr in" style="--d:240"><b>2014 A 기입11</b><span>젖산역치·OBLA → 운동 강도</span></div>
+    <div class="yr in" style="--d:240"><b>2014 A 기입11</b><span>교차개념·젖산역치·OBLA → 운동 강도</span></div>
     <div class="yr in" style="--d:280"><b>2015 A7</b><span>해리곡선 우측이동 (pH)</span></div>
     <div class="yr in" style="--d:320"><b>2018 A7</b><span>해부학적 사강 · 폐포 환기량 계산</span></div>
     <div class="yr in" style="--d:360"><b>2018 B5</b><span>호흡교환율 0.7·1.0과 연료</span></div>
@@ -557,7 +561,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="abs" style="left:1240px;top:350px;width:580px">
     <div class="pt" data-step="1">우측이동: 체온↑ · PCO₂↑ · <span class="blank" data-reveal="1" style="min-width:110px"><i>1</i><b>pH</b></span>↓ (보어 효과) · 2,3-BPG↑ → 근육에 산소를 더 내놓는다</div>
     <div class="pt" data-step="2">헤모글로빈은 S자 — 폐에서는 꽉 붙잡고, 근육에서는 잘 놓는다</div>
-    <div class="pt" data-step="3"><b class="c-o2">미오글로빈</b>은 쌍곡선, 훨씬 왼쪽 — PO₂가 아주 낮아져야 산소를 내놓는 근육 속 <b>산소 저장고</b> (2026 B4)</div>
+    <div class="pt" data-step="3"><b class="c-o2">미오글로빈</b>은 쌍곡선, 훨씬 왼쪽 — PO₂가 아주 낮아져야 산소를 내놓는 근육 속 <b>산소 저장고</b> — 근육 세포막에서 <b>미토콘드리아로 O₂를 운반</b>하기도 한다 (2026 B4)</div>
   </div>
 </section>
 
@@ -594,7 +598,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
       <g font-size="19" font-weight="600"><text x="140" y="200" fill="#f5f5f7">① 급증</text><text x="222" y="168" fill="#f5f5f7">② 완만</text><text x="350" y="70" fill="#f5f5f7">③ 정상상태</text></g>
     </svg>
     <div class="pt" data-step="2">① 급증 = <b>신경성</b> — 중추명령, 근육·관절의 기계적 구심신호</div>
-    <div class="pt" data-step="3">② 완만한 증가 = <b>체액성</b> — PCO₂·H⁺·체온 변화를 화학수용기가 감지</div>
+    <div class="pt" data-step="3">② 완만한 증가 = <b>체액성</b> — PCO₂·H⁺(화학수용기)와 체온·K⁺ 등 체액성 자극</div>
   </div>
 </section>
 
@@ -655,7 +659,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="rg"><div class="rg-h"><b style="color:#30D158">호흡교환율 RER</b><span id="rxReV"></span></div><div class="rg-bar"><i id="rxReB" style="background:#30D158"></i></div></div>
     <svg class="rx-graph no-nav" viewBox="0 0 490 250" id="rxGraph"></svg>
   </div>
-  <div class="lab-src rx-src">대표값: 젊은 남성(VO₂max 약 3.0 L/분) 가정, 숫자는 0·25·50·75·100% 지점에서만 표시하고 사이는 막대만 이어 그림. 근거: Dominelli &amp; Sheel 2024 (Adv Physiol Educ) · Anselmi 2021 (비운동인 VT1 약 59%, VT2 약 83%) · West (통과 시간·산소 평형) · Dempsey &amp; Wagner 1999 (운동 중 동맥혈 가스).</div>
+  <div class="lab-src rx-src">대표값: 젊은 남성(VO₂max 약 3.0 L/분) 가정, 숫자는 0·25·50·75·100% 지점에서만 표시하고 사이는 막대만 이어 그림. 근거: Dominelli &amp; Sheel 2024 (Adv Physiol Educ) · Anselmi 2021 · West (통과 시간·산소 평형) · Dempsey &amp; Wagner 1999 (운동 중 동맥혈 가스).<br>역치 범위 VT1 약 50~60%, VT2 약 80~85%는 비운동인 기준 연구값(Anselmi 2021: VT1 약 59%, VT2 약 83%) — 훈련하면 더 높은 강도로 옮겨 간다.</div>
 </section>
 
 
@@ -675,7 +679,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   </svg>
   <div class="abs" style="left:1240px;top:330px;width:580px">
     <div class="pt" data-step="1"><b class="c-o2">VT1</b> (대략 50~60%) VE/VO₂만 오르기 시작 — 젖산 완충으로 생긴 CO₂를 내보내려 환기↑ ≈ <b>젖산역치</b></div>
-    <div class="pt" data-step="2"><b class="c-mid">VT2 · 호흡성 보상점</b> (약 80%) VE/VCO₂도 오른다 — 산증을 숨으로 보상 ≈ <b>OBLA</b></div>
+    <div class="pt" data-step="2"><b class="c-mid">VT2 · 호흡성 보상점</b> (약 80~85%) VE/VCO₂도 오른다 — 산증을 숨으로 보상 ≈ <b>OBLA</b></div>
     <div class="pt" data-step="3"><b>무산소성 역치</b> 유산소 대사만으로 에너지를 대지 못해 무산소 대사가 급증하기 시작하는 강도 — 지표 = 젖산역치·환기역치·OBLA (2019 A13)</div>
     <div class="t-cap mute" data-step="4" style="margin-top:18px">2019 A13: 역치 B 강도가 A·C보다 유리 — A보다 빠르고, C보다 젖산 축적이 적어 오래 유지된다.</div>
   </div>
@@ -701,7 +705,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <div class="pt" data-step="3">교차점 A(고강도)의 주 연료 = <span class="blank" data-reveal="3" style="min-width:150px"><i>1</i><b>탄수화물</b></span> (2025 A2 ㉠)</div>
     <div class="pt" data-step="4"><b>OBLA</b> 혈중 젖산 <b>4 mmol/L</b>에 이르는 시점</div>
     <div class="pt" data-step="5">지구성 훈련 → 같은 강도에서 젖산↓, 역치는 <b>더 높은 강도</b>로 (2025 A2 고쳐 쓰기)</div>
-    <div class="t-cap mute" data-step="5" style="margin-top:14px">셋의 공통 처방 요소 = <b style="color:var(--ink)">운동 강도</b> (2014 A 기입11)</div>
+    <div class="t-cap mute" data-step="5" style="margin-top:14px">교차개념·젖산역치·OBLA의 공통 처방 요소 = <b style="color:var(--ink)">운동 강도</b> (2014 A 기입11)</div>
   </div>
 </section>
 
@@ -711,10 +715,10 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="exam in" style="--d:200;left:120px;top:290px;width:1040px">
     <p>다음은 점증부하 운동 검사 결과에 대한 설명이다.</p>
     <ol class="stmt">
-      <li><b>㉠</b> 젖산역치 이후 혈중 젖산이 늘면 중탄산 완충으로 CO₂가 더 생겨 환기량이 늘어난다.</li>
-      <li><b>㉡</b> 호흡성 보상점에서는 VE/VCO₂가 오르기 시작한다.</li>
-      <li><b>㉢</b> 지구성 훈련 후에는 젖산역치가 더 낮은 운동 강도에서 나타난다.</li>
-      <li><b>㉣</b> OBLA는 혈중 젖산 농도가 2 mmol/L에 이르는 시점이다.</li>
+      <li style="padding-left:90px;text-indent:-90px"><b style="text-indent:0">㉠</b>젖산역치 이후 혈중 젖산이 늘면 중탄산 완충으로 CO₂가 더 생겨 환기량이 늘어난다.</li>
+      <li style="padding-left:90px;text-indent:-90px"><b style="text-indent:0">㉡</b>호흡성 보상점에서는 VE/VCO₂가 오르기 시작한다.</li>
+      <li style="padding-left:90px;text-indent:-90px"><b style="text-indent:0">㉢</b>지구성 훈련 후에는 젖산역치가 더 낮은 운동 강도에서 나타난다.</li>
+      <li style="padding-left:90px;text-indent:-90px"><b style="text-indent:0">㉣</b>OBLA는 혈중 젖산 농도가 2 mmol/L에 이르는 시점이다.</li>
     </ol>
   </div>
   <div class="answer" style="left:1220px;top:290px;width:580px">
@@ -767,10 +771,11 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="panel abs in" style="--d:250;left:120px;top:300px;width:760px">
     <div class="t-cap mute">2026 A3 측정 결과 (항정상태 20분)</div>
     <div class="t-body" style="margin-top:10px">O₂ 섭취량 3.0 L/분<br>CO₂ 생성량 2.7 L/분</div>
+    <div class="t-cap mute" data-step="3" style="margin-top:16px">참고 표(비단백 RER, 문제에 주어짐)<br><span style="white-space:nowrap">RER 0.90 → <b style="color:var(--ink)">4.92 kcal / O₂ 1 L</b></span></div>
   </div>
   <div class="abs num" style="left:960px;top:300px;font-size:44px;line-height:1.9;font-weight:500">
     <div data-step="1"><span class="mute lbl">RER</span>2.7 ÷ 3.0 = <span class="blank" data-reveal="2" style="min-width:120px"><i>1</i><b>0.90</b></span></div>
-    <div data-step="3"><span class="mute lbl">O₂ 1 L당</span>표에서 <b>4.92</b> kcal</div>
+    <div data-step="3"><span class="mute lbl">O₂ 1 L당</span>표에서 0.90 → <b>4.92</b> kcal</div>
     <div data-step="4"><span class="mute lbl">총 열량</span>4.92 × 3.0 × 20 = <span class="blank" data-reveal="5" style="min-width:160px"><i>2</i><b>295.2</b></span> kcal</div>
   </div>
   <div class="abs t-body" data-step="5" style="left:120px;top:800px;right:120px">근육의 젖산 → 간에서 포도당(당신생) → 근육 = <b class="c-act">코리 회로</b> (2026 A3 ㉡)
@@ -792,7 +797,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
     <g font-size="28" font-weight="600"><text x="330" y="440" fill="#FF453A" data-step="1">산소결핍</text><text x="840" y="560" fill="#64D2FF" data-step="2">EPOC</text><text x="560" y="440" fill="#a1a1a6">정상상태</text></g>
   </svg>
   <div class="abs" style="left:1240px;top:330px;width:580px">
-    <div class="pt" data-step="1"><b class="c-hr">산소결핍</b> 시작 직후 산소섭취가 따라오지 못하는 동안 ATP-PCr·해당과정이 메운다. 고강도일수록 <b>증가</b>.<br><span class="mute" style="font-size:27px">2025 A11 A 시점(PCr·산소섭취 곡선 교차): <b style="color:var(--on-dark)">ATP-PCr → 유산소</b>로 전환</span></div>
+    <div class="pt" data-step="1"><b class="c-hr">산소결핍</b> 시작 직후 산소섭취가 따라오지 못하는 동안 <span style="white-space:nowrap">ATP-PCr</span>·해당과정이 메운다. 고강도일수록 <b>증가</b>.<br><span class="mute" style="font-size:27px">2025 A11 A 시점(PCr·산소섭취 곡선 교차): <b style="color:var(--on-dark);white-space:nowrap">ATP-PCr → 유산소</b>로 전환</span></div>
     <div class="pt" data-step="2"><b class="c-o2">EPOC</b> 끝난 뒤에도 높게 유지되는 산소섭취 — <b>PCr 재합성</b>, 젖산 제거(대부분 산화, 일부 간에서 포도당 신생), 체온·호르몬, 미오글로빈 재보충</div>
     <div class="pt" data-step="3">힐의 옛 이름 = <b>산소부채</b>. 가벼운 운동으로 회복하면 젖산이 더 빨리 산화된다 (2020 A7)</div>
   </div>
@@ -800,30 +805,36 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 
 <!-- 22 문제 ④ -->
 <section class="slide" id="s21" data-tile="light" data-title="기출 변형 ④ · 2025 A11">
-  <div class="hd"><div class="t-eyebrow in">기출 변형 ④ · 2025학년도 A11의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">연료와 열량을 구하고, 틀린 것 2개를 고치시오</div></div>
-  <div class="exam in" style="--d:200;left:120px;top:262px;width:1080px;padding:24px 36px;font-size:25px;line-height:1.5">
-    <svg width="1000" height="230" viewBox="0 0 1000 230" id="q4G">
-      <line x1="70" y1="200" x2="980" y2="200" stroke="#1d1d1f" stroke-width="1.5"/><line x1="70" y1="200" x2="70" y2="10" stroke="#1d1d1f" stroke-width="1.5"/>
+  <div class="hd"><div class="t-eyebrow in">기출 변형 ④ · 2025학년도 A11의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">PFK로 A 시점을 읽고, 틀린 것을 모두 고치시오</div></div>
+  <div class="exam in" style="--d:200;left:120px;top:250px;width:1080px;padding:20px 34px;font-size:23px;line-height:1.45">
+    <svg width="1010" height="214" viewBox="0 0 1010 214" id="q4G">
+      <line x1="70" y1="186" x2="980" y2="186" stroke="#1d1d1f" stroke-width="1.5"/><line x1="70" y1="186" x2="70" y2="10" stroke="#1d1d1f" stroke-width="1.5"/><line x1="980" y1="186" x2="980" y2="10" stroke="#1d1d1f" stroke-width="1.5"/>
       <g id="q4Ax" font-size="16" fill="#1d1d1f"></g>
+      <path id="q4P" fill="none" stroke="#1d1d1f" stroke-width="2.5"/>
       <path id="q4V" fill="none" stroke="#1d1d1f" stroke-width="2.5" stroke-dasharray="7 5"/>
       <g id="q4Mk" font-size="18" fill="#1d1d1f"></g>
     </svg>
-    <div style="font-size:23px">※ B 구간(항정상태)의 이산화탄소 생성량(VCO₂)은 1.75 L/분으로 가정함.</div>
-    <table style="font-size:21px;margin-top:8px"><tr><th>비단백 RER</th><td>0.70</td><td>0.75</td><td>0.80</td><td>0.85</td><td>0.90</td><td>0.95</td><td>1.00</td></tr><tr><th>kcal / O₂ 1 L</th><td>4.69</td><td>4.74</td><td>4.80</td><td>4.86</td><td>4.92</td><td>4.99</td><td>5.05</td></tr></table>
-    <ol class="stmt" style="margin-top:6px">
-      <li style="font-size:24px;padding:7px 0"><b>ⓐ</b> 고강도 운동일수록 운동 초기 산소결핍이 감소한다.</li>
-      <li style="font-size:24px;padding:7px 0"><b>ⓑ</b> 고강도 운동 뒤에는 EPOC 구간 면적이 증가한다.</li>
-      <li style="font-size:24px;padding:7px 0"><b>ⓒ</b> EPOC 구간에서 크레아틴인산(PCr)이 분해된다.</li>
-    </ol>
-    <div class="howto" style="margin-top:8px;font-size:22px;padding:10px 20px">&lt;작성 방법&gt; ① B 구간의 RER을 구하고 주 연료를 쓸 것. ② B 구간 강도로 10분 운동했을 때 에너지 소비량을 표를 이용해 구할 것. ③ ⓐ~ⓒ 중 틀린 것 2개를 바르게 고칠 것.</div>
+    <div style="font-size:21px;padding-left:1.2em;text-indent:-1.2em">※ A 시점: 근육 크레아틴인산(PCr)과 산소섭취량 그래프가 교차되는 순간이며, 에너지 대사가 A 시점 전·후로 전환됨. 전환 시점 전·후의 포스포프룩토키나아제(PFK) 효소 활성도는 낮음.</div>
+    <div style="font-size:21px">※ B 구간(항정상태)의 이산화탄소 생성량(VCO₂)은 1.75 L/분으로 가정함.</div>
+    <table style="font-size:19px;margin-top:6px"><tr><th>비단백 RER</th><td>0.70</td><td>0.75</td><td>0.80</td><td>0.85</td><td>0.90</td><td>0.95</td><td>1.00</td></tr><tr><th>kcal / O₂ 1 L</th><td>4.69</td><td>4.74</td><td>4.80</td><td>4.86</td><td>4.92</td><td>4.99</td><td>5.05</td></tr></table>
+    <div style="display:grid;grid-template-columns:1.3fr 1fr;gap:0 26px;margin-top:8px;font-size:21px;line-height:1.45;border-top:1px dashed #c7c7cc;padding-top:6px">
+      <div><b>· 급격한 고강도 운동</b>
+        <div style="padding-left:1em;text-indent:-1em">- 에피네프린·노르에피네프린 농도 ⓐ<u>증가</u></div>
+        <div style="padding-left:1em;text-indent:-1em">- 낮은 강도 운동에 비해 산소섭취량 ⓑ<u>증가</u>, 산소결핍량 ⓒ<u>증가</u></div>
+        <div style="padding-left:1em;text-indent:-1em">- EPOC 구간 면적 ⓓ<u>감소</u></div></div>
+      <div><b>· EPOC 구간의 대사 작용</b>
+        <div style="padding-left:1em;text-indent:-1em">- 크레아틴인산(PCr) ⓔ<u>분해</u></div>
+        <div style="padding-left:1em;text-indent:-1em">- 포도당 신생합성(젖산 → 포도당) ⓕ<u>증가</u></div></div>
+    </div>
+    <div class="howto" style="margin-top:8px;font-size:21px;padding:8px 18px">&lt;작성 방법&gt; ① PFK가 속도를 조절하는 대사 과정을 쓰고, ※의 PFK 조건에 근거하여 A 시점 전에 ATP를 주로 공급한 에너지 시스템을 쓸 것. ② B 구간 강도로 10분간 운동했을 때의 에너지 소비량을 표를 이용해 구할 것. ③ ⓐ~ⓕ에서 잘못 설명된 것을 <b>모두</b> 찾아 바르게 고칠 것.</div>
   </div>
-  <div class="answer" style="left:1260px;top:262px;width:560px">
-    <div class="t-cap mute">풀이</div>
-    <div class="a-line num" data-step="1">① 1.75 ÷ 2.5 = <b>0.70</b> → <b>지방</b></div>
-    <div class="a-line num" data-step="2">② 4.69 × 2.5 × 10 = <b>117.25 kcal</b></div>
-    <div class="a-line" data-step="3">③ ⓐ 산소결핍 <b>증가</b></div>
-    <div class="a-line" data-step="4">ⓒ PCr <b>재합성</b></div>
-    <div class="t-cap mute" data-step="4" style="margin-top:26px">원래 기출: A 시점 대사 전환(ATP-PCr → 유산소) · B 구간 연료 · ⓐ~ⓕ 중 틀린 것 고치기</div>
+  <div class="answer" style="left:1260px;top:250px;width:560px">
+    <div class="t-cap mute">모범답안</div>
+    <div class="a-line" data-step="1">① PFK = <b>해당과정</b>의 속도조절효소<br>활성 낮음 → 젖산 시스템 기여 작음<br>→ A 시점 전: <b style="white-space:nowrap">ATP-PCr 시스템</b></div>
+    <div class="a-line num" data-step="2">② RER 1.75 ÷ 2.5 = 0.70 → 4.69 kcal<br>4.69 × 2.5 × 10 = <b>117.25 kcal</b></div>
+    <div class="a-line" data-step="3">③ ⓓ EPOC 구간 면적 <b>증가</b></div>
+    <div class="a-line" data-step="4">ⓔ PCr <b>재합성</b></div>
+    <div class="t-cap mute" data-step="4" style="margin-top:22px">함정: ⓒ는 이번엔 옳다(고강도 → 산소결핍 증가). 원래 기출은 ⓒ·ⓔ가 틀렸고, A 시점 전환과 B 구간 연료를 물었다.</div>
   </div>
 </section>
 
@@ -873,7 +884,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
   <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
     <div class="card in" style="--d:150"><div class="k c-o2">숨의 길</div><h4>사강 150 mL</h4><p>폐포 환기 = (VT − 150) × f<br>안정 호기는 수동, 노력성 호기에 복횡근<br>VC = IRV + TV + ERV</p></div>
-    <div class="card in" style="--d:250"><div class="k c-hr">가스교환</div><h4>분압차</h4><p>확산 ∝ 면적 × 분압차 ÷ 두께<br>우측이동: 온도↑ PCO₂↑ pH↓ 2,3-BPG↑<br>CO₂는 대부분 중탄산 이온</p></div>
+    <div class="card in" style="--d:250"><div class="k c-hr">가스교환</div><h4>분압차</h4><p>확산 ∝ 면적 × 확산계수 × 분압차 ÷ 두께<br>우측이동: 온도↑ PCO₂↑ pH↓ 2,3-BPG↑<br>CO₂는 대부분 중탄산 이온</p></div>
     <div class="card in" style="--d:350"><div class="k c-act">조절</div><h4>신경 → 체액</h4><p>급증은 신경성, 완만은 체액성<br>중추: PCO₂·H⁺ / 말초: PO₂↓<br>VT1 ≈ 젖산역치, VT2 ≈ OBLA</p></div>
     <div class="card in" style="--d:450"><div class="k c-mid">대사 읽기</div><h4>RER = VCO₂ ÷ VO₂</h4><p>0.7 지방 · 1.0 탄수화물<br>&gt; 1.0 = 중탄산 완충 CO₂<br>열량 = kcal/L × VO₂ × 시간</p></div>
     <div class="card in" style="--d:550"><div class="k c-low">회복</div><h4>산소결핍 · EPOC</h4><p>고강도 → 산소결핍↑ · EPOC↑<br>EPOC: PCr 재합성, 젖산 제거<br>적극적 회복 → 젖산 산화↑</p></div>
@@ -921,18 +932,18 @@ const NOTES = {
   s7: "폐포 환기량은 1회 호흡량에서 **사강 150 mL를 빼고** 호흡수를 곱합니다. 분당 환기량이 8 L로 같아도 깊고 느리게 쉬는 쪽이 폐포에 더 많은 공기를 보냅니다.",
   s8: "가스는 분압이 높은 곳에서 낮은 곳으로 갑니다. 폐포 산소 분압은 약 100, 정맥혈은 40이라 산소는 혈액으로 들어갑니다. 이산화탄소는 차이가 6밖에 안 되지만 **확산계수가 약 20배** 커서 잘 넘어갑니다.",
   s9: "픽의 확산 법칙입니다. 확산량은 **면적·확산계수·분압차**에 비례하고 **두께**에 반비례합니다. 운동하면 근육이 산소를 많이 써 정맥혈 산소 분압이 낮아지므로 폐에서 **분압차가 커져** 확산이 늘어납니다. 2024 A12의 서술 근거입니다.",
-  s10: "운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 해리곡선이 오른쪽으로 이동해 산소를 더 내놓습니다. 근육 속 **미오글로빈**은 곡선이 훨씬 왼쪽에 있어 산소를 저장해 두다가 아주 낮은 분압에서 내놓습니다.",
+  s10: "운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 해리곡선이 오른쪽으로 이동해 산소를 더 내놓습니다. 근육 속 **미오글로빈**은 곡선이 훨씬 왼쪽에 있어 산소를 저장해 두다가 아주 낮은 분압에서 내놓습니다. 또 근육 세포막에서 **미토콘드리아로 산소를 운반**하는 역할도 합니다. 2026 B4가 이 두 역할을 함께 제시했습니다.",
   s11: "2018 A7의 같은 수치로 다르게 물었습니다. 세 학생의 분당 환기량은 모두 **6.0 L로 같습니다**. 사강 150을 빼면 A는 1.5, B는 3.75, C는 4.5 L로 **C > B > A**입니다. 사강은 **매 호흡마다** 빠지므로 얕고 빠르게 쉴수록 손해이고, **깊고 느린 호흡**이 유리합니다. 확산이 늘어나는 이유는 **분압차가 커지기** 때문입니다.",
-  s12: "운동을 시작하면 환기량이 **바로 뛰어오르고**, 이어서 천천히 올라 정상상태에 이릅니다. 처음 급증은 중추명령과 근육 구심신호 같은 **신경성**, 뒤의 완만한 증가는 화학수용기를 통한 **체액성** 조절입니다.",
-  s13: "강도 막대를 안정에서 최대까지 천천히 올려 봅니다. 젊은 남성, 최대산소섭취량 약 3.0 L/분을 가정한 대표값입니다. 분당 환기량은 **1회 호흡량 × 호흡수**입니다. 안정 때 0.5 L × 14회 = 7 L/분, 최대에서는 2.4 L × 50회 ≈ 120 L/분으로 약 17배가 됩니다. 저강도에서는 **1회 호흡량이 먼저 커집니다**. 앞에서 본 것처럼 사강 약 150 mL는 숨마다 빠지므로, 같은 환기량이라면 깊게 쉬는 쪽이 폐포에 공기를 더 많이 보냅니다. 1회 호흡량은 최대의 약 40~60% 강도에서 **폐활량의 약 50%** 가까이 다다라 고원에 이르고, 그 뒤 늘어나는 환기는 **호흡수**가 맡습니다. 그래프의 꺾임 두 개를 보세요. **VT1**(약 55~60%)을 넘으면 젖산을 중탄산이 완충하면서 생긴 CO₂까지 내보내느라 환기가 가파르게 늘고 VE/VO₂가 오릅니다. **VT2**(약 80~85%, 호흡성 보상점)를 넘으면 산증을 숨으로 보상해 PaCO₂가 약 40에서 약 32~35까지 떨어지고 VE/VCO₂도 오릅니다. 가운데 그림은 폐포 한 개와 모세혈관입니다. 적혈구는 안정 때 약 0.75초에 걸쳐 지나가는데 산소 평형은 약 0.25초 안에 끝납니다. 최대 운동에서는 통과 시간이 교재 기준 약 0.25초까지 짧아지지만(측정 연구에 따라 0.45초 안팎) 대개 평형 시간 안에 들어오므로, 일반인은 최대 운동에서도 **동맥혈 산소분압이 약 95로 거의 유지**됩니다. 그래서 **숨이 찬 건 산소가 모자라서가 아닙니다** — 이것이 자주 나오는 오개념입니다. 호흡교환율은 약 0.8에서 최대 운동 때 1.1 이상까지 오릅니다.",
-  s14: "점증부하에서 환기량은 두 번 꺾입니다. **VT1**은 대략 최대산소섭취량의 50~60%에서 VE/VO₂만 오르기 시작하는 지점으로 젖산역치와 비슷하고, **VT2**, 곧 호흡성 보상점은 VE/VCO₂까지 오르는 지점으로 OBLA와 비슷합니다. **무산소성 역치**는 유산소 대사만으로 에너지를 대지 못해 무산소 대사가 급증하기 시작하는 강도입니다. 2019 A13에서는 역치 B 강도가 A보다 빠르고 C보다 젖산이 덜 쌓여 오래 유지할 수 있어 유리하다고 쓰면 됩니다.",
-  s15: "**젖산역치**는 혈중 젖산이 가파르게 오르기 시작하는 강도로, 2025 A2 그래프에서는 최대산소섭취량의 **50%**였습니다. 젖산역치를 넘으면 혈액 **pH가 떨어집니다**. 젖산과 pH 곡선이 만나는 교차점 A는 고강도라 주 연료가 **탄수화물**입니다. **OBLA**는 4 mmol/L에 이르는 시점입니다. 지구성 훈련을 하면 역치가 **더 높은 강도**로 옮겨 갑니다. 2025 A2에서 이 방향을 고쳐 쓰게 했습니다.",
+  s12: "운동을 시작하면 환기량이 **바로 뛰어오르고**, 이어서 천천히 올라 정상상태에 이릅니다. 처음 급증은 중추명령과 근육 구심신호 같은 **신경성**, 뒤의 완만한 증가는 화학수용기가 감지하는 PCO₂·H⁺, 그리고 체온·칼륨 이온 같은 혈액 속 자극에 의한 **체액성** 조절입니다.",
+  s13: "강도 막대를 안정에서 최대까지 천천히 올려 봅니다. 젊은 남성, 최대산소섭취량 약 3.0 L/분을 가정한 대표값입니다. 분당 환기량은 **1회 호흡량 × 호흡수**입니다. 안정 때 0.5 L × 14회 = 7 L/분, 최대에서는 2.4 L × 50회 ≈ 120 L/분으로 약 17배가 됩니다. 저강도에서는 **1회 호흡량이 먼저 커집니다**. 앞에서 본 것처럼 사강 약 150 mL는 숨마다 빠지므로, 같은 환기량이라면 깊게 쉬는 쪽이 폐포에 공기를 더 많이 보냅니다. 1회 호흡량은 중강도까지 빠르게 늘다가, 75% 이후에는 2.3에서 2.4 L로 거의 늘지 않는 **고원**, 곧 **폐활량의 약 50%**에 이르고, 그 뒤 늘어나는 환기는 **호흡수**가 맡습니다. 그래프의 꺾임 두 개를 보세요. **VT1**(약 50~60%)을 넘으면 젖산을 중탄산이 완충하면서 생긴 CO₂까지 내보내느라 환기가 가파르게 늘고 VE/VO₂가 오릅니다. **VT2**(약 80~85%, 호흡성 보상점)를 넘으면 산증을 숨으로 보상해 PaCO₂가 약 40에서 약 32~35까지 떨어지고 VE/VCO₂도 오릅니다. 가운데 그림은 폐포 한 개와 모세혈관입니다. 적혈구는 안정 때 약 0.75초에 걸쳐 지나가는데 산소 평형은 약 0.25초 안에 끝납니다. 최대 운동에서는 통과 시간이 약 0.25~0.45초로 짧아져 평형 시간(약 0.25초)에 거의 맞닿지만, 일반인은 최대 운동에서도 **동맥혈 산소분압이 약 95로 거의 유지**됩니다. 그래서 **숨이 찬 건 산소가 모자라서가 아닙니다** — 이것이 자주 나오는 오개념입니다. 호흡교환율은 약 0.8에서 최대 운동 때 1.1 이상까지 오릅니다.",
+  s14: "점증부하에서 환기량은 두 번 꺾입니다. **VT1**은 대략 최대산소섭취량의 50~60%에서 VE/VO₂만 오르기 시작하는 지점으로 젖산역치와 비슷하고, **VT2**, 곧 호흡성 보상점은 약 80~85%에서 VE/VCO₂까지 오르는 지점으로 OBLA와 비슷합니다. **무산소성 역치**는 유산소 대사만으로 에너지를 대지 못해 무산소 대사가 급증하기 시작하는 강도입니다. 2019 A13에서는 역치 B 강도가 A보다 빠르고 C보다 젖산이 덜 쌓여 오래 유지할 수 있어 유리하다고 쓰면 됩니다.",
+  s15: "**젖산역치**는 혈중 젖산이 가파르게 오르기 시작하는 강도로, 2025 A2 그래프에서는 최대산소섭취량의 **50%**였습니다. 젖산역치를 넘으면 혈액 **pH가 떨어집니다**. 젖산과 pH 곡선이 만나는 교차점 A는 고강도라 주 연료가 **탄수화물**입니다. **OBLA**는 4 mmol/L에 이르는 시점입니다. 지구성 훈련을 하면 역치가 **더 높은 강도**로 옮겨 갑니다. 2025 A2에서 이 방향을 고쳐 쓰게 했습니다. 2014 A 기입11은 **교차개념·젖산역치·OBLA**에 공통으로 적용되는 운동 처방 요소를 물었고, 답은 **운동 강도**입니다.",
   s16: "기출형 문제입니다. 틀린 것은 ㉢과 ㉣입니다. 훈련 후 젖산역치는 **더 높은** 강도에서 나타나고, OBLA는 **4 mmol/L**입니다.",
   s17: "**호흡교환율**은 이산화탄소 생성량을 산소 섭취량으로 나눈 값입니다. **0.7이면 지방, 1.0이면 탄수화물**, 0.85면 반반입니다. 산소 1 L당 열량도 함께 바뀝니다. 2025 A11에서는 B 구간 VO₂ 2.5, VCO₂ 1.75를 주었으니 나누면 **0.70, 지방**입니다.",
   s18: "탄수화물만 써도 1.0인데 1.2가 나오는 이유는, 젖산의 수소 이온을 중탄산이 완충하면서 생긴 **비대사성 이산화탄소**와 과환기 때문입니다. 2014학년도 A형 서술형 3번의 답입니다.",
-  s19: "2026 A3입니다. 2.7을 3.0으로 나누면 **0.90**, 표에서 4.92 kcal입니다. 4.92 × 3.0 × 20분 = **295.2 kcal**입니다. RER과는 별개로, 근육의 젖산이 간에서 포도당으로 바뀌어(당신생) 다시 근육으로 돌아오는 것이 **코리 회로**입니다. 2026 A3 ㉡의 답입니다.",
+  s19: "2026 A3입니다. 2.7을 3.0으로 나누면 **0.90**, 문제에 주어진 표에서 RER 0.90은 산소 1 L당 4.92 kcal입니다. 4.92 × 3.0 × 20분 = **295.2 kcal**입니다. RER과는 별개로, 근육의 젖산이 간에서 포도당으로 바뀌어(당신생) 다시 근육으로 돌아오는 것이 **코리 회로**입니다. 2026 A3 ㉡의 답입니다.",
   s20: "운동을 시작하면 산소섭취가 바로 따라오지 못해 **산소결핍**이 생기고, 끝난 뒤에도 산소섭취가 높게 남는 것이 **EPOC**입니다. EPOC 동안 PCr이 **재합성**되고 젖산이 제거되는데, 젖산은 **대부분 산화**되고 일부만 간에서 포도당으로 바뀝니다. 고강도일수록 둘 다 커집니다. 2025 A11의 A 시점, 곧 PCr과 산소섭취 곡선이 만나는 때에 에너지 공급이 **ATP-PCr에서 유산소로 전환**됩니다.",
-  s21: "2025 A11의 같은 자료로 다르게 물었습니다. B 구간 VCO₂ 1.75를 VO₂ 2.5로 나누면 **0.70**, 주 연료는 **지방**입니다. 표에서 4.69 kcal이니 4.69 × 2.5 × 10분 = **117.25 kcal**입니다. 틀린 것은 ⓐ 산소결핍 **증가**, ⓒ PCr **재합성**입니다. 원래 기출은 A 시점의 대사 전환, B 구간 연료, 틀린 것 고치기를 물었습니다.",
+  s21: "2025 A11의 같은 그래프와 조건으로 다르게 물었습니다. 첫째, PFK는 **해당과정의 속도조절효소**입니다. 전환 시점 전후로 PFK 활성이 낮다는 것은 해당과정, 곧 젖산 시스템의 기여가 작다는 뜻이므로, A 시점 전에는 **ATP-PCr 시스템**이 ATP를 주로 공급했습니다. 둘째, B 구간 RER은 1.75 ÷ 2.5 = 0.70이고 표에서 4.69 kcal이니, 4.69 × 2.5 × 10분 = **117.25 kcal**입니다. 셋째, 틀린 것은 ⓓ와 ⓔ입니다. 고강도 운동 뒤 EPOC 구간 면적은 **증가**하고, EPOC 동안 PCr은 **재합성**됩니다. 원래 기출에서 틀렸던 ⓒ는 이번에는 '산소결핍량 증가'로 옳은 문장입니다. 원래 답을 외워서 고르면 틀립니다.",
   s22: "훈련하면 같은 최대하 강도에서는 환기량이 줄고, 최대 운동에서는 늘어납니다. 그런데 폐 구조는 거의 바뀌지 않아, 엘리트 선수에게는 폐가 한계가 되기도 합니다.",
   s23: "13년 동안 나오지 않은 세 가지입니다. 환기를 조절하는 **중추·말초 화학수용기**, 이산화탄소가 대부분 **중탄산 이온**으로 운반된다는 것, 그리고 **고지대**에서 과환기와 EPO입니다. 한 줄씩만 기억해 두세요.",
   s24: "감점 함정 10가지입니다. 사강 빼기, 안정 호기는 수동, pH 감소, 확산 법칙과 픽 원리 구분, RER 방향과 1.0 초과 이유를 특히 확인하세요.",
@@ -977,20 +988,20 @@ function fnPath(f, x0, x1, X, Y, n = 80){
 function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text) e.textContent = text; parent.append(e); return e; }
 
 // 폐용적 곡선: [시간, 리터] 꼭짓점을 사인 모양으로 잇는다
-function spiroPts(X, Y){
-  const keys = [[0,2.4],[.5,2.9],[1,2.4],[1.5,2.9],[2,2.4],[2.5,2.9],[3,2.4],[4,6.0],[5.2,1.2],[6,2.4],[6.5,2.9],[7,2.4]];
+function spiroPts(X, Y, tEnd = 7){
+  const keys = [[0,2.4],[.5,2.9],[1,2.4],[1.5,2.9],[2,2.4],[2.5,2.9],[3,2.4],[4,6.0],[5.2,1.2],[6,2.4],[6.5,2.9],[7,2.4]].filter(k => k[0] <= tEnd);
   const pts = [];
   for (let k = 0; k < keys.length - 1; k++){
     const [t0, v0] = keys[k], [t1, v1] = keys[k + 1];
     for (let i = 0; i < 14; i++){ const u = i / 14, e = (1 - Math.cos(Math.PI * u)) / 2; pts.push([X(t0 + (t1 - t0) * u), Y(v0 + (v1 - v0) * e)]); }
   }
-  pts.push([X(7), Y(2.4)]);
+  pts.push([X(keys[keys.length - 1][0]), Y(2.4)]);
   return 'M' + pts.map(p => p[0].toFixed(1) + ' ' + p[1].toFixed(1)).join('L');
 }
 // 5장
 (function(){
   const X = t => 220 + t * 134, Y = v => 900 - v * 90, g = $('#spMarks'), sv = $('#spiro');
-  $('#spPath').setAttribute('d', spiroPts(X, Y));
+  $('#spPath').setAttribute('d', spiroPts(X, Y, 6)); // 안정 호흡으로 돌아온 FRC(x≈1024)에서 끝 — VC·FRC 괄호선(x 1060·1100)을 가로지르지 않게
   [6.0, 2.9, 2.4, 1.2].forEach(v => el('line', {x1: 200, y1: Y(v), x2: 1170, y2: Y(v), stroke: '#3a3a3c', 'stroke-width': 2, 'stroke-dasharray': '6 8'}, sv, null));
   sv.insertBefore(sv.lastChild, sv.firstChild); sv.insertBefore(sv.lastChild, sv.firstChild); sv.insertBefore(sv.lastChild, sv.firstChild); sv.insertBefore(sv.lastChild, sv.firstChild);
   // lb: 글자 위치 [x, y, 정렬] — 곡선·괄호선과 겹치지 않게 따로 줄 수 있다
@@ -1026,14 +1037,14 @@ function spiroPts(X, Y){
 (function(){
   const X = i => 200 + i * 9.6, Y = v => 880 - (v - 20) * 25;
   const o2 = i => i < 58 ? 25 + (58 - i) ** 2 * .0035 : 25 + (i - 58) ** 2 * .0074;
-  const co2 = i => i < 79 ? 28 + (79 - i) ** 2 * .00115 : 28 + (i - 79) ** 2 * .018;
+  const co2 = i => i < 82 ? 28 + (82 - i) ** 2 * .00115 : 28 + (i - 82) ** 2 * .018; // VT1 58%, VT2 82% — 강의 범위(약 50~60% · 80~85%) 안
   $('#vtO2').setAttribute('d', fnPath(o2, 20, 100, X, Y)); $('#vtCO2').setAttribute('d', fnPath(co2, 20, 100, X, Y));
   $('#lO2').setAttribute('x', X(100) - 40); $('#lO2').setAttribute('y', Y(o2(100)) - 18);
   $('#lCO2').setAttribute('x', X(89)); $('#lCO2').setAttribute('y', Y(co2(89)) + 56);
   const tk = $('#vtTicks');
   [20, 40, 60, 80, 100].forEach(i => { el('line', {x1: X(i), y1: 880, x2: X(i), y2: 892, stroke: '#6e6e73', 'stroke-width': 2}, tk); el('text', {x: X(i), y: 920, 'text-anchor': 'middle', 'font-size': 24, fill: '#a1a1a6'}, tk, String(i)); });
   const g = $('#vtMarks');
-  [[58, 'VT1', '#64D2FF', 1], [79, 'VT2', '#FF9F0A', 2]].forEach(([i, t, c, s]) => { const gg = el('g', {'data-step': s}, g); el('line', {x1: X(i), y1: 360, x2: X(i), y2: 880, stroke: c, 'stroke-width': 3, 'stroke-dasharray': '8 8'}, gg); el('text', {x: X(i), y: 350, 'text-anchor': 'middle', 'font-size': 30, 'font-weight': 700, fill: c}, gg, t); });
+  [[58, 'VT1', '#64D2FF', 1], [82, 'VT2', '#FF9F0A', 2]].forEach(([i, t, c, s]) => { const gg = el('g', {'data-step': s}, g); el('line', {x1: X(i), y1: 360, x2: X(i), y2: 880, stroke: c, 'stroke-width': 3, 'stroke-dasharray': '8 8'}, gg); el('text', {x: X(i), y: 350, 'text-anchor': 'middle', 'font-size': 30, 'font-weight': 700, fill: c}, gg, t); });
 })();
 
 // 16장 젖산
@@ -1067,20 +1078,32 @@ function spiroPts(X, Y){
 
 // 20장 문제 ④ — 2025 A11 산소섭취량 그래프 (B 구간 2.5 L/min)
 (function(){
-  const X = t => 70 + t * 65, Y = v => 200 - v * 45, ax = $('#q4Ax'), mk = $('#q4Mk');
+  const X = t => 70 + t * 65, Y = v => 186 - v * 42, ax = $('#q4Ax'), mk = $('#q4Mk');
   const sm = u => u <= 0 ? 0 : u >= 1 ? 1 : (1 - Math.cos(Math.PI * u)) / 2;
   const vo2 = t => t < 5.2 ? .5 + 2 * (1 - Math.exp(-t / .55)) : t < 6.6 ? 2.5 + 1.3 * sm((t - 5.2) / 1.4) : t < 7 ? 3.8 : .5 + 3.3 * Math.exp(-(t - 7) / 1.4);
+  // 근육 PCr(실선, 오른쪽 축 — 원문처럼 그림 높이만): 운동 초 급감 → 운동 중 낮게 유지 → 끝나면 빠르게 재합성
+  const pcr = t => t < 7 ? .45 + 2.55 / (1 + Math.exp((t - 1.05) / .13)) : .45 + 2.15 * (1 - Math.exp(-(t - 7) / .35)) + .35 * (1 - Math.exp(-(t - 7) / 4));
   $('#q4V').setAttribute('d', fnPath(vo2, 0, 14, X, Y, 200));
+  $('#q4P').setAttribute('d', fnPath(pcr, 0, 14, X, Y, 280));
   [1, 2, 3, 4].forEach(v => el('text', {x: 62, y: Y(v) + 6, 'text-anchor': 'end'}, ax, String(v)));
-  [0, 2, 4, 6, 8, 10, 12, 14].forEach(t => el('text', {x: X(t), y: 220, 'text-anchor': 'middle'}, ax, t === 14 ? '14분' : String(t)));
+  [0, 2, 4, 6, 8, 10, 12, 14].forEach(t => el('text', {x: X(t), y: 206, 'text-anchor': 'middle'}, ax, t === 14 ? '14분' : String(t)));
   el('text', {x: 80, y: 18}, ax, '산소 섭취량(L·min⁻¹)');
+  el('text', {x: 972, y: 18, 'text-anchor': 'end'}, ax, '근육 크레아틴인산(PCr) →');
+  // 범례
+  el('line', {x1: 640, y1: 44, x2: 680, y2: 44, stroke: '#1d1d1f', 'stroke-width': 2.5}, mk); el('text', {x: 688, y: 50, 'font-size': 16}, mk, '근육 크레아틴인산');
+  el('line', {x1: 820, y1: 44, x2: 860, y2: 44, stroke: '#1d1d1f', 'stroke-width': 2.5, 'stroke-dasharray': '7 5'}, mk); el('text', {x: 868, y: 50, 'font-size': 16}, mk, '산소 섭취량');
+  // A: 두 곡선이 교차하는 순간
+  let ta = .2; while (ta < 3 && vo2(ta) < pcr(ta)) ta += .005;
+  el('line', {x1: X(ta), y1: 186, x2: X(ta), y2: 22, stroke: '#1d1d1f', 'stroke-width': 1, 'stroke-dasharray': '3 4'}, mk);
+  el('circle', {cx: X(ta), cy: Y(vo2(ta)), r: 5, fill: '#1d1d1f'}, mk);
+  el('text', {x: X(ta) + 12, y: Y(vo2(ta)) + 22, 'font-weight': 700, 'font-size': 20}, mk, 'A');
   el('line', {x1: 70, y1: Y(2.5), x2: X(2.6), y2: Y(2.5), stroke: '#1d1d1f', 'stroke-width': 1, 'stroke-dasharray': '3 4'}, mk);
   el('text', {x: 62, y: Y(2.5) + 6, 'text-anchor': 'end', 'font-weight': 700}, mk, '2.5');
   el('path', {d: `M${X(2.6)} ${Y(2.5) - 30}V${Y(2.5) - 20}H${X(5)}V${Y(2.5) - 30}`, fill: 'none', stroke: '#1d1d1f', 'stroke-width': 1.5}, mk);
   el('text', {x: X(3.8), y: Y(2.5) - 38, 'text-anchor': 'middle', 'font-weight': 700, 'font-size': 20}, mk, 'B');
   el('text', {x: X(9.2), y: Y(1.6), 'font-size': 18}, mk, 'EPOC');
   el('line', {x1: 70, y1: Y(.5), x2: 980, y2: Y(.5), stroke: '#8e8e93', 'stroke-width': 1}, mk);
-  el('text', {x: X(11), y: Y(.5) + 18, 'text-anchor': 'middle', 'font-size': 15}, mk, '안정 시 산소 섭취량');
+  el('text', {x: X(11), y: Y(.5) + 16, 'text-anchor': 'middle', 'font-size': 14}, mk, '안정 시 산소 섭취량');
 })();
 
 // 21장 산소결핍·EPOC
@@ -1107,8 +1130,8 @@ function spiroPts(X, Y){
 
   // 대표값(젊은 남성, VO2max 약 3.0 L/분) — 숫자는 이 다섯 지점에서만 보인다
   const A = [0, 25, 50, 75, 100];
-  const VT1 = 57.5, VT2 = 82.5; // VT1 약 55~60%, VT2 약 80~85% (Anselmi 2021 비운동인 59% · 83%)
-  const TV = [[0, .5], [25, 1.3], [50, 2.0], [75, 2.3], [100, 2.4]];           // L — 최대의 약 40~60% 강도에서 고원, 고원값은 폐활량의 약 50% (Dominelli & Sheel 2024)
+  const VT1 = 57.5, VT2 = 82.5; // 강의 범위 VT1 약 50~60%, VT2 약 80~85% 안 (비운동인 연구값: Anselmi 2021 59% · 83%)
+  const TV = [[0, .5], [25, 1.3], [50, 2.0], [75, 2.3], [100, 2.4]];           // L — 중강도까지 빠르게 늘고 75% 이후 거의 고원(2.3→2.4), 고원값은 폐활량의 약 50% (Dominelli & Sheel 2024)
   // VE: 대표값 다섯 점을 모두 지나고, VT1·VT2에서 기울기가 꺾이도록 꺾은선(VT1 앞 기울기를 VT1까지 이어 씀)
   const VE = (() => {
     const p = [[0, 7], [25, 21], [50, 36]], s1 = (36 - 21) / 25;
@@ -1129,8 +1152,8 @@ function spiroPts(X, Y){
     ve: ['7 L/분', '21 L/분', '36 L/분', '64 L/분', '120 L/분'],
     po: ['약 95 mmHg', '유지', '유지', '유지', '약 95 (일반인)'],
     pc: ['40 mmHg', '40 mmHg', '40 mmHg', '약 40 mmHg', '약 32~35'],
-    re: ['약 0.8', '', '약 0.9 전후', '약 1.0', '1.1 이상'],
-    tau: ['약 0.75초', '', '', '', '약 0.25~0.45초 (교재값 0.25)'],
+    re: ['약 0.8', '약 0.85', '약 0.9 전후', '약 1.0', '1.1 이상'],
+    tau: ['약 0.75초', '', '', '', '약 0.25~0.45초'],
   };
 
   // ── 폐 그림 ──
@@ -1148,7 +1171,7 @@ function spiroPts(X, Y){
 
   // ── VE 그래프 ──
   const gs = $i('rxGraph'), GX = x => 56 + 4.1 * x, GY = v => 212 - v * 1.45;
-  [[55, 60, 'VT1'], [80, 85, 'VT2']].forEach(([a, b, l]) => { mk('rect', {x: GX(a), y: 22, width: GX(b) - GX(a), height: 190, fill: '#FF9F0A', opacity: .16}, gs); mk('text', {x: (GX(a) + GX(b)) / 2, y: 40, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 700, fill: '#FF9F0A'}, gs, l); });
+  [[50, 60, 'VT1'], [80, 85, 'VT2']].forEach(([a, b, l]) => { mk('rect', {x: GX(a), y: 22, width: GX(b) - GX(a), height: 190, fill: '#FF9F0A', opacity: .16}, gs); mk('text', {x: (GX(a) + GX(b)) / 2, y: 40, 'text-anchor': 'middle', 'font-size': 15, 'font-weight': 700, fill: '#FF9F0A'}, gs, l); });
   mk('line', {x1: 56, y1: 212, x2: 470, y2: 212, stroke: '#6e6e73', 'stroke-width': 2}, gs);
   mk('line', {x1: 56, y1: 212, x2: 56, y2: 18, stroke: '#6e6e73', 'stroke-width': 2}, gs);
   [0, 50, 100].forEach(v => mk('text', {x: GX(v), y: 232, 'text-anchor': 'middle', 'font-size': 14, fill: '#a1a1a6'}, gs, v + '%'));
@@ -1169,7 +1192,7 @@ function spiroPts(X, Y){
     if (x < VT1) return 'VT1 전(저·중강도): <b>1회 호흡량이 먼저 커진다</b> — 호흡수는 조금씩만 는다<small>깊은 호흡이 유리: 사강(약 150 mL)은 숨마다 빠지므로 깊을수록 폐포에 가는 몫이 커진다</small>';
     if (x < VT2) return 'VT1을 넘으면: 젖산을 중탄산이 완충하며 생긴 <b>CO₂</b>까지 내보내려 환기가 가파르게 (VE/VO₂↑)<small>VE/VCO₂는 아직 그대로 · PaCO₂도 거의 그대로</small>';
     if (x < 97) return 'VT2(호흡성 보상점)를 넘으면: <b>산증을 숨으로 보상</b> → CO₂를 더 내보내 PaCO₂↓ (VE/VCO₂도↑)<small>1회 호흡량은 고원에 가까워지고, 늘어나는 환기는 호흡수가 맡는다</small>';
-    return '최대: 1회 호흡량은 <b>고원</b>(폐활량의 약 50%) → 환기는 <b>호흡수</b>로 늘린다<small>숨이 찬 건 산소 부족 때문이 아니다 — 일반인은 최대 운동에서도 PaO₂가 거의 유지된다</small>';
+    return '최대: 1회 호흡량은 <b>고원</b>(폐활량의 약 50%) → 환기는 <b>호흡수</b>로 늘린다<small>통과 시간은 약 0.25~0.45초로 짧아져 평형 시간(약 0.25초)에 거의 맞닿는다 — 그래도 일반인은 PaO₂가 거의 유지된다(숨이 찬 건 산소 부족 때문이 아니다)</small>';
   }
   const zone = x => x < 3 ? '안정' : x < VT1 ? 'VT1 아래' : x < VT2 ? 'VT1 ~ VT2' : x < 97 ? 'VT2 위' : '최대';
   const ai = () => A.findIndex(a => Math.abs(x - a) < .5);
@@ -1340,6 +1363,19 @@ function wake(){ ui.classList.remove('idle'); clearTimeout(idleT); idleT = setTi
 
 const m = location.hash.match(/^#(\d+)(?:\.(\d+))?/);
 go(m ? +m[1] - 1 : 0, m && m[2] ? +m[2] : 0);
+
+// 폰 세로 화면 안내 · 폰 가로에서는 쉬는 조작 막대를 완전히 숨김
+(() => {
+  const st = document.createElement('style');
+  st.textContent = '#rot{display:none;position:fixed;left:12px;right:12px;bottom:max(16px,env(safe-area-inset-bottom));z-index:99;padding:12px 16px;border-radius:14px;background:rgba(28,28,30,.94);color:#f5f5f7;font:600 15px/1.45 "Pretendard Variable",Pretendard,sans-serif;text-align:center;word-break:keep-all}'
+    + '@media (orientation:portrait) and (max-width:820px){#rot{display:block}}'
+    + '@media (max-height:500px){#ui.idle{opacity:0!important}}';
+  document.head.appendChild(st);
+  const d = document.createElement('div'); d.id = 'rot'; d.className = 'no-nav';
+  d.textContent = '폰을 가로로 돌리면 크게 볼 수 있습니다 (눌러서 닫기)';
+  d.onclick = e => { e.stopPropagation(); d.remove(); };
+  document.body.appendChild(d);
+})();
 </script>
 </body>
 </html>
