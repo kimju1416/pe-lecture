@@ -285,6 +285,83 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 @keyframes draw{from{stroke-dashoffset:1}to{stroke-dashoffset:0}}
 .draw{stroke-dasharray:1}
 .slide.is-on .draw{animation:draw 1.6s var(--ease-inout) both .3s}
+
+/* ── 몸속 실험실 ── */
+.lab-left{position:absolute;left:120px;top:250px;width:560px}
+.lab-photo{height:300px;border-radius:18px;overflow:hidden;background:#000}
+.lab-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.lab-clock{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px}
+.lab-clock span{font-size:26px;font-weight:600;color:#FF453A}
+.lab-clock b{font-size:56px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lab-left input[type=range]{width:100%;margin-top:10px;accent-color:#FF453A;height:26px}
+.lab-ticks{position:relative;height:26px;font-size:15px;color:#6e6e73}
+.lab-ticks span{position:absolute;top:0;white-space:nowrap}
+.lab-btns{display:flex;gap:10px;margin-top:14px}
+.lab-btns button,.ev-btns button{height:52px;padding:0 22px;border-radius:26px;background:#2c2c2e;color:#f5f5f7;font-size:21px;font-weight:600;border:2px solid transparent}
+.lab-btns button:hover,.ev-btns button:hover{border-color:#6e6e73}
+.ev-btns button.on{background:#f5f5f7;color:#1d1d1f}
+.lab-say{margin-top:22px;font-size:27px;line-height:1.5;min-height:130px;padding:20px 24px;border-radius:16px;background:#1c1c1e}
+.lab-say b{color:#64D2FF}
+.lab-cell{position:absolute;left:720px;top:250px;width:560px;height:676px}
+.lab-right{position:absolute;left:1320px;top:250px;width:500px}
+.gauge{margin-bottom:26px}
+.g-h{display:flex;justify-content:space-between;align-items:baseline;font-size:24px}
+.g-h span{min-height:36px;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.g-bar{height:22px;border-radius:11px;background:#2c2c2e;margin-top:8px;overflow:hidden}
+.g-bar i{display:block;height:100%;width:0;border-radius:11px}
+.gauge small{display:block;font-size:16px;color:#a1a1a6;margin-top:7px;line-height:1.4}
+.gauge.dim{opacity:.35}
+.lab-src{font-size:15px;color:#6e6e73;line-height:1.5}
+.ev-btns{position:absolute;left:120px;top:250px;display:flex;gap:12px;flex-wrap:wrap}
+.lab2-photo{position:absolute;left:120px;top:340px;width:520px;height:600px;border-radius:20px;overflow:hidden;background:#000}
+.lab2-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.lab2-main{position:absolute;left:690px;top:340px;width:1110px}
+.ev-name{font-size:40px;font-weight:700}
+.ev-name small{font-size:24px;color:#a1a1a6;font-weight:400;margin-left:14px}
+.ev-bar{position:relative;height:64px;border-radius:14px;overflow:hidden;background:#2c2c2e;margin-top:18px;display:flex}
+.ev-bar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:26px;font-weight:700;color:#1d1d1f;transition:width .6s cubic-bezier(.2,.8,.2,1);white-space:nowrap;overflow:hidden}
+.ev-bar i:first-child{background:#FF453A;color:#fff}
+.ev-bar i:nth-child(2){background:#FFD60A;margin-left:auto}
+.ev-bar em{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,rgba(255,214,10,.55) 0 8px,rgba(255,69,58,.55) 8px 16px);transition:left .6s,width .6s}
+.ev-leg{display:flex;gap:28px;margin-top:12px;font-size:20px;color:#a1a1a6;align-items:center}
+.ev-leg b{display:inline-block;width:16px;height:16px;border-radius:4px;margin-right:8px;vertical-align:-2px}
+.ev-leg span:last-child{margin-left:auto;color:#f5f5f7;font-weight:600}
+.ev-dom{margin-top:22px;font-size:27px;line-height:1.5;padding:18px 24px;border-radius:14px;background:#2c2c2e}
+.ev-curve{width:1110px;height:340px;margin-top:20px}
+
+/* ── 몸속 실험실: 강도와 순환 ── */
+.lc-left{position:absolute;left:120px;top:244px;width:520px}
+.lc-mode{margin-top:0;align-items:center}
+.lc-mode button.on{background:#f5f5f7;color:#1d1d1f}
+.lc-who{margin-left:auto;font-size:18px;color:#6e6e73}
+.lc-int{display:flex;align-items:baseline;gap:12px;margin-top:16px}
+.lc-int span{font-size:24px;color:#a1a1a6}
+.lc-int b{margin-left:auto;font-size:54px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lc-int small{font-size:20px;color:#a1a1a6}
+.lc-left input[type=range]{width:100%;margin-top:6px;accent-color:#FF453A;height:26px}
+.lc-ticks{position:relative;height:34px;margin:2px 10px 0}
+.lc-ticks button{position:absolute;top:0;transform:translateX(-50%);height:30px;padding:0 10px;border-radius:15px;background:transparent;color:#a1a1a6;font-size:16px;border:1px solid #3a3a3c;white-space:nowrap}
+.lc-ticks button:hover{border-color:#a1a1a6;color:#f5f5f7}
+.lc-ticks button.on{background:#f5f5f7;color:#1d1d1f;border-color:#f5f5f7}
+.lc-heart{position:absolute;left:120px;top:540px;width:520px;height:330px}
+.lc-say{position:absolute;left:120px;top:880px;width:520px;margin-top:0;min-height:0;font-size:23px;line-height:1.45;padding:16px 20px;box-sizing:border-box;height:134px}
+.lc-say small{display:block;font-size:19px;color:#a1a1a6;margin-top:6px}
+.lc-say small b{color:#f5f5f7}
+.lc-flow{position:absolute;left:680px;top:244px;width:600px;height:720px}
+.lc-right{position:absolute;left:1320px;top:244px;width:500px}
+.lc-g{margin-bottom:12px}
+.lc-g .g-h{font-size:22px;height:38px;align-items:flex-end}
+.lc-g .g-h span{min-height:0;font-size:28px;line-height:1.2}
+.lc-g .g-h b{line-height:1.3}
+.lc-g .g-bar{height:16px;margin-top:4px}
+.lc-g small{font-size:15px;margin-top:4px;min-height:21px}
+.lc-u{font-style:normal;font-size:16px;color:#a1a1a6;font-weight:400}
+.lc-bp{position:relative}
+.lc-bp i{position:absolute;top:0;height:100%;border-radius:8px;background:linear-gradient(90deg,#64D2FF,#FF453A)}
+.lc-bp u{position:absolute;top:-3px;width:4px;height:22px;margin-left:-2px;background:#f5f5f7;border-radius:2px}
+.lc-fick{margin:6px 0 14px;padding:12px 16px;border-radius:14px;background:#1c1c1e;font-size:18px;line-height:1.5;color:#a1a1a6;height:108px;box-sizing:border-box;font-variant-numeric:tabular-nums}
+.lc-fick b{color:#f5f5f7}
+.lc-fick em{font-style:normal;color:#30D158;font-weight:700}
 </style>
 </head>
 <body>
@@ -582,14 +659,53 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
       <text x="710" y="960" text-anchor="middle">유산소 운동 강도 →</text><text x="200" y="340">혈압 (mmHg)</text></g>
     <path class="draw" pathLength="1" d="M260 660L1160 420" stroke="#FF453A" stroke-width="7" fill="none" stroke-linecap="round"/>
     <text x="1170" y="410" font-size="30" font-weight="600" fill="#FF453A">수축기 120→200</text>
-    <g data-step="1"><path d="M260 780L1160 786" stroke="#64D2FF" stroke-width="7" fill="none" stroke-linecap="round"/><text x="1170" y="800" font-size="30" font-weight="600" fill="#64D2FF">이완기 ≈ 80</text></g>
-    <g data-step="2"><path d="M260 740L1160 658" stroke="#a1a1a6" stroke-width="5" stroke-dasharray="12 10" fill="none"/><text x="1170" y="660" font-size="28" fill="#a1a1a6">평균동맥압 완만히↑ (93→119)</text></g>
+    <g data-step="1"><path d="M260 780L1160 786" stroke="#64D2FF" stroke-width="7" fill="none" stroke-linecap="round"/><text x="1170" y="800" font-size="30" font-weight="600" fill="#64D2FF">이완기 거의 그대로</text></g>
+    <g data-step="2"><path d="M260 740L1160 658" stroke="#a1a1a6" stroke-width="5" stroke-dasharray="12 10" fill="none"/><text x="1170" y="660" font-size="28" fill="#a1a1a6">평균동맥압 완만히↑</text></g>
   </svg>
   <div class="abs" style="left:1240px;top:830px;width:600px" data-step="3"><div class="t-cap mute">수축기↑ = 심박출량↑ / 이완기 유지 = 활동근 혈관 확장으로 말초저항↓. 저항운동은 둘 다 크게 오른다.</div></div>
 </section>
 
+<!-- 몸속 실험실 — 강도를 올리면 심장과 혈류 -->
+<section class="slide" id="s18" data-tile="black" data-title="몸속 실험실 — 강도를 올리면 심장과 혈류">
+  <div class="hd"><div class="t-eyebrow in"><b>5</b>몸속 실험실</div><div class="t-head in" style="--d:100">강도를 올리면 — 심장은 더 빨리·더 많이, 피는 근육으로</div></div>
+  <div class="lc-left no-nav">
+    <div class="lab-btns lc-mode" id="lcMode"><button data-m="u" class="on">일반인</button><button data-m="a">지구성 선수</button><span class="lc-who">20세 남성</span></div>
+    <div class="lc-int"><span>운동 강도</span><b id="lcPct">0%</b><small>%VO<sub>2</sub>max</small></div>
+    <input type="range" id="lcRange" min="0" max="100" step="1" value="0" aria-label="운동 강도 (%VO2max)">
+    <div class="lc-ticks" id="lcTicks"><button data-v="0" style="left:0">안정</button><button data-v="25" style="left:25%">25%</button><button data-v="50" style="left:50%">50%</button><button data-v="75" style="left:75%">75%</button><button data-v="100" style="left:100%">최대</button></div>
+    <div class="lab-btns"><button id="lcPlay">▶ 재생</button><button id="lcReset">안정으로</button></div>
+  </div>
+  <svg class="lc-heart" viewBox="0 0 520 330" id="lcHeartSvg">
+    <path id="lcOut" d="M240 96C240 36 280 18 330 18L520 18" fill="none" stroke="#5a1a20" stroke-width="24" stroke-linecap="round"/>
+    <g id="lcDots"></g>
+    <g id="lcHeart">
+      <path d="M232 76C266 70 300 92 300 132C300 196 250 252 196 296C150 262 92 214 92 150C92 104 128 74 172 82C192 72 212 72 232 76Z" fill="#7a1f27" stroke="#FF453A" stroke-width="4"/>
+      <ellipse id="lcLv" cx="212" cy="176" rx="46" ry="70" fill="#2a0a0e" stroke="#c9474f" stroke-width="3"/>
+      <text x="212" y="182" text-anchor="middle" font-size="17" fill="#f5f5f7">좌심실</text>
+    </g>
+    <circle id="lcSvC" cx="420" cy="172" r="40" fill="#FF453A" opacity=".35" stroke="#FF453A" stroke-width="3"/>
+    <text x="420" y="270" text-anchor="middle" font-size="17" fill="#a1a1a6">한 번에 내보내는 양</text>
+    <text id="lcSvT" x="420" y="179" text-anchor="middle" font-size="22" font-weight="700" fill="#f5f5f7"></text>
+    <text x="330" y="54" font-size="16" fill="#a1a1a6">대동맥 → 온몸</text>
+    <text x="8" y="322" font-size="14" fill="#6e6e73">심장 모식도 · 박동은 실제의 1/2 속도 · 수축 폭과 원의 넓이 ∝ 1회 박출량</text>
+  </svg>
+  <div class="lab-say lc-say" id="lcSay"></div>
+  <svg class="lc-flow" viewBox="0 0 600 720" id="lcFlow"></svg>
+  <div class="lc-right">
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#FF453A">심박수</b><span id="lcHrV"></span></div><div class="g-bar"><i id="lcHrB" style="background:#FF453A"></i></div><small id="lcHrN"></small></div>
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#FF9F0A">1회 박출량</b><span id="lcSvV"></span></div><div class="g-bar"><i id="lcSvB" style="background:#FF9F0A"></i></div><small id="lcSvN"></small></div>
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#FFD60A">심박출량</b><span id="lcQV"></span></div><div class="g-bar"><i id="lcQB" style="background:#FFD60A"></i></div><small>= 심박수 × 1회 박출량</small></div>
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#64D2FF">동정맥 산소차</b><span id="lcAvV"></span></div><div class="g-bar"><i id="lcAvB" style="background:#64D2FF"></i></div><small>동맥혈 산소(약 20 mL/100 mL) − 정맥혈 산소</small></div>
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#30D158">산소섭취량 VO<sub>2</sub></b><span id="lcVoV"></span></div><div class="g-bar"><i id="lcVoB" style="background:#30D158"></i></div><small>최대 강도의 값 = VO<sub>2</sub>max</small></div>
+    <div class="gauge lc-g"><div class="g-h"><b style="color:#f5f5f7">혈압 <em class="lc-u">mmHg</em></b><span id="lcBpV"></span></div><div class="g-bar lc-bp"><i id="lcBpB"></i><u id="lcMapM"></u></div><small>막대 = 이완기~수축기 · 흰 금 = 평균동맥압(이완기 + 맥압/3)</small></div>
+    <div class="lc-fick" id="lcFick"></div>
+    <div class="lab-src">근거: Zhou 2001 · Gledhill 1994 · Joyner &amp; Casey 2015 · Bassett &amp; Howley 2000 · ACSM/AHA 혈압 기준 · 1회 박출량 고원 논쟁(Vella &amp; Robergs 2005, Vieira 2016). 숫자는 0·25·50·75·100% 지점에서만, 그 사이는 막대만 이어 그림.</div>
+  </div>
+</section>
+
+
 <!-- 21 혈류 추진력 -->
-<section class="slide" id="s18" data-tile="parchment" data-title="혈류 추진력 계산">
+<section class="slide" id="s19" data-tile="parchment" data-title="혈류 추진력 계산">
   <div class="hd"><div class="t-eyebrow in"><b>5</b>재분배와 혈압</div><div class="t-head in" style="--d:100">혈류 추진력 = 평균동맥압 − 우심방압</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2014 A 서술3</span></div>
   <div class="panel abs in" style="--d:250;left:120px;top:300px;width:760px">
@@ -610,7 +726,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 
 
 <!-- 23 문제 ③ -->
-<section class="slide" id="s19" data-tile="light" data-title="기출형 문제 ③ 혈류 추진력">
+<section class="slide" id="s20" data-tile="light" data-title="기출형 문제 ③ 혈류 추진력">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ③</div><div class="t-head in" style="--d:100">혈류 추진력의 차이를 구하시오</div></div>
   <div class="exam in" style="--d:200;left:120px;top:290px;width:900px">
     <p>운동 부하 검사 결과 (소수점 이하 첫째 자리에서 반올림)</p>
@@ -630,7 +746,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 24 산소 운반 -->
-<section class="slide" id="s20" data-tile="black" data-title="6. 피 100 mL에 산소 20 mL">
+<section class="slide" id="s21" data-tile="black" data-title="6. 피 100 mL에 산소 20 mL">
   <video class="abs vid fin" src="img/circ-rbc.mp4" poster="img/circ-rbc.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
   <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(180deg,rgba(0,0,0,.75) 0%,rgba(0,0,0,0) 34%,rgba(0,0,0,0) 55%,rgba(0,0,0,.9) 82%)"></div>
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">적혈구 하나하나가 산소를 내려놓는다</div></div>
@@ -641,7 +757,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 25 산소해리곡선 -->
-<section class="slide" id="s21" data-tile="dark" data-title="산소해리곡선 우측이동">
+<section class="slide" id="s22" data-tile="dark" data-title="산소해리곡선 우측이동">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">근육에서는 곡선이 오른쪽으로 — 산소를 더 내려놓는다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2015 A7</span></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
@@ -662,7 +778,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 26 Fick -->
-<section class="slide" id="s22" data-tile="light" data-title="픽 원리 — 산소섭취량">
+<section class="slide" id="s23" data-tile="light" data-title="픽 원리 — 산소섭취량">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">산소섭취량 = 심박출량 × 동정맥 산소차</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2025 B10</span></div>
   <div class="cards" style="top:330px;grid-template-columns:1fr 1fr">
@@ -674,7 +790,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 27 사강·확산 -->
-<section class="slide" id="s23" data-tile="parchment" data-title="사강 · 폐포 환기량 · 확산">
+<section class="slide" id="s24" data-tile="parchment" data-title="사강 · 폐포 환기량 · 확산">
   <div class="hd"><div class="t-eyebrow in"><b>6</b>산소 운반</div><div class="t-head in" style="--d:100">숨은 깊게 — 사강 150 mL는 매번 버려진다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2018 A7</span><span>2024 A12</span></div>
   <table class="dtab abs in" style="--d:300;left:120px;top:320px">
@@ -692,7 +808,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 28 문제 ④ -->
-<section class="slide" id="s24" data-tile="light" data-title="기출형 문제 ④ 픽 원리 계산">
+<section class="slide" id="s25" data-tile="light" data-title="기출형 문제 ④ 픽 원리 계산">
   <div class="hd"><div class="t-eyebrow in">기출형 문제 ④</div><div class="t-head in" style="--d:100">픽 원리로 심박출량과 산소섭취량을 구하시오</div></div>
   <div class="exam in" style="--d:200;left:120px;top:280px;width:1040px;padding:28px 38px">
     <div style="display:flex;gap:36px;align-items:flex-start">
@@ -725,7 +841,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 29 심혈관 표류 -->
-<section class="slide" id="s25" data-tile="black" data-title="7. 심혈관 표류">
+<section class="slide" id="s26" data-tile="black" data-title="7. 심혈관 표류">
   <video class="abs vid fin" src="img/circ-runner.mp4" poster="img/circ-runner.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1920px;height:1080px;object-fit:cover"></video>
   <div class="abs" style="left:0;top:0;width:1920px;height:1080px;background:linear-gradient(90deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.85) 62%)"></div>
   <div class="side" style="left:1180px;width:660px">
@@ -738,7 +854,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 30 표류 기전 -->
-<section class="slide" id="s26" data-tile="dark" data-title="표류의 기전과 문제">
+<section class="slide" id="s27" data-tile="dark" data-title="표류의 기전과 문제">
   <div class="hd"><div class="t-eyebrow in"><b>7</b>오래, 덥게</div><div class="t-head in" style="--d:100">왜 1회 박출량이 줄어드나</div></div>
   <svg class="full-svg" viewBox="0 0 1920 1080">
     <line x1="160" y1="760" x2="900" y2="760" stroke="#6e6e73" stroke-width="2"/><line x1="160" y1="760" x2="160" y2="330" stroke="#6e6e73" stroke-width="2"/>
@@ -761,7 +877,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 31 심장 적응 -->
-<section class="slide" id="s27" data-tile="black" data-title="8. 심장의 훈련 적응">
+<section class="slide" id="s28" data-tile="black" data-title="8. 심장의 훈련 적응">
   <img class="abs fin" src="img/circ-athletes.jpg" alt="마라톤 선수와 역도 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
@@ -774,7 +890,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 32 혈장량 -->
-<section class="slide" id="s28" data-tile="black" data-title="혈장량이 먼저 늘어난다">
+<section class="slide" id="s29" data-tile="black" data-title="혈장량이 먼저 늘어난다">
   <img class="abs fin" src="img/circ-hematocrit.jpg" alt="원심분리한 혈액 튜브 두 개" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>8</b>훈련 적응</div>
@@ -788,7 +904,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 근육 적응 -->
-<section class="slide" id="s29" data-tile="light" data-title="근육 적응 · 안정 시 심박수 · 탈훈련">
+<section class="slide" id="s30" data-tile="light" data-title="근육 적응 · 안정 시 심박수 · 탈훈련">
   <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">근육은 산소를 더 뽑고, 심장은 덜 뛴다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2020 A7</span></div>
   <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
@@ -799,7 +915,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 34 카보넨 -->
-<section class="slide" id="s30" data-tile="parchment" data-title="카보넨 목표 심박수 · 운동 효과 방향">
+<section class="slide" id="s31" data-tile="parchment" data-title="카보넨 목표 심박수 · 운동 효과 방향">
   <div class="hd"><div class="t-eyebrow in"><b>8</b>훈련 적응</div><div class="t-head in" style="--d:100">처방은 여유심박수로 — 카보넨 공식</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A14</span><span>2022 A3</span><span>2026 A9</span></div>
   <div class="panel abs in" style="--d:250;left:120px;top:300px;right:120px"><div style="font-size:50px;font-weight:600">목표 심박수 = (최대 HR − 안정 HR) × <span class="c-act">강도</span> + 안정 HR</div></div>
@@ -816,7 +932,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 출제 예상 -->
-<section class="slide" id="s31" data-tile="dark" data-title="출제 예상 4가지">
+<section class="slide" id="s32" data-tile="dark" data-title="출제 예상 4가지">
   <div class="hd"><div class="t-eyebrow in">출제 예상</div><div class="t-head in" style="--d:100">13년 동안 안 나온 것 — 한 줄씩만</div></div>
   <div class="gx in" style="--d:200"><span class="p">출제 예상</span></div>
   <div class="cards" style="top:300px;grid-template-columns:1fr 1fr">
@@ -828,7 +944,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 36 함정 -->
-<section class="slide" id="s32" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+<section class="slide" id="s33" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
   <ol class="traps">
     <li class="in" style="--d:150">혈류 추진력에서 <b>우심방압을 안 뺌</b></li>
@@ -845,13 +961,13 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 37 요약 -->
-<section class="slide" id="s33" data-tile="light" data-title="한 장 요약">
+<section class="slide" id="s34" data-tile="light" data-title="한 장 요약">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
   <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
     <div class="card in" style="--d:150"><div class="k c-hr">공식</div><h4>Q = HR × SV</h4><p>VO₂ = Q × 동정맥 산소차<br>EF = SV ÷ EDV<br>MAP = DBP + ⅓ 맥압<br>추진력 = MAP − 우심방압</p></div>
     <div class="card in" style="--d:250"><div class="k c-act">조절</div><h4>SV 3요인</h4><p>이완기말 용적 · 수축력 · 평균 대동맥압<br>HR: 부교감 철회 → 교감<br>환류: 근육·호흡펌프·정맥 수축</p></div>
     <div class="card in" style="--d:350"><div class="k c-o2">운반</div><h4>우측이동</h4><p>온도↑ · PCO₂↑ · pH↓ · 2,3-BPG↑<br>폐포 환기 = (VT − 150) × f<br>확산 ∝ 면적 × 분압차 ÷ 두께</p></div>
-    <div class="card in" style="--d:450"><div class="k c-mid">급성 반응</div><h4>재분배 · 혈압</h4><p>근육 20% → 84%<br>수축기↑ 이완기≈<br>표류: HR↑ SV↓ Q 유지</p></div>
+    <div class="card in" style="--d:450"><div class="k c-mid">급성 반응</div><h4>재분배 · 혈압</h4><p>근육 약 20% → 약 85%<br>수축기↑ 이완기≈<br>표류: HR↑ SV↓ Q 유지</p></div>
     <div class="card in" style="--d:550"><div class="k c-low">만성 적응</div><h4>좌심실 내강↑</h4><p>혈장량 먼저↑ (가성 빈혈)<br>안정 HR↓ · 모세혈관·미토콘드리아↑<br>탈훈련은 혈장부터</p></div>
     <div class="card in" style="--d:650"><div class="k" style="color:var(--t2)">출제 예상</div><h4>아직 안 나온 것</h4><p>압수용기 재설정 · 운동승압반사<br>이중곱 · 발살바<br>운동 후 저혈압</p></div>
   </div>
@@ -880,7 +996,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
   <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
   <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <span class="count" id="cnt">1 / 33</span>
+  <span class="count" id="cnt">1 / 34</span>
   <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
   <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </div>
@@ -903,24 +1019,25 @@ const NOTES = {
   s13: "기출형 문제입니다. ㉠은 **1회 박출량**, ㉡은 78 나누기 130으로 **60퍼센트**입니다. 총혈액량이 늘어난 이유는 **혈장량이 적혈구량보다 더 빨리, 더 많이 늘기** 때문입니다.",
   s14: "종아리 근육은 두 번째 심장입니다. 근육이 수축하면 정맥이 눌려 피가 위로 밀리고, **정맥 판막**이 역류를 막습니다. 운동을 갑자기 멈추면 이 펌프가 멎으니 정리 운동을 합니다. 2015 A7번입니다.",
   s15: "정맥환류는 **근육펌프, 호흡펌프, 정맥 수축** 세 가지로 돕습니다. 그런데 **등척성 수축**처럼 계속 힘을 주고 있으면 혈관이 눌린 채 풀리지 않아 오히려 환류가 막힙니다. 2022 B8의 빈칸입니다.",
-  s16: "최대 운동에서는 근육이 받는 몫이 약 20%에서 84%로 늘어납니다. 교감신경이 온몸 혈관을 조이지만 활동근에서는 대사산물이 혈관을 넓혀 그 조임을 무력화하는데, 이것을 **기능적 교감신경 억제**라고 합니다.",
+  s16: "최대 운동에서는 근육이 받는 몫이 약 20%에서 약 85%로 늘어납니다. 교감신경이 온몸 혈관을 조이지만 활동근에서는 대사산물이 혈관을 넓혀 그 조임을 무력화하는데, 이것을 **기능적 교감신경 억제**라고 합니다.",
   s17: "점증 부하 운동에서 **수축기 혈압은 오르고, 이완기 혈압은 거의 그대로**입니다. 심박출량은 늘고, 활동근 혈관이 넓어져 말초저항은 줄기 때문입니다. 저항운동은 둘 다 크게 오릅니다.",
-  s18: "2014학년도 A형 서술형 3번입니다. 평균동맥압은 이완기에 맥압의 3분의 1을 더합니다. 안정 93.3, 운동 118.3입니다. 혈류 추진력은 여기서 **우심방압을 빼야** 합니다. 그러면 93.3과 113.3, 차이는 **20 mmHg**입니다.",
-  s19: "기출형 계산 문제입니다. 안정 평균동맥압 83.3에서 우심방압 2를 빼면 81.3, 운동 106에서 4를 빼면 102입니다. 차이는 20.7, 반올림해 **21 mmHg**입니다.",
-  s20: "피 100 mL에는 산소가 약 20 mL 들어 있습니다. 헤모글로빈 1 g이 산소 **1.34 mL**와 결합하기 때문입니다. 적혈구는 모세혈관을 지나며 근육에 산소를 내려놓습니다.",
-  s21: "산소해리곡선입니다. 운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 곡선이 오른쪽으로 이동해 같은 분압에서 산소를 더 내려놓습니다. 2015 A7번의 빈칸이 pH였습니다.",
-  s22: "픽 원리입니다. 산소섭취량은 심박출량 곱하기 동정맥 산소차입니다. 안정 250 mL, 최대 3,000 mL 정도입니다. 최대산소섭취량을 키우는 길은 **중추의 최대 심박출량**과 **말초의 산소 추출** 두 가지입니다.",
-  s23: "폐포 환기량은 1회 호흡량에서 **해부학적 사강 150 mL**를 빼고 호흡수를 곱합니다. 2018 A7 표에서 A는 1,500, B는 3,750, C는 4,500 mL로, 분당 환기량이 같아도 깊고 느린 **C, B, A 순**입니다. 확산은 면적과 **분압차**에 비례하고 두께에 반비례합니다.",
-  s24: "2025 B10 자료 그대로입니다. 60 kJ을 300초로 나누면 200 W입니다. 그때 심박수 150, 1회 박출량 100이므로 심박출량 **15 L/분**입니다. 산소차는 14 mL/100 mL, 곧 140 mL/L이므로 2,100 mL/분, 체중 50으로 나누면 **42 mL/kg/분**입니다. 여기에 하나를 더 물었습니다. 300 W에서는 정맥 산소가 4이므로 산소차가 **16으로 커집니다**. 근육이 산소를 더 많이 뽑아 쓴다는 뜻입니다. 좌심실 요인은 내강 증가와 수축력 증가입니다.",
-  s25: "같은 속도로 오래 달리면 심박수는 점점 오르고 1회 박출량은 줄어듭니다. 심박출량은 거의 유지됩니다. 이것이 **심혈관 표류**이고, 더울수록 커집니다. 2023 B9번입니다.",
-  s26: "체온이 오르면 피부로 피가 가고 땀으로 **혈장량이 줄어** 정맥환류와 이완기말 용적이 줄어듭니다. 그래서 1회 박출량이 줄고, 심박수가 보상적으로 올라 심박출량을 유지합니다.",
-  s27: "지구성 훈련은 **좌심실**의 내강, 즉 용적을 키웁니다. 2020 A7의 빈칸 답은 좌심실입니다. 그래서 1회 박출량과 최대 심박출량이 늘어납니다. 답안에는 벽이 두꺼워진다가 아니라 내강이 커진다고 써야 합니다. 2020 A7, 2025 B10입니다.",
-  s28: "훈련하면 **혈장량이 먼저** 늘어납니다. 훈련 시작 며칠 안에, 3~6회 만에 약 12~20% 늘어납니다. 적혈구는 수 주에 걸쳐 늘어납니다. 그래서 헤마토크릿은 오히려 약간 낮아지는데, 이것을 가성 빈혈이라고 합니다. 2021 B6의 서술 문항입니다.",
-  s29: "훈련하면 근육은 **모세혈관과 미토콘드리아**가 늘어 산소를 더 뽑고, 심장은 1회 박출량이 커져 **안정 시 심박수가 낮아집니다**. 훈련을 멈추면 혈장량부터 빠집니다.",
-  s30: "운동 처방은 카보넨 공식으로 합니다. 최대에서 안정 심박수를 빼고 강도를 곱한 뒤 안정 심박수를 더합니다. 2022 A3은 **141과 148**입니다. 최대 심박수가 없으면 220에서 나이를 뺍니다. 2026 A9는 15세라 최대 205, (140 − 75) ÷ (205 − 75)로 **50%**입니다. 같은 문항에서 틀린 기대 효과는 ㉢ 혈관신생과 ㉤ 인슐린 민감도로, 둘 다 **증가**가 맞습니다. 에피네프린·노르에피네프린의 분비선은 **부신수질**입니다.",
-  s31: "아직 나오지 않은 네 가지입니다. **이중곱**은 심박수 곱하기 수축기 혈압, **발살바**는 숨을 참고 힘줄 때 혈압이 치솟는 현상, 조절은 **중추명령·운동승압반사·압수용기 재설정**, 그리고 **운동 후 저혈압**입니다.",
-  s32: "감점 함정 10가지입니다. 특히 우심방압 빼기, 박출계수 분모, 단위 환산, 부교감 철회, 심박출량 유지는 실제 채점 포인트입니다.",
-  s33: "한 장으로 정리합니다. 공식 네 개, 1회 박출량 3요인, 우측이동 조건, 급성 반응과 만성 적응을 기억하세요."
+  s18: "몸속 실험실입니다. 20세 남성이 운동 강도를 안정에서 최대산소섭취량의 100%까지 올릴 때 심장과 혈류가 어떻게 바뀌는지 봅니다. 먼저 **안정 시**입니다. 심박출량은 일반인과 지구성 선수 모두 약 5 L/분으로 같습니다. 선수는 심박수가 약 50회로 낮은 대신 1회 박출량이 약 100 mL로 큽니다. 강도를 올리면 **초반에는 심박수와 1회 박출량이 함께** 오릅니다. 일반인은 약 40~60%에서 1회 박출량이 **고원**에 이르고, 그 뒤 심박출량 증가는 심박수가 맡습니다. 선수는 최대까지 1회 박출량이 계속 늘어난다는 보고가 있지만, 고원 여부는 아직 논쟁 중입니다. 최대에서 심박출량은 일반인 약 22 L/분, 선수 약 36 L/분입니다. 픽 원리로 확인하면 VO2는 심박출량 곱하기 동정맥 산소차, 일반인 최대는 22.0 L/분 곱하기 155 mL/L로 약 3.4 L/분입니다. 선수의 높은 최대산소섭취량은 주로 **큰 최대 심박출량** 덕분이고, 최대 동정맥 산소차도 선수가 약 16으로 조금 더 큽니다(말초 적응). 혈류는 근육 몫이 약 20%에서 약 85%로 늘고, 내장과 신장은 비율뿐 아니라 **절대량도 줄어듭니다**. 뇌는 양이 거의 유지됩니다. 혈압은 **수축기가 120에서 약 200으로 오르고 이완기는 거의 그대로**입니다. 오개념 세 가지를 짚습니다. 첫째, 이완기 혈압도 크게 오른다 — 아닙니다. 활동근 혈관이 넓어져 말초저항이 줄기 때문에 거의 그대로이거나 조금 내려갑니다. 둘째, 심박출량은 심박수만 늘어서 증가한다 — 아닙니다. 초반에는 1회 박출량도 함께 늘어납니다. 셋째, 선수는 최대 심박수가 더 높다 — 아닙니다. 최대 심박수는 비슷하거나 약간 낮고, 차이는 1회 박출량에서 납니다.",
+  s19: "2014학년도 A형 서술형 3번입니다. 평균동맥압은 이완기에 맥압의 3분의 1을 더합니다. 안정 93.3, 운동 118.3입니다. 혈류 추진력은 여기서 **우심방압을 빼야** 합니다. 그러면 93.3과 113.3, 차이는 **20 mmHg**입니다.",
+  s20: "기출형 계산 문제입니다. 안정 평균동맥압 83.3에서 우심방압 2를 빼면 81.3, 운동 106에서 4를 빼면 102입니다. 차이는 20.7, 반올림해 **21 mmHg**입니다.",
+  s21: "피 100 mL에는 산소가 약 20 mL 들어 있습니다. 헤모글로빈 1 g이 산소 **1.34 mL**와 결합하기 때문입니다. 적혈구는 모세혈관을 지나며 근육에 산소를 내려놓습니다.",
+  s22: "산소해리곡선입니다. 운동 중인 근육은 체온이 오르고, 이산화탄소가 늘고, **pH가 떨어집니다**. 그러면 곡선이 오른쪽으로 이동해 같은 분압에서 산소를 더 내려놓습니다. 2015 A7번의 빈칸이 pH였습니다.",
+  s23: "픽 원리입니다. 산소섭취량은 심박출량 곱하기 동정맥 산소차입니다. 안정 250 mL, 최대 3,000 mL 정도입니다. 최대산소섭취량을 키우는 길은 **중추의 최대 심박출량**과 **말초의 산소 추출** 두 가지입니다.",
+  s24: "폐포 환기량은 1회 호흡량에서 **해부학적 사강 150 mL**를 빼고 호흡수를 곱합니다. 2018 A7 표에서 A는 1,500, B는 3,750, C는 4,500 mL로, 분당 환기량이 같아도 깊고 느린 **C, B, A 순**입니다. 확산은 면적과 **분압차**에 비례하고 두께에 반비례합니다.",
+  s25: "2025 B10 자료 그대로입니다. 60 kJ을 300초로 나누면 200 W입니다. 그때 심박수 150, 1회 박출량 100이므로 심박출량 **15 L/분**입니다. 산소차는 14 mL/100 mL, 곧 140 mL/L이므로 2,100 mL/분, 체중 50으로 나누면 **42 mL/kg/분**입니다. 여기에 하나를 더 물었습니다. 300 W에서는 정맥 산소가 4이므로 산소차가 **16으로 커집니다**. 근육이 산소를 더 많이 뽑아 쓴다는 뜻입니다. 좌심실 요인은 내강 증가와 수축력 증가입니다.",
+  s26: "같은 속도로 오래 달리면 심박수는 점점 오르고 1회 박출량은 줄어듭니다. 심박출량은 거의 유지됩니다. 이것이 **심혈관 표류**이고, 더울수록 커집니다. 2023 B9번입니다.",
+  s27: "체온이 오르면 피부로 피가 가고 땀으로 **혈장량이 줄어** 정맥환류와 이완기말 용적이 줄어듭니다. 그래서 1회 박출량이 줄고, 심박수가 보상적으로 올라 심박출량을 유지합니다.",
+  s28: "지구성 훈련은 **좌심실**의 내강, 즉 용적을 키웁니다. 2020 A7의 빈칸 답은 좌심실입니다. 그래서 1회 박출량과 최대 심박출량이 늘어납니다. 답안에는 벽이 두꺼워진다가 아니라 내강이 커진다고 써야 합니다. 2020 A7, 2025 B10입니다.",
+  s29: "훈련하면 **혈장량이 먼저** 늘어납니다. 훈련 시작 며칠 안에, 3~6회 만에 약 12~20% 늘어납니다. 적혈구는 수 주에 걸쳐 늘어납니다. 그래서 헤마토크릿은 오히려 약간 낮아지는데, 이것을 가성 빈혈이라고 합니다. 2021 B6의 서술 문항입니다.",
+  s30: "훈련하면 근육은 **모세혈관과 미토콘드리아**가 늘어 산소를 더 뽑고, 심장은 1회 박출량이 커져 **안정 시 심박수가 낮아집니다**. 훈련을 멈추면 혈장량부터 빠집니다.",
+  s31: "운동 처방은 카보넨 공식으로 합니다. 최대에서 안정 심박수를 빼고 강도를 곱한 뒤 안정 심박수를 더합니다. 2022 A3은 **141과 148**입니다. 최대 심박수가 없으면 220에서 나이를 뺍니다. 2026 A9는 15세라 최대 205, (140 − 75) ÷ (205 − 75)로 **50%**입니다. 같은 문항에서 틀린 기대 효과는 ㉢ 혈관신생과 ㉤ 인슐린 민감도로, 둘 다 **증가**가 맞습니다. 에피네프린·노르에피네프린의 분비선은 **부신수질**입니다.",
+  s32: "아직 나오지 않은 네 가지입니다. **이중곱**은 심박수 곱하기 수축기 혈압, **발살바**는 숨을 참고 힘줄 때 혈압이 치솟는 현상, 조절은 **중추명령·운동승압반사·압수용기 재설정**, 그리고 **운동 후 저혈압**입니다.",
+  s33: "감점 함정 10가지입니다. 특히 우심방압 빼기, 박출계수 분모, 단위 환산, 부교감 철회, 심박출량 유지는 실제 채점 포인트입니다.",
+  s34: "한 장으로 정리합니다. 공식 네 개, 1회 박출량 3요인, 우측이동 조건, 급성 반응과 만성 적응을 기억하세요."
 };
 
 const $ = s => document.querySelector(s);
@@ -1028,10 +1145,206 @@ function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS,
 (function(){
   const C = {근육:'#D70015', 내장:'#B25000', 신장:'#8E6A00', 뇌:'#0077B6', 심장:'#6B2FB3', 피부:'#1E8B3E', 기타:'#86868b'};
   const rest = [['근육',20],['내장',25],['신장',20],['뇌',15],['심장',4],['피부',6],['기타',10]];
-  const max = [['근육',84],['내장',1],['신장',1],['뇌',4],['심장',4],['피부',2],['기타',4]];
+  const max = [['근육',85],['내장',2],['신장',1],['뇌',4],['심장',4],['피부',2],['기타',2]];
   [[rest, '#rb1'], [max, '#rb2']].forEach(([arr, id]) => {
     arr.forEach(([k, v]) => { const i = document.createElement('i'); i.style.width = v + '%'; i.style.background = C[k]; if (v >= 6) i.innerHTML = `<span>${k}<small>${v}%</small></span>`; $(id).append(i); });
   });
+})();
+
+
+// ── 몸속 실험실: 강도를 올리면 심장과 혈류 (20세 남성, 일반인 / 지구성 선수) ──
+(function(){
+  const $i = id => document.getElementById(id);
+  const flowSvg = $i('lcFlow'); if (!flowSvg) return; const sec = flowSvg.closest('.slide');
+  const X = [0, 25, 50, 75, 100];
+  // 근거 지점 값 (%VO2max 0·25·50·75·100). Zhou 2001 · Gledhill 1994 · Bassett & Howley 2000
+  const D = {
+    u: {hr: [70, 102, 135, 168, 200], sv: [72, 100, 110, 110, 110], q: [5.0, 10.2, 14.9, 18.5, 22.0], av: [5.0, 8.3, 11.4, 13.8, 15.5], vo: [0.25, 0.85, 1.70, 2.55, 3.40]},
+    a: {hr: [50, 86, 123, 159, 195], sv: [100, 140, 160, 175, 185], q: [5.0, 12.0, 19.7, 27.8, 36.1], av: [5.0, 12.0, 14.7, 15.6, 16.0], vo: [0.25, 1.44, 2.90, 4.34, 5.78]}, // 최대 동정맥 산소차는 선수가 약간 큼(말초 적응: 모세혈관·미토콘드리아)
+  };
+  const BP = {sys: [120, 145, 165, 185, 200], dia: [78, 76, 75, 74, 72], map: [92, 99, 105, 111, 115]}; // 공통 (ACSM/AHA)
+  // 단조 3차 보간(PCHIP) — 근거 지점 사이를 넘치지 않게 잇는다(막대 전용)
+  function pchip(ys, x){
+    const n = X.length, h = [], d = [], m = [];
+    for (let i = 0; i < n - 1; i++){ h[i] = X[i + 1] - X[i]; d[i] = (ys[i + 1] - ys[i]) / h[i]; }
+    m[0] = d[0]; m[n - 1] = d[n - 2];
+    for (let i = 1; i < n - 1; i++) m[i] = d[i - 1] * d[i] <= 0 ? 0 : 3 * (h[i - 1] + h[i]) / ((2 * h[i] + h[i - 1]) / d[i - 1] + (h[i] + 2 * h[i - 1]) / d[i]);
+    let k = 0; while (k < n - 2 && x > X[k + 1]) k++;
+    const t = (x - X[k]) / h[k], t2 = t * t, t3 = t2 * t;
+    return (2 * t3 - 3 * t2 + 1) * ys[k] + (t3 - 2 * t2 + t) * h[k] * m[k] + (-2 * t3 + 3 * t2) * ys[k + 1] + (t3 - t2) * h[k] * m[k + 1];
+  }
+  const lin = (a, b, x) => a + (b - a) * x / 100;
+  // 일반인 혈류(L/분): 안정→최대는 교재 통상치 근사. 뇌는 중간(50~75%) 약 0.85로 올랐다 복귀, 피부는 50%에서 약 0.8 정점
+  const ORG = [
+    {k: 'mus', n: '골격근', c: '#FF453A'},
+    {k: 'gut', n: '내장', c: '#FF9F0A', f: x => lin(1.25, 0.4, x)},
+    {k: 'kid', n: '신장', c: '#FFD60A', f: x => lin(1.0, 0.3, x)},
+    {k: 'brn', n: '뇌', c: '#64D2FF', f: x => pchip([0.75, 0.81, 0.85, 0.85, 0.78], x)},
+    {k: 'cor', n: '심장(관상)', c: '#BF5AF2', f: x => lin(0.2, 0.8, x)},
+    {k: 'skn', n: '피부', c: '#30D158', f: x => pchip([0.3, 0.55, 0.8, 0.7, 0.5], x)},
+    {k: 'oth', n: '기타', c: '#8e8e93', f: x => lin(0.5, 0.52, x)},
+  ];
+  // 표시하는 숫자(근거 지점만). u: 일반인, a: 선수(선수는 근육만 근거 값 '약 31')
+  const SHOW = {
+    u: {0: ['1.0', '1.25', '1.0', '0.75', '0.2', '0.3', '0.5'], 2: [, , , '0.85', , '0.8'], 3: [, , , '0.85'], 4: ['18.7', '0.4', '0.3', '0.78', '0.8', '0.5', '0.52']},
+    a: {0: ['1.0', '1.25', '1.0', '0.75', '0.2', '0.3', '0.5'], 2: [, , , '0.85'], 3: [, , , '0.85'], 4: ['31', , , '0.78']},
+  };
+  // 부위별 흐름: 일반인은 심박출량 − 나머지 = 근육. 선수는 같은 비율(뇌만 절대량 유지 — 뇌 혈류는 자동조절)
+  function flows(mode, x){
+    const qu = pchip(D.u.q, x), q = pchip(D[mode].q, x), r = q / qu;
+    const o = {};
+    ORG.slice(1).forEach(g => { o[g.k] = g.f(x) * (mode === 'a' && g.k !== 'brn' ? r : 1); });
+    o.mus = q - ORG.slice(1).reduce((s, g) => s + o[g.k], 0);
+    return {q, o};
+  }
+
+  // ── 가운데 그림 만들기 ──
+  const NS = 'http://www.w3.org/2000/svg';
+  const mk = (tag, a, p, txt) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (txt !== undefined) e.textContent = txt; p.append(e); return e; };
+  const S = flowSvg;
+  mk('text', {x: 20, y: 26, 'font-size': 22, 'font-weight': 700, fill: '#f5f5f7'}, S, '온몸으로 가는 피');
+  mk('text', {x: 580, y: 26, 'text-anchor': 'end', 'font-size': 16, fill: '#a1a1a6'}, S, '막대 너비 = 절대량 (L/분)');
+  const TX0 = 20, TW = 560, TMAX = 40;
+  mk('rect', {x: TX0, y: 44, width: TW, height: 46, rx: 8, fill: '#1c1c1e'}, S);
+  const segs = ORG.map(g => mk('rect', {x: TX0, y: 44, width: 0, height: 46, fill: g.c}, S));
+  const segT = mk('text', {x: TX0 + 10, y: 74, 'font-size': 18, 'font-weight': 700, fill: '#1d1d1f'}, S, '');
+  [0, 10, 20, 30, 40].forEach(v => { mk('line', {x1: TX0 + TW * v / TMAX, y1: 92, x2: TX0 + TW * v / TMAX, y2: 100, stroke: '#6e6e73', 'stroke-width': 2}, S); mk('text', {x: TX0 + TW * v / TMAX, y: 118, 'text-anchor': v === 0 ? 'start' : v === 40 ? 'end' : 'middle', 'font-size': 15, fill: '#6e6e73'}, S, v + (v === 40 ? ' L/분' : '')); });
+  mk('text', {x: 20, y: 152, 'font-size': 20, fill: '#a1a1a6'}, S, '심박출량 중 근육 몫');
+  const shareT = mk('text', {x: 580, y: 154, 'text-anchor': 'end', 'font-size': 26, 'font-weight': 700, fill: '#FF453A'}, S, '');
+  const BX = 140, BW = 340;
+  const rows = ORG.map((g, i) => {
+    const y = i === 0 ? 178 : 262 + (i - 1) * 58;
+    mk('text', {x: 20, y: y + 21, 'font-size': 20, 'font-weight': 600, fill: g.c}, S, g.n);
+    mk('rect', {x: BX, y, width: BW, height: 28, rx: 6, fill: '#1c1c1e'}, S);
+    if (i > 0) mk('line', {x1: BX + BW / 2, y1: y - 3, x2: BX + BW / 2, y2: y + 31, stroke: '#3a3a3c', 'stroke-dasharray': '3 4'}, S);
+    const bar = mk('rect', {x: BX, y, width: 0, height: 28, rx: 6, fill: g.c}, S);
+    const val = mk('text', {x: 584, y: y + 22, 'text-anchor': 'end', 'font-size': 22, 'font-weight': 700, fill: '#f5f5f7'}, S, '');
+    return {bar, val, max: i === 0 ? 32 : 2};
+  });
+  mk('text', {x: BX, y: 228, 'font-size': 14, fill: '#6e6e73'}, S, '근육 칸 눈금 0~32 L/분');
+  mk('line', {x1: 20, y1: 238, x2: 580, y2: 238, stroke: '#2c2c2e', 'stroke-width': 2}, S);
+  mk('text', {x: BX, y: 254, 'font-size': 14, fill: '#a1a1a6'}, S, '아래 여섯 칸은 눈금 확대 0~2 L/분 (점선 = 1 L)');
+  const cap = [
+    ['근육 몫 약 20% → 약 85% · 내장·신장은 절대량도 감소', '#f5f5f7', 18],
+    ['뇌는 양이 거의 유지(중간 강도에서 조금 올랐다 복귀) · 피부는 중간 강도에서 늘다가', '#a1a1a6', 15],
+    ['최대에서 감소(교재 기준 — 최근 반론 있음) · 부위별 안정값은 교과서 통상치 근사', '#a1a1a6', 15],
+    ['선수: 일반인과 같은 비율을 적용한 그림(뇌는 절대량 유지) — 최대 근육 약 31 L/분', '#a1a1a6', 15],
+  ];
+  cap.forEach(([t, c, fs], i) => mk('text', {x: 20, y: 628 + i * 24 + (i ? 4 : 0), 'font-size': fs, fill: c, 'font-weight': i ? 400 : 600}, S, t));
+
+  // ── 심장 ──
+  const heart = $i('lcHeart'), lv = $i('lcLv'), svC = $i('lcSvC'), svT = $i('lcSvT');
+  const outP = $i('lcOut'), outLen = outP.getTotalLength(), dots = [];
+  for (let i = 0; i < 9; i++) dots.push(mk('circle', {r: 6, fill: '#FF6961'}, $i('lcDots')));
+
+  let x = 0, mode = 'u', playing = false, dwell = 0, last = 0, beat = 0, dph = 0;
+  const range = $i('lcRange');
+  const anchor = () => X.findIndex(a => Math.abs(x - a) <= 0.5);
+  const f1 = v => v.toFixed(1), f2 = v => v.toFixed(2);
+
+  function say(){
+    const i = anchor();
+    let m, s;
+    if (x < 3){ m = '안정: 심박출량 약 5 L/분 — <b>선수와 일반인이 같다</b>. 선수는 심박이 낮고 1회 박출량이 크다'; s = '강도 막대를 끌거나 ▶ 재생'; }
+    else {
+      if (x < 40) m = '초반엔 <b>심박수와 1회 박출량이 함께</b> 오른다';
+      else if (x < 97) m = mode === 'u' ? '일반인은 약 40~60%에서 <b>1회 박출량 고원</b> → 그 뒤는 <b>심박수</b>로' : '선수는 최대까지 <b>1회 박출량이 늘어난다</b> (논쟁 있음)';
+      else m = mode === 'u' ? '최대: 근육 몫 약 20% → <b>약 85%</b>, 내장·신장은 <b>절대량도 감소</b>' : '선수의 높은 VO<sub>2</sub>max는 주로 <b>큰 최대 심박출량</b> 덕분 (Bassett &amp; Howley 2000)';
+      s = '혈압: <b>수축기↑ 이완기≈</b> (평균동맥압은 완만히↑)';
+    }
+    return m + '<small>' + s + '</small>';
+  }
+
+  function draw(){
+    const d = D[mode], i = anchor(), at = i >= 0;
+    const hr = pchip(d.hr, x), sv = pchip(d.sv, x), q = pchip(d.q, x), av = pchip(d.av, x), vo = pchip(d.vo, x);
+    const sys = pchip(BP.sys, x), dia = pchip(BP.dia, x), map = pchip(BP.map, x);
+    $i('lcPct').textContent = (x < 0.5 ? '안정 ' : '') + Math.round(x) + '%';
+    range.value = Math.round(x);
+    [...$i('lcTicks').children].forEach((b, j) => b.classList.toggle('on', j === i));
+    // 계기: 막대는 늘 움직이고, 숫자는 근거 지점에서만
+    const set = (k, w, txt) => { $i(k + 'B').style.width = Math.max(0, Math.min(100, w)) + '%'; $i(k + 'V').textContent = at ? txt : ''; };
+    set('lcHr', hr / 210 * 100, at && d.hr[i] + ' 회/분');
+    set('lcSv', sv / 200 * 100, at && d.sv[i] + ' mL');
+    set('lcQ', q / 40 * 100, at && f1(d.q[i]) + ' L/분');
+    set('lcAv', av / 20 * 100, at && f1(d.av[i]) + ' mL/100 mL');
+    set('lcVo', vo / 6 * 100, at && f2(d.vo[i]) + ' L/분');
+    $i('lcBpB').style.left = dia / 220 * 100 + '%'; $i('lcBpB').style.width = (sys - dia) / 220 * 100 + '%';
+    $i('lcMapM').style.left = map / 220 * 100 + '%';
+    $i('lcBpV').textContent = at ? BP.sys[i] + '/' + BP.dia[i] + ' · 평균 ' + BP.map[i] : '';
+    $i('lcHrN').textContent = mode === 'u' ? '20세 일반인: 안정 약 70 → 최대 약 200' : '선수: 안정 약 50으로 낮다 · 최대는 일반인과 비슷하거나 약간 낮다';
+    $i('lcSvN').textContent = mode === 'u' ? '약 40~60%에서 고원 → 그 뒤 심박출량 증가는 심박수로' : '최대까지 계속 증가 (고원 여부는 논쟁 있음)';
+    // 픽 원리 대입(근거 지점에서만)
+    if (at){
+      const ml = Math.round(d.q[i] * d.av[i] * 10), qq = d.hr[i] * d.sv[i] / 1000;
+      const eq = Math.abs(ml / 1000 - d.vo[i]) < 1e-9 ? '=' : '≈';
+      const eq2 = Math.abs(qq - d.q[i]) < 1e-9 ? '=' : '≈';
+      $i('lcFick').innerHTML = `<b>심박출량</b> = ${d.hr[i]} 회/분 × ${d.sv[i]} mL = ${eq2 === '=' ? '' : +qq.toFixed(3) + ' L/분 ≈ '}<em>${f1(d.q[i])} L/분</em><br>` +
+        `<b>VO<sub>2</sub> = 심박출량 × 동정맥 산소차</b><br>= ${f1(d.q[i])} L/분 × ${Math.round(d.av[i] * 10)} mL/L = ${ml.toLocaleString('en')} mL/분 ${eq} <em>${f2(d.vo[i])} L/분</em>`;
+    } else {
+      $i('lcFick').innerHTML = '<b>심박출량</b> = 심박수 × 1회 박출량<br><b>VO<sub>2</sub> = 심박출량 × 동정맥 산소차</b><br>0·25·50·75·100% 지점에서 현재값을 대입한다';
+    }
+    // 가운데: 혈류
+    const F = flows(mode, x);
+    let cx = TX0;
+    ORG.forEach((g, j) => { const w = TW * F.o[g.k] / TMAX; segs[j].setAttribute('x', cx); segs[j].setAttribute('width', Math.max(0, w)); cx += w; });
+    const mw = TW * F.o.mus / TMAX;
+    segT.textContent = mw > 70 ? '근육' : '';
+    const sh = SHOW[mode][i] || [];
+    ORG.forEach((g, j) => {
+      const r = rows[j]; r.bar.setAttribute('width', Math.max(0, Math.min(1, F.o[g.k] / r.max)) * BW);
+      r.val.textContent = at && sh[j] ? '약 ' + sh[j] : '';
+    });
+    shareT.textContent = i === 0 ? '약 20%' : i === 4 ? (mode === 'u' ? '약 85%' : '약 86%') : '';
+    $i('lcSay').innerHTML = say();
+    return {hr, sv, q, av, vo, F};
+  }
+
+  function heartFrame(dt, sv, hr, q){
+    beat = (beat + dt * hr / 60 * 0.5) % 1; // 실제의 1/2 속도
+    const c = beat < 0.35 ? Math.sin(Math.PI * beat / 0.35) : 0;
+    const amp = 0.25 * sv / 185;            // 수축 폭 ∝ 1회 박출량
+    const s = 1 - amp * c;
+    heart.setAttribute('transform', `translate(196 180) scale(${s}) translate(-196 -180)`);
+    lv.setAttribute('rx', 46 * (1 - 1.2 * amp * c)); lv.setAttribute('ry', 70 * (1 - 1.2 * amp * c));
+    svC.setAttribute('r', 62 * Math.sqrt(sv / 185)); svC.setAttribute('opacity', .3 + .5 * c);
+    dph = (dph + dt * (0.04 + 0.5 * q / 36.1 * (0.3 + 1.4 * c))) % 1;
+    dots.forEach((e, k) => { const p = outP.getPointAtLength(((k / dots.length + dph) % 1) * outLen); e.setAttribute('cx', p.x); e.setAttribute('cy', p.y); });
+  }
+
+  function frame(now){
+    const dt = Math.min(.05, (now - last) / 1000 || 0); last = now;
+    if (sec.classList.contains('is-on')){
+      if (playing){
+        if (dwell > 0) dwell -= dt;
+        else {
+          const nx = x + dt * 9;
+          const nextA = X.find(a => a > x + 1e-6);
+          if (nextA !== undefined && nx >= nextA){ x = nextA; dwell = 1.6; if (x >= 100){ playing = false; $i('lcPlay').textContent = '▶ 재생'; } }
+          else x = Math.min(100, nx);
+        }
+      }
+      const v = draw();
+      heartFrame(dt, v.sv, v.hr, v.q);
+      const i = anchor();
+      svT.textContent = i >= 0 ? D[mode].sv[i] + ' mL' : '';
+    } else if (playing){ playing = false; $i('lcPlay').textContent = '▶ 재생'; }
+    requestAnimationFrame(frame);
+  }
+  function setMode(m){
+    mode = m === 'a' || m === 1 || m === '선수' ? 'a' : 'u';
+    [...$i('lcMode').querySelectorAll('button')].forEach(b => b.classList.toggle('on', b.dataset.m === mode));
+    const v = draw(); const i = anchor(); svT.textContent = i >= 0 ? D[mode].sv[i] + ' mL' : ''; heartFrame(0, v.sv, v.hr, v.q);
+  }
+  const stopPlay = () => { playing = false; $i('lcPlay').textContent = '▶ 재생'; };
+  $i('lcMode').querySelectorAll('button').forEach(b => b.onclick = e => { e.stopPropagation(); setMode(b.dataset.m); });
+  [...$i('lcTicks').children].forEach(b => b.onclick = e => { e.stopPropagation(); x = +b.dataset.v; stopPlay(); draw(); });
+  $i('lcPlay').onclick = e => { e.stopPropagation(); if (x >= 100) x = 0; playing = !playing; dwell = 0; $i('lcPlay').textContent = playing ? '❚❚ 멈춤' : '▶ 재생'; };
+  $i('lcReset').onclick = e => { e.stopPropagation(); x = 0; stopPlay(); draw(); };
+  range.oninput = () => { x = +range.value; stopPlay(); };
+  ['click', 'touchstart', 'keydown'].forEach(ev => range.addEventListener(ev, e => e.stopPropagation()));
+  window.__labCirc = {set: v => { x = Math.max(0, Math.min(100, +v)); stopPlay(); setMode(mode); }, mode: m => setMode(m)};
+  setMode('u'); requestAnimationFrame(frame);
 })();
 
 // 30장 문제

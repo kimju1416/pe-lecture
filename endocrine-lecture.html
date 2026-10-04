@@ -316,6 +316,87 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 .fbox.hi{background:#fff3e0;color:#B25000}
 .fbox small{display:block;font-size:22px;font-weight:400;color:var(--t2);margin-top:4px}
 .far{font-size:40px;color:var(--t3)}
+
+/* ── 몸속 실험실 ── */
+.lab-left{position:absolute;left:120px;top:250px;width:560px}
+.lab-photo{height:300px;border-radius:18px;overflow:hidden;background:#000}
+.lab-photo img{width:100%;height:100%;object-fit:cover;object-position:30% 50%}
+.lab-clock{display:flex;justify-content:space-between;align-items:baseline;margin-top:22px}
+.lab-clock span{font-size:26px;font-weight:600;color:#FF453A}
+.lab-clock b{font-size:56px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.lab-left input[type=range]{width:100%;margin-top:10px;accent-color:#FF453A;height:26px}
+.lab-ticks{position:relative;height:26px;font-size:15px;color:#6e6e73}
+.lab-ticks span{position:absolute;top:0;white-space:nowrap}
+.lab-btns{display:flex;gap:10px;margin-top:14px}
+.lab-btns button,.ev-btns button{height:52px;padding:0 22px;border-radius:26px;background:#2c2c2e;color:#f5f5f7;font-size:21px;font-weight:600;border:2px solid transparent}
+.lab-btns button:hover,.ev-btns button:hover{border-color:#6e6e73}
+.ev-btns button.on{background:#f5f5f7;color:#1d1d1f}
+.lab-say{margin-top:22px;font-size:27px;line-height:1.5;min-height:130px;padding:20px 24px;border-radius:16px;background:#1c1c1e}
+.lab-say b{color:#64D2FF}
+.lab-cell{position:absolute;left:720px;top:250px;width:560px;height:676px}
+.lab-right{position:absolute;left:1320px;top:250px;width:500px}
+.gauge{margin-bottom:26px}
+.g-h{display:flex;justify-content:space-between;align-items:baseline;font-size:24px}
+.g-h span{min-height:36px;font-size:30px;font-weight:700;font-variant-numeric:tabular-nums}
+.g-bar{height:22px;border-radius:11px;background:#2c2c2e;margin-top:8px;overflow:hidden}
+.g-bar i{display:block;height:100%;width:0;border-radius:11px}
+.gauge small{display:block;font-size:16px;color:#a1a1a6;margin-top:7px;line-height:1.4}
+.gauge.dim{opacity:.35}
+.lab-src{font-size:15px;color:#6e6e73;line-height:1.5}
+.ev-btns{position:absolute;left:120px;top:250px;display:flex;gap:12px;flex-wrap:wrap}
+.lab2-photo{position:absolute;left:120px;top:340px;width:520px;height:600px;border-radius:20px;overflow:hidden;background:#000}
+.lab2-photo img{width:100%;height:100%;object-fit:cover;transition:opacity .3s}
+.lab2-main{position:absolute;left:690px;top:340px;width:1110px}
+.ev-name{font-size:40px;font-weight:700}
+.ev-name small{font-size:24px;color:#a1a1a6;font-weight:400;margin-left:14px}
+.ev-bar{position:relative;height:64px;border-radius:14px;overflow:hidden;background:#2c2c2e;margin-top:18px;display:flex}
+.ev-bar i{display:flex;align-items:center;justify-content:center;font-style:normal;font-size:26px;font-weight:700;color:#1d1d1f;transition:width .6s cubic-bezier(.2,.8,.2,1);white-space:nowrap;overflow:hidden}
+.ev-bar i:first-child{background:#FF453A;color:#fff}
+.ev-bar i:nth-child(2){background:#FFD60A;margin-left:auto}
+.ev-bar em{position:absolute;top:0;bottom:0;background:repeating-linear-gradient(45deg,rgba(255,214,10,.55) 0 8px,rgba(255,69,58,.55) 8px 16px);transition:left .6s,width .6s}
+.ev-leg{display:flex;gap:28px;margin-top:12px;font-size:20px;color:#a1a1a6;align-items:center}
+.ev-leg b{display:inline-block;width:16px;height:16px;border-radius:4px;margin-right:8px;vertical-align:-2px}
+.ev-leg span:last-child{margin-left:auto;color:#f5f5f7;font-weight:600}
+.ev-dom{margin-top:22px;font-size:27px;line-height:1.5;padding:18px 24px;border-radius:14px;background:#2c2c2e}
+.ev-curve{width:1110px;height:340px;margin-top:20px}
+
+/* ── 몸속 실험실(내분비) — 오래 달리기와 혈당 ── */
+.le-left{position:absolute;left:120px;top:244px;width:500px}
+.le-clock{display:flex;justify-content:space-between;align-items:center}
+.le-clock span{font-size:19px;line-height:1.35;font-weight:600;color:#FF9F0A}
+.le-clock b{font-size:54px;font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.le-left input[type=range]{width:100%;margin-top:6px;accent-color:#FF9F0A;height:26px}
+.le-a9{position:relative;height:22px;margin-top:2px}
+.le-a9 i{position:absolute;left:0;top:3px;width:27.8%;height:6px;border-radius:3px;background:#64D2FF;opacity:.7}
+.le-a9 span{position:absolute;left:0;top:10px;font-size:14px;color:#64D2FF;white-space:nowrap}
+.le-ctl{display:flex;flex-wrap:wrap;gap:10px 14px;margin-top:14px;align-items:center}
+.le-ctl .lab-btns{margin-top:0}
+.le-ctl .lab-btns button{height:48px;font-size:19px;padding:0 18px}
+.le-tog{display:flex;align-items:center;gap:6px;background:#1c1c1e;border-radius:26px;padding:4px 4px 4px 16px}
+.le-tog span{font-size:17px;color:#a1a1a6;margin-right:4px}
+.le-tog button{height:40px;padding:0 16px;border-radius:20px;background:transparent;color:#a1a1a6;font-size:18px;font-weight:600;border:0}
+.le-tog button.on{background:#f5f5f7;color:#1d1d1f}
+.le-tog button#leC1.on{background:#30D158;color:#06210f}
+.le-say{margin-top:14px;font-size:23px;line-height:1.45;min-height:104px;padding:14px 20px}
+.le-say b{color:#FF9F0A}
+.le-glu{display:block;width:500px;height:250px;margin-top:12px}
+.le-a9t{margin-top:6px;font-size:15px;line-height:1.45;color:#a1a1a6}
+.le-a9t b{color:#64D2FF}
+.le-body{position:absolute;left:660px;top:248px;width:560px;height:740px}
+.le-right{position:absolute;left:1262px;top:244px;width:540px}
+.le-h{font-size:22px;font-weight:700;margin:10px 0 4px;color:#f5f5f7}
+.le-h:first-child{margin-top:0}
+.le-h small{font-size:15px;font-weight:400;color:#6e6e73;margin-left:10px}
+.le-sub{font-size:15px;color:#6e6e73;margin:6px 0 0}
+.le-row{display:grid;grid-template-columns:150px 1fr 108px;align-items:center;gap:12px;height:32px;font-size:19px}
+.le-row b{font-weight:700;white-space:nowrap}
+.le-row span{text-align:right;font-size:20px;font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.le-bar{position:relative;height:16px;border-radius:8px;background:#2c2c2e}
+.le-bar i{position:absolute;left:0;top:0;bottom:0;width:0;border-radius:8px}
+.le-bar.dir i{opacity:.75}
+.le-bar u{position:absolute;top:-5px;bottom:-5px;width:2px;background:#f5f5f7;opacity:.6}
+.le-cap{font-size:14.5px;line-height:1.4;color:#a1a1a6;margin:2px 0 4px}
+.le-src{margin-top:8px;font-size:13.5px;line-height:1.4}
 </style>
 </head>
 <body>
@@ -396,8 +477,119 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   </div>
 </section>
 
+<!-- 몸속 실험실 — 오래 달리기와 혈당 -->
+<section class="slide" id="s6" data-tile="black" data-title="몸속 실험실 — 오래 운동하는 동안 혈당과 호르몬">
+  <div class="hd"><div class="t-eyebrow in"><b>2</b>몸속 실험실</div><div class="t-head in" style="--d:100">오래 운동하는 동안 — 혈당은 누가 지키나</div></div>
+  <div class="gx in" style="--d:200"><span class="y">기출</span><span>2026 A9</span></div>
+
+  <div class="le-left no-nav">
+    <div class="le-clock"><span id="leSit">중강도(약 65~75% VO₂max)<br>오래 운동하기</span><b id="leTime">0분</b></div>
+    <input type="range" id="leRange" min="0" max="180" step="0.5" value="0" aria-label="운동 시간(분)">
+    <div class="lab-ticks"><span style="left:0">0분</span><span style="left:15.4%">30</span><span style="left:31.8%">60</span><span style="left:48.4%">90</span><span style="left:64.8%">120</span><span style="left:81.4%">150</span><span style="right:0">180분</span></div>
+    <div class="le-a9"><i></i><span>2026 A9 그래프 구간(0~50분)</span></div>
+    <div class="le-ctl">
+      <div class="lab-btns"><button id="lePlay">▶ 재생</button><button id="leReset">처음부터</button></div>
+      <div class="le-tog"><span>탄수화물 섭취</span><button id="leC0" class="on">없음</button><button id="leC1">있음</button></div>
+    </div>
+    <div class="lab-say le-say" id="leSay"></div>
+    <svg class="le-glu" id="leGlu" viewBox="0 0 500 250"></svg>
+    <div class="le-a9t"><b>2026 A9</b> (나) 그래프 = 이 화면의 0~50분 — 에피·노르에피·성장호르몬·코티솔·글루카곤↑, 이름 없는 점선(인슐린)↓. 기출 그래프는 다섯 호르몬을 한 선으로 묶은 방향 모식이다 — 실제로는 카테콜아민이 가장 빠르고 코티솔은 늦게 뚜렷해진다(이 화면처럼). 답은 방향(증가·감소)으로 쓴다.</div>
+  </div>
+
+  <svg class="le-body no-nav" id="leBody" viewBox="0 0 560 740">
+    <defs>
+      <marker id="leAh" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0L10 5L0 10z" fill="#6e6e73"/></marker>
+    </defs>
+    <rect x="6" y="6" width="548" height="728" rx="40" fill="#101014" stroke="#3a3a3c" stroke-width="2"/>
+    <!-- 마신 탄수화물 -->
+    <g id="leGut" opacity="0">
+      <rect x="190" y="30" width="180" height="44" rx="22" fill="#0e2214" stroke="#30D158" stroke-width="2.5"/>
+      <text x="280" y="59" text-anchor="middle" font-size="18" font-weight="700" fill="#30D158">마신 탄수화물</text>
+    </g>
+    <path id="lePgut" d="M280 76L280 150" fill="none" stroke="none"/>
+    <!-- 혈관 -->
+    <rect x="232" y="110" width="96" height="444" rx="48" fill="#22090d" stroke="#c9474f" stroke-width="3"/>
+    <text x="224" y="128" text-anchor="end" font-size="17" font-weight="700" fill="#ff8a80">혈액</text>
+    <g id="leGlc"></g>
+    <!-- 부신수질 -->
+    <ellipse cx="110" cy="190" rx="58" ry="34" fill="#1d1416" stroke="#6e4a50" stroke-width="2"/>
+    <text x="110" y="196" text-anchor="middle" font-size="15" fill="#a1a1a6">신장</text>
+    <path d="M70 160Q110 112 150 160Z" fill="#3a1418" stroke="#FF453A" stroke-width="2.5"/>
+    <text x="110" y="100" text-anchor="middle" font-size="19" font-weight="700" fill="#FF453A">부신수질</text>
+    <text id="leAdrT" x="110" y="244" text-anchor="middle" font-size="16" fill="#FF453A">에피·노르에피 ↑</text>
+    <path id="lePadr" d="M140 150C180 150 210 175 246 190" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#leAh)"/>
+    <!-- 이자 -->
+    <path d="M370 170C380 140 430 132 470 140C510 148 530 170 520 186C505 205 450 196 410 200C385 202 364 192 370 170Z" fill="#1a1a10" stroke="#c8a24a" stroke-width="2.5"/>
+    <text x="450" y="118" text-anchor="middle" font-size="19" font-weight="700" fill="#e0c070">이자(췌장)</text>
+    <text id="leInsT" x="412" y="232" font-size="17" font-weight="700" fill="#64D2FF">인슐린 ↓</text>
+    <text id="leGcgT" x="412" y="256" font-size="17" font-weight="700" fill="#FF9F0A">글루카곤 ↑</text>
+    <path id="lePins" d="M380 160C360 160 345 170 326 176" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#leAh)"/>
+    <path id="lePgcg" d="M384 194C362 202 346 208 326 214" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#leAh)"/>
+    <!-- 간 -->
+    <path d="M30 330C30 290 80 274 150 280C200 284 222 300 222 330C222 380 190 440 130 452C70 462 30 410 30 330Z" fill="#26140e" stroke="#b4643c" stroke-width="3"/>
+    <text x="64" y="316" font-size="22" font-weight="700" fill="#e08a5a">간</text>
+    <rect x="98" y="300" width="64" height="120" rx="10" fill="#140a07" stroke="#e08a5a" stroke-width="2.5"/>
+    <rect id="leTank" x="102" y="304" width="56" height="112" rx="7" fill="#e08a5a" opacity=".85"/>
+    <text x="130" y="440" text-anchor="middle" font-size="15" fill="#e08a5a">글리코겐 저장고</text>
+    <g id="leGng" opacity=".3">
+      <text x="30" y="486" font-size="15" fill="#FFD60A">당신생: 젖산·글리세롤·</text>
+      <text x="30" y="506" font-size="15" fill="#FFD60A">아미노산 → 새 포도당</text>
+      <path d="M150 478C176 470 186 456 182 432" fill="none" stroke="#FFD60A" stroke-width="2" marker-end="url(#leAh)"/>
+    </g>
+    <path id="lePliv" d="M196 330C214 330 226 334 246 338" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#leAh)"/>
+    <text x="226" y="316" text-anchor="end" font-size="15" fill="#FFD60A">포도당 →</text>
+    <!-- 지방조직 -->
+    <g fill="#24200e" stroke="#BF5AF2" stroke-width="2">
+      <circle cx="420" cy="350" r="26"/><circle cx="470" cy="336" r="26"/><circle cx="508" cy="372" r="22"/><circle cx="458" cy="390" r="26"/><circle cx="410" cy="402" r="22"/>
+    </g>
+    <text x="460" y="304" text-anchor="middle" font-size="19" font-weight="700" fill="#BF5AF2">지방조직</text>
+    <text x="458" y="448" text-anchor="middle" font-size="15" fill="#BF5AF2">유리지방산 → 혈액</text>
+    <path id="lePffa" d="M396 370C370 372 350 376 318 382" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6" marker-end="url(#leAh)"/>
+    <!-- 근육 -->
+    <rect x="28" y="596" width="504" height="118" rx="24" fill="#2a1215" stroke="#c9474f" stroke-width="3"/>
+    <g id="leFib"></g>
+    <text x="48" y="702" font-size="19" font-weight="700" fill="#ff8a80">근육 (수축 중)</text>
+    <text id="leMusT" x="514" y="701" text-anchor="end" font-size="15" fill="#f5f5f7">수축 자체가 GLUT4를 세포막으로 — 인슐린과 별개</text>
+    <g id="leG4"></g>
+    <path id="lePup1" d="M262 540C250 566 218 584 186 604" fill="none" stroke="none"/>
+    <path id="lePup2" d="M280 548C280 570 288 588 300 604" fill="none" stroke="none"/>
+    <path id="lePup3" d="M300 540C330 566 380 584 414 604" fill="none" stroke="none"/>
+    <path id="lePfm" d="M318 500C360 530 440 560 470 610" fill="none" stroke="#3a3a3c" stroke-width="2" stroke-dasharray="4 6"/>
+    <g id="leDots"></g>
+    <g id="leExh" opacity="0"><rect x="170" y="630" width="220" height="44" rx="22" fill="#FF453A"/><text x="280" y="660" text-anchor="middle" font-size="23" font-weight="800" fill="#fff">탈진 직전</text></g>
+    <text x="280" y="729"text-anchor="middle" font-size="13" fill="#6e6e73">점의 밀도·흐름·저장고 높이는 크기 비교(모식) — 실측 숫자가 아니다</text>
+  </svg>
+
+  <div class="le-right">
+    <div class="le-h">호르몬 <small>안정 = 세로 눈금</small></div>
+    <div class="le-row"><b style="color:#FF453A">에피네프린</b><div class="le-bar"><i id="leBepi" style="background:#FF453A"></i><u style="left:20%"></u></div><span id="leVepi"></span></div>
+    <div class="le-row"><b style="color:#FF6961">노르에피네프린</b><div class="le-bar"><i id="leBne" style="background:#FF6961"></i><u style="left:20%"></u></div><span id="leVne"></span></div>
+    <div class="le-row"><b style="color:#FF9F0A">글루카곤</b><div class="le-bar"><i id="leBgcg" style="background:#FF9F0A"></i><u style="left:20%"></u></div><span id="leVgcg"></span></div>
+    <div class="le-cap">숫자: Galbo 1975 — 76% VO₂max로 탈진까지 달린 실험의 탈진 무렵(안정 대비), 탄수화물 없음 끝에만 표시. 탄수화물을 먹으면 에피는 덜 오르고 노르에피는 거의 그대로.</div>
+    <div class="le-sub">방향만 (막대 길이는 모식)</div>
+    <div class="le-row"><b style="color:#64D2FF">인슐린</b><div class="le-bar dir"><i id="leBins" style="background:#64D2FF"></i><u style="left:40%"></u></div><span id="leVins"></span></div>
+    <div class="le-row"><b style="color:#30D158">코티솔</b><div class="le-bar dir"><i id="leBcor" style="background:#30D158"></i><u style="left:40%"></u></div><span id="leVcor"></span></div>
+    <div class="le-row"><b style="color:#5AC8FA">성장호르몬</b><div class="le-bar dir"><i id="leBgh" style="background:#5AC8FA"></i><u style="left:40%"></u></div><span id="leVgh"></span></div>
+    <div class="le-cap">코티솔은 오래 할수록 늦게 오른다 — 약 60% 2시간 운동에서 90~120분에 뚜렷(Del Corral 1998). 성장호르몬은 초반부터 오른다. 탄수화물을 먹으면 코티솔은 덜 오르고 인슐린은 덜 내려간다.</div>
+
+    <div class="le-h">간 <small>혈액으로 포도당 내보내기</small></div>
+    <div class="le-row"><b style="color:#e08a5a">포도당 방출</b><div class="le-bar"><i id="leBhgo" style="background:#e08a5a"></i><u style="left:25%"></u></div><span id="leVhgo"></span></div>
+    <div class="le-cap">안정 대비 약 3배 (Trimmer 2002, 65% 운동 90분). 초반엔 대부분 글리코겐 분해. 탄수화물을 먹으면 간 방출이 약 절반으로 준다 (McConell 1994).</div>
+    <div class="le-row"><b style="color:#FFD60A">그중 당신생 몫</b><div class="le-bar dir"><i id="leBgng" style="background:#FFD60A"></i></div><span id="leVgng"></span></div>
+    <div class="le-cap">시간이 갈수록↑ — 저강도 4시간 연구(Ahlborg 1974): 초반 약 20~25% → 4시간 약 45%.</div>
+
+    <div class="le-h">연료와 근육</div>
+    <div class="le-row"><b style="color:#BF5AF2">RER</b><div class="le-bar"><i id="leBrer" style="background:#BF5AF2"></i></div><span id="leVrer"></span></div>
+    <div class="le-cap">왼쪽 끝 0.70(지방만) · 오른쪽 끝 1.00(탄수화물만). 탄수화물 없이 약 0.85 → 약 0.80, 먹으면 약 0.85 유지 (Coyle 1986).</div>
+    <div class="le-row"><b style="color:#ff8a80">근글리코겐</b><div class="le-bar dir"><i id="leBmg" style="background:#ff8a80"></i></div><span id="leVmg"></span></div>
+    <div class="le-cap">처음 2시간이 더 빨리 준다. 탄수화물을 먹어도 처음 3시간은 거의 같게 줄었다 (Coyle 1986, 자전거 71%).</div>
+    <div class="lab-src le-src">근거: Galbo 1975 · Coyle 1986 · Trimmer 2002 · Ahlborg 1974 · Del Corral 1998 · Goodwin 2010 · McConell 1994 · Christ 2024 · Richter &amp; Hargreaves 2013. 숫자는 근거 지점에서만.</div>
+  </div>
+</section>
+
+
 <!-- 카테콜아민과 지방 -->
-<section class="slide" id="s6" data-tile="black" data-title="부신수질 카테콜아민과 지방 동원">
+<section class="slide" id="s7" data-tile="black" data-title="부신수질 카테콜아민과 지방 동원">
   <video class="abs vid fin" src="img/endo-adrenal.mp4" poster="img/endo-adrenal.jpg" muted loop playsinline preload="metadata" style="left:0;top:0;width:1250px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 62%,transparent 96%);mask-image:linear-gradient(90deg,#000 62%,transparent 96%)"></video>
   <div class="side">
     <div class="t-eyebrow in"><b>2</b>혈당과 연료</div>
@@ -410,7 +602,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 문제 ① 2016 B4 -->
-<section class="slide" id="s7" data-tile="parchment" data-title="기출 ① 2016 B4">
+<section class="slide" id="s8" data-tile="parchment" data-title="기출 ① 2016 B4">
   <div class="hd"><div class="t-eyebrow in">기출 ① · 2016학년도 B4 그대로</div><div class="t-head in" style="--d:100">운동과 비만</div></div>
   <div class="exam in" style="--d:200;left:120px;top:260px;width:1060px;padding:26px 36px;font-size:23px;line-height:1.55">
     <div style="margin-bottom:14px">다음은 운동과 비만에 대한 체육 수업 상황이다. 부신수질에서 분비되는 호르몬 중 밑줄 친 ㉠의 변화를 일으키는 주요 호르몬 2가지를 쓰고, ㉡의 이유를 서술하시오. [4점]</div>
@@ -431,7 +623,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 인슐린 -->
-<section class="slide" id="s8" data-tile="dark" data-title="인슐린과 인슐린 민감도">
+<section class="slide" id="s9" data-tile="dark" data-title="인슐린과 인슐린 민감도">
   <div class="hd"><div class="t-eyebrow in"><b>2</b>혈당과 연료</div><div class="t-head in" style="--d:100">운동하는 몸은 인슐린이 덜 필요하다</div></div>
   <div class="gx in" style="--d:200"><span class="y">기출</span><span>2017 A14</span><span>2026 A9</span></div>
   <div class="cards" style="top:320px;grid-template-columns:repeat(2,1fr)">
@@ -445,7 +637,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 문제 ② 2017 A14 변형 -->
-<section class="slide" id="s9" data-tile="light" data-title="기출 변형 ② 2017 A14">
+<section class="slide" id="s10" data-tile="light" data-title="기출 변형 ② 2017 A14">
   <div class="hd"><div class="t-eyebrow in">기출 변형 ② · 2017학년도 A14의 같은 자료로 다르게</div><div class="t-head in" style="--d:100">체중 조절 프로그램의 목표</div></div>
   <div class="exam in" style="--d:200;left:120px;top:290px;width:1040px;font-size:26px">
     가람(17세 남)의 건강 검진: 체지방률·총콜레스테롤·혈압·혈당이 정상보다 약간 높음.<br>
@@ -461,7 +653,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 문제 ③ 2026 A9 -->
-<section class="slide" id="s10" data-tile="parchment" data-title="기출 ③ 2026 A9">
+<section class="slide" id="s11" data-tile="parchment" data-title="기출 ③ 2026 A9">
   <div class="hd"><div class="t-eyebrow in">기출 ③ · 2026학년도 A9 그대로</div><div class="t-head in" style="--d:100">운동 프로그램 계획과 호르몬 반응</div></div>
   <div class="exam in" style="--d:200;left:120px;top:240px;width:1140px;padding:18px 28px;font-size:19px;line-height:1.5">
     <div style="margin-bottom:8px">다음은 A 학생의 건강 체력 교실 자료의 일부이다. &lt;작성 방법&gt;에 따라 순서대로 서술하시오. [4점]</div>
@@ -516,7 +708,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 3. 체액 조절 -->
-<section class="slide" id="s11" data-tile="black" data-title="3. 땀과 물 — ADH와 알도스테론">
+<section class="slide" id="s12" data-tile="black" data-title="3. 땀과 물 — ADH와 알도스테론">
   <img class="abs fin" src="img/circ-runner.jpg" alt="더운 날 땀 흘리며 달리는 선수" style="left:0;top:0;width:1150px;height:1080px;object-fit:cover;-webkit-mask-image:linear-gradient(90deg,#000 66%,transparent 98%);mask-image:linear-gradient(90deg,#000 66%,transparent 98%)">
   <div class="side">
     <div class="t-eyebrow in"><b>3</b>체액 조절</div>
@@ -529,7 +721,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 문제 ④ 2023 B9 -->
-<section class="slide" id="s12" data-tile="light" data-title="기출 ④ 2023 B9">
+<section class="slide" id="s13" data-tile="light" data-title="기출 ④ 2023 B9">
   <div class="hd"><div class="t-eyebrow in">기출 ④ · 2023학년도 B9 그대로</div><div class="t-head in" style="--d:100">고온 환경에서의 운동</div></div>
   <div class="exam in" style="--d:200;left:120px;top:240px;width:1100px;padding:20px 30px;font-size:20px;line-height:1.5">
     <div style="margin-bottom:8px">다음은 고온 환경에서의 운동 방법에 대해 교사와 학생이 나눈 대화 내용이다. &lt;작성 방법&gt;에 따라 순서대로 서술하시오. [4점]</div>
@@ -552,7 +744,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 4. 훈련 적응 -->
-<section class="slide" id="s13" data-tile="dark" data-title="4. 훈련 적응">
+<section class="slide" id="s14" data-tile="dark" data-title="4. 훈련 적응">
   <div class="hd"><div class="t-eyebrow in"><b>4</b>훈련 적응</div><div class="t-head in" style="--d:100">훈련한 몸은 호르몬을 덜 쓴다</div></div>
   <div class="cards" style="top:320px;grid-template-columns:repeat(3,1fr)">
     <div class="card" data-step="1"><div class="k c-hr">카테콜아민</div><h4>같은 강도에서 덜 오른다</h4><p>같은 절대 강도가 상대적으로 쉬워져 에피·노르에피네프린 반응↓</p></div>
@@ -562,7 +754,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 함정 -->
-<section class="slide" id="s14" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
+<section class="slide" id="s15" data-tile="black" data-title="함정 10 — 이렇게 쓰면 감점">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">이렇게 쓰면 감점 — 함정 10</div></div>
   <ol class="traps">
     <li class="in" style="--d:150">에피·노르에피네프린 = <b>부신수질</b></li>
@@ -579,7 +771,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
 </section>
 
 <!-- 요약 -->
-<section class="slide" id="s15" data-tile="light" data-title="한 장 요약">
+<section class="slide" id="s16" data-tile="light" data-title="한 장 요약">
   <div class="hd"><div class="t-eyebrow in">정리</div><div class="t-head in" style="--d:100">한 장 요약</div></div>
   <div class="cards sum" style="top:300px;grid-template-columns:repeat(3,1fr)">
     <div class="card in" style="--d:150"><div class="k c-hr">분비선</div><h4>수질 · 피질 · 후엽</h4><p>부신수질: 에피·노르에피<br>부신피질: 코티솔·알도스테론<br>뇌하수체 후엽: ADH</p></div>
@@ -614,7 +806,7 @@ kbd{display:inline-block;min-width:26px;padding:2px 8px;border-radius:6px;backgr
   <button id="bT" title="대본 보기(T)" aria-label="대본 보기"><svg viewBox="0 0 24 24"><path d="M5 7h14M5 12h14M5 17h9"/></svg></button>
   <button id="bO" title="전체 보기(O)" aria-label="전체 보기"><svg viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
   <button id="bP" title="이전" aria-label="이전"><svg viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg></button>
-  <span class="count" id="cnt">1 / 15</span>
+  <span class="count" id="cnt">1 / 16</span>
   <button id="bN" title="다음" aria-label="다음"><svg viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg></button>
   <button id="bF" title="전체 화면(F)" aria-label="전체 화면"><svg viewBox="0 0 24 24"><path d="M4 9V4h5M20 9V4h-5M4 15v5h5M20 15v5h-5"/></svg></button>
 </div>
@@ -627,16 +819,17 @@ const NOTES = {
   s3: "분비선과 호르몬입니다. **부신수질**은 에피네프린과 노르에피네프린, **부신피질**은 코티솔과 알도스테론, **뇌하수체 후엽**은 항이뇨호르몬입니다. 운동 중에는 인슐린만 줄고 나머지는 늘어납니다.",
   s4: "운동하면 카테콜아민, 글루카곤, 코티솔, 성장호르몬은 오르고 **인슐린만 줄어듭니다**. 목적은 혈당을 지키고 지방을 꺼내 쓰는 것입니다. 2026 A9는 인슐린 선에 이름을 붙이지 않았습니다.",
   s5: "근육이 당을 써도 혈당이 유지되는 네 가지 길입니다. 간의 글리코겐 분해, 간의 포도당 신생, 지방 분해로 포도당 절약, 그리고 근수축 자체가 GLUT4를 옮겨 당을 들이는 것입니다.",
-  s6: "부신수질의 **에피네프린과 노르에피네프린**은 지방세포에서 중성지방을 분해해 유리지방산을 내보내고, 간과 근육의 글리코겐 분해를 늘립니다. 강도가 높을수록 급증해 탄수화물 사용이 늘어납니다.",
-  s7: "2016 B4 기출 그대로입니다. 유리지방산 동원을 늘리는 부신수질 호르몬은 **에피네프린과 노르에피네프린**, 저항 트레이닝이 체지방을 줄이는 이유는 근육량이 늘어 **안정 시 대사량이 늘기** 때문입니다.",
-  s8: "운동 중에는 인슐린이 줄어도 근수축이 GLUT4를 옮겨 당을 들입니다. 규칙적으로 운동하면 **인슐린 민감도가 오르고 요구도는 내려갑니다**. HDL과 혈관신생도 증가가 맞습니다.",
-  s9: "2017 A14와 같은 자료로 다르게 묻습니다. 규칙적 운동 뒤에는 같은 포도당에도 인슐린이 **덜** 나옵니다. 근육의 **GLUT4**가 늘었기 때문입니다. 운동 중에는 근수축 자체가 GLUT4를 옮깁니다.",
-  s10: "2026 A9 기출 그대로입니다. 카보넨으로 ⓐ는 **50%**, 잘못된 것은 ㉢ 지방조직 혈관 신생과 ㉤ 인슐린 민감도로 둘 다 **증가**가 맞습니다. 그래프의 ⓑ 에피네프린과 ⓒ 노르에피네프린의 공통 분비선은 **부신수질**입니다.",
-  s11: "땀을 흘리면 혈장 삼투압이 올라 **뇌하수체 후엽의 ADH**가 물을 재흡수시키고, 혈장량이 줄면 레닌-안지오텐신을 거쳐 **부신피질의 알도스테론**이 나트륨과 물을 보존합니다.",
-  s12: "2023 B9 기출 그대로입니다. 고온에서 오래 운동하면 1회 박출량은 **감소**, 심박수는 **증가**합니다. 판단력 상실, 의식 상실, 심부 체온 40℃ 초과는 ㉡ **열사병**, ㉢은 **항이뇨호르몬**, ㉣은 **부신피질**입니다.",
-  s13: "훈련한 몸은 같은 강도에서 카테콜아민이 덜 오르고, 글루카곤은 덜 오르고 인슐린은 덜 줄어듭니다. 대신 인슐린 민감도와 GLUT4가 늘어납니다.",
-  s14: "감점 함정 10가지입니다. 수질과 피질, 후엽, 인슐린만 감소, 민감도와 요구도의 방향을 특히 확인하세요.",
-  s15: "한 장으로 정리합니다. 분비선, 운동 중 반응, 혈당 유지, 물 조절, 훈련 적응, 그리고 직접 출제된 기출 네 문항과 관련 문항 두 개, 2020 B10과 2025 A11입니다."
+  s6: "몸속 실험실입니다. 중강도, 최대산소섭취량의 약 65~75%로 오래 운동한다고 해 봅시다. 시간 막대를 움직이거나 재생을 누르세요. 시작하자마자 **카테콜아민은 오르고 인슐린은 줄어듭니다**. 글루카곤은 서서히 오릅니다. 그래서 간이 포도당을 혈액으로 내보내고, 그 양은 안정 때의 약 3배입니다. 근육은 **수축만으로 GLUT4를 세포막에 올려** 포도당을 들입니다. 인슐린이 줄어도 당 흡수가 늘어나는 이유입니다. 시간이 지나면 지방조직에서 **유리지방산**이 나와 연료가 됩니다. 약 1시간까지 혈당은 대체로 유지됩니다. 오래 갈수록 간 글리코겐이 줄고 **당신생의 비중**이 커지며, 코티솔도 늦게 뚜렷해집니다. 탄수화물을 먹지 않으면 호흡교환율이 약 0.85에서 약 0.80으로 내려가고, 약 3시간 무렵 혈당이 약 2.5 mM까지 떨어져 탈진합니다. 이때 에피네프린은 안정의 약 4.7배, 노르에피네프린 약 3.8배, 글루카곤 약 2.8배입니다. 이 숫자는 76% 강도로 탈진까지 달린 다른 실험의 값입니다. 이제 **탄수화물 섭취 있음**을 누르세요. 혈당이 4.2~5.2 mM에서 유지되고 약 4시간까지 운동합니다. 호흡교환율도 약 0.85로 유지됩니다. 에피네프린과 코티솔은 덜 오르고 인슐린은 덜 내려가며, 간이 내보내는 포도당은 약 절반으로 줍니다. 그래도 처음 3시간 동안 근글리코겐이 줄어드는 정도는 거의 같았습니다. 2026 A9 그래프는 이 화면의 0~50분을 방향만 그린 것입니다. 다섯 호르몬을 한 선으로 묶었지만 실제로 오르는 속도는 다르고, 코티솔은 늦습니다. 답은 증가와 감소, 방향으로 쓰면 됩니다. 흔한 오개념 세 가지를 짚겠습니다. 첫째, 운동하면 혈당이 늘 떨어진다 — 아닙니다. 중강도에서는 한참 동안 유지되고, 떨어지는 것은 오래 하고 탄수화물이 바닥날 때입니다. 둘째, 근육이 포도당을 들이려면 인슐린이 꼭 필요하다 — 아닙니다. 수축 자체가 GLUT4를 옮깁니다. 셋째, 당신생이 처음부터 주력이다 — 아닙니다. 초반에는 간 글리코겐 분해가 대부분이고, 당신생은 시간이 지날수록 비중이 커집니다.",
+  s7: "부신수질의 **에피네프린과 노르에피네프린**은 지방세포에서 중성지방을 분해해 유리지방산을 내보내고, 간과 근육의 글리코겐 분해를 늘립니다. 강도가 높을수록 급증해 탄수화물 사용이 늘어납니다.",
+  s8: "2016 B4 기출 그대로입니다. 유리지방산 동원을 늘리는 부신수질 호르몬은 **에피네프린과 노르에피네프린**, 저항 트레이닝이 체지방을 줄이는 이유는 근육량이 늘어 **안정 시 대사량이 늘기** 때문입니다.",
+  s9: "운동 중에는 인슐린이 줄어도 근수축이 GLUT4를 옮겨 당을 들입니다. 규칙적으로 운동하면 **인슐린 민감도가 오르고 요구도는 내려갑니다**. HDL과 혈관신생도 증가가 맞습니다.",
+  s10: "2017 A14와 같은 자료로 다르게 묻습니다. 규칙적 운동 뒤에는 같은 포도당에도 인슐린이 **덜** 나옵니다. 근육의 **GLUT4**가 늘었기 때문입니다. 운동 중에는 근수축 자체가 GLUT4를 옮깁니다.",
+  s11: "2026 A9 기출 그대로입니다. 카보넨으로 ⓐ는 **50%**, 잘못된 것은 ㉢ 지방조직 혈관 신생과 ㉤ 인슐린 민감도로 둘 다 **증가**가 맞습니다. 그래프의 ⓑ 에피네프린과 ⓒ 노르에피네프린의 공통 분비선은 **부신수질**입니다.",
+  s12: "땀을 흘리면 혈장 삼투압이 올라 **뇌하수체 후엽의 ADH**가 물을 재흡수시키고, 혈장량이 줄면 레닌-안지오텐신을 거쳐 **부신피질의 알도스테론**이 나트륨과 물을 보존합니다.",
+  s13: "2023 B9 기출 그대로입니다. 고온에서 오래 운동하면 1회 박출량은 **감소**, 심박수는 **증가**합니다. 판단력 상실, 의식 상실, 심부 체온 40℃ 초과는 ㉡ **열사병**, ㉢은 **항이뇨호르몬**, ㉣은 **부신피질**입니다.",
+  s14: "훈련한 몸은 같은 강도에서 카테콜아민이 덜 오르고, 글루카곤은 덜 오르고 인슐린은 덜 줄어듭니다. 대신 인슐린 민감도와 GLUT4가 늘어납니다.",
+  s15: "감점 함정 10가지입니다. 수질과 피질, 후엽, 인슐린만 감소, 민감도와 요구도의 방향을 특히 확인하세요.",
+  s16: "한 장으로 정리합니다. 분비선, 운동 중 반응, 혈당 유지, 물 조절, 훈련 적응, 그리고 직접 출제된 기출 네 문항과 관련 문항 두 개, 2020 B10과 2025 A11입니다."
 };
 
 const $ = s => document.querySelector(s);
@@ -688,6 +881,172 @@ function el(tag, attrs, parent, text){ const e = document.createElementNS(SVGNS,
 const INK = '#1d1d1f';
 function txt(g, x, y, t, o = {}){ return el('text', Object.assign({x, y, 'font-size': 15, fill: INK}, o), g, t); }
 
+
+
+// ── 몸속 실험실(내분비) — 오래 달리는 동안 혈당과 호르몬 ──
+// 숫자는 근거 지점에서만 보인다. 그 사이 곡선·막대는 두 끝을 잇는 '이어 그린 모양'(모식)이다.
+(function(){
+  const $i = id => document.getElementById(id);
+  const body = $i('leBody'); if (!body) return; const sec = body.closest('.slide');
+  const NS = 'http://www.w3.org/2000/svg', END = 180;
+  const mk = (tag, a, p, txt) => { const e = document.createElementNS(NS, tag); for (const k in a) e.setAttribute(k, a[k]); if (txt != null) e.textContent = txt; p.append(e); return e; };
+  const cl = (x, a, b) => Math.max(a, Math.min(b, x));
+  const sm = x => { x = cl(x, 0, 1); return x * x * (3 - 2 * x); };
+
+  // 혈당(mM): 시작 약 5. 탄수화물 없음 → 약 3시간 무렵 약 2.5(Coyle 1986), 약 1시간까지는 10~15% 안쪽으로만 내려가게(Goodwin 2010: 30분~1시간, 40~70% 운동의 보통 반응)
+  //          탄수화물 있음 → 4.2~5.2 범위 안에서 유지(Coyle 1986)
+  const glu = (t, c) => c ? 5 - 0.25 * Math.pow(t / END, 1.5) : 5 - 2.5 * Math.pow(t / END, 2.64);
+  // 호르몬(안정 = 1). 탄수화물 없음의 끝값만 근거(Galbo 1975 탈진 무렵): 에피 4.7, 노르에피 3.8, 글루카곤 2.8
+  // 탄수화물 있음은 상승 폭이 줄어드는 방향만 모식으로(숫자 없음) — 에피·코티솔은 덜 오르고 노르에피는 거의 그대로(Christ 2024 체계적 고찰), 인슐린은 덜 내려감(McConell 1994)
+  function hor(t, c){
+    const u = t / END;
+    return {
+      epi: 1 + (c ? .5 : 1) * 3.7 * Math.pow(u, 1.6),
+      ne: 1 + 2.8 * Math.pow(u, 1.2),
+      gcg: 1 + (c ? .5 : 1) * 1.8 * Math.pow(u, 1.5),
+      ins: 1 - (c ? .25 : .5) * (1 - Math.exp(-t / 40)),               // 방향만
+      cor: 1 + (c ? .5 : 1) * 1.2 * sm((t - 60) / 60),                  // 늦게 — 90~120분에 뚜렷(Del Corral 1998)
+      gh: 1 + (c ? .6 : 1) * 1.4 * (1 - Math.exp(-t / 20)),            // 초반부터
+    };
+  }
+  // 간 포도당 방출(안정 = 1): 빠르게 약 3배(Trimmer 2002, 2.0→5.84 mg/kg/min). 탄수화물 없이 늦게는 글리코겐이 줄어 따라가지 못함(모식). 먹으면 간 방출이 약 절반(McConell 1994: 2시간 합계 51%↓)
+  const hgo = (t, c) => { let v = 1 + 2 * (1 - Math.exp(-t / 5)); if (c) v -= 1.4 * sm((t - 15) / 60); else v -= 0.6 * Math.pow(cl((t - 120) / 60, 0, 1), 1.5); return v; };
+  const gng = t => 22 + 20 * (t / END);                                     // 막대 모식(숫자 없음)
+  const liv = (t, c) => c ? 1 - 0.45 * (t / END) : 1 - 0.88 * Math.pow(t / END, 1.15); // 간 글리코겐 탱크(숫자 없음)
+  const rer = (t, c) => c ? 0.85 : 0.85 - 0.05 * (1 - Math.exp(-t / 70)) / (1 - Math.exp(-END / 70)); // 탄수화물 없음 0.85 → 0.80, 먹으면 처음 값(0.86) 유지 (Coyle 1986)
+  const mgly = t => 0.2 + 0.8 * Math.exp(-t / 90);                           // 처음 2시간이 더 빠름, 탄수화물과 무관(Coyle 1986)
+  const ffa = (t, c) => (t <= 0 ? .1 : (0.15 + 0.85 * (1 - Math.exp(-t / 60)))) * (c ? .6 : 1);
+
+  // ── 혈당 그래프 ──
+  const gs = $i('leGlu');
+  const X = t => 60 + t / END * 420, Y = m => 220 - (m - 2) / 4 * 170;
+  mk('text', {x: 4, y: 20, 'font-size': 18, 'font-weight': 700, fill: '#f5f5f7'}, gs, '혈당 (mM)');
+  const gv = mk('text', {x: 496, y: 20, 'text-anchor': 'end', 'font-size': 20, 'font-weight': 700, fill: '#FF453A'}, gs, '');
+  mk('rect', {x: X(0), y: Y(5.2), width: 420, height: Y(4.2) - Y(5.2), fill: '#30D158', opacity: .12}, gs);
+  const bandT = mk('text', {x: X(4), y: Y(5.2) - 6, 'font-size': 14, fill: '#30D158'}, gs, '탄수화물 섭취: 4.2~5.2 유지, 약 4시간까지 (Coyle 1986)');
+  mk('rect', {x: X(0), y: 46, width: X(60) - X(0), height: 174, fill: '#f5f5f7', opacity: .05}, gs);
+  mk('text', {x: (X(0) + X(60)) / 2, y: 213, 'text-anchor': 'middle', 'font-size': 12, fill: '#6e6e73'}, gs, '~1시간: 10~15% 안쪽');
+  mk('line', {x1: X(0), y1: 220, x2: 480, y2: 220, stroke: '#6e6e73', 'stroke-width': 2}, gs);
+  mk('line', {x1: X(0), y1: 46, x2: X(0), y2: 220, stroke: '#6e6e73', 'stroke-width': 2}, gs);
+  [[5, '5'], [2.5, '2.5']].forEach(([m, l]) => { mk('line', {x1: X(0), y1: Y(m), x2: 480, y2: Y(m), stroke: '#3a3a3c', 'stroke-dasharray': '4 6'}, gs); mk('text', {x: X(0) - 8, y: Y(m) + 5, 'text-anchor': 'end', 'font-size': 15, fill: '#a1a1a6'}, gs, l); });
+  [[0, '0'], [60, '60'], [120, '120'], [180, '180분']].forEach(([t, l]) => mk('text', {x: X(t), y: 242, 'text-anchor': t === 180 ? 'end' : 'middle', 'font-size': 15, fill: '#a1a1a6'}, gs, l));
+  const curve = c => { let d = ''; for (let i = 0; i <= 90; i++){ const t = END * i / 90; d += (i ? 'L' : 'M') + X(t).toFixed(1) + ' ' + Y(glu(t, c)).toFixed(1); } return d; };
+  const cN = mk('path', {d: curve(false), fill: 'none', stroke: '#FF453A', 'stroke-width': 5, 'stroke-linecap': 'round'}, gs);
+  const cC = mk('path', {d: curve(true), fill: 'none', stroke: '#30D158', 'stroke-width': 5, 'stroke-linecap': 'round'}, gs);
+  mk('circle', {cx: X(0), cy: Y(5), r: 6, fill: '#f5f5f7'}, gs);
+  const endN = mk('g', {}, gs);
+  mk('circle', {cx: X(180), cy: Y(2.5), r: 7, fill: '#FF453A'}, endN);
+  mk('text', {x: X(0) + 8, y: Y(2.5) - 8, 'font-size': 14, fill: '#FF453A'}, endN, '탄수화물 없음: 약 3시간, 탈진 직전 약 2.5');
+  mk('text', {x: 100, y: 20, 'font-size': 13, fill: '#6e6e73'}, gs, '시작·끝 근거를 이어 그린 모양');
+  const cur = mk('line', {x1: 0, y1: 46, x2: 0, y2: 220, stroke: '#f5f5f7', 'stroke-width': 2, opacity: .7}, gs);
+  const curD = mk('circle', {r: 8, fill: '#f5f5f7', stroke: '#000', 'stroke-width': 2}, gs);
+
+  // ── 몸 그림 ──
+  const fib = $i('leFib');
+  for (let i = 0; i < 16; i++) mk('rect', {x: 46 + i * 30, y: 630, width: 12, height: 46, rx: 4, fill: '#5a2329'}, fib);
+  // 혈관 속 포도당 점(밀도 = 혈당)
+  const glcG = $i('leGlc'), GN = 48, glc = [];
+  for (let i = 0; i < GN; i++){ const e = mk('circle', {r: 6, fill: '#FFD60A'}, glcG); glc.push({e, x: 246 + ((i * 37) % 68), y0: (i * 151) % 380}); }
+  // GLUT4 운반체 8개(세포 안 → 세포막)
+  const g4G = $i('leG4'), G4 = [];
+  for (let i = 0; i < 8; i++){ const x = 116 + i * 52; const e = mk('rect', {x: x - 9, y: 648, width: 18, height: 26, rx: 5, fill: '#30D158', stroke: '#0b3d1c', 'stroke-width': 2}, g4G); G4.push({e, y: 648}); }
+  mk('text', {x: 40, y: 622, 'font-size': 16, 'font-weight': 700, fill: '#30D158'}, g4G, 'GLUT4');
+  // 흐르는 점
+  const dots = $i('leDots'), P = {};
+  [['adr', 'lePadr', '#FF453A', 6], ['ins', 'lePins', '#64D2FF', 5], ['gcg', 'lePgcg', '#FF9F0A', 5], ['liv', 'lePliv', '#FFD60A', 6], ['ffa', 'lePffa', '#BF5AF2', 6], ['fm', 'lePfm', '#BF5AF2', 6], ['gut', 'lePgut', '#30D158', 6], ['up1', 'lePup1', '#FFD60A', 5], ['up2', 'lePup2', '#FFD60A', 5], ['up3', 'lePup3', '#FFD60A', 5]].forEach(([k, id, c, n]) => {
+    const path = $i(id), len = path.getTotalLength(), list = [];
+    for (let i = 0; i < n; i++) list.push(mk('circle', {r: 6, fill: c, opacity: 0}, dots));
+    P[k] = {path, len, list, ph: 0, v: 0};
+  });
+
+  let t = 0, carb = false, playing = false, last = 0, flowT = 0;
+  const range = $i('leRange');
+  function say(t, c){
+    if (t < 4) return '시작: <b>카테콜아민↑·인슐린↓</b>, 글루카곤은 서서히↑ → 간이 포도당을 혈액으로 내보낸다';
+    if (t < 25) return '근육은 <b>수축만으로 GLUT4</b>를 세포막에 올려 포도당을 들인다 — 인슐린과 별개';
+    if (t < 45) return '지방조직에서 <b>유리지방산</b>이 나와 연료가 된다 → 탄수화물을 아낀다';
+    if (t < 90) return '약 1시간까지 혈당은 <b>대체로 유지</b> — 보통 10~15% 넘게 떨어지지 않는다 (Goodwin 2010)';
+    if (t < 120) return '오래 갈수록 <b>간 글리코겐</b>이 줄고 <b>당신생</b> 비중↑, <b>코티솔</b>도 오른다';
+    if (c) return t < 175 ? '<b>탄수화물을 먹으면</b> 혈액에 포도당이 들어와 혈당이 유지된다 → 더 오래' : '탄수화물을 먹으면 혈당 유지 → <b>약 4시간까지</b> (먹지 않으면 약 3시간, Coyle 1986)';
+    return t < 175 ? '탄수화물 없이 2시간을 넘기면 간이 따라가지 못해 <b>혈당이 떨어진다</b>' : '약 3시간: 혈당 약 2.5 mM — <b>탈진</b> (탄수화물 없이 2~3시간 넘게)';
+  }
+  function setW(id, frac){ $i(id).style.width = (cl(frac, 0, 1) * 100).toFixed(2) + '%'; }
+  function draw(){
+    const c = carb, g = glu(t, c), h = hor(t, c), ex = !c && t >= 175;
+    $i('leTime').textContent = Math.round(t) + '분';
+    $i('leSay').innerHTML = say(t, c);
+    range.value = t;
+    // 혈당
+    gv.setAttribute('fill', c ? '#30D158' : '#FF453A');
+    gv.textContent = t < 1 ? '약 5 mM' : c ? '4.2~5.2 mM 범위' : ex ? '약 2.5 mM' : (t <= 60 ? '대체로 유지' : '');
+    cN.setAttribute('opacity', c ? .22 : 1); cN.setAttribute('stroke-width', c ? 3 : 5);
+    cC.setAttribute('opacity', c ? 1 : .22); cC.setAttribute('stroke-width', c ? 5 : 3);
+    endN.setAttribute('opacity', c ? .3 : 1); bandT.setAttribute('opacity', c ? 1 : .5);
+    cur.setAttribute('x1', X(t)); cur.setAttribute('x2', X(t)); curD.setAttribute('cx', X(t)); curD.setAttribute('cy', Y(g));
+    // 호르몬 막대: 근거 3종은 0~5배 눈금(안정 = 20%), 방향만 3종은 안정 = 40%
+    setW('leBepi', h.epi / 5); setW('leBne', h.ne / 5); setW('leBgcg', h.gcg / 5);
+    $i('leVepi').textContent = ex ? '약 4.7배' : t >= 1 ? '↑' : '';
+    $i('leVne').textContent = ex ? '약 3.8배' : t >= 1 ? '↑' : '';
+    $i('leVgcg').textContent = ex ? '약 2.8배' : t >= 1 ? '↑' : '';
+    setW('leBins', h.ins * .4); setW('leBcor', h.cor * .4); setW('leBgh', h.gh * .4);
+    $i('leVins').textContent = t >= 1 ? '↓' : '';
+    $i('leVcor').textContent = t < 60 ? (t >= 1 ? '거의 그대로' : '') : t < 90 ? '오르기 시작' : '↑';
+    $i('leVgh').textContent = t >= 1 ? '↑' : '';
+    // 간
+    const hg = hgo(t, c);
+    setW('leBhgo', hg / 4);
+    $i('leVhgo').textContent = !c && t >= 20 && t <= 90 ? '약 3배' : (c && t >= 30 ? '덜 내보냄' : (t >= 1 ? '↑' : ''));
+    setW('leBgng', gng(t) / 100); $i('leVgng').textContent = t >= 1 ? '↑' : '';
+    // RER, 근글리코겐
+    const r = rer(t, c); setW('leBrer', (r - .7) / .3);
+    $i('leVrer').textContent = t <= 15 ? '약 0.85' : c ? '약 0.85 유지' : ex ? '약 0.80' : '↓';
+    setW('leBmg', mgly(t)); $i('leVmg').textContent = t >= 1 ? '↓' : '';
+    // 몸 그림
+    const lv = liv(t, c), th = 112 * lv; $i('leTank').setAttribute('y', 304 + 112 - th); $i('leTank').setAttribute('height', th);
+    $i('leGng').setAttribute('opacity', (.25 + .75 * (t / END)).toFixed(2));
+    $i('leGut').setAttribute('opacity', c ? 1 : 0);
+    $i('leExh').setAttribute('opacity', ex ? 1 : 0);
+    $i('leInsT').setAttribute('font-size', (17 - 2 * (1 - h.ins) / .5).toFixed(1));
+    $i('leGcgT').setAttribute('font-size', (16 + 6 * (h.gcg - 1) / 1.8).toFixed(1));
+    $i('leAdrT').setAttribute('font-size', (16 + 5 * (h.epi - 1) / 3.7).toFixed(1));
+    const nG = Math.round(GN * g / 5);
+    glc.forEach((d, i) => d.e.setAttribute('opacity', i < nG ? .95 : 0));
+    // 흐름 세기(0~1, 모식)
+    const up = t <= 0 ? .15 : .85 * cl(g / 5, 0, 1);
+    const v = {adr: t <= 0 ? 0 : .25 + .75 * (h.epi - 1) / 3.7, ins: .9 * h.ins, gcg: t <= 0 ? .1 : .25 + .75 * (h.gcg - 1) / 1.8, liv: t <= 0 ? .2 : .25 + .75 * cl((hg - 1) / 2, 0, 1), ffa: ffa(t, c), fm: ffa(t, c), gut: c && t > 0 ? .75 : 0, up1: up, up2: up, up3: up};
+    for (const k in P) P[k].v = v[k];
+  }
+  function anim(dt){
+    flowT += dt;
+    for (const k in P){
+      const o = P[k], vv = o.v, n = o.list.length, show = Math.ceil(n * cl(vv, 0, 1));
+      o.ph = (o.ph + dt * (0.15 + 0.6 * vv)) % 1;
+      o.list.forEach((cc, i) => { const q = o.path.getPointAtLength(((i / n + o.ph) % 1) * o.len); cc.setAttribute('cx', q.x); cc.setAttribute('cy', q.y); cc.setAttribute('opacity', i < show && vv > .03 ? Math.min(1, .35 + vv) : 0); });
+    }
+    const sp = 40 + 30 * (t > 0 ? 1 : 0);
+    glc.forEach(d => { const y = 160 + (d.y0 + flowT * sp) % 380; d.e.setAttribute('cx', d.x); d.e.setAttribute('cy', y); });
+    // GLUT4: 안정이면 대부분 세포 안, 수축하면 대부분 세포막(y 598)
+    const on = t <= 0 ? 2 : Math.round(2 + 5 * (1 - Math.exp(-t / 3)));
+    G4.forEach((u, i) => { const target = i < on ? 598 : 648; u.y += (target - u.y) * Math.min(1, dt * 4); u.e.setAttribute('y', u.y.toFixed(1)); });
+  }
+  function frame(now){
+    const dt = Math.min(.05, (now - last) / 1000 || 0); last = now;
+    if (sec.classList.contains('is-on')){
+      if (playing){ t += dt * 6; if (t >= END){ t = END; playing = false; $i('lePlay').textContent = '▶ 재생'; } }
+      draw(); anim(dt);
+    } else if (playing){ playing = false; $i('lePlay').textContent = '▶ 재생'; }
+    requestAnimationFrame(frame);
+  }
+  const setCarb = b => { carb = !!b; $i('leC0').classList.toggle('on', !carb); $i('leC1').classList.toggle('on', carb); draw(); };
+  $i('lePlay').onclick = e => { e.stopPropagation(); if (t >= END) t = 0; playing = !playing; $i('lePlay').textContent = playing ? '❚❚ 멈춤' : '▶ 재생'; };
+  $i('leReset').onclick = e => { e.stopPropagation(); t = 0; playing = true; $i('lePlay').textContent = '❚❚ 멈춤'; };
+  $i('leC0').onclick = e => { e.stopPropagation(); setCarb(false); };
+  $i('leC1').onclick = e => { e.stopPropagation(); setCarb(true); };
+  range.oninput = () => { t = +range.value; playing = false; $i('lePlay').textContent = '▶ 재생'; draw(); };
+  ['click', 'touchstart', 'keydown'].forEach(ev => range.addEventListener(ev, e => e.stopPropagation()));
+  window.__labEndo = {set: m => { t = cl(+m, 0, END); playing = false; $i('lePlay').textContent = '▶ 재생'; draw(); }, carb: b => setCarb(b)};
+  draw(); anim(0); requestAnimationFrame(frame);
+})();
 
 // 30장 문제
 document.querySelectorAll('.mcq').forEach(q => q.querySelectorAll('button').forEach(b => b.onclick = e => {
